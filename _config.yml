@@ -1,0 +1,14 @@
+title: "Zihao's Portfolio"
+remote_theme: "mmistakes/minimal-mistakes@latest"
+plugins:
+  - jekyll-include-cache
+
+# Optional site info
+repository: "ZihaoFU245/ZihaoFU245.github.io"
+minimal_mistakes_skin: "dirt"  # choose from default, dark, air, mint, etc.
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
