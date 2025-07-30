@@ -1,11 +1,21 @@
 title: "Zihao's Portfolio"
 description: "Engineer & Computer Science student. Personal website, CV, and projects."
-remote_theme: "mmistakes/minimal-mistakes@latest"
+remote_theme: "mmistakes/minimal-mistakes"
 plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-include-cache
 
 minimal_mistakes_skin: "default"
 repository: "ZihaoFU245/ZihaoFU245.github.io"
+
+# Site settings
+url: "https://zihaof245.github.io"
+baseurl: ""
+locale: "en-US"
+title_separator: "-"
+breadcrumbs: true
 
 author:
   name: "Zihao Fu"
@@ -17,6 +27,7 @@ author:
   linkedin: "zihaofu"
 
 # Navigation
+masthead_title: "Zihao's Portfolio"
 defaults:
   - scope:
       path: ""
