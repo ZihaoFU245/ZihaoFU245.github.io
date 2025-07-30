@@ -1,6 +1,6 @@
 title: "Zihao's Portfolio"
 description: "Engineer & Computer Science student. Personal website, CV, and projects."
-remote_theme: "mmistakes/minimal-mistakes@latest"
+remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-include-cache
 
