@@ -1,0 +1,206 @@
+---
+layout: default
+title: "Resume"
+description: "Professional resume of Zihao Fu - Engineer & CS student"
+---
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-white mb-4">{{ site.data.resume.name }}</h1>
+        <p class="text-xl text-gray-400 mb-6">{{ site.data.resume.summary }}</p>
+        
+        <!-- Contact Info -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm">
+            {% if site.data.resume.email != '[your-email@domain.com]' %}
+            <a href="mailto:{{ site.data.resume.email }}" class="text-accent-light hover:text-accent">
+                <i class="fas fa-envelope mr-1"></i>{{ site.data.resume.email }}
+            </a>
+            {% endif %}
+            {% if site.data.resume.phone != '[your-phone]' %}
+            <span class="text-gray-400">
+                <i class="fas fa-phone mr-1"></i>{{ site.data.resume.phone }}
+            </span>
+            {% endif %}
+            {% if site.data.resume.location != '[Your Location]' %}
+            <span class="text-gray-400">
+                <i class="fas fa-map-marker-alt mr-1"></i>{{ site.data.resume.location }}
+            </span>
+            {% endif %}
+            <a href="https://github.com/{{ site.data.resume.github }}" target="_blank" class="text-accent-light hover:text-accent">
+                <i class="fab fa-github mr-1"></i>github.com/{{ site.data.resume.github }}
+            </a>
+            {% if site.data.resume.linkedin != '[your-linkedin-handle]' %}
+            <a href="https://linkedin.com/in/{{ site.data.resume.linkedin }}" target="_blank" class="text-accent-light hover:text-accent">
+                <i class="fab fa-linkedin mr-1"></i>linkedin.com/in/{{ site.data.resume.linkedin }}
+            </a>
+            {% endif %}
+        </div>
+        
+        <div class="mt-6">
+            <a href="/assets/resume.pdf" target="_blank" class="btn-primary">
+                <i class="fas fa-download mr-2"></i>Download PDF
+            </a>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <section class="mb-12">
+        <h2 class="section-title">Education</h2>
+        <div class="space-y-6">
+            {% for edu in site.data.resume.education %}
+            <div class="card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-semibold text-accent">{{ edu.degree }}</h3>
+                        <p class="text-gray-400">{{ edu.institution }}</p>
+                        {% if edu.subjects %}
+                        <p class="text-gray-400">{{ edu.subjects }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="text-right">
+                        {% if edu.gpa %}
+                        <p class="text-accent-light font-medium">GPA: {{ edu.gpa }}</p>
+                        {% endif %}
+                        {% if edu.expected %}
+                        <p class="text-gray-400">Expected {{ edu.expected }}</p>
+                        {% elsif edu.year %}
+                        <p class="text-gray-400">{{ edu.year }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="mb-12">
+        <h2 class="section-title">Key Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card">
+                <h3 class="text-lg font-semibold text-accent mb-3">Languages</h3>
+                <div class="flex flex-wrap gap-2">
+                    {% for skill in site.data.resume.skills.languages %}
+                    <span class="bg-accent/20 text-accent-light px-3 py-1 rounded-full text-sm">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="text-lg font-semibold text-accent mb-3">Frameworks</h3>
+                <div class="flex flex-wrap gap-2">
+                    {% for skill in site.data.resume.skills.frameworks %}
+                    <span class="bg-accent/20 text-accent-light px-3 py-1 rounded-full text-sm">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="text-lg font-semibold text-accent mb-3">Tools</h3>
+                <div class="flex flex-wrap gap-2">
+                    {% for skill in site.data.resume.skills.tools %}
+                    <span class="bg-accent/20 text-accent-light px-3 py-1 rounded-full text-sm">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    {% if site.data.resume.experience %}
+    <section class="mb-12">
+        <h2 class="section-title">Experience</h2>
+        <div class="space-y-6">
+            {% for exp in site.data.resume.experience %}
+            <div class="card">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-accent">{{ exp.role }}</h3>
+                        <p class="text-gray-400">{{ exp.company }}</p>
+                    </div>
+                    <p class="text-gray-400">{{ exp.dates }}</p>
+                </div>
+                <ul class="space-y-2">
+                    {% for achievement in exp.achievements %}
+                    <li class="text-text flex items-start">
+                        <i class="fas fa-chevron-right text-accent-light mt-1 mr-3 flex-shrink-0"></i>
+                        {{ achievement }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Projects -->
+    <section class="mb-12">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for project in site.data.projects %}
+            {% include project-card.html project=project %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Awards -->
+    {% if site.data.resume.awards %}
+    <section class="mb-12">
+        <h2 class="section-title">Awards & Certifications</h2>
+        <div class="card">
+            <ul class="space-y-2">
+                {% for award in site.data.resume.awards %}
+                <li class="text-text flex items-center">
+                    <i class="fas fa-trophy text-accent-light mr-3"></i>
+                    {{ award }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Publications -->
+    {% if site.data.resume.publications %}
+    <section class="mb-12">
+        <h2 class="section-title">Publications & Talks</h2>
+        <div class="space-y-4">
+            {% for pub in site.data.resume.publications %}
+            <div class="card">
+                <h3 class="text-lg font-semibold text-accent">{{ pub.title }}</h3>
+                <p class="text-gray-400">{{ pub.venue }} • {{ pub.date }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Languages -->
+    <section class="mb-12">
+        <h2 class="section-title">Languages</h2>
+        <div class="card">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% for lang in site.data.resume.languages %}
+                <div class="text-center">
+                    <p class="text-accent font-medium">{{ lang.language }}</p>
+                    <p class="text-gray-400">{{ lang.level }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests -->
+    <section class="mb-12">
+        <h2 class="section-title">Interests</h2>
+        <div class="card">
+            <div class="flex flex-wrap gap-3">
+                {% for interest in site.data.resume.interests %}
+                <span class="bg-accent/20 text-accent-light px-4 py-2 rounded-full">{{ interest }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>

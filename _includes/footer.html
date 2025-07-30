@@ -1,0 +1,60 @@
+<footer class="bg-panel border-t border-gray-700 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-lg font-semibold text-accent mb-4">Get In Touch</h3>
+                <div class="space-y-2">
+                    {% if site.data.resume.email != '[your-email@domain.com]' %}
+                    <p class="text-text">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <a href="mailto:{{ site.data.resume.email }}" class="hover:text-accent-light">
+                            {{ site.data.resume.email }}
+                        </a>
+                    </p>
+                    {% endif %}
+                    {% if site.data.resume.location != '[Your Location]' %}
+                    <p class="text-text">
+                        <i class="fas fa-map-marker-alt mr-2"></i>{{ site.data.resume.location }}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h3 class="text-lg font-semibold text-accent mb-4">Connect</h3>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/{{ site.data.resume.github }}" 
+                       target="_blank" 
+                       class="text-text hover:text-accent-light text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    {% if site.data.resume.linkedin != '[your-linkedin-handle]' %}
+                    <a href="https://linkedin.com/in/{{ site.data.resume.linkedin }}" 
+                       target="_blank" 
+                       class="text-text hover:text-accent-light text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold text-accent mb-4">Quick Links</h3>
+                <div class="space-y-2">
+                    <a href="{{ '/resume.html' | relative_url }}" class="block text-text hover:text-accent-light">Resume</a>
+                    <a href="{{ '/projects.html' | relative_url }}" class="block text-text hover:text-accent-light">Projects</a>
+                    <a href="/assets/resume.pdf" target="_blank" class="block text-text hover:text-accent-light">Download CV</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p class="text-gray-400">
+                © {{ 'now' | date: "%Y" }} {{ site.data.resume.name }}. Built with Jekyll & Tailwind CSS.
+            </p>
+        </div>
+    </div>
+</footer>

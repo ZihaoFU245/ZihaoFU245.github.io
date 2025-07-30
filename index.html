@@ -1,1 +1,224 @@
-"Hello World" 
+"---
+layout: default
+title: "Home"
+description: "Personal portfolio of Zihao Fu - Engineer & CS student focused on ML and systems"
+---
+
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-bg to-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="text-center lg:text-left">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    Hi, I'm <span class="text-accent-light">{{ site.data.resume.name }}</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    {{ site.data.resume.summary }}
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-envelope mr-2"></i>Hire Me
+                    </a>
+                    <a href="{{ '/projects.html' | relative_url }}" class="btn-secondary">
+                        <i class="fas fa-code mr-2"></i>View Projects
+                    </a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex justify-center lg:justify-start space-x-6 mt-8">
+                    <a href="https://github.com/{{ site.data.resume.github }}" 
+                       target="_blank" 
+                       class="text-gray-400 hover:text-accent-light text-2xl transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    {% if site.data.resume.linkedin != '[your-linkedin-handle]' %}
+                    <a href="https://linkedin.com/in/{{ site.data.resume.linkedin }}" 
+                       target="_blank" 
+                       class="text-gray-400 hover:text-accent-light text-2xl transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Profile Image -->
+            <div class="flex justify-center lg:justify-end">
+                <div class="relative">
+                    <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-r from-accent to-accent-light p-1">
+                        <div class="w-full h-full rounded-full bg-panel flex items-center justify-center">
+                            <!-- Placeholder for profile image -->
+                            <div class="w-60 h-60 lg:w-76 lg:h-76 rounded-full bg-gradient-to-br from-accent/20 to-accent-light/20 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-accent-light"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating elements -->
+                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-accent-light rounded-full animate-pulse"></div>
+                    <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full animate-pulse delay-1000"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Preview -->
+<section class="py-20 bg-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="section-title">Key Skills</h2>
+            <p class="text-gray-400 text-lg">Technologies I work with</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Languages -->
+            <div class="card text-center">
+                <div class="text-accent-light text-4xl mb-4">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-accent mb-3">Languages</h3>
+                <div class="flex flex-wrap justify-center gap-2">
+                    {% for skill in site.data.resume.skills.languages %}
+                    <span class="bg-accent/20 text-accent-light px-3 py-1 rounded-full text-sm">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Frameworks -->
+            <div class="card text-center">
+                <div class="text-accent-light text-4xl mb-4">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-accent mb-3">Frameworks</h3>
+                <div class="flex flex-wrap justify-center gap-2">
+                    {% for skill in site.data.resume.skills.frameworks %}
+                    <span class="bg-accent/20 text-accent-light px-3 py-1 rounded-full text-sm">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Tools -->
+            <div class="card text-center">
+                <div class="text-accent-light text-4xl mb-4">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-accent mb-3">Tools</h3>
+                <div class="flex flex-wrap justify-center gap-2">
+                    {% for skill in site.data.resume.skills.tools %}
+                    <span class="bg-accent/20 text-accent-light px-3 py-1 rounded-full text-sm">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="py-20 bg-panel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="text-gray-400 text-lg">Some of my recent work</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in site.data.projects %}
+                {% if project.featured %}
+                    {% include project-card.html project=project %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="{{ '/projects.html' | relative_url }}" class="btn-primary">
+                <i class="fas fa-arrow-right mr-2"></i>View All Projects
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="text-gray-400 text-lg">Ready to bring your ideas to life</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div class="space-y-6">
+                <h3 class="text-2xl font-semibold text-accent mb-6">Get In Touch</h3>
+                
+                {% if site.data.resume.email != '[your-email@domain.com]' %}
+                <div class="flex items-center space-x-4">
+                    <div class="bg-accent/20 p-3 rounded-lg">
+                        <i class="fas fa-envelope text-accent-light"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Email</p>
+                        <a href="mailto:{{ site.data.resume.email }}" class="text-white hover:text-accent-light">
+                            {{ site.data.resume.email }}
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if site.data.resume.location != '[Your Location]' %}
+                <div class="flex items-center space-x-4">
+                    <div class="bg-accent/20 p-3 rounded-lg">
+                        <i class="fas fa-map-marker-alt text-accent-light"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Location</p>
+                        <p class="text-white">{{ site.data.resume.location }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <div class="flex items-center space-x-4">
+                    <div class="bg-accent/20 p-3 rounded-lg">
+                        <i class="fab fa-github text-accent-light"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">GitHub</p>
+                        <a href="https://github.com/{{ site.data.resume.github }}" 
+                           target="_blank" 
+                           class="text-white hover:text-accent-light">
+                            github.com/{{ site.data.resume.github }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="card">
+                <form action="https://formspree.io/f/[your-form-id]" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-text mb-2">Name</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-3 bg-bg border border-gray-600 rounded-lg focus:border-accent-light focus:ring-1 focus:ring-accent-light text-white">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-text mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-3 bg-bg border border-gray-600 rounded-lg focus:border-accent-light focus:ring-1 focus:ring-accent-light text-white">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-text mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                                  class="w-full px-4 py-3 bg-bg border border-gray-600 rounded-lg focus:border-accent-light focus:ring-1 focus:ring-accent-light text-white"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary w-full">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>" 

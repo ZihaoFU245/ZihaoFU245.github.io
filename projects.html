@@ -1,0 +1,126 @@
+---
+layout: default
+title: "Projects"
+description: "Portfolio of projects by Zihao Fu - ML, web development, and systems engineering"
+---
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-white mb-4">My Projects</h1>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            A collection of my work spanning machine learning, web development, and systems engineering. 
+            Each project demonstrates different aspects of my technical skills and problem-solving approach.
+        </p>
+    </div>
+
+    <!-- Featured Projects -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold text-accent mb-8">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% assign featured_projects = site.data.projects | where: "featured", true %}
+            {% for project in featured_projects %}
+                {% include project-card.html project=project %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- All Projects -->
+    <section>
+        <h2 class="text-2xl font-bold text-accent mb-8">All Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for project in site.data.projects %}
+                {% include project-card.html project=project %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="mt-16">
+        <h2 class="text-2xl font-bold text-accent mb-8">Technology Stack</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Languages -->
+            <div class="card text-center">
+                <div class="text-accent-light text-4xl mb-4">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-accent mb-4">Programming Languages</h3>
+                <div class="space-y-2">
+                    {% for lang in site.data.resume.skills.languages %}
+                    <div class="bg-accent/10 rounded-lg p-3">
+                        <span class="text-accent-light font-medium">{{ lang }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="card text-center">
+                <div class="text-accent-light text-4xl mb-4">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-accent mb-4">Frameworks & Libraries</h3>
+                <div class="space-y-2">
+                    {% for framework in site.data.resume.skills.frameworks %}
+                    <div class="bg-accent/10 rounded-lg p-3">
+                        <span class="text-accent-light font-medium">{{ framework }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="card text-center">
+                <div class="text-accent-light text-4xl mb-4">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-accent mb-4">Tools & Platforms</h3>
+                <div class="space-y-2">
+                    {% for tool in site.data.resume.skills.tools %}
+                    <div class="bg-accent/10 rounded-lg p-3">
+                        <span class="text-accent-light font-medium">{{ tool }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Stats -->
+    <section class="mt-16">
+        <h2 class="text-2xl font-bold text-accent mb-8">GitHub Activity</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card">
+                <h3 class="text-lg font-semibold text-accent mb-4">GitHub Stats</h3>
+                <img src="https://github-readme-stats.vercel.app/api?username={{ site.data.resume.github }}&show_icons=true&theme=dark&bg_color=1F2937&text_color=E5E7EB&icon_color=60A5FA&title_color=1E3A8A" 
+                     alt="GitHub Stats" 
+                     class="w-full rounded-lg">
+            </div>
+            
+            <div class="card">
+                <h3 class="text-lg font-semibold text-accent mb-4">Most Used Languages</h3>
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username={{ site.data.resume.github }}&layout=compact&theme=dark&bg_color=1F2937&text_color=E5E7EB&title_color=1E3A8A" 
+                     alt="Top Languages" 
+                     class="w-full rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mt-16 text-center">
+        <div class="card bg-gradient-to-r from-accent/20 to-accent-light/20 border-accent/30">
+            <h2 class="text-2xl font-bold text-white mb-4">Interested in Collaborating?</h2>
+            <p class="text-gray-300 mb-6">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-envelope mr-2"></i>Get In Touch
+                </a>
+                <a href="https://github.com/{{ site.data.resume.github }}" target="_blank" class="btn-secondary">
+                    <i class="fab fa-github mr-2"></i>View GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
