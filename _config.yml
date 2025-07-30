@@ -1,11 +1,23 @@
 title: "Zihao's Portfolio"
-remote_theme: "mmistakes/minimal-mistakes@latest"
+description: "Engineer & Computer Science student. Personal website, CV, and projects."
+remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-include-cache
+  - jekyll-remote-theme
 
-# Optional site info
+minimal_mistakes_skin: "default"
 repository: "ZihaoFU245/ZihaoFU245.github.io"
-minimal_mistakes_skin: "dirt"  # choose from default, dark, air, mint, etc.
+
+author:
+  name: "Zihao Fu"
+  avatar: "/assets/images/profile.jpg"
+  bio: "Engineer, Computer Science student at HKUST. Interested in AI, systems, and more."
+  location: "Hong Kong"
+  email: "zihaofu@example.com"
+  github: "ZihaoFU245"
+  linkedin: "zihaofu"
+
+# Navigation
 defaults:
   - scope:
       path: ""
