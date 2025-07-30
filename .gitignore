@@ -39,6 +39,7 @@ logs
 
 # Dependency directories
 vendor/
+Gemfile.lock
 
 # Ruby
 *.gem
