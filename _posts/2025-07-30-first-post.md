@@ -8,6 +8,7 @@ categories:
 tags:
   - Welcome
   - Introduction
+classes: wide
 ---
 
 This is the first post on my new website. I'm excited to share my journey, projects, and thoughts with you.
