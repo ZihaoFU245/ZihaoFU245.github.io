@@ -17,6 +17,12 @@ locale: "en-US"
 title_separator: "-"
 breadcrumbs: true
 
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
 author:
   name: "Zihao Fu"
   avatar: "/assets/images/profile.jpg"
