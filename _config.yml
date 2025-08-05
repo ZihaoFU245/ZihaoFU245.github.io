@@ -7,7 +7,7 @@ plugins:
   - jekyll-gist
   - jekyll-include-cache
 
-minimal_mistakes_skin: "air"
+minimal_mistakes_skin: "aqua"
 repository: "ZihaoFU245/ZihaoFU245.github.io"
 
 # Site settings

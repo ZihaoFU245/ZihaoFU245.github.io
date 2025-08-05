@@ -1,6 +1,15 @@
 ---
-layout: post
-title: "Welcome to my blog"
+layout: single
+title: "Welcome to My Blog!"
+author_profile: true
+date: 2025-07-30
+categories:
+  - General
+tags:
+  - Welcome
+  - Introduction
 ---
-This is the first post on my website. More content coming soon.
 
+This is the first post on my new website. I'm excited to share my journey, projects, and thoughts with you.
+
+Stay tuned for more content coming soon!
