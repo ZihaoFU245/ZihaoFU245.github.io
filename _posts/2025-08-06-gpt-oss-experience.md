@@ -8,6 +8,7 @@ categories:
 classes: wide
 header:
   teaser: "/assets/2025-08-06-resources/cover.png"
+  image: "/assets/2025-08-06-resources/cover.png"
 ---
 
 ## My Experience with gpt-oss-20b 
