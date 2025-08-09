@@ -23,7 +23,7 @@ paginate: 5
 paginate_path: /blog/page:num/
 
 # Teaser / cover image
-teaser: "/assets/images/cover.jpg"
+teaser: "/assets/cover.png"
 
 # Collections
 collections:

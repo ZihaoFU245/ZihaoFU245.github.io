@@ -6,6 +6,8 @@ date: 2025-08-08
 categories:
   - General
 classes: wide
+header:
+  teaser: "/assets/2025-08-08-resources/cover.png"
 ---
 # 🎉 2DTileEngine is Now Open Source! 🚀
 

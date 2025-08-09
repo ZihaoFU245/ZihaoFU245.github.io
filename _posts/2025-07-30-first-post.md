@@ -10,7 +10,7 @@ tags:
   - Introduction
 classes: wide
 header:
-  teaser: "../assets/2025-08-08-resources/cover.jpg"
+  teaser: "/assets/2025-08-08-resources/cover.png"
 ---
 
 This is the first post on my new website. I'm excited to share my journey, projects, and thoughts with you.
