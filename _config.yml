@@ -4,7 +4,6 @@ remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-include-cache
   - jekyll-paginate
 
