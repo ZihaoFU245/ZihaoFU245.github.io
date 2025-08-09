@@ -1,8 +1,7 @@
 ---
-layout: home
+layout: single
 title: "Home"
 author_profile: true
-entries_layout: grid
 classes: wide
 ---
 

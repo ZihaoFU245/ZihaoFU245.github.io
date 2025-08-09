@@ -1,3 +1,5 @@
 source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
+
+# Speed up includes per Minimal Mistakes docs
 gem "jekyll-include-cache", group: :jekyll_plugins
