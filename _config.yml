@@ -19,7 +19,7 @@ title_separator: "-"
 breadcrumbs: true
 
 # Pagination (for Blog page using layout: home)
-paginate: 5
+paginate: 6
 paginate_path: /blog/page:num/
 
 # Teaser / cover image
@@ -39,6 +39,7 @@ author:
   email: "zihaofu12@gmail.com"
   github: "ZihaoFU245"
   linkedin: "zihao-fu-198b02374"
+  instagram: "zihao_fu06"
 
 # Navigation
 masthead_title: "Zihao's Portfolio"
