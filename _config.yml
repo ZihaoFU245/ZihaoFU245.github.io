@@ -10,6 +10,7 @@ plugins:
 
 minimal_mistakes_skin: "aqua"
 repository: "ZihaoFU245/ZihaoFU245.github.io"
+teaser: "/assets/images/profile.jpg"
 
 # Site settings
 url: "https://zihaofu245.github.io"
@@ -17,6 +18,7 @@ baseurl: ""
 locale: "en-US"
 title_separator: "-"
 breadcrumbs: true
+read_time: true
 
 # Pagination (for Blog page using layout: home)
 paginate: 5
@@ -51,3 +53,4 @@ defaults:
     values:
       layout: single
       author_profile: true
+  read_time: true

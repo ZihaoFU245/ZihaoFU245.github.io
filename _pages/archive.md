@@ -3,6 +3,7 @@ title: "Archive"
 permalink: /archive/
 layout: posts
 classes: wide
+author_profile: true
 ---
 
 ## Projects
