@@ -1,4 +1,4 @@
-title: "Welcome to My Portfolio!"
+title: "Zihao's Portfolio"
 description: "Engineer & Computer Science student. Personal website, CV, and projects."
 remote_theme: "mmistakes/minimal-mistakes"
 plugins:
@@ -42,16 +42,19 @@ author:
   instagram: "zihao_fu06"
 
 # Navigation
-masthead_title: "Zihao's Portfolio"
+masthead_title: "Welcome to My Portfolio!"
 defaults:
   - scope:
       path: ""
       type: pages
     values:
       layout: single
+      classes: wide
   - scope:
       path: ""
       type: posts
     values:
       layout: single
       author_profile: true
+      read_time: true
+      comments: false
