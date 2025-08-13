@@ -24,12 +24,12 @@ header:
 
 这个夏天的伯克利，不安静，却充满了生命力。
 
-![*08-12-2025 GoodBye Photo*](../assets/2025-08-12-resources/GoodByeHYF.jpg)
-![*Photos that i got*](../assets/2025-08-12-resources/GoodByeHFY2.jpg)
+![*08-12-2025 GoodBye Photo*](/assets/2025-08-12-resources/GoodByeHYF.jpg)
+![*Photos that i got*](/assets/2025-08-12-resources/GoodByeHFY2.jpg)
 
-![街头音乐人·旧金山](../assets/2025-08-12-resources/MusicianSF.jpg)
-![晚霞的橙红·Enclave](../assets/2025-08-12-resources/EnclaveDawn.jpg)
-![城市远眺·SF](../assets/2025-08-12-resources/SFpeakView.jpg)
+![街头音乐人·旧金山](/assets/2025-08-12-resources/MusicianSF.jpg)
+![晚霞的橙红·Enclave](/assets/2025-08-12-resources/EnclaveDawn.jpg)
+![城市远眺·SF](/assets/2025-08-12-resources/SFpeakView.jpg)
 
 ## 灰，是分别那天的天气
 这个夏天的最后一天，我送别了一位非常特别的朋友。
@@ -42,10 +42,10 @@ header:
 
 灰，是结束时那种轻轻的痛感，是知道再见之后，各自都会走向不同人生的沉默。
 
-![雾中的金门大桥](../assets/2025-08-12-resources/FoggyGGBridge.jpg)
-![桥下的阴影](../assets/2025-08-12-resources/GGBridgeUnder.jpg)
-![海边的灰色海滩](../assets/2025-08-12-resources/DarkBeach.jpg)
-![远景里的大桥与雾](../assets/2025-08-12-resources/GGBridgeWholeView.jpg)
+![雾中的金门大桥](/assets/2025-08-12-resources/FoggyGGBridge.jpg)
+![桥下的阴影](/assets/2025-08-12-resources/GGBridgeUnder.jpg)
+![海边的灰色海滩](/assets/2025-08-12-resources/DarkBeach.jpg)
+![远景里的大桥与雾](/assets/2025-08-12-resources/GGBridgeWholeView.jpg)
 
 ## 忙碌是什么颜色？
 夏天的伯克利，真的太忙了。
@@ -54,11 +54,11 @@ header:
 
 那种橙色，是燃烧，是疲惫，是青春最真实的模样。
 
-![Bancroft 图书馆](../assets/2025-08-12-resources/BancroftLibrary.jpg)
-![Sather Tower](../assets/2025-08-12-resources/SatherTower.jpg)
-![从钟楼望去](../assets/2025-08-12-resources/ViewAtSatherTower.jpg)
-![Lawrence 实验室](../assets/2025-08-12-resources/Lawrence.jpg)
-![伯克利松鼠·日常](../assets/2025-08-12-resources/BerkeleySquirrel.jpg)
+![Bancroft 图书馆](/assets/2025-08-12-resources/BancroftLibrary.jpg)
+![Sather Tower](/assets/2025-08-12-resources/SatherTower.jpg)
+![从钟楼望去](/assets/2025-08-12-resources/ViewAtSatherTower.jpg)
+![Lawrence 实验室](/assets/2025-08-12-resources/Lawrence.jpg)
+![伯克利松鼠·日常](/assets/2025-08-12-resources/BerkeleySquirrel.jpg)
 
 ## 收获，是金黄色的阳光
 我也收获了很多。
@@ -71,15 +71,15 @@ header:
 
 收获是金黄色的，像傍晚洒在脸上的暖光，像内心悄悄长大的感觉。
 
-![Sausalito 的金色海湾](../assets/2025-08-12-resources/Sausalito.jpg)
-![大桥与草地的金色](../assets/2025-08-12-resources/GGBridgeGrassLand.jpg)
-![El Capitan 直面震撼](../assets/2025-08-12-resources/ElCapitan.jpg)
-![El Capitan·另一角度](../assets/2025-08-12-resources/ElCapitan2.jpg)
-![Yosemite 的瀑布](../assets/2025-08-12-resources/YosemiteFall.jpg)
-![Yosemite 夜色](../assets/2025-08-12-resources/YosemiteNight.jpg)
-![徒步的路](../assets/2025-08-12-resources/Hiking.jpg)
-![徒步的另一段](../assets/2025-08-12-resources/Hiking22.jpg)
-![Yosemite 的瞬间](../assets/2025-08-12-resources/YosemitePoPo.jpg)
+![Sausalito 的金色海湾](/assets/2025-08-12-resources/Sausalito.jpg)
+![大桥与草地的金色](/assets/2025-08-12-resources/GGBridgeGrassLand.jpg)
+![El Capitan 直面震撼](/assets/2025-08-12-resources/ElCapitan.jpg)
+![El Capitan·另一角度](/assets/2025-08-12-resources/ElCapitan2.jpg)
+![Yosemite 的瀑布](/assets/2025-08-12-resources/YosemiteFall.jpg)
+![Yosemite 夜色](/assets/2025-08-12-resources/YosemiteNight.jpg)
+![徒步的路](/assets/2025-08-12-resources/Hiking.jpg)
+![徒步的另一段](/assets/2025-08-12-resources/Hiking22.jpg)
+![Yosemite 的瞬间](/assets/2025-08-12-resources/YosemitePoPo.jpg)
 
 
 
