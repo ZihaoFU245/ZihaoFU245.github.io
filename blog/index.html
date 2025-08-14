@@ -1,10 +1,100 @@
 ---
-layout: home
+layout: single
 title: "Blog"
 permalink: /blog/
 author_profile: true
-entries_layout: grid
-show_excerpts: true
 classes: wide
 ---
+
+<style>
+/* Hide theme's unused pagination block if any */
+.pagination { display:none; }
+.post-grid { display:grid; gap:1.25rem; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); }
+.post-card { border:1px solid #ddd; padding:0.75rem 0.85rem; border-radius:6px; background:#fff; }
+.post-card h3 { margin-top:0; font-size:1.05rem; }
+.page-buttons { margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.5rem; }
+.page-buttons button { background:#444; color:#fff; border:none; padding:0.45rem 0.85rem; border-radius:4px; cursor:pointer; }
+.page-buttons button.active { background:#d26911; }
+.page-buttons button:disabled { opacity:0.4; cursor:default; }
+</style>
+
+<p>This page lists all posts. Use the pagination controls below. (Client-side pagination is used here due to GitHub Pages limitations for subdirectory pagination.)</p>
+
+<div id="post-list" class="post-grid" data-page-size="6">
+	{% for post in site.posts %}
+	<article class="post-card" data-index="{{ forloop.index0 }}">
+		<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+		<small>{{ post.date | date: "%Y-%m-%d" }}</small>
+		{% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 140 }}</p>{% endif %}
+	</article>
+	{% endfor %}
+</div>
+
+<div class="page-buttons" id="page-buttons" aria-label="Pagination"></div>
+
+<noscript>
+	<p><em>JavaScript disabled: all posts are shown; pagination disabled.</em></p>
+</noscript>
+
+<script>
+(function(){
+	const container = document.getElementById('post-list');
+	if(!container) return;
+	const pageSize = parseInt(container.getAttribute('data-page-size'),10) || 6;
+	const cards = Array.from(container.querySelectorAll('.post-card'));
+	const total = cards.length;
+	const totalPages = Math.ceil(total / pageSize);
+	const btnWrap = document.getElementById('page-buttons');
+	if(totalPages <= 1){ return; }
+
+	function showPage(p){
+		cards.forEach((card,i)=>{
+			const page = Math.floor(i / pageSize) + 1;
+			card.style.display = (page === p ? '' : 'none');
+		});
+		Array.from(btnWrap.querySelectorAll('button[data-page]')).forEach(btn=>{
+			btn.classList.toggle('active', parseInt(btn.dataset.page,10) === p);
+		});
+		// Enable/disable prev/next
+		const prev = btnWrap.querySelector('button[data-nav="prev"]');
+		const next = btnWrap.querySelector('button[data-nav="next"]');
+		if(prev) prev.disabled = (p === 1);
+		if(next) next.disabled = (p === totalPages);
+		// Scroll to top of list for better UX
+		container.scrollIntoView({behavior:'smooth', block:'start'});
+		history.replaceState(null, '', p === 1 ? '#top' : ('#page-' + p));
+	}
+
+	// Build controls
+	const prevBtn = document.createElement('button');
+	prevBtn.textContent = 'Prev';
+	prevBtn.dataset.nav = 'prev';
+	prevBtn.addEventListener('click',()=>{
+		const current = parseInt(btnWrap.querySelector('button.active')?.dataset.page || '1',10);
+		if(current>1) showPage(current-1);
+	});
+	btnWrap.appendChild(prevBtn);
+
+	for(let p=1;p<=totalPages;p++){
+		const b=document.createElement('button');
+		b.textContent = p;
+		b.dataset.page = p;
+		b.addEventListener('click',()=>showPage(p));
+		btnWrap.appendChild(b);
+	}
+	const nextBtn = document.createElement('button');
+	nextBtn.textContent = 'Next';
+	nextBtn.dataset.nav = 'next';
+	nextBtn.addEventListener('click',()=>{
+		const current = parseInt(btnWrap.querySelector('button.active')?.dataset.page || '1',10);
+		if(current < totalPages) showPage(current+1);
+	});
+	btnWrap.appendChild(nextBtn);
+
+	// Initialize (check hash for deep-link)
+	const hashMatch = location.hash.match(/page-(\d+)/);
+	const startPage = hashMatch ? Math.min(totalPages, Math.max(1, parseInt(hashMatch[1],10))) : 1;
+	showPage(startPage);
+})();
+</script>
 
