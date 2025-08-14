@@ -1,100 +1,59 @@
 ---
-layout: single
+layout: home
 title: "Blog"
 permalink: /blog/
 author_profile: true
+entries_layout: grid
+show_excerpts: true
 classes: wide
+page_num: 1
+per_page: 6
 ---
 
-<style>
-/* Hide theme's unused pagination block if any */
-.pagination { display:none; }
-.post-grid { display:grid; gap:1.25rem; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); }
-.post-card { border:1px solid #ddd; padding:0.75rem 0.85rem; border-radius:6px; background:#fff; }
-.post-card h3 { margin-top:0; font-size:1.05rem; }
-.page-buttons { margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.5rem; }
-.page-buttons button { background:#444; color:#fff; border:none; padding:0.45rem 0.85rem; border-radius:4px; cursor:pointer; }
-.page-buttons button.active { background:#d26911; }
-.page-buttons button:disabled { opacity:0.4; cursor:default; }
-</style>
+{%- comment -%}
+Manual static pagination because GitHub Pages only supports jekyll-paginate on the root index. Duplicate this file into /blog/page2/index.html, /blog/page3/... with adjusted page_num.
+{%- endcomment -%}
 
-<p>This page lists all posts. Use the pagination controls below. (Client-side pagination is used here due to GitHub Pages limitations for subdirectory pagination.)</p>
+{% assign posts_all = site.posts %}
+{% assign per_page = page.per_page | default: 6 %}
+{% assign total_posts = posts_all | size %}
+{% assign total_pages = total_posts | divided_by: per_page %}
+{% if total_posts modulo per_page != 0 %}{% assign total_pages = total_pages | plus: 1 %}{% endif %}
+{% assign page_num = page.page_num | default: 1 %}
+{% assign offset_calc = per_page | times: page_num | minus: per_page %}
 
-<div id="post-list" class="post-grid" data-page-size="6">
-	{% for post in site.posts %}
-	<article class="post-card" data-index="{{ forloop.index0 }}">
-		<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-		<small>{{ post.date | date: "%Y-%m-%d" }}</small>
-		{% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 140 }}</p>{% endif %}
-	</article>
-	{% endfor %}
+{%- comment -%} Display only the slice for this page {%- endcomment -%}
+<div class="archive__items" style="margin-top:1rem;">
+{% for post in posts_all limit: per_page offset: offset_calc %}
+	{% include archive-single.html type="grid" %}
+{% endfor %}
 </div>
 
-<div class="page-buttons" id="page-buttons" aria-label="Pagination"></div>
+{%- if total_pages > 1 -%}
+<nav class="pagination" role="navigation" aria-label="Pagination" style="margin-top:2rem;">
+	<ul class="pagination__list" style="list-style:none;display:flex;gap:0.5rem;flex-wrap:wrap;padding:0;">
+		{% if page_num > 1 %}
+			{% assign prev_page = page_num | minus: 1 %}
+			<li><a class="btn btn--small" href="{% if prev_page == 1 %}{{ '/blog/' | relative_url }}{% else %}{{ '/blog/page' | append: prev_page | append: '/' | relative_url }}{% endif %}">&laquo; Prev</a></li>
+		{% else %}
+			<li><span class="btn btn--small" style="opacity:.4;cursor:default;">&laquo; Prev</span></li>
+		{% endif %}
 
-<noscript>
-	<p><em>JavaScript disabled: all posts are shown; pagination disabled.</em></p>
-</noscript>
+		{% for p in (1..total_pages) %}
+			{% if p == page_num %}
+				<li><span class="btn btn--small" style="background:#d26911;color:#fff;">{{ p }}</span></li>
+			{% else %}
+				<li><a class="btn btn--small" href="{% if p == 1 %}{{ '/blog/' | relative_url }}{% else %}{{ '/blog/page' | append: p | append: '/' | relative_url }}{% endif %}">{{ p }}</a></li>
+			{% endif %}
+		{% endfor %}
 
-<script>
-(function(){
-	const container = document.getElementById('post-list');
-	if(!container) return;
-	const pageSize = parseInt(container.getAttribute('data-page-size'),10) || 6;
-	const cards = Array.from(container.querySelectorAll('.post-card'));
-	const total = cards.length;
-	const totalPages = Math.ceil(total / pageSize);
-	const btnWrap = document.getElementById('page-buttons');
-	if(totalPages <= 1){ return; }
-
-	function showPage(p){
-		cards.forEach((card,i)=>{
-			const page = Math.floor(i / pageSize) + 1;
-			card.style.display = (page === p ? '' : 'none');
-		});
-		Array.from(btnWrap.querySelectorAll('button[data-page]')).forEach(btn=>{
-			btn.classList.toggle('active', parseInt(btn.dataset.page,10) === p);
-		});
-		// Enable/disable prev/next
-		const prev = btnWrap.querySelector('button[data-nav="prev"]');
-		const next = btnWrap.querySelector('button[data-nav="next"]');
-		if(prev) prev.disabled = (p === 1);
-		if(next) next.disabled = (p === totalPages);
-		// Scroll to top of list for better UX
-		container.scrollIntoView({behavior:'smooth', block:'start'});
-		history.replaceState(null, '', p === 1 ? '#top' : ('#page-' + p));
-	}
-
-	// Build controls
-	const prevBtn = document.createElement('button');
-	prevBtn.textContent = 'Prev';
-	prevBtn.dataset.nav = 'prev';
-	prevBtn.addEventListener('click',()=>{
-		const current = parseInt(btnWrap.querySelector('button.active')?.dataset.page || '1',10);
-		if(current>1) showPage(current-1);
-	});
-	btnWrap.appendChild(prevBtn);
-
-	for(let p=1;p<=totalPages;p++){
-		const b=document.createElement('button');
-		b.textContent = p;
-		b.dataset.page = p;
-		b.addEventListener('click',()=>showPage(p));
-		btnWrap.appendChild(b);
-	}
-	const nextBtn = document.createElement('button');
-	nextBtn.textContent = 'Next';
-	nextBtn.dataset.nav = 'next';
-	nextBtn.addEventListener('click',()=>{
-		const current = parseInt(btnWrap.querySelector('button.active')?.dataset.page || '1',10);
-		if(current < totalPages) showPage(current+1);
-	});
-	btnWrap.appendChild(nextBtn);
-
-	// Initialize (check hash for deep-link)
-	const hashMatch = location.hash.match(/page-(\d+)/);
-	const startPage = hashMatch ? Math.min(totalPages, Math.max(1, parseInt(hashMatch[1],10))) : 1;
-	showPage(startPage);
-})();
-</script>
+		{% if page_num < total_pages %}
+			{% assign next_page = page_num | plus: 1 %}
+			<li><a class="btn btn--small" href="{{ '/blog/page' | append: next_page | append: '/' | relative_url }}">Next &raquo;</a></li>
+		{% else %}
+			<li><span class="btn btn--small" style="opacity:.4;cursor:default;">Next &raquo;</span></li>
+		{% endif %}
+	</ul>
+</nav>
+{%- endif -%}
 
