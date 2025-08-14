@@ -9,6 +9,7 @@ plugins:
 
 minimal_mistakes_skin: "dirt"
 repository: "ZihaoFU245/ZihaoFU245.github.io"
+math_provider: "katex" # Math rendering
 
 # Site settings
 url: "https://zihaofu245.github.io"
