@@ -3,3 +3,6 @@ gem "github-pages", group: :jekyll_plugins
 
 # Speed up includes per Minimal Mistakes docs
 gem "jekyll-include-cache", group: :jekyll_plugins
+
+gem "webrick"     # Ruby 3+ needs this for `jekyll serve`
+gem "tzinfo-data" # fixes time zone issues on Windows
