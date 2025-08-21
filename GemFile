@@ -1,8 +1,15 @@
 source "https://rubygems.org"
-gem "github-pages", group: :jekyll_plugins
 
-# Speed up includes per Minimal Mistakes docs
-gem "jekyll-include-cache", group: :jekyll_plugins
+# Explicit Jekyll stack (moving off github-pages gem to allow jekyll-paginate-v2)
+gem "jekyll", "~> 4.3"
 
-gem "webrick"     # Ruby 3+ needs this for `jekyll serve`
-gem "tzinfo-data" # fixes time zone issues on Windows
+group :jekyll_plugins do
+	gem "jekyll-feed"
+	gem "jekyll-sitemap"
+	gem "jekyll-include-cache"
+	gem "jekyll-remote-theme"
+	gem "jekyll-paginate-v2"
+end
+
+gem "webrick"      # Ruby 3+ needs this for `jekyll serve`
+gem "tzinfo-data"  # fixes time zone issues on Windows
