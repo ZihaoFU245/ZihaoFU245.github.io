@@ -8,6 +8,8 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_GEMFILE: GemFile # Workaround for Windows-cased GemFile; rename to Gemfile later.
     steps:
       - uses: actions/checkout@v4
       - name: Set up Ruby

@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
 # Explicit Jekyll stack (moving off github-pages gem to allow jekyll-paginate-v2)
+# NOTE: Ideally rename this file to Gemfile (lowercase 'f'). Until then, CI sets BUNDLE_GEMFILE=GemFile.
+
 gem "jekyll", "~> 4.3"
 
 group :jekyll_plugins do
