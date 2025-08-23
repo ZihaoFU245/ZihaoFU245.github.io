@@ -17,3 +17,9 @@ pagination:
     before: 2
     after: 2
 ---
+
+<h3>Here are all my blogs!</h3>
+
+
+<!-- Page Effects -->
+<script defer src="{{ '/assets/js/blog-effects.js' | relative_url }}"></script>

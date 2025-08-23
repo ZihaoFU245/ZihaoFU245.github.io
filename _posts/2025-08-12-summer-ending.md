@@ -95,7 +95,23 @@ header:
 可即使没能继续，它依然很美。
 
 ## 所以，这个夏天，到底是什么颜色？
-是红，是灰，是橙，是蓝，是金，是我们一起经历的一切。
+是<span class="color-chip" data-key="red">红</span>，
+是<span class="color-chip" data-key="gray">灰</span>，
+是<span class="color-chip" data-key="orange">橙</span>，
+是<span class="color-chip" data-key="blue">蓝</span>，
+是<span class="color-chip" data-key="gold">金</span>，
+是我们一起经历的一切。
 是我们在照片里笑着的模样，是我在黄昏时落泪的片刻。
 
 这个夏天，是我不舍地放下、却永远不会忘记的颜色。
+
+<style>
+.color-chip {
+  cursor: pointer; border-bottom: 1px dotted currentColor; padding: 0 .1em;
+}
+.color-chip:active { transform: scale(0.98); }
+.color-chip.success { background: rgba(0,0,0,.06); border-bottom-color: transparent; }
+</style>
+
+<!-- Fallback explicit include since footer_scripts didn't inject on build -->
+<script defer src="{{ '/assets/js/color-sequence.js' | relative_url }}"></script>
