@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.github.io/" rel="alternate" type="text/html" /><updated>2025-08-22T15:11:49+00:00</updated><id>https://zihaofu245.github.io/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Recent updates 2025/8/22</title><link href="https://zihaofu245.github.io/general/2025/08/22/recent.html" rel="alternate" type="text/html" title="Recent updates 2025/8/22" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/22/recent</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/22/recent.html"><![CDATA[<h1 id="最近的小更新沪上日式味觉冒险-">最近的小更新｜沪上日式味觉冒险 🍣🔥</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.github.io/" rel="alternate" type="text/html" /><updated>2025-08-23T14:26:30+00:00</updated><id>https://zihaofu245.github.io/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Recent updates 2025/8/22</title><link href="https://zihaofu245.github.io/general/2025/08/22/recent.html" rel="alternate" type="text/html" title="Recent updates 2025/8/22" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/22/recent</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/22/recent.html"><![CDATA[<h1 id="最近的小更新沪上日式味觉冒险-">最近的小更新｜沪上日式味觉冒险 🍣🔥</h1>
 
 <blockquote>
   <p><em>这一篇，献给被烟火气、酱香味与霓虹灯包裹的夜晚。也献给忙碌间隙里，能让人瞬间回血的那一口 —— 好吃到想原地鼓掌的日式风味。</em></p>
@@ -142,10 +142,26 @@
 可即使没能继续，它依然很美。</p>
 
 <h2 id="所以这个夏天到底是什么颜色">所以，这个夏天，到底是什么颜色？</h2>
-<p>是红，是灰，是橙，是蓝，是金，是我们一起经历的一切。
+<p>是<span class="color-chip" data-key="red">红</span>，
+是<span class="color-chip" data-key="gray">灰</span>，
+是<span class="color-chip" data-key="orange">橙</span>，
+是<span class="color-chip" data-key="blue">蓝</span>，
+是<span class="color-chip" data-key="gold">金</span>，
+是我们一起经历的一切。
 是我们在照片里笑着的模样，是我在黄昏时落泪的片刻。</p>
 
-<p>这个夏天，是我不舍地放下、却永远不会忘记的颜色。</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[伯克利的夏天，是五彩斑斓的告别 如果这个夏天可以用颜色来描绘，那一定不止一种：有燃烧的红，有离别的灰，有忙碌的橙，有成长的金黄，也有无法说出口的蓝]]></summary></entry><entry><title type="html">Open Source My Engine！😍</title><link href="https://zihaofu245.github.io/general/2025/08/08/openSource-Engine.html" rel="alternate" type="text/html" title="Open Source My Engine！😍" /><published>2025-08-08T00:00:00+00:00</published><updated>2025-08-08T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/08/openSource-Engine</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/08/openSource-Engine.html"><![CDATA[<h1 id="-2dtileengine-is-now-open-source-">🎉 2DTileEngine is Now Open Source! 🚀</h1>
+<p>这个夏天，是我不舍地放下、却永远不会忘记的颜色。</p>
+
+<style>
+.color-chip {
+  cursor: pointer; border-bottom: 1px dotted currentColor; padding: 0 .1em;
+}
+.color-chip:active { transform: scale(0.98); }
+.color-chip.success { background: rgba(0,0,0,.06); border-bottom-color: transparent; }
+</style>
+
+<!-- Fallback explicit include since footer_scripts didn't inject on build -->
+<script defer="" src="/assets/js/color-sequence.js"></script>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[伯克利的夏天，是五彩斑斓的告别 如果这个夏天可以用颜色来描绘，那一定不止一种：有燃烧的红，有离别的灰，有忙碌的橙，有成长的金黄，也有无法说出口的蓝]]></summary></entry><entry><title type="html">Open Source My Engine！😍</title><link href="https://zihaofu245.github.io/general/2025/08/08/openSource-Engine.html" rel="alternate" type="text/html" title="Open Source My Engine！😍" /><published>2025-08-08T00:00:00+00:00</published><updated>2025-08-08T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/08/openSource-Engine</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/08/openSource-Engine.html"><![CDATA[<h1 id="-2dtileengine-is-now-open-source-">🎉 2DTileEngine is Now Open Source! 🚀</h1>
 
 <p>I’m excited to announce that my lightweight 2D Tile Engine, <a href="https://github.com/ZihaoFU245/2DTileEngine">2DTileEngine</a>, is now open source!</p>
 
