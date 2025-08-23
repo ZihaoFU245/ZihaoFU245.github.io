@@ -58,7 +58,104 @@ Wow! You stepped off the sitemap trail. Where am I???<span class="caret" aria-hi
 </details>
 
 ### Scratch Pad
-I might drop notes below this line.
+I would drop notes below this line.
+
+### Check this out!
+
+<style>
+.mini-chat-wrapper {max-width:420px;background:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:14px 16px 10px;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;box-shadow:0 4px 14px -6px rgba(0,0,0,.12);position:relative;}
+.mini-chat-wrapper:before {content:"chat";position:absolute;top:6px;right:14px;font-size:.55rem;letter-spacing:.15em;color:#94a3b8;font-weight:600;text-transform:uppercase;}
+.mini-msg-stream {list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.mini-msg {display:flex;align-items:flex-end;gap:8px;}
+.mini-msg.you {flex-direction:row-reverse;}
+.mini-avatar {width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 1px #cbd5e1,0 2px 4px -2px rgba(0,0,0,.25);}
+.mini-bubble {max-width:70%;padding:10px 14px;font-size:.83rem;line-height:1.25;border-radius:18px;position:relative;word-wrap:break-word;transition:background .25s ease,transform .25s ease,box-shadow .25s ease;}
+.mini-msg.them .mini-bubble {background:#f1f5f9;color:#334155;border-top-left-radius:8px;}
+.mini-msg.you .mini-bubble {background:#1d4ed8;color:#fff;border-top-right-radius:8px;}
+.mini-bubble time {display:block;font-size:.55rem;opacity:0;margin-top:4px;letter-spacing:.5px;transition:opacity .25s ease,transform .25s ease;transform:translateY(4px);}
+.mini-bubble:hover time {opacity:.75;transform:translateY(0);}
+/* Hover effects */
+.mini-msg.them .mini-bubble:hover {background:#e2eaf4;box-shadow:0 4px 10px -4px rgba(30,41,59,.28);transform:translateY(-2px);} 
+.mini-msg.you .mini-bubble:hover {background:#1e40af;box-shadow:0 4px 10px -4px rgba(30,41,59,.4);transform:translateY(-2px);} 
+/* Focus for accessibility (if tab-focused via scripting later) */
+.mini-bubble:focus {outline:2px solid #2563eb;outline-offset:2px;}
+@media (max-width:520px){.mini-chat-wrapper{max-width:100%;}}
+/* Reactions */
+.mini-reactions {display:flex;gap:4px;margin-top:6px;opacity:0;transform:translateY(4px);transition:opacity .25s ease,transform .25s ease;flex-wrap:wrap;}
+.mini-bubble:hover .mini-reactions,.mini-bubble:focus .mini-reactions {opacity:1;transform:translateY(0);}
+.mini-reactions button {background:#ffffff;border:1px solid #dbe3ec;border-radius:14px;font-size:.65rem;line-height:1;padding:4px 6px;cursor:pointer;display:flex;align-items:center;gap:4px;color:#475569;box-shadow:0 1px 2px rgba(0,0,0,.08);transition:background .2s,border-color .2s,transform .2s;}
+.mini-reactions button:hover {background:#f1f5f9;border-color:#c3d0db;transform:translateY(-2px);}
+.mini-reactions button.chosen {background:#1d4ed8;border-color:#1d4ed8;color:#fff;}
+.mini-msg.you .mini-reactions button.chosen {background:#1e40af;border-color:#1e40af;}
+.mini-reactions button span {font-weight:600;min-width:10px;text-align:center;}
+</style>
+
+<div class="mini-chat-wrapper" aria-label="Sample conversation">
+	<ul class="mini-msg-stream" role="log" aria-live="polite">
+		<li class="mini-msg them">
+			<img class="mini-avatar" src="/assets/images/profile.jpg" alt="Avatar A" loading="lazy" />
+			<div class="mini-bubble"><strong style="font-size:.65rem;letter-spacing:.05em;opacity:.75;display:block;margin-bottom:2px;">SCOUT</strong>
+				You navigated through the hash gate. What are you seeking?
+				<time datetime="2025-08-23T00:00:00Z">now</time>
+				<div class="mini-reactions" aria-label="Add reaction">
+					<button type="button" aria-label="thumbs up">💘 <span></span></button>
+					<button type="button" aria-label="fire">🔥 <span></span></button>
+					<button type="button" aria-label="sparkles">✨ <span></span></button>
+					<button type="button" aria-label="smile">😄 <span></span></button>
+				</div>
+			</div>
+		</li>
+		<li class="mini-msg you">
+			<img class="mini-avatar" src="/assets/images/profile_old.jpg" alt="Avatar B" loading="lazy" />
+			<div class="mini-bubble"><strong style="font-size:.65rem;letter-spacing:.05em;opacity:.75;display:block;margin-bottom:2px;">WANDERER</strong>
+				Mostly curiosity. Any hidden switches?
+				<time datetime="2025-08-23T00:00:05Z">moments later</time>
+				<div class="mini-reactions" aria-label="Add reaction">
+					<button type="button" aria-label="thumbs up">💘 <span></span></button>
+					<button type="button" aria-label="fire">🔥 <span></span></button>
+					<button type="button" aria-label="sparkles">✨ <span></span></button>
+					<button type="button" aria-label="smile">😄 <span></span></button>
+				</div>
+			</div>
+		</li>
+		<li class="mini-msg them">
+			<img class="mini-avatar" src="/assets/images/profile.jpg" alt="Avatar A" loading="lazy" />
+			<div class="mini-bubble"><strong style="font-size:.65rem;letter-spacing:.05em;opacity:.75;display:block;margin-bottom:2px;">SCOUT</strong>
+				The page itself is the puzzle. Keep wandering—doors notice intent.
+				<time datetime="2025-08-23T00:00:12Z">just now</time>
+				<div class="mini-reactions" aria-label="Add reaction">
+					<button type="button" aria-label="thumbs up">💘 <span></span></button>
+					<button type="button" aria-label="fire">🔥 <span></span></button>
+					<button type="button" aria-label="sparkles">✨ <span></span></button>
+					<button type="button" aria-label="smile">😄 <span></span></button>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<!-- End secret chat component -->
+
+<script>
+// lightweight reaction counter (not persisted)
+(function(){
+  document.querySelectorAll('.mini-reactions button').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      const countSpan = this.querySelector('span');
+      let current = parseInt(countSpan.textContent || '0', 10);
+      if(this.classList.contains('chosen')) {
+        // toggle off
+        if(current>0){countSpan.textContent = current-1 || '';}
+        this.classList.remove('chosen');
+      } else {
+        countSpan.textContent = current + 1;
+        this.classList.add('chosen');
+      }
+    });
+  });
+})();
+</script>
 
 ---
 Last rebuild: {{ site.time | date: "%Y-%m-%d %H:%M %Z" }}
