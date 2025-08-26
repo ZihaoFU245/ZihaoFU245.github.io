@@ -5,13 +5,13 @@ subtitle: "Engineer • CS Student • Builder"
 header:
   overlay_color: "#000"
   overlay_filter: "0.45"
-  overlay_image: "/assets/cover.png"   # you have this already
+  overlay_image: "/assets/images/cover.jpg"   # you have this already
   actions:
-    - label: "Projects"
-      url: "/projects/"
+    - label: "About"
+      url: "/about/"
     - label: "Blog"
       url: "/blog/"
-    - label: "Resume"
+    - label: "Résumé"
       url: "/resume/"
 excerpt: >
   I build practical tools and playful experiments—AI agents, a modular music player, and a Java 2D engine.

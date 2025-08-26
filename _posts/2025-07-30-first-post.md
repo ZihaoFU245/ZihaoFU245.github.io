@@ -10,8 +10,8 @@ tags:
   - Introduction
 classes: wide
 header:
-  teaser: "/assets/images/profile_old.jpg"
-  image: "/assets/images/profile_old.jpg"
+  teaser: "/assets/images/cover.jpg"
+  image: "/assets/images/cover.jpg"
 ---
 
 This is the first post on my new website. I'm excited to share my journey, projects, and thoughts with you.
