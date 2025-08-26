@@ -31,7 +31,7 @@
 
 
 
-  <meta property="og:image" content="https://zihaofu245.github.io/assets/2025-08-08-resources/cover.png">
+  <meta property="og:image" content="https://zihaofu245.github.io/assets/2025-08-08-resources/cover.jpg">
 
 
 
@@ -76,12 +76,20 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   </head>
 
   <body class="layout--single wide" dir="ltr">
@@ -133,7 +141,7 @@
                 href="/resume/"
                 
                 
-              >Resume</a>
+              >Résumé</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -149,24 +157,6 @@
 
     <div class="initial-content">
       
-  
-
-
-
-
-
-
-
-<div class="page__hero"
-  style=" background-image: url('');"
->
-  
-    <img src="/assets/2025-08-08-resources/cover.png" alt="Open Source My Engine！😍" class="page__hero-image">
-  
-  
-</div>
-
-
 
 
 
@@ -449,7 +439,7 @@
 <p>I believe in learning by doing—and sharing! By open sourcing this engine, I hope to help others explore game development basics, experiment, and maybe even build something cool.</p>
 
 <h2 id="screenshots">Screenshots</h2>
-<p><img src="../assets/images/java-Game-imgs/2.png" alt="Demo Screenshot" /></p>
+<p><img src="/assets/images/java-Game-imgs/2.png" alt="Demo Screenshot" /></p>
 
 <h2 id="get-involved">Get Involved</h2>
 <ul>

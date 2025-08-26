@@ -31,7 +31,7 @@
 
 
 
-  <meta property="og:image" content="https://zihaofu245.github.io/assets/images/profile_old.jpg">
+  <meta property="og:image" content="https://zihaofu245.github.io/assets/images/cover.jpg">
 
 
 
@@ -76,12 +76,20 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   </head>
 
   <body class="layout--single wide" dir="ltr">
@@ -133,7 +141,7 @@
                 href="/resume/"
                 
                 
-              >Resume</a>
+              >Résumé</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -161,7 +169,7 @@
   style=" background-image: url('');"
 >
   
-    <img src="/assets/images/profile_old.jpg" alt="Welcome to My Blog!" class="page__hero-image">
+    <img src="/assets/images/cover.jpg" alt="Welcome to My Blog!" class="page__hero-image">
   
   
 </div>
@@ -432,7 +440,7 @@
       <a href="#" class="pagination--pager disabled">Previous</a>
     
     
-      <a href="/general/2025/08/05/new-cpp-plan.html" class="pagination--pager" title="Practise for 61BL needed">Next</a>
+      <a href="/general/2025/08/05/update.html" class="pagination--pager" title="My Java game develope status">Next</a>
     
   </nav>
 

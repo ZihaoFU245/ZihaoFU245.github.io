@@ -31,7 +31,7 @@
 
 
 
-  <meta property="og:image" content="https://zihaofu245.github.io/assets/2025-08-22-resources/cover.jpg">
+  <meta property="og:image" content="https://zihaofu245.github.io/assets/2025-08-22-resources/beefBowl.jpg">
 
 
 
@@ -76,12 +76,20 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   </head>
 
   <body class="layout--single wide" dir="ltr">
@@ -133,7 +141,7 @@
                 href="/resume/"
                 
                 
-              >Resume</a>
+              >Résumé</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -469,7 +477,7 @@
       
   <nav class="pagination">
     
-      <a href="/general/2025/08/12/summer-ending.html" class="pagination--pager" title="What is the color of Berkeley?">Previous</a>
+      <a href="/general/2025/08/14/math-exam-review.html" class="pagination--pager" title="Cheat Sheet for Math N53 Berkeley!">Previous</a>
     
     
       <a href="#" class="pagination--pager disabled">Next</a>

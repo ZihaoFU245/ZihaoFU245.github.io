@@ -11,7 +11,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Projects - Zihao’s Portfolio</title>
-<meta name="description" content="Notable Projects">
+<meta name="description" content="My Project Collections">
 
 
   <meta name="author" content="Zihao Fu">
@@ -27,7 +27,7 @@
 <meta property="og:url" content="https://zihaofu245.github.io/projects/">
 
 
-  <meta property="og:description" content="Notable Projects">
+  <meta property="og:description" content="My Project Collections">
 
 
 
@@ -35,7 +35,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-08-26T10:27:16+00:00">
+  <meta property="article:published_time" content="2025-08-26T15:58:35+00:00">
 
 
 
@@ -74,12 +74,20 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   </head>
 
   <body class="layout--single wide" dir="ltr">
@@ -131,7 +139,7 @@
                 href="/resume/"
                 
                 
-              >Resume</a>
+              >Résumé</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -309,8 +317,8 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Projects">
-    <meta itemprop="description" content="Notable Projects">
-    <meta itemprop="datePublished" content="2025-08-26T10:27:16+00:00">
+    <meta itemprop="description" content="My Project Collections">
+    <meta itemprop="datePublished" content="2025-08-26T15:58:35+00:00">
     
 
     <div class="page__inner-wrap">
@@ -328,37 +336,41 @@
 
       <section class="page__content" itemprop="text">
         
-        <h2 id="notable-projects">Notable Projects</h2>
+        <h2 id="my-project-collections">My Project Collections</h2>
 
-<ul>
-  <li><strong>Friday AI Assistant:</strong> Modular skill-based assistant with MCP server (Python, FastAPI, React, Electron) — <a href="https://github.com/ZihaoFU245/It-s-Friday-">Repo link</a>
-    <ul>
-      <li>Did it in June 2025 connecting MCP servers with an Agents (OpenAi-Agents-SDK)</li>
-      <li>The OpenAI agents sdk is using LiteLLM for it’s backend, which all written in Python, the latency to super high, bad user experience. TensorZero (Rust) might done a better job. I will try that out in future.</li>
-    </ul>
-  </li>
-  <li><strong>Music Player App:</strong> PySide6, python-vlc — <a href="https://github.com/ZihaoFU245/Acoustic-Player">Repo link</a>
-    <ul>
-      <li>This is my first big project, a bit rustly for the first time. But the experience i gain is most important.</li>
-    </ul>
-  </li>
-  <li><strong>Machine Learning Projs</strong>
-    <ol>
-      <li>Span email classification (naive Bayes)</li>
-      <li>Titanic (MLP)</li>
-      <li>California house price (MLP)</li>
-      <li>Iris Flower (K-Means + KNN)</li>
-      <li>MNIST (MLP / CNN)</li>
-      <li>Butterfly classification (CNN)
-        <ul>
-          <li>Found the dataset on kaggle</li>
-        </ul>
-      </li>
-      <li>Connect Four AI (MiniMax)</li>
-      <li>Mini AutoPilot at HKUST (CNN, OpenCV)</li>
-    </ol>
-  </li>
-</ul>
+<h3 id="new-agent-application-aurora"><a href="/projects/aurora-agent/">New Agent Application Aurora</a></h3>
+
+<p>Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to en…</p>
+
+<p><a href="/projects/aurora-agent/">Read more</a></p>
+
+<hr />
+
+<h3 id="2d-tile-engine"><a href="/projects/tile-engine/">2D Tile Engine</a></h3>
+
+<p><img src="/assets/2025-08-08-resources/cover.jpg" alt="cover" /></p>
+
+<p>A simple, tile-based engine built in Java for learning, tinkering, and creative projects. It features:</p>
+
+<p><a href="/projects/tile-engine/">Read more</a></p>
+
+<hr />
+
+<h3 id="friday--ai-assistant"><a href="/projects/friday-ai/">Friday — AI Assistant</a></h3>
+
+<p>Modular skill-based assistant with an MCP server backend (Python, FastAPI, React, Electron). Key points:</p>
+
+<p><a href="/projects/friday-ai/">Read more</a></p>
+
+<hr />
+
+<h3 id="machine-learning-mini-projects"><a href="/projects/ml-projects/">Machine Learning Mini Projects</a></h3>
+
+<p>Collection of small learning-focused ML builds:</p>
+
+<p><a href="/projects/ml-projects/">Read more</a></p>
+
+<hr />
 
 
         
@@ -371,7 +383,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-08-26T10:27:16+00:00">August 26, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-08-26T15:58:35+00:00">August 26, 2025</time></p>
 
       </footer>
 
@@ -380,10 +392,10 @@
       
   <nav class="pagination">
     
-      <a href="/archive/" class="pagination--pager" title="Archive">Previous</a>
+      <a href="/blog/" class="pagination--pager" title="Blog">Previous</a>
     
     
-      <a href="/resume/" class="pagination--pager" title="Resume">Next</a>
+      <a href="/resume/" class="pagination--pager" title="Résumé">Next</a>
     
   </nav>
 

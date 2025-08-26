@@ -11,7 +11,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Zihao Fu - Zihao’s Portfolio</title>
-<meta name="description" content="I build practical tools and playful experiments—AI agents, a modular music player, and a Java 2D engine.">
+<meta name="description" content="I like to tinker—coding agents, crafting music apps, and building games where ideas come alive.">
 
 
   <meta name="author" content="Zihao Fu">
@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://zihaofu245.github.io/">
 
 
-  <meta property="og:description" content="I build practical tools and playful experiments—AI agents, a modular music player, and a Java 2D engine.">
+  <meta property="og:description" content="I like to tinker—coding agents, crafting music apps, and building games where ideas come alive.">
 
 
 
-  <meta property="og:image" content="https://zihaofu245.github.io/assets/cover.png">
+  <meta property="og:image" content="https://zihaofu245.github.io/assets/images/cover.jpg">
 
 
 
@@ -82,12 +82,20 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   </head>
 
   <body class="layout--splash wide" dir="ltr">
@@ -139,7 +147,7 @@
                 href="/resume/"
                 
                 
-              >Resume</a>
+              >Résumé</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -164,7 +172,7 @@
 
 
 <div class="page__hero--overlay"
-  style="background-color: #000; background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/assets/cover.png');"
+  style="background-color: #000; background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/assets/images/cover.jpg');"
 >
   
     <div class="wrapper">
@@ -175,7 +183,7 @@
         
       </h1>
       
-        <p class="page__lead">I build practical tools and playful experiments—AI agents, a modular music player, and a Java 2D engine.
+        <p class="page__lead">I like to tinker—coding agents, crafting music apps, and building games where ideas come alive.
 </p>
       
       
@@ -184,11 +192,13 @@
       
         <p>
         
-          <a href="/projects/" class="btn btn--light-outline btn--large">Projects</a>
+          <a href="/about/" class="btn btn--light-outline btn--large">About</a>
         
           <a href="/blog/" class="btn btn--light-outline btn--large">Blog</a>
         
-          <a href="/resume/" class="btn btn--light-outline btn--large">Resume</a>
+          <a href="/projects/" class="btn btn--light-outline btn--large">Projects</a>
+        
+          <a href="/resume/" class="btn btn--light-outline btn--large">Résumé</a>
         
         </p>
       
@@ -202,7 +212,7 @@
 <div id="main" role="main">
   <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Zihao Fu">
-    <meta itemprop="description" content="I build practical tools and playful experiments—AI agents, a modular music player, and a Java 2D engine.">
+    <meta itemprop="description" content="I like to tinker—coding agents, crafting music apps, and building games where ideas come alive.">
     
     
 
@@ -215,25 +225,25 @@
       <div class="archive__item">
         
           <div class="archive__item-teaser">
-            <img src="/assets/images/Java-Game-imgs/1.png" alt="Java Engine" />
+            <img src="/assets/2025-08-08-resources/cover.png" alt="Tile Engine" />
             
           </div>
         
 
         <div class="archive__item-body">
           
-            <h2 class="archive__item-title">Java 2D Engine</h2>
+            <h2 class="archive__item-title">2D Tile Engine</h2>
           
 
           
             <div class="archive__item-excerpt">
-              <p>Scene-based architecture, layered rendering, and collision handling.</p>
+              <p>Scene-based architecture, layered rendering, and collision handling in Java</p>
 
             </div>
           
 
           
-            <p><a href="/projects/" class="btn ">See details</a></p>
+            <p><a href="/projects/tile-engine/" class="btn ">See details</a></p>
           
         </div>
       </div>
@@ -243,25 +253,25 @@
       <div class="archive__item">
         
           <div class="archive__item-teaser">
-            <img src="/assets/images/profile.jpg" alt="AI Assistant Friday" />
+            <img src="/assets/images/profile.jpg" alt="AI Assistant (Agents)" />
             
           </div>
         
 
         <div class="archive__item-body">
           
-            <h2 class="archive__item-title">Friday (AI Assistant)</h2>
+            <h2 class="archive__item-title">Agent application</h2>
           
 
           
             <div class="archive__item-excerpt">
-              <p>Skill-server style, MCP-connected, Agents SDK + LiteLLM.</p>
+              <p>LangGraph, tools, MCP servers</p>
 
             </div>
           
 
           
-            <p><a href="/projects/" class="btn ">Read more</a></p>
+            <p><a href="/projects/aurora-agent/" class="btn ">Read more</a></p>
           
         </div>
       </div>
@@ -271,7 +281,7 @@
       <div class="archive__item">
         
           <div class="archive__item-teaser">
-            <img src="/assets/2025-08-08-resources/cover.png" alt="Blog" />
+            <img src="/assets/2025-08-12-resources/ElCapitan.jpg" alt="Blog" />
             
           </div>
         
@@ -290,6 +300,34 @@
 
           
             <p><a href="/blog/" class="btn ">Browse posts</a></p>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="feature__item">
+      <div class="archive__item">
+        
+          <div class="archive__item-teaser">
+            <img src="/assets/2025-08-12-resources/ViewAtSatherTower.jpg" alt="Blog" />
+            
+          </div>
+        
+
+        <div class="archive__item-body">
+          
+            <h2 class="archive__item-title">Num 1th favourite post</h2>
+          
+
+          
+            <div class="archive__item-excerpt">
+              <p>Num 1th favourite post!</p>
+
+            </div>
+          
+
+          
+            <p><a href="/general/2025/08/12/summer-ending" class="btn ">Check it out!</a></p>
           
         </div>
       </div>

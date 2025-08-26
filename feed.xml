@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.github.io/" rel="alternate" type="text/html" /><updated>2025-08-26T10:27:16+00:00</updated><id>https://zihaofu245.github.io/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Recent updates 2025/8/22</title><link href="https://zihaofu245.github.io/general/2025/08/22/recent.html" rel="alternate" type="text/html" title="Recent updates 2025/8/22" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/22/recent</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/22/recent.html"><![CDATA[<h1 id="最近的小更新沪上日式味觉冒险-">最近的小更新｜沪上日式味觉冒险 🍣🔥</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.github.io/" rel="alternate" type="text/html" /><updated>2025-08-26T15:58:35+00:00</updated><id>https://zihaofu245.github.io/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Recent updates 2025/8/22</title><link href="https://zihaofu245.github.io/general/2025/08/22/recent.html" rel="alternate" type="text/html" title="Recent updates 2025/8/22" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/22/recent</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/22/recent.html"><![CDATA[<h1 id="最近的小更新沪上日式味觉冒险-">最近的小更新｜沪上日式味觉冒险 🍣🔥</h1>
 
 <blockquote>
   <p><em>这一篇，献给被烟火气、酱香味与霓虹灯包裹的夜晚。也献给忙碌间隙里，能让人瞬间回血的那一口 —— 好吃到想原地鼓掌的日式风味。</em></p>
@@ -57,7 +57,243 @@
 
 <blockquote>
   <p><em>“好好吃饭，是与世界和解的一种微型协议。”</em></p>
-</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[最近的小更新｜沪上日式味觉冒险 🍣🔥]]></summary></entry><entry><title type="html">What is the color of Berkeley?</title><link href="https://zihaofu245.github.io/general/2025/08/12/summer-ending.html" rel="alternate" type="text/html" title="What is the color of Berkeley?" /><published>2025-08-12T00:00:00+00:00</published><updated>2025-08-12T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/12/summer-ending</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/12/summer-ending.html"><![CDATA[<h1 id="伯克利的夏天是五彩斑斓的告别">伯克利的夏天，是五彩斑斓的告别</h1>
+</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[最近的小更新｜沪上日式味觉冒险 🍣🔥]]></summary></entry><entry><title type="html">Cheat Sheet for Math N53 Berkeley!</title><link href="https://zihaofu245.github.io/general/2025/08/14/math-exam-review.html" rel="alternate" type="text/html" title="Cheat Sheet for Math N53 Berkeley!" /><published>2025-08-14T00:00:00+00:00</published><updated>2025-08-14T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/14/math-exam-review</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/14/math-exam-review.html"><![CDATA[<h2 id="multivariable-calculus--integral--theorem-cheat-sheet">Multivariable Calculus – Integral &amp; Theorem Cheat Sheet</h2>
+
+<p><strong>Conventions.</strong></p>
+<ul>
+  <li>In 2D: $\mathbf{F}=\langle M,N\rangle$. In 3D: $\mathbf{F}=\langle P,Q,R\rangle$.</li>
+  <li>A smooth curve $C$ is parameterized by $\mathbf{r}(t)$, $a\le t\le b$.</li>
+  <li>A smooth surface $S$ is parameterized by $\mathbf{r}(u,v)$ on a domain $D_{uv}$.</li>
+  <li>Unit normal $\mathbf{n}$ is chosen by orientation (right-hand rule when paired with boundary orientation).</li>
+</ul>
+
+<hr />
+
+<h2 id="1-line-integrals">1) Line Integrals</h2>
+
+<h3 id="scalar-line-integral-with-respect-to-arc-length">Scalar line integral (with respect to arc length)</h3>
+<p>\(\int_C f\,ds \;=\; \int_a^b f(\mathbf{r}(t))\,\|\mathbf{r}'(t)\|\,dt.\)</p>
+
+<h3 id="vector-line-integral-work">Vector line integral (work)</h3>
+<p>\(W=\int_C \mathbf{F}\cdot d\mathbf{r} \;=\; \int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt.\)</p>
+
+<p><strong>Work/energy interpretation:</strong> moving a particle through a force field $\mathbf{F}$ along $C$.</p>
+
+<h3 id="is-mathbff-conservative-in-a-simply-connected-open-set">“Is $\mathbf{F}$ conservative?” (in a simply connected open set)</h3>
+<ul>
+  <li>Equivalent tests:
+    <ul>
+      <li>$\displaystyle \oint_C \mathbf{F}\cdot d\mathbf{r}=0$ for every closed $C$.</li>
+      <li>Path independence: $\int_{C_1}\mathbf{F}\cdot d\mathbf{r}=\int_{C_2}\mathbf{F}\cdot d\mathbf{r}$ for any two paths with same endpoints.</li>
+      <li>There exists potential $f$ with $\mathbf{F}=\nabla f$.</li>
+      <li>In 2D: $N_x=M_y$. In 3D: $\nabla\times \mathbf{F}=\mathbf{0}$.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Finding $f$ when conservative (2D):</strong> Integrate $M=\partial f/\partial x$ in $x$, then determine the “constant in $x$” via $N=\partial f/\partial y$.</p>
+
+<hr />
+
+<h2 id="2-greens-theorem-2d">2) Green’s Theorem (2D)</h2>
+
+<p>Let $C$ be positively oriented, piecewise smooth, <strong>simple closed</strong> curve bounding region $D$ and $M,N$ have continuous partials on an open set containing $D$.</p>
+
+<h3 id="circulation-form">Circulation form</h3>
+<p>\(\oint_C M\,dx+N\,dy \;=\; \iint_D \left(N_x - M_y\right)\,dA.\)</p>
+
+<h3 id="flux--normal-form">Flux / normal form</h3>
+<p>\(\oint_C \mathbf{F}\cdot \mathbf{n}\,ds
+\;=\;
+\oint_C (-N)\,dx + M\,dy
+\;=\;
+\iint_D \left(M_x + N_y\right)\,dA
+\;=\; \iint_D \nabla\cdot\mathbf{F}\,dA.\)</p>
+
+<h3 id="area-corollaries">Area corollaries</h3>
+<p>\(ext{Area}(D)=\frac12\oint_C (x\,dy - y\,dx)
+\;=\;\oint_C x\,dy \;=\; -\oint_C y\,dx \quad (\text{choose any one}).\)</p>
+
+<hr />
+
+<h2 id="3-surface-integrals">3) Surface Integrals</h2>
+
+<h3 id="scalar-surface-integral">Scalar surface integral</h3>
+<p>Given $\mathbf{r}(u,v)$ on $D_{uv}$,</p>
+
+\[\iint_S f\,dS \;=\; \iint_{D_{uv}} f(\mathbf{r}(u,v))\,\|\mathbf{r}_u\times \mathbf{r}_v\|\,du\,dv.\]
+
+<p>For a graph $z=g(x,y)$:
+\(dS = \sqrt{1+g_x^2+g_y^2}\,dx\,dy.\)</p>
+
+<h3 id="flux-of-a-vector-field-across-a-surface">Flux of a vector field across a surface</h3>
+
+\[\iint_S \mathbf{F}\cdot \mathbf{n}\,dS
+\;=\;
+\iint_{D_{uv}} \mathbf{F}(\mathbf{r}(u,v))\cdot\left(\mathbf{r}_u\times \mathbf{r}_v\right)\,du\,dv.\]
+
+<hr />
+
+<h2 id="4-stokes-theorem-3d">4) Stokes’ Theorem (3D)</h2>
+
+<p>Let $S$ be an oriented smooth surface with boundary curve $C=\partial S$ (positively oriented by the right-hand rule). If $\mathbf{F}$ has continuous partials,</p>
+
+\[\oint_C \mathbf{F}\cdot d\mathbf{r}
+\;=\;
+\iint_S (\nabla\times\mathbf{F})\cdot \mathbf{n}\,dS.\]
+
+<hr />
+
+<h2 id="5-divergence-theorem-gauss">5) Divergence Theorem (Gauss)</h2>
+
+<p>Let $E$ be a solid region with boundary surface $S=\partial E$ oriented outward, and $\mathbf{F}$ have continuous partials:</p>
+
+\[\iint_S \mathbf{F}\cdot \mathbf{n}\,dS
+\;=\;
+\iiint_E \nabla\cdot\mathbf{F}\,dV.\]
+
+<hr />
+
+<h2 id="6-double--triple-integrals">6) Double &amp; Triple Integrals</h2>
+
+<h3 id="double-integral-cartesian">Double integral (Cartesian)</h3>
+
+\[\iint_D f(x,y)\,dA \;=\; \int_{x=a}^b\int_{y=g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx
+\quad \text{or} \quad
+\int_{y=c}^d\int_{x=h_1(y)}^{h_2(y)} f(x,y)\,dx\,dy.\]
+
+<h3 id="double-integral-polar">Double integral (polar)</h3>
+<p>Use $x=r\cos\theta,\;y=r\sin\theta,\; dA = r\,dr\,d\theta$:</p>
+
+\[\iint_D f(x,y)\,dA
+\;=\;
+\int_{\theta=\alpha}^{\beta}\int_{r=r_1(\theta)}^{r_2(\theta)}
+f\!\big(r\cos\theta, r\sin\theta\big)\; r\,dr\,d\theta.\]
+
+<h3 id="triple-integral-cartesian">Triple integral (Cartesian)</h3>
+
+\[\iiint_E f(x,y,z)\,dV
+\;=\;
+\int\!\!\int\!\!\int f(x,y,z)\,dz\,dy\,dx
+\quad (\text{order to fit }E).\]
+
+<h3 id="triple-integral-cylindrical">Triple integral (cylindrical)</h3>
+<p>Use $x=r\cos\theta,\;y=r\sin\theta,\;z=z,\; dV=r\,dr\,d\theta\,dz$:</p>
+
+\[\iiint_E f\,dV
+=
+\int_{\theta=\alpha}^{\beta}\int_{r=r_1(\theta)}^{r_2(\theta)}\int_{z=z_1(r,\theta)}^{z_2(r,\theta)}
+f(r\cos\theta,r\sin\theta,z)\; r\,dz\,dr\,d\theta.\]
+
+<h3 id="triple-integral-spherical">Triple integral (spherical)</h3>
+<p>Use $x=\rho\sin\phi\cos\theta,\; y=\rho\sin\phi\sin\theta,\; z=\rho\cos\phi,\; dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta$:</p>
+
+\[\iiint_E f\,dV
+=
+\int_{\theta=\alpha}^{\beta}\int_{\phi=\phi_1(\theta)}^{\phi_2(\theta)}\int_{\rho=\rho_1(\phi,\theta)}^{\rho_2(\phi,\theta)}
+f(\rho,\phi,\theta)\; \rho^2\sin\phi\, d\rho\, d\phi\, d\theta.\]
+
+<hr />
+
+<h2 id="7-change-of-variables-jacobian">7) Change of Variables (Jacobian)</h2>
+
+<h3 id="in-2d">In 2D</h3>
+<p>If $(x,y)=(x(u,v),y(u,v))$ is one-to-one with nonzero Jacobian</p>
+
+<p>\(J=\frac{\partial(x,y)}{\partial(u,v)}=
+\begin{vmatrix}
+x_u &amp; x_v\\
+y_u &amp; y_v
+\end{vmatrix},\)
+then
+\(\iint_D f(x,y)\,dx\,dy
+=
+\iint_{D^*} f\big(x(u,v),y(u,v)\big)\; \left|J\right|\,du\,dv.\)</p>
+
+<h3 id="in-3d">In 3D</h3>
+<p>Similarly with $(x,y,z)=(x(u,v,w),y(u,v,w),z(u,v,w))$ and
+\(J=\frac{\partial(x,y,z)}{\partial(u,v,w)}=
+\det
+\begin{bmatrix}
+x_u &amp; x_v &amp; x_w\\
+y_u &amp; y_v &amp; y_w\\
+z_u &amp; z_v &amp; z_w
+\end{bmatrix}.\)</p>
+
+<hr />
+
+<h2 id="8-curl-and-divergence-cartesian">8) Curl and Divergence (Cartesian)</h2>
+
+\[\nabla\times\mathbf{F}=
+\begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k}\\
+\partial_x &amp; \partial_y &amp; \partial_z\\
+P &amp; Q &amp; R
+\end{vmatrix}
+=
+\langle R_y-Q_z,\; P_z-R_x,\; Q_x-P_y\rangle.\]
+
+\[\nabla\cdot\mathbf{F} = P_x + Q_y + R_z.\]
+
+<p><strong>Vector identities:</strong> $\nabla\times(\nabla f)=\mathbf{0}$, $\nabla\cdot(\nabla\times\mathbf{F})=0$.</p>
+
+<hr />
+
+<h2 id="9-second-derivative-test-2d">9) Second Derivative Test (2D)</h2>
+
+<p>Let $f_x=f_y=0$ at $(a,b)$. Define
+$
+D=f_{xx}(a,b)\,f_{yy}(a,b)-\big(f_{xy}(a,b)\big)^2.
+$</p>
+<ul>
+  <li>If $D&gt;0$ and $f_{xx}(a,b)&gt;0$: <strong>local minimum</strong>.</li>
+  <li>If $D&gt;0$ and $f_{xx}(a,b)&lt;0$: <strong>local maximum</strong>.</li>
+  <li>If $D&lt;0$: <strong>saddle</strong>.</li>
+  <li>If $D=0$: <strong>test inconclusive</strong>.</li>
+</ul>
+
+<hr />
+
+<h2 id="10-lagrange-multipliers">10) Lagrange Multipliers</h2>
+
+<p><strong>One constraint $g(x,y,z)=c$:</strong><br />
+Solve</p>
+
+\[\nabla f=\lambda \nabla g,\qquad g(x,y,z)=c.\]
+
+<p><strong>Two constraints $g(x,y,z)=c,\; h(x,y,z)=k$:</strong></p>
+
+\[\nabla f=\lambda \nabla g+\mu \nabla h,\quad g=c,\quad h=k.\]
+
+<hr />
+
+<h2 id="11-flux-quick-references">11) Flux (quick references)</h2>
+
+<ul>
+  <li><strong>Across a plane curve $C$ (Green’s normal form):</strong><br />
+$\displaystyle \oint_C \mathbf{F}\cdot \mathbf{n}\,ds = \oint_C (M\,dy - N\,dx) = \iint_D \nabla\cdot\mathbf{F}\,dA$.</li>
+  <li><strong>Across a surface $S$:</strong><br />
+$\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iint_{D_{uv}}\mathbf{F}(\mathbf{r}(u,v))\cdot(\mathbf{r}_u\times\mathbf{r}_v)\,du\,dv$.</li>
+  <li><strong>Closed surface $S=\partial E$ (Divergence Thm):</strong><br />
+$\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathbf{F}\,dV.$</li>
+</ul>
+
+<hr />
+
+<h2 id="12-common-regional-setups-quick-memory">12) Common Regional Setups (quick memory)</h2>
+
+<ul>
+  <li><strong>Disk/annulus:</strong> use polar $(r,\theta)$, $dA=r\,dr\,d\theta$.</li>
+  <li><strong>Cylinder-like regions:</strong> use cylindrical $(r,\theta,z)$, $dV=r\,dr\,d\theta\,dz$.</li>
+  <li><strong>Spheres/balls/cones:</strong> use spherical $(\rho,\phi,\theta)$, $dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta$.</li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <p>Update on <strong>Aug 26th</strong>: This blog is written on <strong>Aug 14th</strong>, when i’m taking the exam at 12 a.m.
+ And the $Latex$ display is failed, ChatGPT can’t fix that, quite disappointed. And finally i fixed it:)</p>
+</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Multivariable Calculus – Integral &amp; Theorem Cheat Sheet]]></summary></entry><entry><title type="html">What is the color of Berkeley?</title><link href="https://zihaofu245.github.io/general/2025/08/12/summer-ending.html" rel="alternate" type="text/html" title="What is the color of Berkeley?" /><published>2025-08-12T00:00:00+00:00</published><updated>2025-08-12T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/12/summer-ending</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/12/summer-ending.html"><![CDATA[<h1 id="伯克利的夏天是五彩斑斓的告别">伯克利的夏天，是五彩斑斓的告别</h1>
 <blockquote>
   <p><em>如果这个夏天可以用颜色来描绘，那一定不止一种：有燃烧的红，有离别的灰，有忙碌的橙，有成长的金黄，也有无法说出口的蓝</em></p>
 </blockquote>
@@ -204,7 +440,7 @@
 <p>I believe in learning by doing—and sharing! By open sourcing this engine, I hope to help others explore game development basics, experiment, and maybe even build something cool.</p>
 
 <h2 id="screenshots">Screenshots</h2>
-<p><img src="../assets/images/java-Game-imgs/2.png" alt="Demo Screenshot" /></p>
+<p><img src="/assets/images/java-Game-imgs/2.png" alt="Demo Screenshot" /></p>
 
 <h2 id="get-involved">Get Involved</h2>
 <ul>
@@ -224,21 +460,7 @@
 <p>Overall, gpt-oss-20b exceeded my expectations and proved to be a powerful tool for both general and technical queries. 👍</p>
 
 <hr />
-<p><em>This blog post was written by GitHub Copilot, based on feedback and experience provided by the user.</em></p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[My Experience with gpt-oss-20b]]></summary></entry><entry><title type="html">Practise for 61BL needed</title><link href="https://zihaofu245.github.io/general/2025/08/05/new-cpp-plan.html" rel="alternate" type="text/html" title="Practise for 61BL needed" /><published>2025-08-05T00:00:00+00:00</published><updated>2025-08-05T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/05/new-cpp-plan</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/05/new-cpp-plan.html"><![CDATA[<h1 id="what-needs-to-be-done">What needs to be done?</h1>
-
-<h3 id="ans-final-revision-for-61bl">Ans: Final revision for 61BL</h3>
-
-<h3 id="topics">Topics</h3>
-<ul>
-  <li><strong>LLRB Logic</strong></li>
-  <li><strong>Hash Code</strong></li>
-  <li><strong>Heap (Bubble Up / Bubble Down)</strong></li>
-  <li><strong>Disjoint Sets: QuickFind / QuickUnion / Weighted QuickUnion / Weighted QuickUnion &amp; path compression</strong></li>
-  <li><strong>Graph Traversal, BFS, DFS(pre-order &amp; post-order)</strong></li>
-  <li><strong>Algos: Dijkstras(shortest path) A*</strong></li>
-  <li><strong>MST: Minimum spamming tree (Kruskal &amp; Prims)</strong></li>
-  <li><strong>Sortings</strong></li>
-</ul>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[What needs to be done?]]></summary></entry><entry><title type="html">My Java game develope status</title><link href="https://zihaofu245.github.io/general/2025/08/05/update.html" rel="alternate" type="text/html" title="My Java game develope status" /><published>2025-08-05T00:00:00+00:00</published><updated>2025-08-05T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/05/update</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/05/update.html"><![CDATA[<h1 id="recent-update-about-me">Recent update about me</h1>
+<p><em>This blog post was written by GitHub Copilot, based on feedback and experience provided by the user.</em></p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[My Experience with gpt-oss-20b]]></summary></entry><entry><title type="html">My Java game develope status</title><link href="https://zihaofu245.github.io/general/2025/08/05/update.html" rel="alternate" type="text/html" title="My Java game develope status" /><published>2025-08-05T00:00:00+00:00</published><updated>2025-08-05T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/05/update</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/05/update.html"><![CDATA[<h1 id="recent-update-about-me">Recent update about me</h1>
 
 <p>I’ve been working on a Java 2D game, see picture below</p>
 

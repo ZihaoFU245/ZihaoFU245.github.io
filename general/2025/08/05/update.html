@@ -76,12 +76,20 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   </head>
 
   <body class="layout--single wide" dir="ltr">
@@ -133,7 +141,7 @@
                 href="/resume/"
                 
                 
-              >Resume</a>
+              >Résumé</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -419,7 +427,7 @@
       
   <nav class="pagination">
     
-      <a href="/general/2025/08/05/new-cpp-plan.html" class="pagination--pager" title="Practise for 61BL needed">Previous</a>
+      <a href="/general/2025/07/30/first-post.html" class="pagination--pager" title="Welcome to My Blog!">Previous</a>
     
     
       <a href="/general/2025/08/06/gpt-oss-experience.html" class="pagination--pager" title="My Fantastic Experience with gpt-oss-20b! 🚀">Next</a>

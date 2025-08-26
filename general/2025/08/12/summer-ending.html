@@ -31,7 +31,7 @@
 
 
 
-  <meta property="og:image" content="https://zihaofu245.github.io/assets/2025-08-12-resources/GoodByeHYF.jpg">
+  <meta property="og:image" content="https://zihaofu245.github.io/assets/2025-08-12-resources/cover.jpg">
 
 
 
@@ -76,12 +76,20 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   </head>
 
   <body class="layout--single wide" dir="ltr">
@@ -133,7 +141,7 @@
                 href="/resume/"
                 
                 
-              >Resume</a>
+              >Résumé</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -517,7 +525,7 @@
       <a href="/general/2025/08/08/openSource-Engine.html" class="pagination--pager" title="Open Source My Engine！😍">Previous</a>
     
     
-      <a href="/general/2025/08/22/recent.html" class="pagination--pager" title="Recent updates 2025/8/22">Next</a>
+      <a href="/general/2025/08/14/math-exam-review.html" class="pagination--pager" title="Cheat Sheet for Math N53 Berkeley!">Next</a>
     
   </nav>
 
