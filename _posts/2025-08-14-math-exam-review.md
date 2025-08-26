@@ -7,6 +7,8 @@ categories:
   - General
 classes: wide
 mathjax: true
+header:
+  teaser: "/assets/2025-08-14-resources/cover.jpg"
 ---
 
 ## Multivariable Calculus – Integral & Theorem Cheat Sheet
@@ -271,3 +273,6 @@ $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathb
 - **Spheres/balls/cones:** use spherical $(\rho,\phi,\theta)$, $dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta$.
 
 ---
+
+> Update on **Aug 26th**: This blog is written on **Aug 14th**, when i'm taking the exam at 12 a.m.
+ And the $Latex$ display is failed, ChatGPT can't fix that, quite disappointed. And finally i fixed it:)

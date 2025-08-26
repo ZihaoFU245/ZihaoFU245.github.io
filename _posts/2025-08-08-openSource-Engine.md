@@ -7,8 +7,7 @@ categories:
   - General
 classes: wide
 header:
-  teaser: "/assets/2025-08-08-resources/cover.png"
-  image: "/assets/2025-08-08-resources/cover.png"
+  teaser: "/assets/2025-08-08-resources/cover.jpg"
 ---
 # 🎉 2DTileEngine is Now Open Source! 🚀
 
@@ -44,7 +43,7 @@ This project is **mainly for hobbyists and students**—anyone curious about how
 I believe in learning by doing—and sharing! By open sourcing this engine, I hope to help others explore game development basics, experiment, and maybe even build something cool.
 
 ## Screenshots
-![Demo Screenshot](../assets/images/java-Game-imgs/2.png)
+![Demo Screenshot](/assets/images/java-Game-imgs/2.png)
 
 ## Get Involved
 - Star ⭐ the repo

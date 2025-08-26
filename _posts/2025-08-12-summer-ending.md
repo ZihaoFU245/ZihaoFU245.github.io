@@ -7,7 +7,7 @@ categories:
   - General
 classes: wide
 header:
-  teaser: "/assets/2025-08-12-resources/GoodByeHYF.jpg"
+  teaser: "/assets/2025-08-12-resources/cover.jpg"
 ---
 
 # 伯克利的夏天，是五彩斑斓的告别
