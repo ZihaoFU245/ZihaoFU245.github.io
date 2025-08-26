@@ -51,6 +51,9 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 author:
   name: "Zihao Fu"
@@ -71,6 +74,13 @@ defaults:
     values:
       layout: single
       classes: wide
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
   - scope:
       path: ""
       type: posts
