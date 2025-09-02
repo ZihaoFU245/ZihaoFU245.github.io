@@ -1636,7 +1636,8 @@ th {
  *  </div>
  */
 /* Default notice */
-.notice {
+.notice,
+.markdown-alert {
   margin: 2em 0 !important; /* override*/
   padding: 1em;
   color: #343434;
@@ -1647,47 +1648,56 @@ th {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(188.5, 192.5, 195.5, 0.25);
 }
-.notice h4 {
+.notice h4,
+.markdown-alert h4 {
   margin-top: 0 !important; /* override*/
   margin-bottom: 0.75em;
   line-height: inherit;
 }
-.page__content .notice h4 {
+.page__content .notice, .markdown-alert h4 {
   /* using at-root to override .page-content h4 font size*/
   margin-bottom: 0;
   font-size: 1em;
 }
 
-.notice p:last-child {
+.notice p:last-child,
+.markdown-alert p:last-child {
   margin-bottom: 0 !important; /* override*/
 }
-.notice h4 + p {
+.notice h4 + p,
+.markdown-alert h4 + p {
   /* remove space above paragraphs that appear directly after notice headline*/
   margin-top: 0;
   padding-top: 0;
 }
-.notice a {
+.notice a,
+.markdown-alert a {
   color: rgb(169.65, 173.25, 175.95);
 }
-.notice a:hover {
+.notice a:hover,
+.markdown-alert a:hover {
   color: rgb(94.25, 96.25, 97.75);
 }
-blockquote.notice {
+blockquote.notice, blockquote.markdown-alert {
   border-inline-start-color: rgb(169.65, 173.25, 175.95);
 }
 
-.notice code {
+.notice code,
+.markdown-alert code {
   background-color: rgb(237.55, 237.95, 238.25);
 }
-.notice pre code {
+.notice pre code,
+.markdown-alert pre code {
   background-color: inherit;
 }
-.notice ul:last-child {
+.notice ul:last-child,
+.markdown-alert ul:last-child {
   margin-bottom: 0; /* override*/
 }
 
 /* Primary notice */
-.notice--primary {
+.notice--primary,
+.markdown-alert-important {
   margin: 2em 0 !important; /* override*/
   padding: 1em;
   color: #343434;
@@ -1698,47 +1708,56 @@ blockquote.notice {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(52, 52, 52, 0.25);
 }
-.notice--primary h4 {
+.notice--primary h4,
+.markdown-alert-important h4 {
   margin-top: 0 !important; /* override*/
   margin-bottom: 0.75em;
   line-height: inherit;
 }
-.page__content .notice--primary h4 {
+.page__content .notice--primary, .markdown-alert-important h4 {
   /* using at-root to override .page-content h4 font size*/
   margin-bottom: 0;
   font-size: 1em;
 }
 
-.notice--primary p:last-child {
+.notice--primary p:last-child,
+.markdown-alert-important p:last-child {
   margin-bottom: 0 !important; /* override*/
 }
-.notice--primary h4 + p {
+.notice--primary h4 + p,
+.markdown-alert-important h4 + p {
   /* remove space above paragraphs that appear directly after notice headline*/
   margin-top: 0;
   padding-top: 0;
 }
-.notice--primary a {
+.notice--primary a,
+.markdown-alert-important a {
   color: rgb(46.8, 46.8, 46.8);
 }
-.notice--primary a:hover {
+.notice--primary a:hover,
+.markdown-alert-important a:hover {
   color: #1a1a1a;
 }
-blockquote.notice--primary {
+blockquote.notice--primary, blockquote.markdown-alert-important {
   border-inline-start-color: rgb(46.8, 46.8, 46.8);
 }
 
-.notice--primary code {
+.notice--primary code,
+.markdown-alert-important code {
   background-color: rgb(223.9, 223.9, 223.9);
 }
-.notice--primary pre code {
+.notice--primary pre code,
+.markdown-alert-important pre code {
   background-color: inherit;
 }
-.notice--primary ul:last-child {
+.notice--primary ul:last-child,
+.markdown-alert-important ul:last-child {
   margin-bottom: 0; /* override*/
 }
 
 /* Info notice */
-.notice--info {
+.notice--info,
+.markdown-alert-note {
   margin: 2em 0 !important; /* override*/
   padding: 1em;
   color: #343434;
@@ -1749,47 +1768,56 @@ blockquote.notice--primary {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(59, 156, 186, 0.25);
 }
-.notice--info h4 {
+.notice--info h4,
+.markdown-alert-note h4 {
   margin-top: 0 !important; /* override*/
   margin-bottom: 0.75em;
   line-height: inherit;
 }
-.page__content .notice--info h4 {
+.page__content .notice--info, .markdown-alert-note h4 {
   /* using at-root to override .page-content h4 font size*/
   margin-bottom: 0;
   font-size: 1em;
 }
 
-.notice--info p:last-child {
+.notice--info p:last-child,
+.markdown-alert-note p:last-child {
   margin-bottom: 0 !important; /* override*/
 }
-.notice--info h4 + p {
+.notice--info h4 + p,
+.markdown-alert-note h4 + p {
   /* remove space above paragraphs that appear directly after notice headline*/
   margin-top: 0;
   padding-top: 0;
 }
-.notice--info a {
+.notice--info a,
+.markdown-alert-note a {
   color: rgb(53.1, 140.4, 167.4);
 }
-.notice--info a:hover {
+.notice--info a:hover,
+.markdown-alert-note a:hover {
   color: rgb(29.5, 78, 93);
 }
-blockquote.notice--info {
+blockquote.notice--info, blockquote.markdown-alert-note {
   border-inline-start-color: rgb(53.1, 140.4, 167.4);
 }
 
-.notice--info code {
+.notice--info code,
+.markdown-alert-note code {
   background-color: rgb(224.6, 234.3, 237.3);
 }
-.notice--info pre code {
+.notice--info pre code,
+.markdown-alert-note pre code {
   background-color: inherit;
 }
-.notice--info ul:last-child {
+.notice--info ul:last-child,
+.markdown-alert-note ul:last-child {
   margin-bottom: 0; /* override*/
 }
 
 /* Warning notice */
-.notice--warning {
+.notice--warning,
+.markdown-alert-warning {
   margin: 2em 0 !important; /* override*/
   padding: 1em;
   color: #343434;
@@ -1800,47 +1828,56 @@ blockquote.notice--info {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(214, 127, 5, 0.25);
 }
-.notice--warning h4 {
+.notice--warning h4,
+.markdown-alert-warning h4 {
   margin-top: 0 !important; /* override*/
   margin-bottom: 0.75em;
   line-height: inherit;
 }
-.page__content .notice--warning h4 {
+.page__content .notice--warning, .markdown-alert-warning h4 {
   /* using at-root to override .page-content h4 font size*/
   margin-bottom: 0;
   font-size: 1em;
 }
 
-.notice--warning p:last-child {
+.notice--warning p:last-child,
+.markdown-alert-warning p:last-child {
   margin-bottom: 0 !important; /* override*/
 }
-.notice--warning h4 + p {
+.notice--warning h4 + p,
+.markdown-alert-warning h4 + p {
   /* remove space above paragraphs that appear directly after notice headline*/
   margin-top: 0;
   padding-top: 0;
 }
-.notice--warning a {
+.notice--warning a,
+.markdown-alert-warning a {
   color: rgb(192.6, 114.3, 4.5);
 }
-.notice--warning a:hover {
+.notice--warning a:hover,
+.markdown-alert-warning a:hover {
   color: rgb(107, 63.5, 2.5);
 }
-blockquote.notice--warning {
+blockquote.notice--warning, blockquote.markdown-alert-warning {
   border-inline-start-color: rgb(192.6, 114.3, 4.5);
 }
 
-.notice--warning code {
+.notice--warning code,
+.markdown-alert-warning code {
   background-color: rgb(240.1, 231.4, 219.2);
 }
-.notice--warning pre code {
+.notice--warning pre code,
+.markdown-alert-warning pre code {
   background-color: inherit;
 }
-.notice--warning ul:last-child {
+.notice--warning ul:last-child,
+.markdown-alert-warning ul:last-child {
   margin-bottom: 0; /* override*/
 }
 
 /* Success notice */
-.notice--success {
+.notice--success,
+.markdown-alert-tip {
   margin: 2em 0 !important; /* override*/
   padding: 1em;
   color: #343434;
@@ -1851,47 +1888,56 @@ blockquote.notice--warning {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(63, 166, 63, 0.25);
 }
-.notice--success h4 {
+.notice--success h4,
+.markdown-alert-tip h4 {
   margin-top: 0 !important; /* override*/
   margin-bottom: 0.75em;
   line-height: inherit;
 }
-.page__content .notice--success h4 {
+.page__content .notice--success, .markdown-alert-tip h4 {
   /* using at-root to override .page-content h4 font size*/
   margin-bottom: 0;
   font-size: 1em;
 }
 
-.notice--success p:last-child {
+.notice--success p:last-child,
+.markdown-alert-tip p:last-child {
   margin-bottom: 0 !important; /* override*/
 }
-.notice--success h4 + p {
+.notice--success h4 + p,
+.markdown-alert-tip h4 + p {
   /* remove space above paragraphs that appear directly after notice headline*/
   margin-top: 0;
   padding-top: 0;
 }
-.notice--success a {
+.notice--success a,
+.markdown-alert-tip a {
   color: rgb(56.7, 149.4, 56.7);
 }
-.notice--success a:hover {
+.notice--success a:hover,
+.markdown-alert-tip a:hover {
   color: rgb(31.5, 83, 31.5);
 }
-blockquote.notice--success {
+blockquote.notice--success, blockquote.markdown-alert-tip {
   border-inline-start-color: rgb(56.7, 149.4, 56.7);
 }
 
-.notice--success code {
+.notice--success code,
+.markdown-alert-tip code {
   background-color: rgb(225, 235.3, 225);
 }
-.notice--success pre code {
+.notice--success pre code,
+.markdown-alert-tip pre code {
   background-color: inherit;
 }
-.notice--success ul:last-child {
+.notice--success ul:last-child,
+.markdown-alert-tip ul:last-child {
   margin-bottom: 0; /* override*/
 }
 
 /* Danger notice */
-.notice--danger {
+.notice--danger,
+.markdown-alert-caution {
   margin: 2em 0 !important; /* override*/
   padding: 1em;
   color: #343434;
@@ -1902,42 +1948,50 @@ blockquote.notice--success {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(238, 95, 91, 0.25);
 }
-.notice--danger h4 {
+.notice--danger h4,
+.markdown-alert-caution h4 {
   margin-top: 0 !important; /* override*/
   margin-bottom: 0.75em;
   line-height: inherit;
 }
-.page__content .notice--danger h4 {
+.page__content .notice--danger, .markdown-alert-caution h4 {
   /* using at-root to override .page-content h4 font size*/
   margin-bottom: 0;
   font-size: 1em;
 }
 
-.notice--danger p:last-child {
+.notice--danger p:last-child,
+.markdown-alert-caution p:last-child {
   margin-bottom: 0 !important; /* override*/
 }
-.notice--danger h4 + p {
+.notice--danger h4 + p,
+.markdown-alert-caution h4 + p {
   /* remove space above paragraphs that appear directly after notice headline*/
   margin-top: 0;
   padding-top: 0;
 }
-.notice--danger a {
+.notice--danger a,
+.markdown-alert-caution a {
   color: rgb(214.2, 85.5, 81.9);
 }
-.notice--danger a:hover {
+.notice--danger a:hover,
+.markdown-alert-caution a:hover {
   color: rgb(119, 47.5, 45.5);
 }
-blockquote.notice--danger {
+blockquote.notice--danger, blockquote.markdown-alert-caution {
   border-inline-start-color: rgb(214.2, 85.5, 81.9);
 }
 
-.notice--danger code {
+.notice--danger code,
+.markdown-alert-caution code {
   background-color: rgb(242.5, 228.2, 227.8);
 }
-.notice--danger pre code {
+.notice--danger pre code,
+.markdown-alert-caution pre code {
   background-color: inherit;
 }
-.notice--danger ul:last-child {
+.notice--danger ul:last-child,
+.markdown-alert-caution ul:last-child {
   margin-bottom: 0; /* override*/
 }
 
