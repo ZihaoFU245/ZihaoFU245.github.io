@@ -11,7 +11,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Résumé - Zihao’s Portfolio</title>
-<meta name="description" content="I am still working on it 💡">
+<meta name="description" content="Print Resume">
 
 
   <meta name="author" content="Zihao Fu">
@@ -27,7 +27,7 @@
 <meta property="og:url" content="https://zihaofu245.github.io/resume/">
 
 
-  <meta property="og:description" content="I am still working on it 💡">
+  <meta property="og:description" content="Print Resume">
 
 
 
@@ -35,7 +35,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-09-03T06:02:55+00:00">
+  <meta property="article:published_time" content="2025-09-03T13:36:51+00:00">
 
 
 
@@ -317,8 +317,8 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Résumé">
-    <meta itemprop="description" content="I am still working on it 💡">
-    <meta itemprop="datePublished" content="2025-09-03T06:02:55+00:00">
+    <meta itemprop="description" content="Print Resume">
+    <meta itemprop="datePublished" content="2025-09-03T13:36:51+00:00">
     
 
     <div class="page__inner-wrap">
@@ -336,7 +336,27 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>I am still working on it 💡</p>
+        <p><button onclick="printResume()">Print Resume</button></p>
+
+<iframe id="resume-iframe" src="/assets/resume/Resume.html" width="100%" height="1000" style="border:0;" title="Resume">
+</iframe>
+
+<script>
+function printResume() {
+    const iframe = document.getElementById('resume-iframe');
+    if (!iframe) 
+        return;
+    try {
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+    } catch (e) {
+        // fallback: open file in new window
+        window.open(iframe.src, '_blank');
+    }
+
+}
+</script>
+
 
         
       </section>
@@ -348,7 +368,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-09-03T06:02:55+00:00">September 3, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-09-03T13:36:51+00:00">September 3, 2025</time></p>
 
       </footer>
 

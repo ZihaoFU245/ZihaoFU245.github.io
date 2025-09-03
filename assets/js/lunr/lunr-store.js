@@ -24,7 +24,7 @@ var store = [{
         "teaser": "/assets/cover.png"
       },{
         "title": "Résumé",
-        "excerpt":"I am still working on it 💡  ","categories": [],
+        "excerpt":"Print Resume        ","categories": [],
         "tags": [],
         "url": "/resume/",
         "teaser": "/assets/cover.png"
