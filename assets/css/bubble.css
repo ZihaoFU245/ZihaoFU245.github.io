@@ -1,0 +1,121 @@
+/* bubble.css */
+.bubble {
+    position: absolute;
+    background: white;
+    color: black;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    max-width: 180px;
+    text-align: center;
+    line-height: 1.4;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    white-space: nowrap;
+    /* prevent wrap when collapsed */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transform-origin: bottom right;
+    /* scale from corner near title */
+    transition:
+        transform .25s ease,
+        padding .25s ease,
+        box-shadow .25s ease,
+        background-color .25s ease,
+        color .25s ease,
+        max-width .25s ease;
+}
+
+/* (Removed old generic tail to avoid conflicting positioning rules) */
+
+/* Make a tight anchor around the name text */
+.page__title .title-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+/* Place the bubble just above the top-right of the name */
+.page__title .bubble {
+    position: absolute;
+    right: 0;
+    /* align to name’s right edge */
+    bottom: calc(100% + var(--offset-y, 8px));
+    /* sit above the name */
+    transform: translateX(var(--offset-x, 40px)) scale(.82);
+    /* nudge & start slightly smaller */
+    z-index: 10;
+}
+
+/* Hover / focus expansion */
+.page__title .bubble:hover,
+.page__title .bubble:focus-within {
+    transform: translateX(var(--offset-x, 40px)) scale(1);
+    white-space: normal;
+    /* allow wrapping once expanded */
+    max-width: 240px;
+}
+
+/* Emoji + text parts */
+.bubble .bubble-emoji {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.bubble .bubble-text {
+    display: inline;
+}
+
+/* Make only the anchor phrase clickable */
+.bubble .bubble-link {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.bubble .bubble-link:hover,
+.bubble .bubble-link:focus {
+    text-decoration-thickness: 2px;
+}
+
+/* Hidden text until hover */
+.page__title .bubble:not(:hover) .bubble-text {
+    display: none;
+}
+
+/* Provide a subtle larger shadow when expanded */
+.page__title .bubble:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+}
+
+/* Triangle tail (points downward). Uses the bubble's own background color. */
+.page__title .bubble::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    /* place directly below bubble */
+    right: 16px;
+    /* horizontal alignment */
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    /* base triangle */
+    border-top-color: var(--bubble-bg, #fff);
+    /* visible face pointing down */
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .2));
+    /* subtle depth */
+    bottom: auto;
+}
+
+/* Allow JS-configurable offsets via CSS vars */
+.page__title .bubble {
+    transform: translateX(var(--bubble-offset-x, 40px));
+    bottom: calc(100% + var(--bubble-offset-y, 8px));
+}
+
+/* Hover keeps the X offset (from var) and adds a tiny scale */
+.page__title .bubble:hover {
+    transform: translateX(var(--bubble-offset-x, 40px)) scale(1.05);
+}
