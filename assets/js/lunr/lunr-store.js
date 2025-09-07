@@ -72,7 +72,7 @@ var store = [{
         "teaser": "/assets/2025-08-22-resources/beefBowl.jpg"
       },{
         "title": "Life in HKUST, Week 0 out of 16",
-        "excerpt":"First week experience at HKUST sharing! The very first week at HKUST. Year2, 2025-26. What my desk looks like after a week? My Desk! Sticked some photos to decorate. Photos Chemistry Lab Visit Academic warm‑up Really hate comp3111 LAB time, from 6pm to 8pm? wtf! HALL IX is so much...","categories": ["General"],
+        "excerpt":"Sharing my first‑week experience at HKUST! My very first week at HKUST — Year 2, 2025–26. What does my desk look like after a week? This is my desk! I stuck some photos up to decorate my desk. Photos Chemistry Lab Visit Academic warm‑up I really dislike COMP3111 lab time;...","categories": ["General"],
         "tags": [],
         "url": "/general/2025/09/07/first_week_uni.html",
         "teaser": "/assets/2025-09-07-resources/MyDeskPreview.jpg"
