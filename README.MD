@@ -34,14 +34,6 @@ Action steps:
 3. Run `bundle exec jekyll build` producing `_site/`.
 4. Publish `_site/` to `gh-pages` (only when ref == main) using `peaceiris/actions-gh-pages`.
 
-## Do I Commit the `_site` Folder?
-No. `_site/` is a build artifact and should be ignored (it is regenerated every build). Only commit source files (markdown, config, assets). The workflow pushes the generated `_site` contents to the `gh-pages` branch for GitHub Pages hosting.
-
-If `_site` appears unstaged, leave it uncommitted. Add or keep an entry in `.gitignore` if desired:
-```
-_site/
-```
-
 ## Adding Content
 Posts: add Markdown files under `_posts/` named `YYYY-MM-DD-title.md`.
 Pages: place Markdown under `_pages/` (ensure front matter `permalink:` if you want a custom URL).

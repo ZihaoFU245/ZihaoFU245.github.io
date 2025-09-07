@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.github.io/" rel="alternate" type="text/html" /><updated>2025-09-03T13:36:51+00:00</updated><id>https://zihaofu245.github.io/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Recent updates 2025/8/22</title><link href="https://zihaofu245.github.io/general/2025/08/22/recent.html" rel="alternate" type="text/html" title="Recent updates 2025/8/22" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/22/recent</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/22/recent.html"><![CDATA[<h1 id="最近的小更新沪上日式味觉冒险-">最近的小更新｜沪上日式味觉冒险 🍣🔥</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.github.io/" rel="alternate" type="text/html" /><updated>2025-09-07T09:32:19+00:00</updated><id>https://zihaofu245.github.io/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Life in HKUST, Week 0 out of 16</title><link href="https://zihaofu245.github.io/general/2025/09/07/first_week_uni.html" rel="alternate" type="text/html" title="Life in HKUST, Week 0 out of 16" /><published>2025-09-07T00:00:00+00:00</published><updated>2025-09-07T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/09/07/first_week_uni</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/09/07/first_week_uni.html"><![CDATA[<script defer="" src="/assets/js/live-photo.js"></script>
+
+<link rel="stylesheet" href="/assets/css/live-photo.css" />
+
+<h1 id="first-week-experience-at-hkust-sharing">First week experience at HKUST sharing!</h1>
+
+<blockquote>
+  <p>The very first week at HKUST. Year2, 2025-26.</p>
+</blockquote>
+
+<p><strong>What my desk looks like after a week?</strong>
+<!-- Live Photo block --></p>
+<div class="live-photo" data-lp-src="/assets/2025-09-07-resources/MyDesk.mp4" data-lp-replay="click" data-lp-autoplay="true" data-lp-poster="/assets/2025-09-07-resources/MyDeskPreview.jpg">
+
+  <!-- The still image sets the size and stays visible after playback -->
+  <img class="lp-img" src="/assets/2025-09-07-resources/MyDeskPreview.jpg" alt="My Desk" width="1000" />
+</div>
+<p><strong>My Desk! Sticked some photos to decorate.</strong> <a href="/general/2025/08/12/summer-ending"><strong>Photos</strong></a></p>
+
+<div class="live-photo" data-lp-src="/assets/2025-09-07-resources/ChemLab.mp4" data-lp-replay="click" data-lp-autoplay="true" data-lp-poster="/assets/2025-09-07-resources/ChemLabPreview.jpg">
+
+  <!-- The still image sets the size and stays visible after playback -->
+  <img class="lp-img" src="/assets/2025-09-07-resources/ChemLabPreview.jpg" alt="My Desk" width="1000" />
+</div>
+<p><strong>Chemistry Lab Visit</strong></p>
+
+<h2 id="academic-warmup">Academic warm‑up</h2>
+<p><img src="/assets/2025-09-07-resources/Timetable.jpg" alt="Time Table" /></p>
+
+<p><strong>Really hate comp3111 LAB time, from 6pm to 8pm? wtf!</strong></p>
+
+<h2 id="hall-ix-is-so-much-better-than-hall-4-on-every-aspect">HALL IX is so much better than HALL 4, on every aspect</h2>
+<p><img src="/assets/2025-09-07-resources/Dorm.jpg" alt="Dorm" />
+<img src="/assets/2025-09-07-resources/DormView.jpg" alt="Dorm View" />
+<img src="/assets/2025-09-07-resources/DormView2.jpg" alt="Dorm View" /></p>
+
+<h2 id="talking-with-my-bestie">Talking with my Bestie</h2>
+<p><strong>A 12GB RTX 5070Ti can run gpt-oss soooo fast!</strong>
+<img src="/assets/2025-09-07-resources/MyBestie.jpg" alt="Bestie" /></p>
+
+<h3 id="tech-chatter">Tech chatter</h3>
+<p><strong>We ended up benchmarking a lightweight open‑source model variant just for fun—turns out the 12GB buffer is enough for a surprisingly capable context window when you prune and quantize smartly.</strong></p>
+
+<h2 id="me-at-mtr-metro">Me at MTR metro</h2>
+<p><img src="/assets/2025-09-07-resources/Me.jpg" alt="Me" /></p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Recent updates 2025/8/22</title><link href="https://zihaofu245.github.io/general/2025/08/22/recent.html" rel="alternate" type="text/html" title="Recent updates 2025/8/22" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/22/recent</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/22/recent.html"><![CDATA[<h1 id="最近的小更新沪上日式味觉冒险-">最近的小更新｜沪上日式味觉冒险 🍣🔥</h1>
 
 <blockquote>
   <p><em>这一篇，献给被烟火气、酱香味与霓虹灯包裹的夜晚。也献给忙碌间隙里，能让人瞬间回血的那一口 —— 好吃到想原地鼓掌的日式风味。</em></p>
@@ -293,7 +337,17 @@ $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathb
 <blockquote>
   <p>Update on <strong>Aug 26th</strong>: This blog is written on <strong>Aug 14th</strong>, when i’m taking the exam at 12 a.m.
  And the $Latex$ display is failed, ChatGPT can’t fix that, quite disappointed. And finally i fixed it:)</p>
-</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Multivariable Calculus – Integral &amp; Theorem Cheat Sheet]]></summary></entry><entry><title type="html">What is the color of Berkeley?</title><link href="https://zihaofu245.github.io/general/2025/08/12/summer-ending.html" rel="alternate" type="text/html" title="What is the color of Berkeley?" /><published>2025-08-12T00:00:00+00:00</published><updated>2025-08-12T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/12/summer-ending</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/12/summer-ending.html"><![CDATA[<h1 id="伯克利的夏天是五彩斑斓的告别">伯克利的夏天，是五彩斑斓的告别</h1>
+</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Multivariable Calculus – Integral &amp; Theorem Cheat Sheet]]></summary></entry><entry><title type="html">What is the color of Berkeley?</title><link href="https://zihaofu245.github.io/general/2025/08/12/summer-ending.html" rel="alternate" type="text/html" title="What is the color of Berkeley?" /><published>2025-08-12T00:00:00+00:00</published><updated>2025-08-12T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/12/summer-ending</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/12/summer-ending.html"><![CDATA[<style>
+.color-chip {
+  cursor: pointer; border-bottom: 1px dotted currentColor; padding: 0 .1em;
+}
+.color-chip:active { transform: scale(0.98); }
+.color-chip.success { background: rgba(0,0,0,.06); border-bottom-color: transparent; }
+</style>
+
+<script defer="" src="/assets/js/color-sequence.js"></script>
+
+<h1 id="伯克利的夏天是五彩斑斓的告别">伯克利的夏天，是五彩斑斓的告别</h1>
 <blockquote>
   <p><em>如果这个夏天可以用颜色来描绘，那一定不止一种：有燃烧的红，有离别的灰，有忙碌的橙，有成长的金黄，也有无法说出口的蓝</em></p>
 </blockquote>
@@ -386,18 +440,7 @@ $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathb
 是我们一起经历的一切。
 是我们在照片里笑着的模样，是我在黄昏时落泪的片刻。</p>
 
-<p>这个夏天，是我不舍地放下、却永远不会忘记的颜色。</p>
-
-<style>
-.color-chip {
-  cursor: pointer; border-bottom: 1px dotted currentColor; padding: 0 .1em;
-}
-.color-chip:active { transform: scale(0.98); }
-.color-chip.success { background: rgba(0,0,0,.06); border-bottom-color: transparent; }
-</style>
-
-<!-- Fallback explicit include since footer_scripts didn't inject on build -->
-<script defer="" src="/assets/js/color-sequence.js"></script>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[伯克利的夏天，是五彩斑斓的告别 如果这个夏天可以用颜色来描绘，那一定不止一种：有燃烧的红，有离别的灰，有忙碌的橙，有成长的金黄，也有无法说出口的蓝]]></summary></entry><entry><title type="html">Open Source My Engine！😍</title><link href="https://zihaofu245.github.io/general/2025/08/08/openSource-Engine.html" rel="alternate" type="text/html" title="Open Source My Engine！😍" /><published>2025-08-08T00:00:00+00:00</published><updated>2025-08-08T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/08/openSource-Engine</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/08/openSource-Engine.html"><![CDATA[<h1 id="-2dtileengine-is-now-open-source-">🎉 2DTileEngine is Now Open Source! 🚀</h1>
+<p>这个夏天，是我不舍地放下、却永远不会忘记的颜色。</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Open Source My Engine！😍</title><link href="https://zihaofu245.github.io/general/2025/08/08/openSource-Engine.html" rel="alternate" type="text/html" title="Open Source My Engine！😍" /><published>2025-08-08T00:00:00+00:00</published><updated>2025-08-08T00:00:00+00:00</updated><id>https://zihaofu245.github.io/general/2025/08/08/openSource-Engine</id><content type="html" xml:base="https://zihaofu245.github.io/general/2025/08/08/openSource-Engine.html"><![CDATA[<h1 id="-2dtileengine-is-now-open-source-">🎉 2DTileEngine is Now Open Source! 🚀</h1>
 
 <p>I’m excited to announce that my lightweight 2D Tile Engine, <a href="https://github.com/ZihaoFU245/2DTileEngine">2DTileEngine</a>, is now open source!</p>
 
