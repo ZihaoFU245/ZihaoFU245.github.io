@@ -100,4 +100,16 @@
   font-weight: 600;
 }
 
+.card-cta:link,
+.card-cta:visited {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.card-cta:hover,
+.card-cta:focus {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
 /* Removed dark-mode override to always keep a light appearance for game cards */

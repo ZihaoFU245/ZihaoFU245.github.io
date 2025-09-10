@@ -39,7 +39,38 @@ h1 { font-size: 70px; font-weight: bold; color: #776e65; margin: 0; }
 
 .grid-cell { background: rgba(238, 228, 218, 0.35); border-radius: 5px; }
 
-.tile { position: absolute; display: flex; justify-content: center; align-items: center; /* Make tile size responsive to container width (4 cols, 3 gaps of 15px) */ width: calc((100% - 45px) / 4); height: calc((100% - 45px) / 4); background: #eee4da; border-radius: 5px; font-weight: bold; color: #776e65; transition: all 0.15s ease; z-index: 10; line-height: 1; }
+.tile { position: absolute; display: flex; justify-content: center; align-items: center; /* Make tile size responsive to container width (4 cols, 3 gaps of 15px) */ width: calc((100% - 45px) / 4); height: calc((100% - 45px) / 4); background: #eee4da; border-radius: 5px; font-weight: bold; color: #776e65; transition: top 110ms cubic-bezier(0.2, 0.7, 0.3, 1), left 110ms cubic-bezier(0.2, 0.7, 0.3, 1), transform 110ms cubic-bezier(0.2, 0.7, 0.3, 1); will-change: top, left, transform; z-index: 10; line-height: 1; box-shadow: 0 2px 0 rgba(0,0,0,0.1); backface-visibility: hidden; }
+
+/* Moving state: slight compress + lift */
+.tile-moving { transform: scale(0.96); z-index: 20; box-shadow: 0 8px 18px rgba(0,0,0,0.18); }
+
+/* New tile spawn animation with bounce */
+.tile-new { animation: tile-appear 140ms cubic-bezier(0.15, 0.85, 0.25, 1.25); }
+
+@keyframes tile-appear {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Merge pop animation with glow */
+.tile-merged { z-index: 21; animation: tile-pop 150ms cubic-bezier(0.2, 0.7, 0.3, 1); box-shadow: 0 0 0 rgba(237, 194, 46, 0.0); }
+
+@keyframes tile-pop {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(237,194,46,0); }
+  45% { transform: scale(1.22); box-shadow: 0 0 22px rgba(237,194,46,0.55); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(237,194,46,0); }
+}
+
+/* No-move wiggle on the whole board */
+.grid-container.no-move { animation: grid-wiggle 120ms ease-in-out; }
+@keyframes grid-wiggle {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
 
 .tile-2 { background: #eee4da; }
 .tile-4 { background: #ede0c8; }
