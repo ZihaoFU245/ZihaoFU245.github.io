@@ -14,14 +14,27 @@ jobs:
     env:
       BUNDLE_GEMFILE: GemFile # Workaround for Windows-cased GemFile; rename to Gemfile later.
     steps:
+      # Step 1: Checkout the code with LFS files
       - uses: actions/checkout@v4
+        with:
+          lfs: true  # Ensure Git LFS files are fetched
+
+      # Step 2: Set up Ruby environment
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
           bundler-cache: true
+
+      # Step 3: Pull LFS files to ensure all images are downloaded
+      - name: Pull LFS files
+        run: git lfs pull  # Ensure LFS files are actually downloaded
+
+      # Step 4: Build the site with Jekyll
       - name: Build site
         run: bundle exec jekyll build --trace
+
+      # Step 5: Deploy the built site to gh-pages
       - name: Deploy to gh-pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
