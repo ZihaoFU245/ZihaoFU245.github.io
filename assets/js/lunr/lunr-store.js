@@ -77,6 +77,12 @@ var store = [{
         "url": "/general/2025/09/07/first_week_uni.html",
         "teaser": "/assets/2025-09-07-resources/MyDeskPreview.jpg"
       },{
+        "title": "Git LFS with GitHub Pages: A Practical Guide",
+        "excerpt":"Light theme overview: keep source light, store heavy binaries via Git LFS, deploy cleanly to GitHub Pages. GitHub Pages is perfect for hosting personal sites, docs, and project hubs—but large binary assets (videos, raw datasets, layered design files, high‑resolution textures, game builds, etc.) can quickly bloat your repository, slow clones,...","categories": ["general"],
+        "tags": [],
+        "url": "/general/2025/09/12/git-lfs-guide.html",
+        "teaser": "/assets/2025-09-12-resources/new-teaser.svg"
+      },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
         "tags": [],

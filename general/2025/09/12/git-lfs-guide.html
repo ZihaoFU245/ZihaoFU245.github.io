@@ -10,8 +10,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Life in HKUST, Week 0 out of 16 - Zihao’s Portfolio</title>
-<meta name="description" content="Back at HKUST, new story, new life.">
+<!-- begin _includes/seo.html --><title>Git LFS with GitHub Pages: A Practical Guide - Zihao’s Portfolio</title>
+<meta name="description" content="Keep your GitHub Pages repository fast and lean by off‑loading big media to Git LFS. Learn the workflow, caveats, and best practices.">
 
 
   <meta name="author" content="Zihao Fu">
@@ -23,28 +23,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Zihao&#39;s Portfolio">
-<meta property="og:title" content="Life in HKUST, Week 0 out of 16">
-<meta property="og:url" content="https://zihaofu245.me/general/2025/09/07/first_week_uni.html">
+<meta property="og:title" content="Git LFS with GitHub Pages: A Practical Guide">
+<meta property="og:url" content="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html">
 
 
-  <meta property="og:description" content="Back at HKUST, new story, new life.">
-
-
-
-  <meta property="og:image" content="https://zihaofu245.me/assets/2025-09-07-resources/MyDeskPreview.jpg">
+  <meta property="og:description" content="Keep your GitHub Pages repository fast and lean by off‑loading big media to Git LFS. Learn the workflow, caveats, and best practices.">
 
 
 
-
-
-  <meta property="article:published_time" content="2025-09-07T00:00:00+00:00">
+  <meta property="og:image" content="https://zihaofu245.me/assets/2025-09-12-resources/new-teaser.svg">
 
 
 
 
 
+  <meta property="article:published_time" content="2025-09-12T00:00:00+00:00">
 
-<link rel="canonical" href="https://zihaofu245.me/general/2025/09/07/first_week_uni.html">
+
+
+
+
+
+<link rel="canonical" href="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html">
 
 
 
@@ -212,7 +212,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/07" itemprop="item"><span itemprop="name">07</span></a>
+          <a href="/12" itemprop="item"><span itemprop="name">12</span></a>
           <meta itemprop="position" content="5" />
         </li>
         <span class="sep">/</span>
@@ -220,7 +220,7 @@
     
       
       
-        <li class="current">Life in HKUST, Week 0 out of 16</li>
+        <li class="current">Git LFS with GitHub Pages: A Practical Guide</li>
       
     
   </ol>
@@ -358,16 +358,16 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Life in HKUST, Week 0 out of 16">
-    <meta itemprop="description" content="Back at HKUST, new story, new life.">
-    <meta itemprop="datePublished" content="2025-09-07T00:00:00+00:00">
+    <meta itemprop="headline" content="Git LFS with GitHub Pages: A Practical Guide">
+    <meta itemprop="description" content="Keep your GitHub Pages repository fast and lean by off‑loading big media to Git LFS. Learn the workflow, caveats, and best practices.">
+    <meta itemprop="datePublished" content="2025-09-12T00:00:00+00:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="https://zihaofu245.me/general/2025/09/07/first_week_uni.html" itemprop="url">Life in HKUST, Week 0 out of 16
+            <a href="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html" itemprop="url">Git LFS with GitHub Pages: A Practical Guide
 </a>
           </h1>
           
@@ -384,7 +384,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          3 minute read
         
       </span>
     
@@ -396,52 +396,136 @@
 
       <section class="page__content" itemprop="text">
         
-        <script defer="" src="/assets/js/live-photo.js"></script>
+        <figure>
+	<img src="/assets/2025-09-12-resources/new-teaser.svg" alt="Flow: repo → Git LFS (media pointers) → gh-pages deployment with large assets tracked separately" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+	<figcaption style="text-align:center;font-size:0.85rem;color:#64748b;margin-top:.4rem;">Light theme overview: keep source light, store heavy binaries via Git LFS, deploy cleanly to GitHub Pages.</figcaption>
+</figure>
 
-<link rel="stylesheet" href="/assets/css/live-photo.css" />
+<p>GitHub Pages is perfect for hosting personal sites, docs, and project hubs—but large binary assets (videos, raw datasets, layered design files, high‑resolution textures, game builds, etc.) can quickly bloat your repository, slow clones, and hit soft limits. <strong>Git Large File Storage (LFS)</strong> solves this by replacing those big blobs in your Git history with lightweight pointer files, while storing the actual content on a dedicated LFS object store maintained by GitHub.</p>
 
-<h1 id="sharing-my-firstweek-experience-at-hkust">Sharing my first‑week experience at HKUST!</h1>
+<p>In this guide you’ll set up a workflow where your Pages site (often served from <code class="language-plaintext highlighter-rouge">main</code> or a dedicated <code class="language-plaintext highlighter-rouge">gh-pages</code> branch) stays lean while still referencing rich media.</p>
+
+<p>We will cover:</p>
+
+<ol>
+  <li>Why (and when not) to use Git LFS for a Pages site</li>
+  <li>Installing and initializing Git LFS locally</li>
+  <li>Tracking the right patterns (<code class="language-plaintext highlighter-rouge">*.png</code>, <code class="language-plaintext highlighter-rouge">*.mp4</code>, etc.) without over-matching</li>
+  <li>Understanding the <code class="language-plaintext highlighter-rouge">.gitattributes</code> pointer mechanism</li>
+  <li>Adding, committing, and pushing large assets safely</li>
+  <li>Verifying objects are actually in LFS (and not accidentally in normal Git history)</li>
+  <li>Deployment considerations (build pipelines, Jekyll vs. static artifacts)</li>
+  <li>Common pitfalls (bandwidth quotas, repo forks, CI pulls) and how to mitigate them</li>
+  <li>Best practices &amp; maintenance tips (audit, prune, dedupe)</li>
+</ol>
+
+<hr />
+
+<h2 id="1-should-you-use-git-lfs-for-pages">1. Should you use Git LFS for Pages?</h2>
+
+<p>Use LFS when:</p>
+<ul>
+  <li>Individual files &gt; 5–10 MB and may change occasionally</li>
+  <li>Media needs to be versioned (vs. hosting on a CDN or object store)</li>
+  <li>You want a fully self-contained repo experience for collaborators</li>
+</ul>
+
+<p>Consider alternatives when:</p>
+<ul>
+  <li>You expect millions of requests (use a CDN/object storage)</li>
+  <li>Assets are generated builds that could be re-created</li>
+  <li>You have many tiny binary files (overhead outweighs benefit)</li>
+</ul>
 
 <blockquote>
-  <p>My very first week at HKUST — Year 2, 2025–26.</p>
+  <p>Tip: Pair LFS with caching headers on Pages for static media performance.</p>
 </blockquote>
 
-<p><strong>What does my desk look like after a week?</strong>
-<!-- Live Photo block --></p>
-<div class="live-photo" data-lp-src="/assets/2025-09-07-resources/MyDesk.mp4" data-lp-replay="click" data-lp-autoplay="true" data-lp-poster="/assets/2025-09-07-resources/MyDeskPreview.jpg">
+<h2 id="2-install--initialize">2. Install &amp; initialize</h2>
 
-  <!-- The still image sets the size and stays visible after playback -->
-  <img class="lp-img" src="/assets/2025-09-07-resources/MyDeskPreview.jpg" alt="My Desk" width="1000" />
-</div>
-<p><strong>This is my desk! I stuck some photos up to decorate my desk.</strong> <a href="/general/2025/08/12/summer-ending"><strong>Photos</strong></a></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git lfs <span class="nb">install</span>
+</code></pre></div></div>
 
-<div class="live-photo" data-lp-src="/assets/2025-09-07-resources/ChemLab.mp4" data-lp-replay="click" data-lp-autoplay="true" data-lp-poster="/assets/2025-09-07-resources/ChemLabPreview.jpg">
+<p>This sets up required hooks locally. (Run once per machine.)</p>
 
-  <!-- The still image sets the size and stays visible after playback -->
-  <img class="lp-img" src="/assets/2025-09-07-resources/ChemLabPreview.jpg" alt="My Desk" width="1000" />
-</div>
-<p><strong>Chemistry Lab Visit</strong></p>
+<h2 id="3-track-the-right-file-patterns">3. Track the right file patterns</h2>
 
-<h2 id="academic-warmup">Academic warm‑up</h2>
-<p><img src="/assets/2025-09-07-resources/Timetable.jpg" alt="Time Table" /></p>
+<p>Add patterns progressively:</p>
 
-<p><strong>I really dislike COMP3111 lab time; from 6 p.m. to 8 p.m ???</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git lfs track <span class="s2">"*.png"</span>
+git lfs track <span class="s2">"*.mp4"</span>
+git lfs track <span class="s2">"assets/binaries/*.zip"</span>
+</code></pre></div></div>
 
-<h2 id="hall-ix-is-so-much-better-than-hall-4-on-every-aspect">HALL IX is so much better than HALL 4, on every aspect</h2>
-<p><img src="/assets/2025-09-07-resources/Dorm.jpg" alt="Dorm" />
-<img src="/assets/2025-09-07-resources/DormView.jpg" alt="Dorm View" />
-<img src="/assets/2025-09-07-resources/DormView2.jpg" alt="Dorm View" /></p>
+<p>Check the generated <code class="language-plaintext highlighter-rouge">.gitattributes</code>:</p>
 
-<h2 id="talking-with-my-bestie">Talking with my Bestie</h2>
-<p><strong>A 12GB RTX 5070Ti can run gpt-oss soooo fast!</strong>
-<img src="/assets/2025-09-07-resources/MyBestie.jpg" alt="Bestie" /></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> .gitattributes
+</code></pre></div></div>
 
-<h3 id="tech-chatter">Tech chatter</h3>
-<p><strong>We ended up benchmarking a lightweight open‑source model variant just for fun—turns out the 12GB buffer is enough for a surprisingly capable context window when you prune and quantize smartly.</strong></p>
+<p>Avoid wildcarding entire folders too early—keep it intentional.</p>
 
-<h2 id="me-at-the-mtr-metro">Me at the MTR metro</h2>
-<p><img src="/assets/2025-09-07-resources/Me.jpg" alt="Me" /></p>
+<h2 id="4-add--commit">4. Add &amp; commit</h2>
 
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .gitattributes assets/hero.mp4 assets/logo@2x.png
+git commit <span class="nt">-m</span> <span class="s2">"Add media assets via LFS"</span>
+git push origin main
+</code></pre></div></div>
+
+<h2 id="5-verify-objects-stored-in-lfs">5. Verify objects stored in LFS</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git lfs ls-files
+</code></pre></div></div>
+
+<p>Each entry should have a SHA pointer. If a large file is missing here, you committed it normally—rewrite before others pull.</p>
+
+<h2 id="6-deployment--pages-builds">6. Deployment &amp; Pages builds</h2>
+
+<p>GitHub’s Pages build (Jekyll or static) will fetch LFS pointers automatically on the server side for public repos. For private → Pages builds (via actions), ensure you have <code class="language-plaintext highlighter-rouge">actions/checkout</code> with <code class="language-plaintext highlighter-rouge">lfs: true</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+<span class="na">	with</span><span class="pi">:</span>
+<span class="err">		</span><span class="na">lfs</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<h2 id="7-quotas--limits">7. Quotas &amp; limits</h2>
+
+<ul>
+  <li>Storage &amp; bandwidth quotas exist (see GitHub docs). Monitor usage in repo settings → LFS.</li>
+  <li>Hotlinking large video to external audiences? Consider transcoding + external CDN.</li>
+</ul>
+
+<h2 id="8-maintenance">8. Maintenance</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git lfs fetch <span class="nt">--all</span>
+git lfs prune
+</code></pre></div></div>
+
+<p>Periodically prune old unreferenced objects locally to save disk space.</p>
+
+<h2 id="9-checklist-before-inviting-collaborators">9. Checklist before inviting collaborators</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><code class="language-plaintext highlighter-rouge">.gitattributes</code> reviewed &amp; minimal</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />No large binaries in normal <code class="language-plaintext highlighter-rouge">git rev-list --objects</code></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Actions workflows using <code class="language-plaintext highlighter-rouge">lfs: true</code></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />README documents LFS usage &amp; quotas</li>
+</ul>
+
+<hr />
+
+<h3 id="quick-faq">Quick FAQ</h3>
+
+<p><strong>Can I serve LFS assets directly via CDN?</strong>  You can, but LFS isn’t a CDN; for high-traffic media use object storage + CDN.</p>
+
+<p><strong>Does LFS slow down builds?</strong>  Usually negligible for moderate asset counts; large video sets might benefit from caching in CI.</p>
+
+<p><strong>Can I migrate existing large files into LFS?</strong>  Yes—use <code class="language-plaintext highlighter-rouge">git lfs migrate import --include="*.mp4"</code> (will rewrite history; coordinate with collaborators).</p>
+
+<hr />
+
+<p>If you found this helpful, feel free to explore how I’m structuring other media-heavy projects on this site. Next up: comparing LFS vs. alternative asset pipelines.</p>
+
+<p>Happy shipping! 🚀</p>
 
         
       </section>
@@ -453,7 +537,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-09-07T00:00:00+00:00">September 7, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-09-12T00:00:00+00:00">September 12, 2025</time></p>
 
       </footer>
 
@@ -462,10 +546,10 @@
       
   <nav class="pagination">
     
-      <a href="/general/2025/08/22/recent.html" class="pagination--pager" title="Recent updates 2025/8/22">Previous</a>
+      <a href="/general/2025/09/07/first_week_uni.html" class="pagination--pager" title="Life in HKUST, Week 0 out of 16">Previous</a>
     
     
-      <a href="/general/2025/09/12/git-lfs-guide.html" class="pagination--pager" title="Git LFS with GitHub Pages: A Practical Guide">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 

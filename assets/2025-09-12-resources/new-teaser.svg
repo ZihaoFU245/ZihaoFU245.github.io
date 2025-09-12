@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub Pages with Git LFS — Light Theme Teaser</title>
+  <desc id="desc">A light-themed illustration showing a static website preview card deployed from a branch, with real image placeholders stored via LFS.</desc>
+
+  <defs>
+    <linearGradient id="bgGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f6f8fa"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+
+    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#cfd8e3"/>
+    </pattern>
+
+    <g id="branchNode">
+      <circle r="10" fill="#2563eb"/>
+      <circle r="6" fill="#eaf2ff"/>
+    </g>
+
+    <g id="fileIcon">
+      <rect x="0" y="0" width="56" height="72" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+      <path d="M56 22 L40 22 C35 22 32 19 32 14 L32 0" fill="#ffffff" stroke="#e5e7eb"/>
+      <path d="M32 0 L56 22" fill="none" stroke="#e5e7eb"/>
+      <rect x="12" y="34" width="32" height="6" rx="3" fill="#d1d5db"/>
+      <rect x="12" y="46" width="26" height="6" rx="3" fill="#e5e7eb"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="540" fill="url(#bgGrad)"/>
+
+  <!-- Header -->
+  <g transform="translate(60,18)">
+    <rect width="840" height="68" rx="16" fill="#ffffff" stroke="#e5e7eb" filter="url(#softShadow)"/>
+    <text x="24" y="42" font-family="ui-sans-serif, system-ui" font-size="24" fill="#0f172a" font-weight="700">
+      GitHub Pages × LFS
+    </text>
+    <text x="300" y="40" font-family="Lucida Console, Courier, monospace" font-size="20" fill="#475569">
+      one approach • two branches • three steps
+    </text>
+  </g>
+
+  <!-- Left: Pipeline -->
+  <g transform="translate(60,120)">
+    <rect width="320" height="256" rx="20" fill="#ffffff" stroke="#e5e7eb" filter="url(#softShadow)"/>
+    <text x="20" y="36" font-family="ui-sans-serif, system-ui" font-size="18" fill="#111827" font-weight="600">Deploy pipeline</text>
+
+    <g transform="translate(30,70)">
+      <use href="#branchNode" transform="translate(0,0)"/>
+      <rect x="10" y="-2" width="120" height="4" fill="#cbd5e1"/>
+      <use href="#branchNode" transform="translate(140,0)"/>
+      <rect x="150" y="-2" width="80" height="4" fill="#cbd5e1"/>
+      <use href="#branchNode" transform="translate(240,0)"/>
+
+      <text x="-15" y="28" font-family="ui-sans-serif, system-ui" font-size="14" fill="#334155">main</text>
+      <text x="125" y="28" font-family="ui-sans-serif, system-ui" font-size="14" fill="#334155">build</text>
+      <text x="210" y="28" font-family="ui-sans-serif, system-ui" font-size="14" fill="#334155">gh-pages</text>
+    </g>
+
+    <rect x="30" y="120" width="260" height="90" rx="12" fill="#f8fafc" stroke="#e5e7eb"/>
+    <text x="64" y="150" font-family="ui-sans-serif, system-ui" font-size="14" fill="#475569">Action: checkout (with LFS)</text>
+    <text x="64" y="170" font-family="ui-sans-serif, system-ui" font-size="14" fill="#475569">Action: push to main</text>
+    <text x="64" y="190" font-family="ui-sans-serif, system-ui" font-size="14" fill="#475569">Action: build ➜ deploy</text>
+    <rect x="160" y="214" width="20" height="20" fill="url(#dots)"/>
+  </g>
+
+  <!-- Right: Site Preview -->
+  <g transform="translate(408,120)">
+    <rect width="492" height="304" rx="18" fill="#ffffff" stroke="#e5e7eb" filter="url(#softShadow)"/>
+    <rect x="0" y="0" width="492" height="44" rx="18" fill="#f8fafc" stroke="#e5e7eb"/>
+    <circle cx="24" cy="22" r="6" fill="#ef4444"/>
+    <circle cx="44" cy="22" r="6" fill="#f59e0b"/>
+    <circle cx="64" cy="22" r="6" fill="#10b981"/>
+    <rect x="96" y="12" width="280" height="20" rx="10" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="110" y="27" font-family="ui-sans-serif, system-ui" font-size="12" fill="#475569">https://zihaofu245.me/</text>
+
+    <rect x="24" y="60" width="444" height="40" rx="10" fill="#f1f5f9"/>
+    <text x="36" y="85" font-family="ui-sans-serif, system-ui" font-size="16" fill="#0f172a" font-weight="600">
+      /assets/ images • deployed from <tspan font-weight="700">gh-pages</tspan>
+    </text>
+
+    <!-- Real Image placeholders -->
+    <g transform="translate(30,120)">
+      <!-- Each thumbnail: add light gray fallback rect in case image fails to load -->
+      <g>
+        <rect x="0" y="0" width="100" height="72" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+        <image href="/assets/2025-09-07-resources/MyDeskPreview.jpg" xlink:href="/assets/2025-09-07-resources/MyDeskPreview.jpg" x="0" y="0" width="100" height="72" clip-path="inset(0 round 8)"/>
+      </g>
+      <g transform="translate(111,0)">
+        <rect x="0" y="0" width="100" height="72" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+        <image href="../2025-08-12-resources/ElCapitan.jpg" xlink:href="../2025-08-12-resources/ElCapitan.jpg" x="0" y="0" width="100" height="72" clip-path="inset(0 round 8)"/>
+      </g>
+      <g transform="translate(222,0)">
+        <rect x="0" y="0" width="100" height="72" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+        <image href="../2025-08-22-resources/sushi.jpg" xlink:href="../2025-08-22-resources/sushi.jpg" x="0" y="0" width="100" height="72" clip-path="inset(0 round 8)"/>
+      </g>
+      <g transform="translate(333,0)">
+        <rect x="0" y="0" width="100" height="72" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+        <image href="../2025-09-07-resources/DormView.jpg" xlink:href="../2025-09-07-resources/DormView.jpg" x="0" y="0" width="100" height="72" clip-path="inset(0 round 8)"/>
+      </g>
+    </g>
+
+    <g transform="translate(24,215)">
+      <rect x="0" y="0" rx="10" width="160" height="40" fill="#ecfeff" stroke="#a5f3fc"/>
+      <text x="16" y="26" font-family="ui-sans-serif, system-ui" font-size="16" fill="#0e7490" font-weight="700">LFS: Large Files</text>
+    </g>
+
+    <text x="30" y="282" font-family="ui-sans-serif, system-ui" font-size="14" fill="#475569">
+      Versioned site on <tspan font-weight="700">gh-pages</tspan> • Heavy assets via <tspan font-weight="700">Git LFS</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom: Storage -->
+  <g transform="translate(60,390)">
+    <rect width="320" height="64" rx="14" fill="#ffffff" stroke="#e5e7eb" filter="url(#softShadow)"/>
+    <g transform="translate(20,12)">
+      <use href="#fileIcon" transform="translate(0,-5) scale(0.7)"/>
+      <text x="70" y="20" font-family="ui-sans-serif, system-ui" font-size="16" fill="#111827" font-weight="600">Git LFS Storage</text>
+      <text x="70" y="40" font-family="ui-sans-serif, system-ui" font-size="14" fill="#475569">.psd  •  .mp4  •  .png  •  .zip</text>
+    </g>
+  </g>
+
+  <!-- Connector Arrow -->
+  <g transform="translate(350,290)">
+    <path d="M0 0 C20 0, 20 0, 50 0 L68 0" fill="none" stroke="#2f3134" stroke-width="5"/>
+    <polygon points="78,0 56,-10 56,10" fill="#2f3134"/>
+  </g>
+
+  <!-- Footer -->
+  <text x="60" y="505" font-family="ui-sans-serif, system-ui" font-size="12" fill="#94a3b8">
+    Tip: Track large /assets with Git LFS; build from main, deploy to gh-pages.
+  </text>
+</svg>
