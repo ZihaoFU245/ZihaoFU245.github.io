@@ -16,32 +16,35 @@ jobs:
     env:
       BUNDLE_GEMFILE: GemFile  # you can rename to Gemfile later and drop this
     steps:
+      # Checkout code and pull LFS files
       - name: Checkout (with LFS)
         uses: actions/checkout@v4
         with:
           lfs: true
           fetch-depth: 0
 
+      # Cache LFS objects
       - name: Cache Git LFS objects
         uses: actions/cache@v4
         with:
           path: .git/lfs/objects
-          key: ${{ runner.os }}-git-lfs-${{ hashFiles('.gitattributes') }}
+          key: ${{ runner.os }}-git-lfs-${{ hashFiles('.gitattributes') }}-${{ github.sha }}
           restore-keys: |
+            ${{ runner.os }}-git-lfs-${{ github.sha }}-
             ${{ runner.os }}-git-lfs-
 
+      # Ensure LFS files are real (materialize)
       - name: Ensure LFS files are real (materialize)
         shell: bash
         run: |
           set -euo pipefail
           git lfs install --local
-          # Fetch only needed LFS objects for current ref (already fetched by checkout) then verify
           git lfs fetch origin "${GITHUB_SHA}"
           git lfs checkout
           echo "LFS files tracked (pointer -> actual):"
           git lfs ls-files
 
-      # Hard fail if any LFS pointer would be published
+      # Verify no LFS pointers in source assets
       - name: Verify no LFS pointers in source assets
         shell: bash
         run: |
@@ -52,28 +55,31 @@ jobs:
           fi
           echo "No LFS pointers in raw source assets."
 
+      # Set up Ruby
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
           bundler-cache: true
 
+      # Build site
       - name: Build site
         run: bundle exec jekyll build --trace
 
-      # Double-check the built output has real binaries
+      # Verify no LFS pointers in _site
       - name: Verify no LFS pointers in _site
         shell: bash
         run: |
           set -euo pipefail
-            if grep -RIl "version https://git-lfs.github.com/spec" _site 2>/dev/null; then
-              echo "::error::_site contains LFS pointers; aborting deploy." >&2
-              # List offending files for debugging
-              grep -RIl "version https://git-lfs.github.com/spec" _site || true
-              exit 1
-            fi
+          if grep -RIl "version https://git-lfs.github.com/spec" _site 2>/dev/null; then
+            echo "::error::_site contains LFS pointers; aborting deploy." >&2
+            # List offending files for debugging
+            grep -RIl "version https://git-lfs.github.com/spec" _site || true
+            exit 1
+          fi
           echo "No LFS pointers in built output."
 
+      # Deploy to gh-pages
       - name: Deploy to gh-pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
@@ -82,4 +88,3 @@ jobs:
           publish_dir: ./_site
           publish_branch: gh-pages
           cname: zihaofu245.me
-
