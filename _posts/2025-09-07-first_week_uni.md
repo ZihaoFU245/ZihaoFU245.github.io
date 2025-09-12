@@ -6,6 +6,7 @@ date: 2025-09-07
 categories:
   - General
 classes: wide
+excerpt: Back at HKUST, new story, new life.
 header:
   teaser: "/assets/2025-09-07-resources/MyDeskPreview.jpg"
 ---

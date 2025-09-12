@@ -6,6 +6,7 @@ date: 2025-08-12
 categories:
   - General
 classes: wide
+excerpt: How I feel about Berkeley.
 header:
   teaser: "/assets/2025-08-12-resources/cover.jpg"
 ---

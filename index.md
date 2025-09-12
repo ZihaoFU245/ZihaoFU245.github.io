@@ -44,7 +44,4 @@ feature_row:
     btn_label: "Check it out!"
 ---
 
-<link rel="stylesheet" href="/assets/css/bubble.css">
-<script src="/assets/js/bubble-effects.js"></script>
-
 {% include feature_row %}
