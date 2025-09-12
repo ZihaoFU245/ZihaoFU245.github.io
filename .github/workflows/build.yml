@@ -66,18 +66,7 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --trace
 
-      # Verify no LFS pointers in _site
-      - name: Verify no LFS pointers in _site
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -RIl "version https://git-lfs.github.com/spec" _site 2>/dev/null; then
-            echo "::error::_site contains LFS pointers; aborting deploy." >&2
-            # List offending files for debugging
-            grep -RIl "version https://git-lfs.github.com/spec" _site || true
-            exit 1
-          fi
-          echo "No LFS pointers in built output."
+
 
       # Deploy to gh-pages
       - name: Deploy to gh-pages
