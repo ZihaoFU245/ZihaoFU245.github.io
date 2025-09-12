@@ -25,7 +25,7 @@ kramdown:
 mathjax: true
 
 # Site settings
-url: "https://zihaofu245.github.io"
+url: "https://zihaofu245.me"
 baseurl: ""
 locale: "en-US"
 title_separator: "-"

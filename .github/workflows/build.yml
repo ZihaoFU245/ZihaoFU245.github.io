@@ -6,35 +6,74 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # allow pushing to gh-pages with GITHUB_TOKEN
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     env:
-      BUNDLE_GEMFILE: GemFile # Workaround for Windows-cased GemFile; rename to Gemfile later.
+      BUNDLE_GEMFILE: GemFile  # you can rename to Gemfile later and drop this
     steps:
-      # Step 1: Checkout the code with LFS files
-      - uses: actions/checkout@v4
+      - name: Checkout (with LFS)
+        uses: actions/checkout@v4
         with:
-          lfs: true  # Ensure Git LFS files are fetched
+          lfs: true
+          fetch-depth: 0
 
-      # Step 2: Set up Ruby environment
+      - name: Cache Git LFS objects
+        uses: actions/cache@v4
+        with:
+          path: .git/lfs/objects
+          key: ${{ runner.os }}-git-lfs-${{ hashFiles('.gitattributes') }}
+          restore-keys: |
+            ${{ runner.os }}-git-lfs-
+
+      - name: Ensure LFS files are real (materialize)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs install --local
+          # Fetch only needed LFS objects for current ref (already fetched by checkout) then verify
+          git lfs fetch origin "${GITHUB_SHA}"
+          git lfs checkout
+          echo "LFS files tracked (pointer -> actual):"
+          git lfs ls-files
+
+      # Hard fail if any LFS pointer would be published
+      - name: Verify no LFS pointers in source assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RIl "version https://git-lfs.github.com/spec" assets 2>/dev/null; then
+            echo "::error::Found LFS pointer(s) under assets/. 'git lfs checkout' did not materialize some files." >&2
+            exit 1
+          fi
+          echo "No LFS pointers in raw source assets."
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
           bundler-cache: true
 
-      # Step 3: Pull LFS files to ensure all images are downloaded
-      - name: Pull LFS files
-        run: git lfs pull  # Ensure LFS files are actually downloaded
-
-      # Step 4: Build the site with Jekyll
       - name: Build site
         run: bundle exec jekyll build --trace
 
-      # Step 5: Deploy the built site to gh-pages
+      # Double-check the built output has real binaries
+      - name: Verify no LFS pointers in _site
+        shell: bash
+        run: |
+          set -euo pipefail
+            if grep -RIl "version https://git-lfs.github.com/spec" _site 2>/dev/null; then
+              echo "::error::_site contains LFS pointers; aborting deploy." >&2
+              # List offending files for debugging
+              grep -RIl "version https://git-lfs.github.com/spec" _site || true
+              exit 1
+            fi
+          echo "No LFS pointers in built output."
+
       - name: Deploy to gh-pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
@@ -42,3 +81,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
           publish_branch: gh-pages
+          cname: zihaofu245.me
+
