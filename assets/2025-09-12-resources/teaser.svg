@@ -88,19 +88,83 @@
       <!-- Each thumbnail: add light gray fallback rect in case image fails to load -->
       <g>
         <rect x="0" y="0" width="100" height="72" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
-        <image href="/assets/2025-09-07-resources/MyDeskPreview.jpg" xlink:href="/assets/2025-09-07-resources/MyDeskPreview.jpg" x="0" y="0" width="100" height="72" clip-path="inset(0 round 8)"/>
+        <!-- Mini 2048-style board illustration -->
+        <g aria-label="mini-2048-board" transform="translate(10,6)">
+          <!-- board background -->
+          <rect x="0" y="0" width="80" height="60" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+          <rect x="6" y="10" width="68" height="44" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+          <!-- grid base cells -->
+          <g fill="#e9eef3">
+            <rect x="10" y="14" width="14" height="14" rx="3"/>
+            <rect x="28" y="14" width="14" height="14" rx="3"/>
+            <rect x="46" y="14" width="14" height="14" rx="3"/>
+            <rect x="64" y="14" width="14" height="14" rx="3"/>
+            <rect x="10" y="32" width="14" height="14" rx="3"/>
+            <rect x="28" y="32" width="14" height="14" rx="3"/>
+            <rect x="46" y="32" width="14" height="14" rx="3"/>
+            <rect x="64" y="32" width="14" height="14" rx="3"/>
+          </g>
+          <!-- active tiles -->
+          <rect x="10" y="14" width="14" height="14" rx="3" fill="#fde68a" stroke="#fbbf24"/>
+          <rect x="28" y="32" width="14" height="14" rx="3" fill="#93c5fd" stroke="#60a5fa"/>
+          <rect x="46" y="32" width="14" height="14" rx="3" fill="#6ee7b7" stroke="#34d399"/>
+          <!-- numbers -->
+          <text x="17" y="25" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="8" font-weight="700" text-anchor="middle" fill="#1f2937">8</text>
+          <text x="35" y="43" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="7" font-weight="700" text-anchor="middle" fill="#1f2937">32</text>
+          <text x="53" y="43" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="7" font-weight="700" text-anchor="middle" fill="#1f2937">128</text>
+          <!-- subtle label -->
+          <text x="40" y="8" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="8" font-weight="600" text-anchor="middle" fill="#64748b">2048</text>
+        </g>
       </g>
       <g transform="translate(111,0)">
         <rect x="0" y="0" width="100" height="72" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
-        <image href="../2025-08-12-resources/ElCapitan.jpg" xlink:href="../2025-08-12-resources/ElCapitan.jpg" x="0" y="0" width="100" height="72" clip-path="inset(0 round 8)"/>
+        <!-- Inline drawn mountain landscape placeholder -->
+        <g aria-label="mountain-landscape" stroke-linejoin="round" stroke-linecap="round">
+          <rect x="2" y="2" width="96" height="68" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+          <linearGradient id="thumbGrad1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#dbeafe"/>
+            <stop offset="1" stop-color="#bfdbfe"/>
+          </linearGradient>
+          <rect x="2" y="2" width="96" height="40" rx="6" fill="url(#thumbGrad1)"/>
+          <circle cx="20" cy="18" r="8" fill="#fde68a" stroke="#f59e0b"/>
+          <path d="M10 50 L30 30 L50 48 L60 40 L78 52 L90 44 L98 60 L2 60 Z" fill="#94a3b8" stroke="#64748b"/>
+          <path d="M30 30 L42 44 L36 46 Z" fill="#e2e8f0" stroke="#cbd5e1"/>
+        </g>
       </g>
       <g transform="translate(222,0)">
         <rect x="0" y="0" width="100" height="72" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
-        <image href="../2025-08-22-resources/sushi.jpg" xlink:href="../2025-08-22-resources/sushi.jpg" x="0" y="0" width="100" height="72" clip-path="inset(0 round 8)"/>
+        <!-- Inline drawn sushi placeholder -->
+        <g aria-label="sushi-plate" transform="translate(4,6)" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="0" width="92" height="60" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+          <rect x="6" y="38" width="80" height="8" rx="4" fill="#cbd5e1"/>
+          <!-- Nigiri pieces -->
+          <g transform="translate(10,14)">
+            <rect x="0" y="10" width="20" height="10" rx="4" fill="#fef9c3" stroke="#fde68a"/>
+            <rect x="0" y="0" width="20" height="10" rx="4" fill="#ef4444" stroke="#b91c1c"/>
+            <rect x="24" y="10" width="20" height="10" rx="4" fill="#fef9c3" stroke="#fde68a"/>
+            <rect x="24" y="0" width="20" height="10" rx="4" fill="#10b981" stroke="#047857"/>
+            <rect x="48" y="10" width="20" height="10" rx="4" fill="#fef9c3" stroke="#fde68a"/>
+            <rect x="48" y="0" width="20" height="10" rx="4" fill="#6366f1" stroke="#4338ca"/>
+          </g>
+          <!-- Chopsticks -->
+          <path d="M70 6 L88 20" stroke="#78350f" stroke-width="3"/>
+          <path d="M68 10 L86 24" stroke="#b45309" stroke-width="3"/>
+        </g>
       </g>
       <g transform="translate(333,0)">
         <rect x="0" y="0" width="100" height="72" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
-        <image href="../2025-09-07-resources/DormView.jpg" xlink:href="../2025-09-07-resources/DormView.jpg" x="0" y="0" width="100" height="72" clip-path="inset(0 round 8)"/>
+        <!-- Inline drawn dorm window / city view placeholder -->
+        <g aria-label="dorm-window-view" transform="translate(4,4)" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="0" width="92" height="64" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+          <rect x="6" y="6" width="80" height="40" rx="4" fill="#e0f2fe" stroke="#bae6fd"/>
+          <!-- Skyline -->
+          <path d="M10 46 L10 30 L18 30 L18 38 L24 38 L24 26 L34 26 L34 42 L40 42 L40 32 L48 32 L48 46 L56 46 L56 28 L64 28 L64 40 L72 40 L72 34 L80 34 L80 46 Z" fill="#60a5fa" stroke="#3b82f6"/>
+          <!-- Desk -->
+          <rect x="6" y="50" width="80" height="8" rx="4" fill="#94a3b8" stroke="#64748b"/>
+          <!-- Lamp -->
+          <path d="M20 50 L20 42 L26 40" stroke="#475569"/>
+          <circle cx="27" cy="39" r="4" fill="#fde047" stroke="#f59e0b"/>
+        </g>
       </g>
     </g>
 
@@ -127,7 +191,7 @@
   <!-- Connector Arrow -->
   <g transform="translate(350,290)">
     <path d="M0 0 C20 0, 20 0, 50 0 L68 0" fill="none" stroke="#2f3134" stroke-width="5"/>
-    <polygon points="78,0 56,-10 56,10" fill="#2f3134"/>
+    <polygon points="78,0 56,-12 56,12" fill="#2f3134"/>
   </g>
 
   <!-- Footer -->

@@ -78,10 +78,10 @@ var store = [{
         "teaser": "/assets/2025-09-07-resources/MyDeskPreview.jpg"
       },{
         "title": "Git LFS with GitHub Pages: A Practical Guide",
-        "excerpt":"Light theme overview: keep source light, store heavy binaries via Git LFS, deploy cleanly to GitHub Pages. GitHub Pages is perfect for hosting personal sites, docs, and project hubs—but large binary assets (videos, raw datasets, layered design files, high‑resolution textures, game builds, etc.) can quickly bloat your repository, slow clones,...","categories": ["general"],
+        "excerpt":"Written on 12th Sep 2025, after spending an afternoon figuring out how to use both Git LFS and deploy to GitHub Pages. An ultimate shortcut guide. TL;DR: GitHub Pages does not auto-fetch Git LFS objects. You must fetch LFS files during your build/deploy step (e.g., GitHub Actions) so that the...","categories": ["general"],
         "tags": [],
         "url": "/general/2025/09/12/git-lfs-guide.html",
-        "teaser": "/assets/2025-09-12-resources/new-teaser.svg"
+        "teaser": "/assets/2025-09-12-resources/teaser.svg"
       },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
