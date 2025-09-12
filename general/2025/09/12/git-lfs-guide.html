@@ -521,19 +521,6 @@ git push origin main
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build site</span>
         <span class="na">run</span><span class="pi">:</span> <span class="s">bundle exec jekyll build --trace</span>
 
-      <span class="c1"># Verify no LFS pointers in _site</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Verify no LFS pointers in _site</span>
-        <span class="na">shell</span><span class="pi">:</span> <span class="s">bash</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">set -euo pipefail</span>
-          <span class="s">if grep -RIl "version https://git-lfs.github.com/spec" _site 2&gt;/dev/null; then</span>
-            <span class="s">echo "::error::_site contains LFS pointers; aborting deploy." &gt;&amp;2</span>
-            <span class="s"># List offending files for debugging</span>
-            <span class="s">grep -RIl "version https://git-lfs.github.com/spec" _site || true</span>
-            <span class="s">exit 1</span>
-          <span class="s">fi</span>
-          <span class="s">echo "No LFS pointers in built output."</span>
-
       <span class="c1"># Deploy to gh-pages</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to gh-pages</span>
         <span class="na">if</span><span class="pi">:</span> <span class="s">github.ref == 'refs/heads/main'</span>
@@ -547,14 +534,14 @@ git push origin main
   <p><strong>After the first successful run</strong>: Go to Settings → Pages → Build and deployment → Source: Deploy from a branch, select gh-pages and root (or /), then Save.</p>
 </blockquote>
 
-<p>#What to Notice (Important Caveats)</p>
+<h1 id="what-to-notice-important-caveats">What to Notice (Important Caveats)</h1>
 
 <ul>
   <li>
     <p><strong>Pages won’t fetch LFS for you</strong>. The build pipeline must convert pointers → binaries before publishing.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">gh-pages</code> stores real binaries. They’re not tracked by LFS after deployment; they count toward repo/Pages limits. The Pages site limit is about <strong>1 GB</strong>. If your site is heavy, consider:</p>
+    <p><strong>gh-pages</strong> stores real binaries. They’re not tracked by LFS after deployment; they count toward repo/Pages limits. The Pages site limit is about <strong>1 GB</strong>. If your site is heavy, consider:</p>
 
     <ul>
       <li>
