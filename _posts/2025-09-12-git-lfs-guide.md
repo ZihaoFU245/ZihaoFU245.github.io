@@ -128,19 +128,6 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --trace
 
-      # Verify no LFS pointers in _site
-      - name: Verify no LFS pointers in _site
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -RIl "version https://git-lfs.github.com/spec" _site 2>/dev/null; then
-            echo "::error::_site contains LFS pointers; aborting deploy." >&2
-            # List offending files for debugging
-            grep -RIl "version https://git-lfs.github.com/spec" _site || true
-            exit 1
-          fi
-          echo "No LFS pointers in built output."
-
       # Deploy to gh-pages
       - name: Deploy to gh-pages
         if: github.ref == 'refs/heads/main'
@@ -152,11 +139,11 @@ jobs:
 ```
 > **After the first successful run**: Go to Settings → Pages → Build and deployment → Source: Deploy from a branch, select gh-pages and root (or /), then Save.
 
-#What to Notice (Important Caveats)
+# What to Notice (Important Caveats)
 
 - **Pages won’t fetch LFS for you**. The build pipeline must convert pointers → binaries before publishing.
 
-- `gh-pages` stores real binaries. They're not tracked by LFS after deployment; they count toward repo/Pages limits. The Pages site limit is about **1 GB**. If your site is heavy, consider:
+- **gh-pages** stores real binaries. They're not tracked by LFS after deployment; they count toward repo/Pages limits. The Pages site limit is about **1 GB**. If your site is heavy, consider:
 
 	* External object storage + CDN (S3 + CloudFront, Cloudflare R2, etc.).
 
