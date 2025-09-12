@@ -1,0 +1,91 @@
+title: "Zihao's Portfolio"
+description: "Engineer & Computer Science student. Personal website, CV, and projects."
+remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-paginate-v2
+
+minimal_mistakes_skin: "dirt"
+repository: "ZihaoFU245/ZihaoFU245.github.io"
+math_provider: "mathjax" 
+
+# Math / Markdown configuration (required so kramdown preserves \( \) and \[ \] delimiters)
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  math_engine_opts:
+    preview: false
+  syntax_highlighter: rouge
+
+# Site-wide flag so Minimal Mistakes injects MathJax when any page sets mathjax: true
+mathjax: true
+
+# Site settings
+url: "https://zihaofu245.github.io"
+baseurl: ""
+locale: "en-US"
+title_separator: "-"
+breadcrumbs: true
+
+# Pagination (global defaults for jekyll-paginate-v2; page overrides allowed)
+pagination:
+  enabled: true
+  per_page: 8
+  permalink: /page/:num/
+  title: ':title - Page :num'
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+# Teaser / cover image
+teaser: "/assets/cover.png"
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+author:
+  name: "Zihao Fu"
+  avatar: "/assets/images/profile.jpg"
+  bio: "Engineer, Computer Science student at HKUST. Interested in AI, systems, and more."
+  location: "Hong Kong"
+  email: "zihaofu12@gmail.com"
+  github: "ZihaoFU245"
+  linkedin: "zihao-fu-198b02374"
+  instagram: "zihao_fu06"
+
+# Navigation
+masthead_title: "Welcome to My Portfolio!"
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      classes: wide
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
