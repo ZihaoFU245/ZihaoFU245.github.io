@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: single
 title: "runner"
 author_profile: false
 permalink: /hehehehaw/runner/
@@ -46,14 +46,60 @@ excerpt: "Hidden subpage under /hehehehaw/"
     };
 
     const fill = document.getElementById("fill");
-    createUnityInstance(canvas, config, p => {
-      fill.style.width = (p * 100).toFixed(0) + "%";
-    }).then(() => {
-      fill.parentElement.style.display = "none";
-    }).catch(err => {
-      console.error(err);
-      alert("Unity load error:\n" + err);
-    });
+    function showError(msg) {
+      const el = document.createElement('div');
+      el.style.cssText = 'position:fixed;left:10px;top:10px;z-index:10000;color:#fff;background:rgba(0,0,0,.7);padding:6px 8px;border:1px solid #333;font:12px system-ui,Segoe UI,Arial;';
+      el.textContent = msg;
+      document.body.appendChild(el);
+    }
+
+    async function tryUnregisterCOISW() {
+      if (!('serviceWorker' in navigator)) return false;
+      try {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        let didUnregister = false;
+        for (const r of regs) {
+          if (r.active && r.active.scriptURL && r.active.scriptURL.includes('coi-serviceworker.js')) {
+            await r.unregister();
+            didUnregister = true;
+          }
+        }
+        if (didUnregister) {
+          // Reload so the page is no longer controlled by the COI SW
+          location.reload();
+          return true;
+        }
+      } catch (_) {}
+      return false;
+    }
+
+    function startUnity() {
+      if (typeof createUnityInstance !== 'function') {
+        // If the loader script failed (common with COEP + cross-origin CDN without CORS/CORP),
+        // attempt to remove the previously-registered COI SW and reload once.
+        tryUnregisterCOISW().then((reloading) => {
+          if (!reloading) {
+            showError('Failed to load Unity loader (build.loader.js). Check Network tab for errors.');
+          }
+        });
+        return;
+      }
+      createUnityInstance(canvas, config, p => {
+        fill.style.width = (p * 100).toFixed(0) + "%";
+      }).then(() => {
+        fill.parentElement.style.display = "none";
+      }).catch(err => {
+        console.error(err);
+        showError('Unity load error: ' + err);
+      });
+    }
+
+    // Give the loader tag a moment; then start
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      setTimeout(startUnity, 0);
+    } else {
+      document.addEventListener('DOMContentLoaded', startUnity);
+    }
   })();
 </script>
 {% endraw %}
