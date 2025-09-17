@@ -1,7 +1,6 @@
 ---
 layout: none
 title: "Lizan Game"
-author_profile: false
 permalink: /hehehehaw/LizanGame/
 sitemap: false
 robots: noindex

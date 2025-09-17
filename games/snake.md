@@ -1,7 +1,6 @@
 ---
 layout: none
 title: "snake"
-author_profile: false
 permalink: /hehehehaw/snake/
 sitemap: false
 robots: noindex

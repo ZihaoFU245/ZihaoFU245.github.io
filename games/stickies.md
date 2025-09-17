@@ -1,7 +1,6 @@
 ---
 layout: none
 title: "stickies"
-author_profile: false
 permalink: /hehehehaw/stickies/
 sitemap: false
 robots: noindex
