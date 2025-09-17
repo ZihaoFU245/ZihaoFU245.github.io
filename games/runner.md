@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: none
 title: "runner"
 author_profile: false
 permalink: /hehehehaw/runner/
