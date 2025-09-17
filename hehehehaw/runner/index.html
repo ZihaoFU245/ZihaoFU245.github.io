@@ -1,22 +1,48 @@
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Learning2D</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>html,body,#unity-container{height:100%;margin:0;background:#000}</style>
-  <script src="https://cdn.zihaofu245.me/build/Build/build.loader.js"></script>
-</head>
-<body>
-  <div id="unity-container"></div>
-  <script>
+<!-- Fullscreen canvas + tiny progress bar -->
+<style>
+  html, body { height: 100%; margin: 0; background: #000; }
+  /* Make canvas ignore theme wrappers by fixing it to the viewport */
+  #unity-canvas {
+    position: fixed; inset: 0; width: 100vw; height: 100vh;
+    display: block; background: #000;
+  }
+  #bar { position: fixed; left: 10px; bottom: 10px; width: 50vw; max-width: 640px; height: 8px; background:#333; z-index: 9999; }
+  #fill { height: 100%; width: 0%; background:#999; transition: width .1s linear; }
+</style>
+
+<canvas id="unity-canvas"></canvas>
+<div id="bar"><div id="fill"></div></div>
+<noscript style="color:#fff;position:fixed;left:10px;top:10px;z-index:9999">
+  Please enable JavaScript to play the game.
+</noscript>
+
+<!-- Unity loader from CDN -->
+<script src="https://cdn.zihaofu245.me/build/Build/build.loader.js?v=5"></script>
+
+<script>
+  (function () {
+    const canvas = document.getElementById("unity-canvas");
     const buildUrl = "https://cdn.zihaofu245.me/build/Build";
-    createUnityInstance(document.getElementById("unity-container"), {
-      dataUrl:      buildUrl + "/build.data.unityweb",
-      frameworkUrl: buildUrl + "/build.framework.js.unityweb",
-      codeUrl:      buildUrl + "/build.wasm.unityweb",
-      // streamingAssetsUrl: "https://cdn.zihaofu245.me/build/StreamingAssets",
-      companyName: "You", productName: "Learning2D", productVersion: "1.0",
-    }).catch(err => { console.error(err); alert(err); });
-  </script>
-</body>
-</html>
+
+    const config = {
+      dataUrl:      buildUrl + "/build.data.unityweb?v=5",
+      frameworkUrl: buildUrl + "/build.framework.js.unityweb?v=5",
+      codeUrl:      buildUrl + "/build.wasm.unityweb?v=5",
+      // streamingAssetsUrl: "https://cdn.zihaofu245.me/build/StreamingAssets", // if used
+      companyName: "You",
+      productName: "Learning2D",
+      productVersion: "1.0",
+    };
+
+    const fill = document.getElementById("fill");
+    createUnityInstance(canvas, config, p => {
+      fill.style.width = (p * 100).toFixed(0) + "%";
+    }).then(() => {
+      fill.parentElement.style.display = "none";
+    }).catch(err => {
+      console.error(err);
+      alert("Unity load error:\n" + err);
+    });
+  })();
+</script>
+
