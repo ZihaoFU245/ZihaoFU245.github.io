@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1763 768" width="100%" height="100%" role="img" aria-label="Minimal platformer scene with red stick figure and yellow gems">
+	<defs>
+		<!-- Sky gradient -->
+		<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#eef3fa"/>
+			<stop offset="100%" stop-color="#c8d0dc"/>
+		</linearGradient>
+
+		<!-- Generic soft shadow -->
+		<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+			<feOffset dy="8" in="SourceAlpha" result="off"/>
+			<feGaussianBlur stdDeviation="8" in="off" result="blur"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .25 0" in="blur"/>
+			<feBlend in="SourceGraphic" mode="normal"/>
+		</filter>
+
+		<!-- Platform fill and top highlight -->
+		<linearGradient id="platformFill" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#6ea4bc"/>
+			<stop offset="100%" stop-color="#4c7e95"/>
+		</linearGradient>
+		<linearGradient id="platformTop" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#9bc4d6" stop-opacity=".9"/>
+			<stop offset="1" stop-color="#9bc4d6" stop-opacity="0"/>
+		</linearGradient>
+
+		<!-- Gem fill -->
+		<linearGradient id="gemFill" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#ffe66d"/>
+			<stop offset="100%" stop-color="#ffc107"/>
+		</linearGradient>
+
+		<!-- Reusable platform symbol -->
+		<symbol id="platform" viewBox="0 0 300 60" overflow="visible">
+			<g filter="url(#shadow)">
+				<rect x="0" y="0" width="300" height="60" rx="14" fill="url(#platformFill)"/>
+				<!-- Sub-tiles to hint segmentation -->
+				<g opacity=".25">
+					<rect x="98" y="0" width="4" height="60" fill="#2e5a6e"/>
+					<rect x="198" y="0" width="4" height="60" fill="#2e5a6e"/>
+				</g>
+				<!-- Top glossy highlight -->
+				<rect x="4" y="4" width="292" height="18" rx="10" fill="url(#platformTop)"/>
+				<!-- Bottom rim -->
+				<rect x="0" y="50" width="300" height="10" rx="5" fill="#3a6a80" opacity=".8"/>
+			</g>
+		</symbol>
+
+		<!-- Stick character as a symbol for easy placement -->
+		<symbol id="stick" viewBox="0 0 80 90" overflow="visible">
+			<!-- Head -->
+			<circle cx="50" cy="22" r="14" fill="#e23a3a"/>
+			<!-- Body and limbs (rounded strokes) -->
+			<g fill="none" stroke="#d62e2e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+				<!-- Torso -->
+				<path d="M50,34 L44,52 L36,72"/>
+				<!-- Left arm -->
+				<path d="M44,44 C36,42 28,48 26,54"/>
+				<!-- Right arm -->
+				<path d="M53,42 C60,46 64,52 66,56"/>
+				<!-- Left leg -->
+				<path d="M36,72 C28,74 24,78 22,84"/>
+				<!-- Right leg -->
+				<path d="M44,60 C52,64 58,68 62,74"/>
+			</g>
+		</symbol>
+
+		<!-- Gem symbol -->
+		<symbol id="gem" viewBox="0 0 40 40" overflow="visible">
+			<g filter="url(#shadow)">
+				<path d="M20 2 L32 12 L26 28 L14 28 L8 12 Z" fill="url(#gemFill)" stroke="#ffd24a" stroke-width="2"/>
+				<path d="M20 2 L20 28" stroke="#fff2a6" stroke-width="2" opacity=".7"/>
+			</g>
+		</symbol>
+	</defs>
+
+	<!-- Background -->
+	<rect width="1763" height="768" fill="url(#sky)"/>
+
+	<!-- Distant mountains -->
+	<g fill="#c8d1da" opacity=".75">
+		<polygon points="0,520 180,420 360,460 520,410 760,520 0,768"/>
+		<polygon points="1100,520 1320,470 1500,520 1763,600 1763,768 1020,768"/>
+	</g>
+	<g fill="#b7c3ce" opacity=".85">
+		<polygon points="0,560 160,480 360,520 640,460 960,600 960,768 0,768"/>
+		<polygon points="980,640 1220,560 1420,600 1763,520 1763,768 980,768"/>
+	</g>
+
+	<!-- Platforms -->
+	<g>
+		<!-- Middle platform (player standing) -->
+		<use href="#platform" x="770" y="500" width="320" height="64"/>
+		<!-- Upper mid-left platform -->
+		<use href="#platform" x="1120" y="360" width="300" height="60"/>
+		<!-- Upper right platform -->
+		<use href="#platform" x="1620" y="420" width="300" height="60" transform="translate(-220, -40)"/>
+		<!-- Bottom left ground segment for composition -->
+		<use href="#platform" x="160" y="690" width="560" height="64"/>
+		<!-- Bottom right ground segment -->
+		<use href="#platform" x="1220" y="720" width="560" height="64" transform="translate(0,-40)"/>
+	</g>
+
+	<!-- Character -->
+	<g transform="translate(875,468) scale(1.1)" filter="url(#shadow)">
+		<use href="#stick"/>
+	</g>
+
+	<!-- Gems -->
+	<g>
+		<use href="#gem" x="980" y="320" width="40" height="40"/>
+		<use href="#gem" x="1515" y="190" width="46" height="46"/>
+	</g>
+
+	<!-- Subtle vignette -->
+	<radialGradient id="vignette" cx="50%" cy="20%" r="80%">
+		<stop offset="60%" stop-color="#000" stop-opacity="0"/>
+		<stop offset="100%" stop-color="#000" stop-opacity="0.15"/>
+	</radialGradient>
+	<rect width="1763" height="768" fill="url(#vignette)" pointer-events="none"/>
+
+	<!-- Attribution note (non-rendered) -->
+	<metadata>
+		Generated to resemble the attached platformer screenshot with layered blue mountains, glossy platforms, a red stick figure, and two yellow gems.
+	</metadata>
+</svg>
+
