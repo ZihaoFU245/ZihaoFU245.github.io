@@ -56,6 +56,17 @@ with ideas to bypass the restrictions. No games in class? No way!
 			<a class="card-cta" href="/hehehehaw/snake/" aria-label="Play snake">Play now →</a>
 		</div>
 	</div>
+		<div class="game-card">
+		<div class="card-media">
+			<div class="soon-pattern" aria-hidden="true"></div>
+			<span class="pill">Action</span>
+		</div>
+		<div class="card-body">
+			<h3 class="card-title">2D Game</h3>
+			<p class="card-desc">A testing unity cdn deployed game</p>
+			<a class="card-cta" href="/hehehehaw/runner/" aria-label="Play it">Play now →</a>
+		</div>
+	</div>
 	<!-- Teaser for future games -->
 	<div class="game-card is-soon" aria-disabled="true">
 		<div class="card-media">
