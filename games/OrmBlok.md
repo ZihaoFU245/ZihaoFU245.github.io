@@ -1,0 +1,49 @@
+---
+layout: none
+title: "Lizan Game"
+permalink: /hehehehaw/ormblok/
+sitemap: false
+robots: noindex
+---
+
+<link rel="stylesheet" href="/assets/css/game-embed.css">
+
+<div class="game-wrap">
+  <main class="game-main">
+    <div class="game-toolbar">
+      <button class="game-btn" id="btn-fullscreen" aria-controls="ormblok-container" aria-label="Enter fullscreen">
+        ⛶ Fullscreen
+      </button>
+    </div>
+    <div class="game-container aspect-4-3" id="ormblok-container">
+      <div id="game" class="game-stage"></div>
+    </div>
+    <p class="game-note">Tip: If the game doesn't start, wait a moment for the emulator to load. Use the Fullscreen button for the best experience.</p>
+  </main>
+</div>
+
+<script>
+  // EmulatorJS configuration
+  window.EJS_player = '#game';
+  window.EJS_biosUrl = '';
+  window.EJS_gameUrl = 'https://cdn.zihaofu245.me/ormblok/OrmBlok_jam.gbc';
+  window.EJS_core = 'gb';
+
+  // Fullscreen toggle
+  (function(){
+    const btn = document.getElementById('btn-fullscreen');
+    const container = document.getElementById('ormblok-container');
+    if (!btn || !container) return;
+    const inFs = () => document.fullscreenElement === container;
+    const update = () => btn.textContent = inFs() ? '⛶ Exit Fullscreen' : '⛶ Fullscreen';
+    btn.addEventListener('click', async () => {
+      try {
+        if (!inFs()) await container.requestFullscreen();
+        else await document.exitFullscreen();
+      } catch(e) { console.warn('Fullscreen failed', e); }
+    });
+    document.addEventListener('fullscreenchange', update);
+    update();
+  })();
+</script>
+<script src="https://www.emulatorjs.com/loader.js"></script>
