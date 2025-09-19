@@ -45,3 +45,7 @@ feature_row:
 ---
 
 {% include feature_row %}
+
+<div style="max-width:960px;margin:1.25rem auto 0;padding:0 1rem;">
+  <p class="riddle" style="margin:.5rem 0 0;color:#878a8c"><em>A phantom dance of keys, a hidden screen's glow, beneath the drone of lectures, a private world I know.</em></p>
+</div>

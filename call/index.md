@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: single
 title: "There you are!"
 author_profile: true
 permalink: /70xJS11XCBeO13rb-18QamyFA3z1clbODGzOcMSHDfs/
@@ -36,7 +36,11 @@ Wow! You stepped off the sitemap trail. Where am I???<span class="caret" aria-hi
 </div>
 
 <details class="secret-dtl"><summary>Open a tiny puzzle</summary>
-<b>What is a good puzzle??? TOL</b>
+<b>A phantom dance of keys, a hidden screen's glow, Beneath the drone of lectures, a private world I know.</b>
+
+<details class="secret-answer"><summary>Reveal answer</summary>
+<p class="riddle-answer"><em>Answer: </em>Secretly playing game in class</p>
+</details>
 </details>
 
 ### Scratch Pad
@@ -101,11 +105,7 @@ I would drop notes below this line.
 		</li>
 	</ul>
 </div>
-
 <!-- End secret chat component -->
----
-
-- New posts idea: First week back at HKUST -- so much is happening, yet little to say、
 
 <script src="/call/script.js"></script>
 <hr />
