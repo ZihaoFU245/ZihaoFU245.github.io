@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-09-22T15:05:52+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Git LFS with GitHub Pages: A Practical Guide</title><link href="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html" rel="alternate" type="text/html" title="Git LFS with GitHub Pages: A Practical Guide" /><published>2025-09-12T00:00:00+00:00</published><updated>2025-09-12T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/09/12/git-lfs-guide</id><content type="html" xml:base="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html"><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-09-22T15:49:20+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">What happened recently?</title><link href="https://zihaofu245.me/general/2025/09/22/recent.html" rel="alternate" type="text/html" title="What happened recently?" /><published>2025-09-22T00:00:00+00:00</published><updated>2025-09-22T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/09/22/recent</id><content type="html" xml:base="https://zihaofu245.me/general/2025/09/22/recent.html"><![CDATA[<h1 id="weekly-review">Weekly review</h1>
+
+<blockquote>
+  <p>Another few weeks passed at HKUST. This post is continued from Sep 7th - <a href="/general/2025/09/07/first_week_uni.html">first week back in HK</a></p>
+</blockquote>
+
+<h2 id="whats-fun">What’s fun</h2>
+
+<p>If you’ve been checking my website regularly, you might think there haven’t been any updates—no new posts, no new projects. But that’s not entirely true.</p>
+
+<p><strong>I’ve been secretly working on something new!</strong></p>
+
+<p>A brand new landing page — <a href="/hehehehaw">Check it out here</a></p>
+
+<p>It’s now in great shape, with a growing collection of resources. I designed it specifically for my college friends and their needs.</p>
+
+<p><strong>And there’s more!</strong></p>
+
+<p>I partnered with <a href="mailto:shengwxnw@gmail.com">shengwxnw</a> to create a <strong>network request routing service</strong>. We’re leveraging the free tier offered by <a href="https://www.cloudflare.com/">Cloudflare</a> Workers to send requests locally, with the Workers fetching URLs and returning the information to us. However, it’s not as powerful as a full <strong>VPN</strong> solution.</p>
+
+<blockquote>
+  <p>Note: Some websites have blocked visitors from Cloudflare IP addresses, which is a significant disadvantage.</p>
+</blockquote>
+
+<p>You can check out our <strong>Local Connector Prototypes</strong> <a href="https://shengwxnw.github.io">here</a>.</p>
+
+<h2 id="whats-boring">What’s Boring</h2>
+
+<p><strong>Assignments</strong>: Linear Algebra, Discrete math, Circuit design, UML Diagram</p>
+
+<p>The term officially starts, becoming more busy</p>
+
+<h2 id="where-i-spent-most-of-my-time">Where I spent most of my time</h2>
+
+<p>I am watching <strong>Strangers Things</strong>, such a good one. I am now onto <strong>season 03</strong>. Jim Hopper Live!</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Weekly review]]></summary></entry><entry><title type="html">Git LFS with GitHub Pages: A Practical Guide</title><link href="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html" rel="alternate" type="text/html" title="Git LFS with GitHub Pages: A Practical Guide" /><published>2025-09-12T00:00:00+00:00</published><updated>2025-09-12T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/09/12/git-lfs-guide</id><content type="html" xml:base="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html"><![CDATA[<blockquote>
   <p>Written on 12th Sep 2025, after spending an afternoon figuring out how to use both Git LFS and deploy to GitHub Pages. An ultimate shortcut guide.</p>
 </blockquote>
 

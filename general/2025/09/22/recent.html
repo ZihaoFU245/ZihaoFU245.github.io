@@ -10,8 +10,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Résumé - Zihao’s Portfolio</title>
-<meta name="description" content="Print Resume">
+<!-- begin _includes/seo.html --><title>What happened recently? - Zihao’s Portfolio</title>
+<meta name="description" content="Weekly review">
 
 
   <meta name="author" content="Zihao Fu">
@@ -23,26 +23,26 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Zihao&#39;s Portfolio">
-<meta property="og:title" content="Résumé">
-<meta property="og:url" content="https://zihaofu245.me/resume/">
+<meta property="og:title" content="What happened recently?">
+<meta property="og:url" content="https://zihaofu245.me/general/2025/09/22/recent.html">
 
 
-  <meta property="og:description" content="Print Resume">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2025-09-22T15:49:20+00:00">
+  <meta property="og:description" content="Weekly review">
 
 
 
 
 
 
-<link rel="canonical" href="https://zihaofu245.me/resume/">
+
+  <meta property="article:published_time" content="2025-09-22T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://zihaofu245.me/general/2025/09/22/recent.html">
 
 
 
@@ -178,7 +178,47 @@
         <span class="sep">/</span>
       
       
-        <li class="current">Résumé</li>
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/general" itemprop="item"><span itemprop="name">General</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/2025" itemprop="item"><span itemprop="name">2025</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/09" itemprop="item"><span itemprop="name">09</span></a>
+          <meta itemprop="position" content="4" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/22" itemprop="item"><span itemprop="name">22</span></a>
+          <meta itemprop="position" content="5" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">What happened recently?</li>
       
     
   </ol>
@@ -316,19 +356,37 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Résumé">
-    <meta itemprop="description" content="Print Resume">
-    <meta itemprop="datePublished" content="2025-09-22T15:49:20+00:00">
+    <meta itemprop="headline" content="What happened recently?">
+    <meta itemprop="description" content="Weekly review">
+    <meta itemprop="datePublished" content="2025-09-22T00:00:00+00:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="https://zihaofu245.me/resume/" itemprop="url">Résumé
+            <a href="https://zihaofu245.me/general/2025/09/22/recent.html" itemprop="url">What happened recently?
 </a>
           </h1>
           
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
 
 
         </header>
@@ -336,26 +394,41 @@
 
       <section class="page__content" itemprop="text">
         
-        <p><button onclick="printResume()">Print Resume</button></p>
+        <h1 id="weekly-review">Weekly review</h1>
 
-<iframe id="resume-iframe" src="/assets/resume/Resume.html" width="100%" height="1000" style="border:0;" title="Resume">
-</iframe>
+<blockquote>
+  <p>Another few weeks passed at HKUST. This post is continued from Sep 7th - <a href="/general/2025/09/07/first_week_uni.html">first week back in HK</a></p>
+</blockquote>
 
-<script>
-function printResume() {
-    const iframe = document.getElementById('resume-iframe');
-    if (!iframe) 
-        return;
-    try {
-        iframe.contentWindow.focus();
-        iframe.contentWindow.print();
-    } catch (e) {
-        // fallback: open file in new window
-        window.open(iframe.src, '_blank');
-    }
+<h2 id="whats-fun">What’s fun</h2>
 
-}
-</script>
+<p>If you’ve been checking my website regularly, you might think there haven’t been any updates—no new posts, no new projects. But that’s not entirely true.</p>
+
+<p><strong>I’ve been secretly working on something new!</strong></p>
+
+<p>A brand new landing page — <a href="/hehehehaw">Check it out here</a></p>
+
+<p>It’s now in great shape, with a growing collection of resources. I designed it specifically for my college friends and their needs.</p>
+
+<p><strong>And there’s more!</strong></p>
+
+<p>I partnered with <a href="mailto:shengwxnw@gmail.com">shengwxnw</a> to create a <strong>network request routing service</strong>. We’re leveraging the free tier offered by <a href="https://www.cloudflare.com/">Cloudflare</a> Workers to send requests locally, with the Workers fetching URLs and returning the information to us. However, it’s not as powerful as a full <strong>VPN</strong> solution.</p>
+
+<blockquote>
+  <p>Note: Some websites have blocked visitors from Cloudflare IP addresses, which is a significant disadvantage.</p>
+</blockquote>
+
+<p>You can check out our <strong>Local Connector Prototypes</strong> <a href="https://shengwxnw.github.io">here</a>.</p>
+
+<h2 id="whats-boring">What’s Boring</h2>
+
+<p><strong>Assignments</strong>: Linear Algebra, Discrete math, Circuit design, UML Diagram</p>
+
+<p>The term officially starts, becoming more busy</p>
+
+<h2 id="where-i-spent-most-of-my-time">Where I spent most of my time</h2>
+
+<p>I am watching <strong>Strangers Things</strong>, such a good one. I am now onto <strong>season 03</strong>. Jim Hopper Live!</p>
 
 
         
@@ -368,7 +441,7 @@ function printResume() {
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-09-22T15:49:20+00:00">September 22, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-09-22T00:00:00+00:00">September 22, 2025</time></p>
 
       </footer>
 
@@ -377,7 +450,7 @@ function printResume() {
       
   <nav class="pagination">
     
-      <a href="/projects/" class="pagination--pager" title="Projects">Previous</a>
+      <a href="/general/2025/09/12/git-lfs-guide.html" class="pagination--pager" title="Git LFS with GitHub Pages: A Practical Guide">Previous</a>
     
     
       <a href="#" class="pagination--pager disabled">Next</a>
