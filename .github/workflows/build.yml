@@ -13,8 +13,6 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    env:
-      BUNDLE_GEMFILE: GemFile  # you can rename to Gemfile later and drop this
     steps:
       # Checkout code and pull LFS files
       - name: Checkout (with LFS)
