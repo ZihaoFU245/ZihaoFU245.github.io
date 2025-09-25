@@ -83,11 +83,11 @@ var store = [{
         "url": "/general/2025/09/12/git-lfs-guide.html",
         "teaser": "/assets/2025-09-12-resources/teaser.svg"
       },{
-        "title": "What happened recently?",
-        "excerpt":"Weekly review Another few weeks passed at HKUST. This post is continued from Sep 7th - first week back in HK What’s fun If you’ve been checking my website regularly, you might think there haven’t been any updates—no new posts, no new projects. But that’s not entirely true. I’ve been...","categories": ["General"],
+        "title": "Recent about me, mid late Sep",
+        "excerpt":"Weekly review, what happened? Another few weeks passed at HKUST. This post is continued from Sep 7th - first week back in HK What’s fun If you’ve been checking my website regularly, you might think there haven’t been any updates—no new posts, no new projects. But that’s not entirely true....","categories": ["General"],
         "tags": [],
         "url": "/general/2025/09/22/recent.html",
-        "teaser": "/assets/cover.png"
+        "teaser": "/assets/2025-09-22-resources/pi.jpg"
       },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
