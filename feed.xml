@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-09-27T03:56:15+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Recent about me, mid late Sep</title><link href="https://zihaofu245.me/general/2025/09/22/recent.html" rel="alternate" type="text/html" title="Recent about me, mid late Sep" /><published>2025-09-22T00:00:00+00:00</published><updated>2025-09-22T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/09/22/recent</id><content type="html" xml:base="https://zihaofu245.me/general/2025/09/22/recent.html"><![CDATA[<h1 id="weekly-review-what-happened">Weekly review, what happened?</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-10-01T04:31:13+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Projects: LM-Studio ToolPack / Bundle</title><link href="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html" rel="alternate" type="text/html" title="Projects: LM-Studio ToolPack / Bundle" /><published>2025-10-01T00:00:00+00:00</published><updated>2025-10-01T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/01/lms-toolpack</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html"><![CDATA[<h1 id="targeted-for-local-llm-use-mcp-tools-collection">Targeted for Local LLM use: MCP Tools Collection</h1>
+
+<figure>
+    <img src="/assets/2025-10-01-resources/teaser.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+    <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">LM-Studio Tool Bundle</figcaption>
+</figure>
+
+<p><a href="https://github.com/ZihaoFU245/lmstudio-toolpack"><strong>Repo Link</strong></a></p>
+
+<h2 id="why-i-made-this">Why I made this?</h2>
+
+<p>LM Studio requires <strong>manual</strong>, <strong>per-tool configuration</strong> for MCP tools, and currently lacks an <strong>automated</strong> or <strong>user-friendly</strong> way to set up and manage tool integrations. My project aims to address this gap by providing an <strong>easy-to-use bundle</strong> specifically designed for <strong>LM Studio users</strong>.</p>
+
+<h2 id="more-technical-detail">More Technical Detail</h2>
+
+<p><a href="/projects/lmstudio-toolpack/"><strong>On Project Page</strong></a></p>
+
+<hr />
+
+<blockquote>
+  <p>October 1th, <strong>Happy Holiday!</strong></p>
+</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Targeted for Local LLM use: MCP Tools Collection]]></summary></entry><entry><title type="html">Recent about me, mid late Sep</title><link href="https://zihaofu245.me/general/2025/09/22/recent.html" rel="alternate" type="text/html" title="Recent about me, mid late Sep" /><published>2025-09-22T00:00:00+00:00</published><updated>2025-09-22T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/09/22/recent</id><content type="html" xml:base="https://zihaofu245.me/general/2025/09/22/recent.html"><![CDATA[<h1 id="weekly-review-what-happened">Weekly review, what happened?</h1>
 
 <blockquote>
   <p>Another few weeks passed at HKUST. This post is continued from Sep 7th - <a href="/general/2025/09/07/first_week_uni.html">first week back in HK</a></p>
@@ -741,6 +762,4 @@ $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathb
 
 <p><img src="/assets/images/Java-Game-imgs/3.png" alt="Screenshot of my Java 2D game" /></p>
 
-<p>🚀<strong>These are the game map of the game i am working on</strong>, the game is backed by an Engine, which i will open source it. It is great for 2D tile based games,which me and my game making partner used it. 😀</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Recent update about me]]></summary></entry><entry><title type="html">Welcome to My Blog!</title><link href="https://zihaofu245.me/general/2025/07/30/first-post.html" rel="alternate" type="text/html" title="Welcome to My Blog!" /><published>2025-07-30T00:00:00+00:00</published><updated>2025-07-30T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/07/30/first-post</id><content type="html" xml:base="https://zihaofu245.me/general/2025/07/30/first-post.html"><![CDATA[<p>This is the first post on my new website. I’m excited to share my journey, projects, and thoughts with you.</p>
-
-<p>Stay tuned for more content coming soon!</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><category term="Welcome" /><category term="Introduction" /><summary type="html"><![CDATA[This is the first post on my new website. I’m excited to share my journey, projects, and thoughts with you.]]></summary></entry></feed>
+<p>🚀<strong>These are the game map of the game i am working on</strong>, the game is backed by an Engine, which i will open source it. It is great for 2D tile based games,which me and my game making partner used it. 😀</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Recent update about me]]></summary></entry></feed>

@@ -10,8 +10,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Résumé - Zihao’s Portfolio</title>
-<meta name="description" content="Print Resume">
+<!-- begin _includes/seo.html --><title>LM Studio Tool Bundle - Zihao’s Portfolio</title>
+<meta name="description" content="Targeted for Local LLM use: MCP Tools Collection">
 
 
   <meta name="author" content="Zihao Fu">
@@ -23,26 +23,26 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Zihao&#39;s Portfolio">
-<meta property="og:title" content="Résumé">
-<meta property="og:url" content="https://zihaofu245.me/resume/">
+<meta property="og:title" content="LM Studio Tool Bundle">
+<meta property="og:url" content="https://zihaofu245.me/projects/lmstudio-toolpack/">
 
 
-  <meta property="og:description" content="Print Resume">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2025-10-01T04:31:13+00:00">
+  <meta property="og:description" content="Targeted for Local LLM use: MCP Tools Collection">
 
 
 
 
 
 
-<link rel="canonical" href="https://zihaofu245.me/resume/">
+
+  <meta property="article:published_time" content="2025-10-01T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://zihaofu245.me/projects/lmstudio-toolpack/">
 
 
 
@@ -178,7 +178,17 @@
         <span class="sep">/</span>
       
       
-        <li class="current">Résumé</li>
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/projects" itemprop="item"><span itemprop="name">Projects</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">LM Studio Tool Bundle</li>
       
     
   </ol>
@@ -316,16 +326,16 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Résumé">
-    <meta itemprop="description" content="Print Resume">
-    <meta itemprop="datePublished" content="2025-10-01T04:31:13+00:00">
+    <meta itemprop="headline" content="LM Studio Tool Bundle">
+    <meta itemprop="description" content="Targeted for Local LLM use: MCP Tools Collection">
+    <meta itemprop="datePublished" content="2025-10-01T00:00:00+00:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="https://zihaofu245.me/resume/" itemprop="url">Résumé
+            <a href="https://zihaofu245.me/projects/lmstudio-toolpack/" itemprop="url">LM Studio Tool Bundle
 </a>
           </h1>
           
@@ -336,27 +346,86 @@
 
       <section class="page__content" itemprop="text">
         
-        <p><button onclick="printResume()">Print Resume</button></p>
+        <h1 id="targeted-for-local-llm-use-mcp-tools-collection">Targeted for Local LLM use: MCP Tools Collection</h1>
 
-<iframe id="resume-iframe" src="/assets/resume/Resume.html" width="100%" height="1000" style="border:0;" title="Resume">
-</iframe>
+<blockquote>
+  <p>A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options.</p>
+</blockquote>
 
-<script>
-function printResume() {
-    const iframe = document.getElementById('resume-iframe');
-    if (!iframe) 
-        return;
-    try {
-        iframe.contentWindow.focus();
-        iframe.contentWindow.print();
-    } catch (e) {
-        // fallback: open file in new window
-        window.open(iframe.src, '_blank');
-    }
+<h2 id="why-is-exists">Why is exists?</h2>
+<p>The MCP server now is mostly scattered. There is no simple tool-pack. We need to set it up per-tool.
+This tool pack is targeted for local convenient use. I will expand the collections through time. 
+Make LocalLLMs more powerful yet simplier.</p>
 
-}
-</script>
+<h2 id="features">Features</h2>
+<ul>
+  <li>MCP json Configuration file generation: Run <code class="language-plaintext highlighter-rouge">main.py</code> and go through the wizard to complete the generation</li>
+  <li>One venv for multiple MCP servers</li>
+</ul>
 
+<h2 id="repo-location">Repo Location</h2>
+<p><a href="https://github.com/ZihaoFU245/lmstudio-toolpack"><strong>lmstudio-toolpack</strong></a><br />
+<strong>Your suppor could make a huge difference.</strong></p>
+
+<h2 id="mcp-servers">MCP Servers</h2>
+<ul>
+  <li><a href="/MCPs/WebSearch.py">Web Search</a>: Use duckduckgo as search engine, fetch and summarize top results</li>
+  <li><a href="/MCPs/python-sandbox.py">Python SandBox</a>: Allow Agents to run python, use numpy and sympy, good for math</li>
+  <li><a href="/MCPs/Memory.py">Longterm-Memory</a>: For Agents to memories things for longterm use.</li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+<p>It is default using <strong>stdio</strong>
+You can set it to http in <code class="language-plaintext highlighter-rouge">GlobalConfig</code></p>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+  <li>Python &gt;= 3.13</li>
+  <li>Managed with <code class="language-plaintext highlighter-rouge">uv</code></li>
+</ul>
+
+<h2 id="install">Install</h2>
+<p>Using uv:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv <span class="nb">sync</span>
+</code></pre></div></div>
+
+<h2 id="run-the-mcp-server">Run the MCP Server</h2>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python</span><span class="w"> </span><span class="nx">python-sandbox.py</span><span class="w">
+</span></code></pre></div></div>
+<p>The server communicates over stdio (FastMCP). Point your MCP-compatible client at the executable command above.</p>
+
+<h2 id="tool-usage-examples">Tool Usage Examples</h2>
+<p>Run <code class="language-plaintext highlighter-rouge">main.py</code> for json configuration auto generation.
+And you will get something like this:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"memory"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E:</span><span class="se">\\</span><span class="s2">LMStudio</span><span class="se">\\</span><span class="s2">mcp</span><span class="se">\\</span><span class="s2">lmstudio-toolpack</span><span class="se">\\</span><span class="s2">.venv</span><span class="se">\\</span><span class="s2">Scripts</span><span class="se">\\</span><span class="s2">python.exe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"E:</span><span class="se">\\</span><span class="s2">LMStudio</span><span class="se">\\</span><span class="s2">mcp</span><span class="se">\\</span><span class="s2">lmstudio-toolpack</span><span class="se">\\</span><span class="s2">MCPs</span><span class="se">\\</span><span class="s2">Memory.py"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"python-sandbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E:</span><span class="se">\\</span><span class="s2">LMStudio</span><span class="se">\\</span><span class="s2">mcp</span><span class="se">\\</span><span class="s2">lmstudio-toolpack</span><span class="se">\\</span><span class="s2">.venv</span><span class="se">\\</span><span class="s2">Scripts</span><span class="se">\\</span><span class="s2">python.exe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"E:</span><span class="se">\\</span><span class="s2">LMStudio</span><span class="se">\\</span><span class="s2">mcp</span><span class="se">\\</span><span class="s2">lmstudio-toolpack</span><span class="se">\\</span><span class="s2">MCPs</span><span class="se">\\</span><span class="s2">python-sandbox.py"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"websearch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E:</span><span class="se">\\</span><span class="s2">LMStudio</span><span class="se">\\</span><span class="s2">mcp</span><span class="se">\\</span><span class="s2">lmstudio-toolpack</span><span class="se">\\</span><span class="s2">.venv</span><span class="se">\\</span><span class="s2">Scripts</span><span class="se">\\</span><span class="s2">python.exe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"E:</span><span class="se">\\</span><span class="s2">LMStudio</span><span class="se">\\</span><span class="s2">mcp</span><span class="se">\\</span><span class="s2">lmstudio-toolpack</span><span class="se">\\</span><span class="s2">MCPs</span><span class="se">\\</span><span class="s2">WebSearch.py"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>Tweak the name, url, command, if you need.</p>
+
+<h2 id="another-idea">Another Idea</h2>
+<p>If you choose using http. You can use 1mcp to unify them all.
+And run it on a remote server.
+Eg. Connect a Resberry PI to TailScale and set it up remotely.</p>
 
         
       </section>
@@ -368,7 +437,7 @@ function printResume() {
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-10-01T04:31:13+00:00">October 1, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-10-01T00:00:00+00:00">October 1, 2025</time></p>
 
       </footer>
 
@@ -377,7 +446,7 @@ function printResume() {
       
   <nav class="pagination">
     
-      <a href="/projects/" class="pagination--pager" title="Projects">Previous</a>
+      <a href="/projects/aurora-agent/" class="pagination--pager" title="New Agent Application Aurora">Previous</a>
     
     
       <a href="#" class="pagination--pager disabled">Next</a>

@@ -18,7 +18,7 @@ var store = [{
         "teaser": "/assets/cover.png"
       },{
         "title": "Projects",
-        "excerpt":"My Project Collections New Agent Application Aurora Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to en… Read more 2D Tile Engine A simple, tile-based engine built in Java for learning, tinkering, and creative projects. It features:...","categories": [],
+        "excerpt":"My Project Collections LM Studio Tool Bundle Targeted for Local LLM use: MCP Tools Collection Read more New Agent Application Aurora Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to en… Read more 2D Tile Engine A...","categories": [],
         "tags": [],
         "url": "/projects/",
         "teaser": "/assets/cover.png"
@@ -89,6 +89,12 @@ var store = [{
         "url": "/general/2025/09/22/recent.html",
         "teaser": "/assets/2025-09-22-resources/pi.jpg"
       },{
+        "title": "Projects: LM-Studio ToolPack / Bundle",
+        "excerpt":"Targeted for Local LLM use: MCP Tools Collection LM-Studio Tool Bundle Repo Link Why I made this? LM Studio requires manual, per-tool configuration for MCP tools, and currently lacks an automated or user-friendly way to set up and manage tool integrations. My project aims to address this gap by providing...","categories": ["General"],
+        "tags": [],
+        "url": "/general/2025/10/01/lms-toolpack.html",
+        "teaser": "/assets/2025-10-01-resources/teaser.png"
+      },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
         "tags": [],
@@ -111,5 +117,11 @@ var store = [{
         "excerpt":"Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to enable conversational, tool-enabled agents. Key points: Multi-node LangGraph architecture (router, planner, executor, critic) Built-in tools for web search/browsing, crawling, time, file operations, and Gmail (OAuth) CLI and Web...","categories": ["projects"],
         "tags": [],
         "url": "/projects/aurora-agent/",
+        "teaser": "/assets/cover.png"
+      },{
+        "title": "LM Studio Tool Bundle",
+        "excerpt":"Targeted for Local LLM use: MCP Tools Collection A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options. Why is exists? The MCP server now is mostly scattered. There is no simple tool-pack. We need to set it up per-tool. This tool pack is...","categories": ["projects"],
+        "tags": [],
+        "url": "/projects/lmstudio-toolpack/",
         "teaser": "/assets/cover.png"
       }]

@@ -10,8 +10,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Résumé - Zihao’s Portfolio</title>
-<meta name="description" content="Print Resume">
+<!-- begin _includes/seo.html --><title>Projects: LM-Studio ToolPack / Bundle - Zihao’s Portfolio</title>
+<meta name="description" content="Targeted for Local LLM use: MCP Tools Collection">
 
 
   <meta name="author" content="Zihao Fu">
@@ -23,26 +23,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Zihao&#39;s Portfolio">
-<meta property="og:title" content="Résumé">
-<meta property="og:url" content="https://zihaofu245.me/resume/">
+<meta property="og:title" content="Projects: LM-Studio ToolPack / Bundle">
+<meta property="og:url" content="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html">
 
 
-  <meta property="og:description" content="Print Resume">
-
-
-
+  <meta property="og:description" content="Targeted for Local LLM use: MCP Tools Collection">
 
 
 
-
-  <meta property="article:published_time" content="2025-10-01T04:31:13+00:00">
+  <meta property="og:image" content="https://zihaofu245.me/assets/2025-10-01-resources/teaser.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2025-10-01T00:00:00+00:00">
 
-<link rel="canonical" href="https://zihaofu245.me/resume/">
+
+
+
+
+
+<link rel="canonical" href="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html">
 
 
 
@@ -178,7 +180,47 @@
         <span class="sep">/</span>
       
       
-        <li class="current">Résumé</li>
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/general" itemprop="item"><span itemprop="name">General</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/2025" itemprop="item"><span itemprop="name">2025</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/10" itemprop="item"><span itemprop="name">10</span></a>
+          <meta itemprop="position" content="4" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/01" itemprop="item"><span itemprop="name">01</span></a>
+          <meta itemprop="position" content="5" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Projects: LM-Studio ToolPack / Bundle</li>
       
     
   </ol>
@@ -316,19 +358,37 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Résumé">
-    <meta itemprop="description" content="Print Resume">
-    <meta itemprop="datePublished" content="2025-10-01T04:31:13+00:00">
+    <meta itemprop="headline" content="Projects: LM-Studio ToolPack / Bundle">
+    <meta itemprop="description" content="Targeted for Local LLM use: MCP Tools Collection">
+    <meta itemprop="datePublished" content="2025-10-01T00:00:00+00:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="https://zihaofu245.me/resume/" itemprop="url">Résumé
+            <a href="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html" itemprop="url">Projects: LM-Studio ToolPack / Bundle
 </a>
           </h1>
           
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
 
 
         </header>
@@ -336,27 +396,28 @@
 
       <section class="page__content" itemprop="text">
         
-        <p><button onclick="printResume()">Print Resume</button></p>
+        <h1 id="targeted-for-local-llm-use-mcp-tools-collection">Targeted for Local LLM use: MCP Tools Collection</h1>
 
-<iframe id="resume-iframe" src="/assets/resume/Resume.html" width="100%" height="1000" style="border:0;" title="Resume">
-</iframe>
+<figure>
+    <img src="/assets/2025-10-01-resources/teaser.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+    <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">LM-Studio Tool Bundle</figcaption>
+</figure>
 
-<script>
-function printResume() {
-    const iframe = document.getElementById('resume-iframe');
-    if (!iframe) 
-        return;
-    try {
-        iframe.contentWindow.focus();
-        iframe.contentWindow.print();
-    } catch (e) {
-        // fallback: open file in new window
-        window.open(iframe.src, '_blank');
-    }
+<p><a href="https://github.com/ZihaoFU245/lmstudio-toolpack"><strong>Repo Link</strong></a></p>
 
-}
-</script>
+<h2 id="why-i-made-this">Why I made this?</h2>
 
+<p>LM Studio requires <strong>manual</strong>, <strong>per-tool configuration</strong> for MCP tools, and currently lacks an <strong>automated</strong> or <strong>user-friendly</strong> way to set up and manage tool integrations. My project aims to address this gap by providing an <strong>easy-to-use bundle</strong> specifically designed for <strong>LM Studio users</strong>.</p>
+
+<h2 id="more-technical-detail">More Technical Detail</h2>
+
+<p><a href="/projects/lmstudio-toolpack/"><strong>On Project Page</strong></a></p>
+
+<hr />
+
+<blockquote>
+  <p>October 1th, <strong>Happy Holiday!</strong></p>
+</blockquote>
 
         
       </section>
@@ -368,7 +429,7 @@ function printResume() {
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-10-01T04:31:13+00:00">October 1, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-10-01T00:00:00+00:00">October 1, 2025</time></p>
 
       </footer>
 
@@ -377,7 +438,7 @@ function printResume() {
       
   <nav class="pagination">
     
-      <a href="/projects/" class="pagination--pager" title="Projects">Previous</a>
+      <a href="/general/2025/09/22/recent.html" class="pagination--pager" title="Recent about me, mid late Sep">Previous</a>
     
     
       <a href="#" class="pagination--pager disabled">Next</a>
