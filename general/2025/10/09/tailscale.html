@@ -1,0 +1,583 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Tailscale setup experience - Zihao’s Portfolio</title>
+<meta name="description" content="My Journey to a Seamless Private Network with Tailscale">
+
+
+  <meta name="author" content="Zihao Fu">
+  
+  <meta property="article:author" content="Zihao Fu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Zihao&#39;s Portfolio">
+<meta property="og:title" content="Tailscale setup experience">
+<meta property="og:url" content="https://zihaofu245.me/general/2025/10/09/tailscale.html">
+
+
+  <meta property="og:description" content="My Journey to a Seamless Private Network with Tailscale">
+
+
+
+  <meta property="og:image" content="https://cdn.sanity.io/images/w77i7m8x/production/481ad859f0d7ae07295066a7b655588b1069ab1c-1280x584.svg?w=1920&amp;q=75&amp;fit=clip&amp;auto=format">
+
+
+
+
+
+  <meta property="article:published_time" content="2025-10-09T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://zihaofu245.me/general/2025/10/09/tailscale.html">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Zihao's Portfolio Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+
+  <body class="layout--single wide" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Welcome to My Portfolio!
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/archive/"
+                
+                
+              >Archive</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/resume/"
+                
+                
+              >Résumé</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/general" itemprop="item"><span itemprop="name">General</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/2025" itemprop="item"><span itemprop="name">2025</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/10" itemprop="item"><span itemprop="name">10</span></a>
+          <meta itemprop="position" content="4" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/09" itemprop="item"><span itemprop="name">09</span></a>
+          <meta itemprop="position" content="5" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Tailscale setup experience</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://zihaofu245.me/">
+        <img src="/assets/images/profile.jpg" alt="Zihao Fu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://zihaofu245.me/" itemprop="url">Zihao Fu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Engineer, Computer Science student at HKUST. Interested in AI, systems, and more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Hong Kong</span>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:zihaofu12@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="zihaofu12@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/zihao-fu-198b02374" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://instagram.com/zihao_fu06" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ZihaoFU245" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Tailscale setup experience">
+    <meta itemprop="description" content="My Journey to a Seamless Private Network with Tailscale">
+    <meta itemprop="datePublished" content="2025-10-09T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://zihaofu245.me/general/2025/10/09/tailscale.html" itemprop="url">Tailscale setup experience
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h1 id="my-journey-to-a-seamless-private-network-with-tailscale">My Journey to a Seamless Private Network with Tailscale</h1>
+
+<p>It all started with a Raspberry Pi.</p>
+
+<figure>
+    <img src="/assets/2025-10-09-resources/pi.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+    <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My Rasberry Pi</figcaption>
+</figure>
+
+<p>After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea of having a secure and private network was fascinating.</p>
+
+<p>However, I soon hit a roadblock. I was in Hong Kong, and my Raspberry Pi didn’t have a public IP address, a crucial requirement for PiVPN which uses WireGuard. After some head-scratching, I discovered Tailscale, and it turned out to be the perfect solution.</p>
+
+<figure>
+    <img src="/assets/2025-10-09-resources/tailscale.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+    <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My Tailscale homepage</figcaption>
+</figure>
+
+<h2 id="what-is-tailscale">What is Tailscale?</h2>
+
+<p>Tailscale is a zero-config VPN that creates a secure network between your computers, servers, and cloud instances — even when separated by firewalls and subnets. It’s built on top of WireGuard®, which means you get the speed and security of a modern VPN protocol without the setup complexity.</p>
+
+<p>For me, it meant I could finally connect all my devices, including my Raspberry Pi and a few cloud VMs from DigitalOcean, into a single, private “tailnet”.</p>
+
+<h2 id="getting-started-with-tailscale">Getting Started with Tailscale</h2>
+
+<p>Getting started with Tailscale was mostly straightforward, but I did run into a few configuration hurdles like enabling IP forwarding and disabling Generic Receive Offload (GRO) to get everything working smoothly.</p>
+
+<p>Here’s a breakdown of how I set up my tailnet, which might help you get started as well.</p>
+
+<h3 id="1-installing-tailscale">1. Installing Tailscale</h3>
+
+<p>The first step is to install Tailscale on all the devices you want to connect. Tailscale has clients for almost every operating system.</p>
+
+<ol>
+  <li><strong>Go to the Tailscale download page:</strong> <a href="https://tailscale.com/download">tailscale.com/download</a></li>
+  <li><strong>Download and install the client</strong> for your OS (Linux, Windows, macOS, Android, iOS, etc.).</li>
+  <li><strong>Log in:</strong> After installation, you’ll be prompted to log in with a Google, Microsoft, or GitHub account. Use the same account on all your devices to add them to the same tailnet.</li>
+</ol>
+
+<p>For my Raspberry Pi, I used the command line to install it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-fsSL</span> https://tailscale.com/install.sh | sh
+</code></pre></div></div>
+
+<h3 id="2-advertising-a-subnet-like-a-home-network">2. Advertising a Subnet (like a home network)</h3>
+
+<p>One of the most powerful features of Tailscale is the ability to use a device as a gateway to a whole subnet. This is what I did with my Raspberry Pi to access my home network from anywhere.</p>
+
+<ol>
+  <li><strong>Enable IP forwarding on the gateway device (e.g., your Raspberry Pi).</strong>
+    <ul>
+      <li>On Linux, you can do this by running:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'net.ipv4.ip_forward = 1'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/sysctl.d/99-tailscale.conf
+<span class="nb">echo</span> <span class="s1">'net.ipv6.conf.all.forwarding = 1'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/sysctl.d/99-tailscale.conf
+<span class="nb">sudo </span>sysctl <span class="nt">-p</span> /etc/sysctl.d/99-tailscale.conf
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Advertise the subnet route.</strong>
+    <ul>
+      <li>First, connect your device to your tailnet by running <code class="language-plaintext highlighter-rouge">sudo tailscale up</code>.</li>
+      <li>Then, use the <code class="language-plaintext highlighter-rouge">tailscale set</code> command to advertise the route. You’ll need to know the IP range of your local network (e.g., <code class="language-plaintext highlighter-rouge">192.168.1.0/24</code>).
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>tailscale <span class="nb">set</span> <span class="nt">--advertise-routes</span><span class="o">=</span>192.168.1.0/24
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Approve the routes in the Tailscale admin console.</strong>
+    <ul>
+      <li>Go to the <a href="https://login.tailscale.com/admin/machines">Tailscale admin console</a>.</li>
+      <li>You will see your device with a “Subnet routes” badge. Click on it and approve the advertised routes.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="3-using-an-exit-node">3. Using an Exit Node</h3>
+
+<p>An exit node allows you to route all your internet traffic through another device on your tailnet. This is useful for securing your traffic on public Wi-Fi or accessing geo-restricted content. I set up one of my DigitalOcean VMs as an exit node.</p>
+
+<ol>
+  <li><strong>Advertise a device as an exit node.</strong>
+    <ul>
+      <li>On the device you want to be the exit node, run:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>tailscale <span class="nb">set</span> <span class="nt">--advertise-exit-node</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Approve the exit node in the admin console.</strong>
+    <ul>
+      <li>Go to the admin console, find the machine, and approve it as an exit node.</li>
+    </ul>
+  </li>
+  <li><strong>Use the exit node from another device.</strong>
+    <ul>
+      <li>On any other device in your tailnet, you can now choose to route your traffic through the exit node. You can enable this from the Tailscale client menu.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>With Tailscale, I now have a secure, private network that connects my Raspberry Pi, my laptops, my phone, and my cloud servers. It’s been a game-changer for accessing my devices and services from anywhere in the world. If you’re looking for a simple and powerful way to create your own private network, I highly recommend giving Tailscale a try.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-10-09T00:00:00+00:00">October 9, 2025</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/general/2025/10/01/lms-toolpack.html" class="pagination--pager" title="Projects: LM-Studio ToolPack / Bundle">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="site-footer-meta" style="text-align:center; margin-top:20px; font-size:0.9em; color:#777;">
+    <div
+        style="display:flex; flex-wrap:nowrap; justify-content:center; align-items:center; gap:12px; white-space:nowrap;">
+        <span>© 2025 Zihao Fu</span>
+        <span aria-hidden="true">•</span>
+        <a href="https://www.buymeacoffee.com/zihaofu245" target="_blank" rel="noopener noreferrer"
+            title="Buy me a coffee" aria-label="Buy me a coffee" style="display:inline-flex; align-items:center;">
+            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+                style="height:48px; width:auto; vertical-align:middle; border-radius:6px;">
+        </a>
+        <span aria-hidden="true">•</span>
+        <span>Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> &amp; <a
+                href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal
+                Mistakes</a></span>
+    </div>
+</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
