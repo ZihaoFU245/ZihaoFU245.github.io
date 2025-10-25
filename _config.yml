@@ -46,6 +46,9 @@ pagination:
 # Teaser / cover image
 teaser: "/assets/cover.png"
 
+# Livereload
+Livereload: true
+
 # Collections
 collections:
   pages:
