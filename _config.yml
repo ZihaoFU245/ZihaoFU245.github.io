@@ -34,7 +34,7 @@ breadcrumbs: true
 # Pagination (global defaults for jekyll-paginate-v2; page overrides allowed)
 pagination:
   enabled: true
-  per_page: 8
+  per_page: 24
   permalink: /page/:num/
   title: ':title - Page :num'
   sort_field: 'date'
@@ -46,8 +46,6 @@ pagination:
 # Teaser / cover image
 teaser: "/assets/cover.png"
 
-# Livereload
-Livereload: true
 
 # Collections
 collections:

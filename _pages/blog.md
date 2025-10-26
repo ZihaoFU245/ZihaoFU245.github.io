@@ -9,7 +9,7 @@ classes: wide
 pagination:
   enabled: true
   collection: posts
-  per_page: 12
+  per_page: 24
   permalink: /page/:num/
   sort_field: date
   sort_reverse: true
