@@ -101,6 +101,12 @@ var store = [{
         "url": "/general/2025/10/09/tailscale.html",
         "teaser": "https://cdn.sanity.io/images/w77i7m8x/production/481ad859f0d7ae07295066a7b655588b1069ab1c-1280x584.svg?w=1920&q=75&fit=clip&auto=format"
       },{
+        "title": "Midterm - What I've Been Through?",
+        "excerpt":"Average Score, Relationship Problem - How Bad Can It Be? Another month since my last blog about life — and here it comes, finally. Let’s dig into that. This song fits my mood earlier this week perfectly. Well… not quite. 🎧 Midterms 这学期的期中实在是过于繁忙，三天连在一起考试。第一门 Computer Organization 直接就拿了 54 分！ 而 mean...","categories": ["General"],
+        "tags": [],
+        "url": "/general/2025/10/26/recent.html",
+        "teaser": "/assets/2025-10-26-resources/coast.jpg"
+      },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
         "tags": [],
