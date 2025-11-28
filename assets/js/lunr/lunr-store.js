@@ -107,6 +107,12 @@ var store = [{
         "url": "/general/2025/10/26/recent.html",
         "teaser": "/assets/2025-10-26-resources/MountainTop.jpg"
       },{
+        "title": "Building My Self-Hosted Digital Ecosystem :)",
+        "excerpt":"← November Engineering Retrospective I made significant progress through the past month. A multi-regional tailnet has been built out successfully, and I finally understood the Tailscale ACL policy and hardened it. Found a critical security vulnerability on my Paris node: Docker containers bypassed UFW and exposed my Pi-hole as a...","categories": ["General"],
+        "tags": [],
+        "url": "/general/2025/11/28/infrastructure.html",
+        "teaser": "https://images.alphacoders.com/100/thumb-1920-1003903.jpg"
+      },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
         "tags": [],

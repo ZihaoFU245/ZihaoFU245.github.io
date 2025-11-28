@@ -1,4 +1,344 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-10-26T03:24:11+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Midterm - What I’ve Been Through?</title><link href="https://zihaofu245.me/general/2025/10/26/recent.html" rel="alternate" type="text/html" title="Midterm - What I’ve Been Through?" /><published>2025-10-26T00:00:00+00:00</published><updated>2025-10-26T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/26/recent</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/26/recent.html"><![CDATA[<h1 id="average-score-relationship-problem---how-bad-can-it-be">Average Score, Relationship Problem - How Bad Can It Be?</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-11-28T08:41:49+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Building My Self-Hosted Digital Ecosystem :)</title><link href="https://zihaofu245.me/general/2025/11/28/infrastructure.html" rel="alternate" type="text/html" title="Building My Self-Hosted Digital Ecosystem :)" /><published>2025-11-28T00:00:00+00:00</published><updated>2025-11-28T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/11/28/infrastructure</id><content type="html" xml:base="https://zihaofu245.me/general/2025/11/28/infrastructure.html"><![CDATA[<h1 id="-november-engineering-retrospective">← November Engineering Retrospective</h1>
+
+<blockquote>
+  <p>I made significant progress through the past month. A multi-regional tailnet
+has been built out successfully, and I finally understood the Tailscale ACL policy
+and hardened it. Found a critical security vulnerability on my Paris node:
+Docker containers bypassed UFW and exposed my Pi-hole as a public resolver.</p>
+</blockquote>
+
+<ul>
+  <li><a href="#tailnet"><strong>Tailnet</strong></a></li>
+  <li><a href="#container-bypassed-ufw"><strong>Container bypassed ufw</strong></a></li>
+  <li><a href="#what-do-i-host-in-my-tailnet"><strong>What do I host in my tailnet?</strong></a></li>
+  <li><a href="#minecraft-server-self-hosting"><strong>Minecraft server self hosting</strong></a></li>
+  <li><a href="#setting-up-my-own-proxies"><strong>Review on proxy solutions</strong></a></li>
+  <li><a href="#shadowsocks"><strong>Set up shadowsocks</strong></a></li>
+  <li><a href="#at-last"><strong>Ending</strong></a></li>
+</ul>
+
+<h2 id="tailnet">Tailnet</h2>
+
+<p><strong>Tailscale</strong> is one of the best choices to build a secure mesh network, connecting all 
+devices together. <strong>Access Control</strong> is a central topic if we are to manage many devices and users.
+On this year’s Black Friday, I bought a VPS at <strong>Hostinger</strong> with 4GB of RAM, then I decided to run 
+it as a <strong>Minecraft</strong> server, and play with my friends. Now I finally have to face <strong>Access Control</strong> in
+my tailnet. I don’t want to expose my server on public internet, so <strong>Tailscale</strong> is the best choice, 
+and also I don’t want any of my friends hacking around devices in it. Thus, I am changing my <strong>ACL</strong>.</p>
+
+<p>What my ACL looked like before:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+
+	</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+
+	</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>which essentially grants everyone access to any devices. This works perfectly fine with a small
+number of users. But, I can imagine my friends posing thousands of pings to my computer just for fun.
+That is not acceptable, I changed my ACL to something like:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
+
+	</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+	</span><span class="p">],</span><span class="w">
+
+	</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>This version seems to work but I tried it and got stuck on it. This was given by an LLM. I should never trust it
+in the first place. What this means is granting all members access to devices with some tags, and use of exit-node.
+The problem is Tailscale ACL is deny on default, I am the owner of the tailnet, owner is a member, but without
+explicitly allowing owner to access, an owner or in this case admins are not granted with access. 
+With final fine tuning, I get:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    	</span><span class="nl">"grants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+			</span><span class="err">//</span><span class="w"> </span><span class="err">All</span><span class="w"> </span><span class="err">members</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">peer</span><span class="w"> </span><span class="err">relays</span><span class="w"> </span><span class="err">(tag:relays)</span><span class="w">
+			</span><span class="err">//</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">Tailscale</span><span class="w"> </span><span class="err">Peer</span><span class="w"> </span><span class="err">Relays</span><span class="w">
+			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
+
+			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag:relays"</span><span class="p">],</span><span class="w">
+			</span><span class="nl">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"tailscale.com/cap/relay"</span><span class="p">:</span><span class="w"> </span><span class="p">[]},</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="err">//</span><span class="w"> </span><span class="err">Members</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+
+			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+				</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+			</span><span class="p">],</span><span class="w">
+
+			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="err">//</span><span class="w"> </span><span class="err">Admins</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+				</span><span class="s2">"autogroup:admin"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"autogroup:it-admin"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"autogroup:network-admin"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"autogroup:billing-admin"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"autogroup:auditor"</span><span class="p">,</span><span class="w">
+			</span><span class="p">],</span><span class="w">
+
+			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+				</span><span class="s2">"autogroup:members"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"autogroup:self"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:service-admin"</span><span class="p">,</span><span class="w">
+			</span><span class="p">],</span><span class="w">
+
+			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="err">//</span><span class="w"> </span><span class="err">Owner</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:owner"</span><span class="p">],</span><span class="w">
+			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:tagged"</span><span class="p">],</span><span class="w">
+
+			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+				</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+				</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+			</span><span class="p">],</span><span class="w">
+
+			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+	</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>Explicit and strict.</p>
+
+<h2 id="container-bypassed-ufw">Container bypassed ufw</h2>
+
+<p><strong>Docker</strong> containers are a level above <strong>UFW</strong>, which means <strong>UFW</strong> cannot block public requests to my <strong>Pi-hole</strong> container.</p>
+
+<div class="mermaid">
+flowchart LR
+    ext[External Client, nslookup your.vps.ip] --&gt;|UDP/TCP 53| wanIP[Host Public IP]
+
+    subgraph Host_OS [Host Debian VPS]
+        direction LR
+        wanIP --&gt; kernel[Linux Kernel<br />netfilter / iptables]
+
+        subgraph UFW [UFW default deny]
+            direction LR
+            ufwIn[ufw-user-input]
+        end
+
+        kernel --&gt;|Docker injects NAT rules| dockerIpt[Docker iptables<br />DOCKER-* chains]
+        dockerIpt --&gt;|DNAT to 172.18.0.x:53| piholeDocker[Pi-hole Container<br />port 53]
+    end
+
+    piholeDocker --&gt;|DNS reply| ext
+</div>
+
+<p>This made my <strong>Pi-hole</strong> a public container, once I went to check the admin panel of my <strong>Pi-hole</strong>, 
+there are about 1700 active clients using my resolver. Lots of them are from Brazil.</p>
+
+<figure>
+	<img src="/assets/2025-11-28-resources/publicResolver.png" alt="Public resolver" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Pi-hole is being used as a public resolver, I'm pissed</figcaption>
+</figure>
+
+<p><strong>How did I solve it?</strong>
+I used a firewall, not <strong>UFW</strong>. The firewall provided by <strong>Hostinger</strong>, it is at a bigger scope and drops requests from the outside world.</p>
+
+<h2 id="what-do-i-host-in-my-tailnet">What do I host in my tailnet?</h2>
+<p>Self-hosting is so much fun. And you hold your own data.</p>
+<ol>
+  <li><a href="https://pi-hole.net/"><strong>Pi-hole</strong></a> A super lightweight DNS resolver, block ads in the tailnet. Takes about
+30Mb with container.</li>
+  <li><a href="https://karakeep.app/"><strong>Karakeep</strong></a> Bookmark everything, with AI scraping support. Most platforms support it.</li>
+  <li><a href="https://uptime.kuma.pet/"><strong>Uptime-Kuma</strong></a> Fancy monitoring tool for self hosting. Notify you if your service is down.</li>
+  <li><a href="https://docs.searxng.org/"><strong>SearXNG</strong></a> A privacy first search engine. I use it along the <a href="https://github.com/minbrowser/min"><strong>Min Browser</strong></a>, Min browser has a built-in support of SOCK5 protocol, which is perfect.</li>
+  <li>Minecraft server self hosting, <a href="#minecraft-server-self-hosting"><strong>Read more</strong></a></li>
+  <li>Proxy server self hosting, <a href="#setting-up-my-own-proxies"><strong>Read more</strong></a></li>
+  <li><a href="https://nextcloud.com/"><strong>Nextcloud</strong></a></li>
+</ol>
+
+<h2 id="minecraft-server-self-hosting">Minecraft server self hosting</h2>
+
+<p>I am using a <strong>Minecraft</strong> server container to help me easily set up the server.
+<a href="https://github.com/itzg/docker-minecraft-server"><strong>Source</strong></a></p>
+
+<blockquote>
+  <p>I have not dived into the server configuration yet. I just set it up and today is Friday, I am going to test it out with my friend during weekends. Hope the server will survive under 2GB Ram.</p>
+</blockquote>
+
+<p>The above solution requires more RAM and performance. The server is in <strong>Java</strong>, I suspect its efficiency. Yesterday, I found a community <strong>Minecraft</strong> server, <a href="https://github.com/ZihaoFU245/cuberite"><strong>source</strong></a>. The link is the repo that I forked, I added <strong>Docker</strong> support for it, save you more time. The drawback is that it only supports old versions of <strong>Minecraft</strong>, 1.12.*.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">docker build -t cuberite .</code> Build the image</li>
+  <li><code class="language-plaintext highlighter-rouge">docker run -d -p 25565:25565 -p 8080:8080 -v ./cuberite-data:/server --name cuberite cuberite</code> Run the container. The server is at port 25565 and admin panel at 8080. Modify <code class="language-plaintext highlighter-rouge">webadmin.ini</code> file to create an admin account and restart the container.</li>
+</ol>
+
+<h3 id="minimalist">Minimalist</h3>
+<p><a href="https://github.com/ZihaoFU245/mcserver"><strong>Minimal MC server</strong></a>, 
+I wrote a Dockerfile along with a start shell script. Place your <strong>downloaded server.jar</strong> under that directory and build the images, and you will have a running mc server!</p>
+
+<h2 id="setting-up-my-own-proxies">Setting up my own proxies</h2>
+
+<p><strong>Geo Block</strong> is one of the most annoying things in the world. How to solve it? Use a proxy. Buy your own VPS and self host a proxy server can actually have many benefits:</p>
+
+<ol>
+  <li>You manage the server, data is in your hands</li>
+  <li>No one is competing with you, get the whole bandwidth</li>
+  <li>Can be cheaper than buying a proxy provider</li>
+  <li>Secure browsing under unsafe networks</li>
+</ol>
+
+<p>Through the last few months, I’ve been researching on proxies and VPNs. The most straightforward choice is <strong>WireGuard</strong>.</p>
+
+<blockquote>
+  <p>WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography.</p>
+</blockquote>
+
+<blockquote>
+  <p>“Can I just once again state my love for it and hope it gets merged soon? Maybe the code isn’t perfect, but I’ve skimmed it, and compared to the horrors that are OpenVPN and IPsec, it’s a work of art.”  Linus</p>
+</blockquote>
+
+<p>I would say the best way to use it is through <a href="https://tailscale.com/"><strong>Tailscale</strong></a>, fast, lightweight and most importantly, a mesh! This entire blog could not be done without Tailscale.</p>
+
+<h3 id="but-at-what-cost-typical-bbc-ending">But at what cost? Typical BBC ending</h3>
+
+<p><strong>WireGuard</strong>’s aim is simplicity and speed. It can be easily fingerprinted, under some firewall circumstances, it will be blocked or unstable.</p>
+
+<p>I then went on further, deeper research. Later I found another tool: <a href="https://github.com/amnezia-vpn"><strong>AmneziaWG</strong></a>, can avoid <strong>DPI</strong> inspection, while retaining the speed of <strong>WireGuard</strong>. But the installation is a little complicated on a self-hosted <strong>Linux</strong> machine, which I modified a script, <a href="https://github.com/ZihaoFU245/amneziawg-install"><strong>Source</strong></a>, a fork from <a href="https://github.com/Varckin/amneziawg-install">Varkin’s script</a>. In 2025, the apt source list of <strong>Amnezia</strong>, I haven’t dived into that. But the installation script would fail for newer <strong>Linux</strong> kernel. (You can find it in the issues) That’s the motivation for modifying the script. It does not involve kernel modules, all lives under userspace. It builds the official go source code and installs it. Again, make life easier.</p>
+
+<h3 id="what-i-also-tried">What I also tried.</h3>
+<p>I also tried <strong>V2Ray</strong>, <strong>Hysteria</strong> and <strong>Shadowsocks</strong>.
+<strong>V2Ray</strong> and <strong>Hysteria</strong> seems to have many active users, but the setting up is rather complicated, or like <strong>Hysteria</strong>, very hard to find cross platform client GUI binaries. 
+I want to mention as well, all of them cannot achieve the speed as <strong>WireGuard</strong> and <strong>AmneziaWG</strong>.</p>
+
+<p>Among them, I recommend <strong>Shadowsocks</strong> first. It has well maintained client applications for <strong>Android</strong>, <strong>Windows</strong>, <strong>Apple</strong> ecosystem. <a href="https://github.com/shadowsocks/shadowsocks-rust"><strong>Source</strong></a> <strong>Shadowsocks</strong> rust is safe and very memory efficient.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zihao@paris:~<span class="nv">$ </span>systemctl status shadowsocks
+● shadowsocks.service - Shadowsocks-Rust Server
+     Loaded: loaded <span class="o">(</span>/etc/systemd/system/shadowsocks.service<span class="p">;</span> enabled<span class="p">;</span> preset: enabled<span class="o">)</span>
+     Active: active <span class="o">(</span>running<span class="o">)</span> since Tue 2025-11-25 06:57:32 UTC<span class="p">;</span> 3 days ago
+ Invocation: c940ef97e54b45afb70755d7f219116b
+   Main PID: 411417 <span class="o">(</span>ssserver<span class="o">)</span>
+      Tasks: 3 <span class="o">(</span>limit: 4647<span class="o">)</span>
+     Memory: 3.5M <span class="o">(</span>peak: 5.3M<span class="o">)</span>
+        CPU: 795ms
+     CGroup: /system.slice/shadowsocks.service
+             └─411417 /usr/bin/ssserver <span class="nt">-c</span> /etc/shadowsocks/config.json
+</code></pre></div></div>
+
+<p>See the <strong>Shadowsocks</strong> server in <strong>Rust</strong>, is a memory saver. When running a wifi speed test on my device, the memory would only increase to around 10Mb.</p>
+
+<h3 id="shadowsocks">How to set it up?</h3>
+<ol>
+  <li>Clone the repo, and run <code class="language-plaintext highlighter-rouge">cargo build --release</code>, use native build flag if possible, it can achieve better performance in crypto.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">./target/release</code> you can find the <code class="language-plaintext highlighter-rouge">ssserver</code> binary, move this to your VPS. If you build it directly on your VPS ignore this.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">/etc/systemd/system/</code> create a service, like this:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zihao@paris:/etc/systemd/system<span class="nv">$ </span><span class="nb">cat </span>shadowsocks.service
+<span class="o">[</span>Unit]
+<span class="nv">Description</span><span class="o">=</span>Shadowsocks-Rust Server
+<span class="nv">After</span><span class="o">=</span>network-online.target
+<span class="nv">Wants</span><span class="o">=</span>network-online.target
+
+<span class="o">[</span>Service]
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="nv">User</span><span class="o">=</span>nobody
+<span class="nv">Group</span><span class="o">=</span>nogroup
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/ssserver <span class="nt">-c</span> /etc/shadowsocks/config.json
+<span class="nv">Restart</span><span class="o">=</span>on-failure
+<span class="nv">RestartSec</span><span class="o">=</span>3
+<span class="nv">LimitNOFILE</span><span class="o">=</span>51200
+
+<span class="o">[</span>Install]
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div></div>
+
+<p>Step 4. Then make a directory <code class="language-plaintext highlighter-rouge">/etc/shadowsocks/</code> create a <code class="language-plaintext highlighter-rouge">config.json</code> file, like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zihao@paris:~<span class="nv">$ </span><span class="nb">cat</span> /etc/shadowsocks/config.json
+<span class="o">{</span>
+  <span class="s2">"server"</span>: <span class="s2">"0.0.0.0"</span>,
+  <span class="s2">"server_port"</span>: <span class="o">{</span> Port you want to use <span class="o">}</span>,
+  <span class="s2">"password"</span>: <span class="s2">"{ strong password }"</span>,
+  <span class="s2">"method"</span>: <span class="s2">"chacha20-ietf-poly1305"</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Recommend use <code class="language-plaintext highlighter-rouge">openssl rand -base64 30</code> to generate a strong password</p>
+
+<p>Step 5. Start the service, with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start the service</span>
+<span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> shadowsocks
+<span class="nb">sudo </span>systemctl start shadowsocks
+
+<span class="c"># Health check</span>
+<span class="nb">sudo </span>systemctl status shadowsocks
+<span class="nb">sudo </span>journalctl <span class="nt">-u</span> shadowsocks
+</code></pre></div></div>
+
+<p>Step 6. Configure on your client side. You may find the client app in shadowsocks repo.</p>
+
+<h2 id="at-last">At Last</h2>
+<p>I learned a lot during November. Also learned a lot this term. Nov 28, Friday should be the last of the fall term. I’m writing this up to conclude my fall term at 2025.</p>
+
+<ul>
+  <li>I know how to use <strong>Linux</strong></li>
+  <li>Learned how to use <strong>Tailscale</strong></li>
+  <li>Learned many infrastructure set up experience</li>
+  <li>Learning <strong>Rust</strong> right now</li>
+</ul>
+
+<p>What I also enjoyed:</p>
+
+<ul>
+  <li>Stranger Things</li>
+  <li>Wednesday</li>
+  <li>La casa de papel</li>
+  <li>La casa de papel: Berlin</li>
+  <li>Designated Survivor</li>
+</ul>
+
+<p>Maybe I should write a review blog about all these shows.
+I should remove these AI driven blog posts(: Those are in such low quality.</p>
+
+<blockquote>
+  <p>I got a new domain zihaofu245.cloud, don’t know what to serve yet. Open for ideas.</p>
+</blockquote>
+
+<blockquote>
+  <p>This blog is all written by me, no LLM involved.</p>
+</blockquote>
+
+<!-- Mermaid JS (single-use) -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: "loose"  // enables <br/> in diagram labels
+  });
+});
+</script>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[← November Engineering Retrospective]]></summary></entry><entry><title type="html">Midterm - What I’ve Been Through?</title><link href="https://zihaofu245.me/general/2025/10/26/recent.html" rel="alternate" type="text/html" title="Midterm - What I’ve Been Through?" /><published>2025-10-26T00:00:00+00:00</published><updated>2025-10-26T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/26/recent</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/26/recent.html"><![CDATA[<h1 id="average-score-relationship-problem---how-bad-can-it-be">Average Score, Relationship Problem - How Bad Can It Be?</h1>
 
 <blockquote>
   <p>Another month since my last blog about life — and here it comes, finally. Let’s dig into that.</p>
@@ -896,56 +1236,4 @@ $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathb
 是我们一起经历的一切。
 是我们在照片里笑着的模样，是我在黄昏时落泪的片刻。</p>
 
-<p>这个夏天，是我不舍地放下、却永远不会忘记的颜色。</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[How I feel about Berkeley.]]></summary></entry><entry><title type="html">Open Source My Engine！😍</title><link href="https://zihaofu245.me/general/2025/08/08/openSource-Engine.html" rel="alternate" type="text/html" title="Open Source My Engine！😍" /><published>2025-08-08T00:00:00+00:00</published><updated>2025-08-08T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/08/08/openSource-Engine</id><content type="html" xml:base="https://zihaofu245.me/general/2025/08/08/openSource-Engine.html"><![CDATA[<h1 id="-2dtileengine-is-now-open-source-">🎉 2DTileEngine is Now Open Source! 🚀</h1>
-
-<p>I’m excited to announce that my lightweight 2D Tile Engine, <a href="https://github.com/ZihaoFU245/2DTileEngine">2DTileEngine</a>, is now open source!</p>
-
-<h2 id="what-is-2dtileengine">What is 2DTileEngine?</h2>
-<p>A simple, tile-based engine built in Java for learning, tinkering, and creative projects. It features:</p>
-<ul>
-  <li>Scene stack with transitions</li>
-  <li>Fixed-timestep game loop</li>
-  <li>Camera and viewport rendering</li>
-  <li>Spatial-hash collisions</li>
-  <li>Input handling (keyboard, command bar)</li>
-  <li>Demo game with themes, pathfinding, and more</li>
-</ul>
-
-<h2 id="who-is-it-for">Who is it for?</h2>
-<p>This project is <strong>mainly for hobbyists and students</strong>—anyone curious about how game engines work, or looking for a fun way to experiment with 2D games. No need to be a professional developer!</p>
-
-<h2 id="how-to-get-started">How to Get Started</h2>
-<ul>
-  <li><strong>Requirements:</strong> Java 23+, algs4.jar (included)</li>
-  <li><strong>Quick Start:</strong>
-    <ol>
-      <li>Clone the repo</li>
-      <li>Compile with <code class="language-plaintext highlighter-rouge">javac -cp lib\algs4.jar -d out (Get-ChildItem -Recurse -Filter *.java | %% { $_.FullName })</code></li>
-      <li>Run the demo: <code class="language-plaintext highlighter-rouge">java -cp "out;lib/algs4.jar" core.Main</code></li>
-    </ol>
-  </li>
-  <li>See <a href="https://github.com/ZihaoFU245/2DTileEngine/blob/master/docs/GettingStarted.md">docs/GettingStarted.md</a> for more!</li>
-</ul>
-
-<h2 id="highlights">Highlights</h2>
-<ul>
-  <li>Playable demo game included</li>
-  <li>Easy to extend: add your own scenes, entities, and themes</li>
-  <li>Well-documented for learning and hacking</li>
-  <li>Fun command bar and theme system</li>
-</ul>
-
-<h2 id="why-open-source">Why Open Source?</h2>
-<p>I believe in learning by doing—and sharing! By open sourcing this engine, I hope to help others explore game development basics, experiment, and maybe even build something cool.</p>
-
-<h2 id="screenshots">Screenshots</h2>
-<p><img src="/assets/images/java-Game-imgs/2.png" alt="Demo Screenshot" /></p>
-
-<h2 id="get-involved">Get Involved</h2>
-<ul>
-  <li>Star ⭐ the repo</li>
-  <li>Fork and tinker</li>
-  <li>Share feedback or ideas</li>
-</ul>
-
-<p>Let’s make 2D game dev fun and accessible for everyone!</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[🎉 2DTileEngine is Now Open Source! 🚀 I’m excited to announce that my lightweight 2D Tile Engine, 2DTileEngine, is now open source! What is 2DTileEngine? A simple, tile-based engine built in Java for learning, tinkering, and creative projects. It features: Scene stack with transitions Fixed-timestep game loop Camera and viewport rendering Spatial-hash collisions Input handling (keyboard, command bar) Demo game with themes, pathfinding, and more Who is it for? This project is mainly for hobbyists and students—anyone curious about how game engines work, or looking for a fun way to experiment with 2D games. No need to be a professional developer! How to Get Started Requirements: Java 23+, algs4.jar (included) Quick Start: Clone the repo Compile with javac -cp lib\algs4.jar -d out (Get-ChildItem -Recurse -Filter *.java | %% { $_.FullName }) Run the demo: java -cp "out;lib/algs4.jar" core.Main See docs/GettingStarted.md for more! Highlights Playable demo game included Easy to extend: add your own scenes, entities, and themes Well-documented for learning and hacking Fun command bar and theme system Why Open Source? I believe in learning by doing—and sharing! By open sourcing this engine, I hope to help others explore game development basics, experiment, and maybe even build something cool. Screenshots Get Involved Star ⭐ the repo Fork and tinker Share feedback or ideas Let’s make 2D game dev fun and accessible for everyone!]]></summary></entry></feed>
+<p>这个夏天，是我不舍地放下、却永远不会忘记的颜色。</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[How I feel about Berkeley.]]></summary></entry></feed>
