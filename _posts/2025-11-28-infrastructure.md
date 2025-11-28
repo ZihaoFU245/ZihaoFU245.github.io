@@ -17,6 +17,8 @@ has been built out successfully, and I finally understood the Tailscale ACL poli
 and hardened it. Found a critical security vulnerability on my Paris node:
 Docker containers bypassed UFW and exposed my Pi-hole as a public resolver.
 
+> <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1BncfTJAWxrsxyT9culBrj?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
 - [**Tailnet**](#tailnet)
 - [**Container bypassed ufw**](#container-bypassed-ufw)
 - [**What do I host in my tailnet?**](#what-do-i-host-in-my-tailnet)
