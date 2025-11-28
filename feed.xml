@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-11-28T08:41:49+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Building My Self-Hosted Digital Ecosystem :)</title><link href="https://zihaofu245.me/general/2025/11/28/infrastructure.html" rel="alternate" type="text/html" title="Building My Self-Hosted Digital Ecosystem :)" /><published>2025-11-28T00:00:00+00:00</published><updated>2025-11-28T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/11/28/infrastructure</id><content type="html" xml:base="https://zihaofu245.me/general/2025/11/28/infrastructure.html"><![CDATA[<h1 id="-november-engineering-retrospective">← November Engineering Retrospective</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-11-28T08:51:33+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Building My Self-Hosted Digital Ecosystem :)</title><link href="https://zihaofu245.me/general/2025/11/28/infrastructure.html" rel="alternate" type="text/html" title="Building My Self-Hosted Digital Ecosystem :)" /><published>2025-11-28T00:00:00+00:00</published><updated>2025-11-28T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/11/28/infrastructure</id><content type="html" xml:base="https://zihaofu245.me/general/2025/11/28/infrastructure.html"><![CDATA[<h1 id="-november-engineering-retrospective">← November Engineering Retrospective</h1>
 
 <blockquote>
   <p>I made significant progress through the past month. A multi-regional tailnet
@@ -338,7 +338,10 @@ document.addEventListener("DOMContentLoaded", function () {
     securityLevel: "loose"  // enables <br/> in diagram labels
   });
 });
-</script>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[← November Engineering Retrospective]]></summary></entry><entry><title type="html">Midterm - What I’ve Been Through?</title><link href="https://zihaofu245.me/general/2025/10/26/recent.html" rel="alternate" type="text/html" title="Midterm - What I’ve Been Through?" /><published>2025-10-26T00:00:00+00:00</published><updated>2025-10-26T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/26/recent</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/26/recent.html"><![CDATA[<h1 id="average-score-relationship-problem---how-bad-can-it-be">Average Score, Relationship Problem - How Bad Can It Be?</h1>
+</script>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[← November Engineering Retrospective]]></summary></entry><entry><title type="html">Midterm - What I’ve Been Through?</title><link href="https://zihaofu245.me/general/2025/10/26/recent.html" rel="alternate" type="text/html" title="Midterm - What I’ve Been Through?" /><published>2025-10-26T00:00:00+00:00</published><updated>2025-10-26T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/26/recent</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/26/recent.html"><![CDATA[<!--
+# Average Score, Relationship Problem - How Bad Can It Be?
+-->
+<h1 id="how-worse-can-it-be">How worse can it be?</h1>
 
 <blockquote>
   <p>Another month since my last blog about life — and here it comes, finally. Let’s dig into that.</p>
@@ -350,33 +353,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <hr />
 
-<h2 id="midterms">Midterms</h2>
+<!--
+## Midterms
 
-<p>这学期的期中实在是<strong>过于繁忙</strong>，三天连在一起考试。第一门 <em>Computer Organization</em> 直接就拿了 <strong>54 分！</strong><br />
-而 mean 有 62 分，不过 <strong>anyways，我也看开了。</strong> 只是完全没想到会有这么多的 <strong>circuit 题目</strong>。Final 加油！💪</p>
+这学期的期中实在是**过于繁忙**，三天连在一起考试。第一门 *Computer Organization* 直接就拿了 **54 分！**  
+而 mean 有 62 分，不过 **anyways，我也看开了。** 只是完全没想到会有这么多的 **circuit 题目**。Final 加油！💪
 
-<p>然后就是 <em>Linear Algebra</em>，可以开卷，感觉是一个大大的模仿学习，边看 example 边写 😂</p>
+然后就是 *Linear Algebra*，可以开卷，感觉是一个大大的模仿学习，边看 example 边写 😂
 
-<hr />
+---
 
-<h2 id="-relationship-problem">💔 Relationship Problem</h2>
+## 💔 Relationship Problem
 
-<p>This is something <strong>hard</strong> that happened to me this month… but this is a public space, and it’s too long to fit in.<br />
-I’ll post it privately somewhere else. 🫤</p>
+This is something **hard** that happened to me this month... but this is a public space, and it’s too long to fit in.  
+I’ll post it privately somewhere else. 🫤
 
 <figure>
 	<img src="/assets/2025-10-26-resources/coast.jpg" alt="Windy coast" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
 	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">So windy, so cold 🌬️</figcaption>
 </figure>
 
-<p>Kinda feels like a coincidence — right after she left, the temperature suddenly dropped <strong>below 20°C</strong>.<br />
-That’s why I quoted <em>Forever Winter</em> at the top — it fits both <strong>mentally and physically</strong>.<br />
-But as to why I said <em>not quite</em>, it’s because the problem isn’t utterly sad.<br />
-Somehow, I feel <strong>a bit relieved</strong>.</p>
+Kinda feels like a coincidence — right after she left, the temperature suddenly dropped **below 20°C**.  
+That’s why I quoted *Forever Winter* at the top — it fits both **mentally and physically**.  
+But as to why I said *not quite*, it’s because the problem isn’t utterly sad.  
+Somehow, I feel **a bit relieved**.
 
-<hr />
+---
 
-<h2 id="️-welcome-hyf-onboard-hk">✈️ Welcome HYF Onboard HK!</h2>
+## ✈️ Welcome HYF Onboard HK!
+-->
+<h2 id="hk-have-fun">HK, have fun</h2>
 
 <p>It’s so nice to see a friend travel so far to visit me. 💖</p>
 
@@ -414,12 +420,12 @@ Somehow, I feel <strong>a bit relieved</strong>.</p>
 	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Hotpot beef tower 🥩🔥</figcaption>
 </figure>
 
-<p>跟一个朋友打赌——<strong>谁先分手，谁请吃饭。</strong><br />
-但其实就只差了几个小时，差点赢了 😅</p>
+<!--
+跟一个朋友打赌——**谁先分手，谁请吃饭。**  
+但其实就只差了几个小时，差点赢了 😅
 
-<blockquote>
-  <p>谁最喜欢、？</p>
-</blockquote>
+> 谁最喜欢、？
+-->
 
 <hr />
 
@@ -441,7 +447,12 @@ So exciting! 🚀</p>
 I’d describe it as <em>Grey</em>, yet sprinkled with <strong>joyful and hopeful moments</strong>.<br />
 Life, after all, is still <strong>bright and good</strong>. ☀️✨</p>
 
-<hr />]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Average Score, Relationship Problem - How Bad Can It Be?]]></summary></entry><entry><title type="html">Tailscale setup experience</title><link href="https://zihaofu245.me/general/2025/10/09/tailscale.html" rel="alternate" type="text/html" title="Tailscale setup experience" /><published>2025-10-09T00:00:00+00:00</published><updated>2025-10-09T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/09/tailscale</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/09/tailscale.html"><![CDATA[<h1 id="my-journey-to-a-seamless-private-network-with-tailscale">My Journey to a Seamless Private Network with Tailscale</h1>
+<blockquote>
+  <p>Update on Nov.28, I commented out some sections, not delete. I wounld not forgive myself delete 
+any things from past, they are memories, alive. They just lived in another way, as comments. &lt;!—–&gt;</p>
+</blockquote>
+
+<hr />]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[How worse can it be?]]></summary></entry><entry><title type="html">Tailscale setup experience</title><link href="https://zihaofu245.me/general/2025/10/09/tailscale.html" rel="alternate" type="text/html" title="Tailscale setup experience" /><published>2025-10-09T00:00:00+00:00</published><updated>2025-10-09T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/09/tailscale</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/09/tailscale.html"><![CDATA[<h1 id="my-journey-to-a-seamless-private-network-with-tailscale">My Journey to a Seamless Private Network with Tailscale</h1>
 
 <p>It all started with a Raspberry Pi.</p>
 
