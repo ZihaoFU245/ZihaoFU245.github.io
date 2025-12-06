@@ -107,6 +107,10 @@ I would drop notes below this line.
 </div>
 <!-- End secret chat component -->
 
+--- 
+
+Crazy. All wonderful moments comes with an end. This one is neither an exception. Yes, f u Diana.
+
 <script src="/call/script.js"></script>
 <hr />
 Last rebuild: {{ site.time | date: "%Y-%m-%d %H:%M %Z" }}

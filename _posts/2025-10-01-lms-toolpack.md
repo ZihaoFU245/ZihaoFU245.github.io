@@ -30,3 +30,9 @@ LM Studio requires **manual**, **per-tool configuration** for MCP tools, and cur
 ---
 
 > October 1th, **Happy Holiday!**
+
+## Appended on 12/6/2025
+
+I am not keeping maintaining this repo. There are so many existing well written MCP tools. I have no point of
+building wheels again. The MCP tool pack, I regarded it as a fun project, whenever I found a need of updating the code,
+I will pick it up again. 

@@ -18,6 +18,8 @@ and hardened it. Found a critical security vulnerability on my Paris node:
 Docker containers bypassed UFW and exposed my Pi-hole as a public resolver.
 
 > <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1BncfTJAWxrsxyT9culBrj?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+> This blog is too difficult for some of my readers, as it has a huge gap from last blog. If you don't know what is
+> tailscale, [Check this out](/general/2025/10/09/tailscale.html#tailscale-intro)
 
 - [**Tailnet**](#tailnet)
 - [**Container bypassed ufw**](#container-bypassed-ufw)

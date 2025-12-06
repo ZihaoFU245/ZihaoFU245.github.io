@@ -10,9 +10,9 @@ header:
     teaser: "https://cdn.sanity.io/images/w77i7m8x/production/481ad859f0d7ae07295066a7b655588b1069ab1c-1280x584.svg?w=1920&q=75&fit=clip&auto=format"
 ---
 
-# My Journey to a Seamless Private Network with Tailscale
+#  Start off Private Network with Tailscale
 
-It all started with a Raspberry Pi.
+> It all started with a Raspberry Pi.
 
 <figure>
     <img src="/assets/2025-10-09-resources/pi.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
@@ -23,12 +23,15 @@ After getting my hands on a Raspberry Pi, I was eager to explore its potential. 
 
 However, I soon hit a roadblock. I was in Hong Kong, and my Raspberry Pi didn't have a public IP address, a crucial requirement for PiVPN which uses WireGuard. After some head-scratching, I discovered Tailscale, and it turned out to be the perfect solution.
 
+> Comment on 12/6/2025: HKUST resnet do provide public ipv4 over wall jack. To be more accurate, university firewall blocks all inbounds, and 
+I incorrectly believe I did not have an public ipv4.
+
 <figure>
     <img src="/assets/2025-10-09-resources/tailscale.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
     <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My Tailscale homepage</figcaption>
 </figure>
 
-## What is Tailscale?
+## What is Tailscale? {#tailscale-intro}
 
 Tailscale is a zero-config VPN that creates a secure network between your computers, servers, and cloud instances — even when separated by firewalls and subnets. It's built on top of WireGuard®, which means you get the speed and security of a modern VPN protocol without the setup complexity.
 
@@ -39,6 +42,8 @@ For me, it meant I could finally connect all my devices, including my Raspberry 
 Getting started with Tailscale was mostly straightforward, but I did run into a few configuration hurdles like enabling IP forwarding and disabling Generic Receive Offload (GRO) to get everything working smoothly.
 
 Here's a breakdown of how I set up my tailnet, which might help you get started as well.
+
+> 12/6/2025: Go read the docs and health check with `tailscale status` getting started is not that hard as you think
 
 ### 1. Installing Tailscale
 
@@ -97,3 +102,13 @@ An exit node allows you to route all your internet traffic through another devic
 
 With Tailscale, I now have a secure, private network that connects my Raspberry Pi, my laptops, my phone, and my cloud servers. It's been a game-changer for accessing my devices and services from anywhere in the world. If you're looking for a simple and powerful way to create your own private network, I highly recommend giving Tailscale a try.
 
+
+## Appended on 12/6/2025
+
+This is roughly about 2 month later I fully experienced tailscale. What a masterpiece. 
+I have spinned up several VMs and running many docker containers. First amazing thing is, tailscale
+serve, no manually enter ip / machine address and ports any more. So good for self hosting. Second is
+secure connect, It can securly connect 2 computers, without relays if possible, offering low latency and 
+stablity. My friend in Spain, running a minecraft server on his side, and I can join his world with the magic
+of tailscale. Excellent game experience and convenience. One notable replacement for this is e4mc mod for minecraft,
+however it requires install mods and goes through relays.
