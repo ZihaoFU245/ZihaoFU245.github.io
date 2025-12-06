@@ -96,13 +96,13 @@ var store = [{
         "teaser": "/assets/2025-10-01-resources/teaser.png"
       },{
         "title": "Tailscale setup experience",
-        "excerpt":"My Journey to a Seamless Private Network with Tailscale It all started with a Raspberry Pi. My Rasberry Pi After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea...","categories": ["General"],
+        "excerpt":"Start off Private Network with Tailscale It all started with a Raspberry Pi. My Rasberry Pi After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea of having a...","categories": ["General"],
         "tags": [],
         "url": "/general/2025/10/09/tailscale.html",
         "teaser": "https://cdn.sanity.io/images/w77i7m8x/production/481ad859f0d7ae07295066a7b655588b1069ab1c-1280x584.svg?w=1920&q=75&fit=clip&auto=format"
       },{
         "title": "Midterm - What I've Been Through?",
-        "excerpt":"How worse can it be? Another month since my last blog about life — and here it comes, finally. Let’s dig into that. This song fits my mood earlier this week perfectly. Well… not quite. 🎧 HK, have fun It’s so nice to see a friend travel so far to...","categories": ["General"],
+        "excerpt":"How worse can it be? Another month since my last blog about life — and here it comes, finally. Let’s dig into that. This song fits my mood earlier this week perfectly. Well… not quite. 🎧 Comment from future(12/6/2025): This is such a rubbish blog. I should bury it forever...","categories": ["General"],
         "tags": [],
         "url": "/general/2025/10/26/recent.html",
         "teaser": "/assets/2025-10-26-resources/MountainTop.jpg"
