@@ -76,36 +76,36 @@ jobs:
           publish_branch: gh-pages
           cname: zihaofu245.me
 
-      # Connect this GitHub runner to your tailnet
-      - name: Connect to Tailscale
-        if: github.ref == 'refs/heads/main'
-        uses: tailscale/github-action@v4
-        with:
-          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-          tags: tag:ci
+      # # Connect this GitHub runner to your tailnet
+      # - name: Connect to Tailscale
+      #   if: github.ref == 'refs/heads/main'
+      #   uses: tailscale/github-action@v4
+      #   with:
+      #     authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+      #     tags: tag:ci
 
-      # Install SSH key so we can log in as zihao@DEPLOY_HOST
-      - name: Configure SSH
-        if: github.ref == 'refs/heads/main'
-        env:
-          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-        run: |
-          set -euo pipefail
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+      # # Install SSH key so we can log in as zihao@DEPLOY_HOST
+      # - name: Configure SSH
+      #   if: github.ref == 'refs/heads/main'
+      #   env:
+      #     SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+      #     DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      #   run: |
+      #     set -euo pipefail
+      #     mkdir -p ~/.ssh
+      #     chmod 700 ~/.ssh
+      #     printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+      #     chmod 600 ~/.ssh/id_ed25519
+      #     ssh-keyscan "$DEPLOY_HOST" >> ~/.ssh/known_hosts
 
-      # Push built site to ~/zihaofu245.me and restart HTTP server
-      - name: Deploy to Tailscale host
-        if: github.ref == 'refs/heads/main'
-        env:
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-        run: |
-          set -euo pipefail
-          # Sync _site/ to your home web root
-          rsync -avz --delete ./_site/ "zihao@${DEPLOY_HOST}:~/zihaofu245.me/"
-          # Restart your user-level HTTP server
-          ssh "zihao@${DEPLOY_HOST}" "systemctl --user restart blog.service"
+      # # Push built site to ~/zihaofu245.me and restart HTTP server
+      # - name: Deploy to Tailscale host
+      #   if: github.ref == 'refs/heads/main'
+      #   env:
+      #     DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      #   run: |
+      #     set -euo pipefail
+      #     # Sync _site/ to your home web root
+      #     rsync -avz --delete ./_site/ "zihao@${DEPLOY_HOST}:~/zihaofu245.me/"
+      #     # Restart your user-level HTTP server
+      #     ssh "zihao@${DEPLOY_HOST}" "systemctl --user restart blog.service"
