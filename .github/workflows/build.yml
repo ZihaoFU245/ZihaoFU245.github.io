@@ -76,12 +76,13 @@ jobs:
           publish_branch: gh-pages
           cname: zihaofu245.me
 
-            # Connect this GitHub runner to your tailnet
+      # Connect this GitHub runner to your tailnet
       - name: Connect to Tailscale
         if: github.ref == 'refs/heads/main'
         uses: tailscale/github-action@v4
         with:
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+          tags: tag:ci
 
       # Install SSH key so we can log in as zihao@DEPLOY_HOST
       - name: Configure SSH
