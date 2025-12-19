@@ -423,111 +423,117 @@ tailscale, <a href="/general/2025/10/09/tailscale.html#tailscale-intro">Check th
 
 <h2 id="tailnet">Tailnet</h2>
 
-<p><strong>Tailscale</strong> is one of the best choices to build a secure mesh network, connecting all 
+<p><strong>Tailscale</strong> is one of the best choices to build a secure mesh network, connecting all
 devices together. <strong>Access Control</strong> is a central topic if we are to manage many devices and users.
-On this year’s Black Friday, I bought a VPS at <strong>Hostinger</strong> with 4GB of RAM, then I decided to run 
+On this year’s Black Friday, I bought a VPS at <strong>Hostinger</strong> with 4GB of RAM, then I decided to run
 it as a <strong>Minecraft</strong> server, and play with my friends. Now I finally have to face <strong>Access Control</strong> in
-my tailnet. I don’t want to expose my server on public internet, so <strong>Tailscale</strong> is the best choice, 
+my tailnet. I don’t want to expose my server on public internet, so <strong>Tailscale</strong> is the best choice,
 and also I don’t want any of my friends hacking around devices in it. Thus, I am changing my <strong>ACL</strong>.</p>
 
 <p>What my ACL looked like before:</p>
+
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-	</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 
-	</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 
-	</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
 <p>which essentially grants everyone access to any devices. This works perfectly fine with a small
 number of users. But, I can imagine my friends posing thousands of pings to my computer just for fun.
 That is not acceptable, I changed my ACL to something like:</p>
+
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-	</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
 
-	</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-		</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
-	</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+ </span><span class="p">],</span><span class="w">
 
-	</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
 <p>This version seems to work but I tried it and got stuck on it. This was given by an LLM. I should never trust it
 in the first place. What this means is granting all members access to devices with some tags, and use of exit-node.
 The problem is Tailscale ACL is deny on default, I am the owner of the tailnet, owner is a member, but without
-explicitly allowing owner to access, an owner or in this case admins are not granted with access. 
+explicitly allowing owner to access, an owner or in this case admins are not granted with access.
 With final fine tuning, I get:</p>
+
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    	</span><span class="nl">"grants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="err">//</span><span class="w"> </span><span class="err">All</span><span class="w"> </span><span class="err">members</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">peer</span><span class="w"> </span><span class="err">relays</span><span class="w"> </span><span class="err">(tag:relays)</span><span class="w">
-			</span><span class="err">//</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">Tailscale</span><span class="w"> </span><span class="err">Peer</span><span class="w"> </span><span class="err">Relays</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
+     </span><span class="nl">"grants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="err">//</span><span class="w"> </span><span class="err">All</span><span class="w"> </span><span class="err">members</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">peer</span><span class="w"> </span><span class="err">relays</span><span class="w"> </span><span class="err">(tag:relays)</span><span class="w">
+   </span><span class="err">//</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">Tailscale</span><span class="w"> </span><span class="err">Peer</span><span class="w"> </span><span class="err">Relays</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag:relays"</span><span class="p">],</span><span class="w">
-			</span><span class="nl">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"tailscale.com/cap/relay"</span><span class="p">:</span><span class="w"> </span><span class="p">[]},</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="err">//</span><span class="w"> </span><span class="err">Members</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag:relays"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"tailscale.com/cap/relay"</span><span class="p">:</span><span class="w"> </span><span class="p">[]},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Members</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-				</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
-			</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+   </span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="err">//</span><span class="w"> </span><span class="err">Admins</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-				</span><span class="s2">"autogroup:admin"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:it-admin"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:network-admin"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:billing-admin"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:auditor"</span><span class="p">,</span><span class="w">
-			</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Admins</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"autogroup:admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:it-admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:network-admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:billing-admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:auditor"</span><span class="p">,</span><span class="w">
+   </span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-				</span><span class="s2">"autogroup:members"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:self"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:service-admin"</span><span class="p">,</span><span class="w">
-			</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"autogroup:members"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:self"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:service-admin"</span><span class="p">,</span><span class="w">
+   </span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="err">//</span><span class="w"> </span><span class="err">Owner</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:owner"</span><span class="p">],</span><span class="w">
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:tagged"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Owner</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:owner"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:tagged"</span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-				</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
-			</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+   </span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-	</span><span class="p">]</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+ </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
 <p>Explicit and strict.</p>
 
 <h2 id="container-bypassed-ufw">Container bypassed ufw</h2>
@@ -554,19 +560,21 @@ flowchart LR
     piholeDocker --&gt;|DNS reply| ext
 </div>
 
-<p>This made my <strong>Pi-hole</strong> a public container, once I went to check the admin panel of my <strong>Pi-hole</strong>, 
+<p>This made my <strong>Pi-hole</strong> a public container, once I went to check the admin panel of my <strong>Pi-hole</strong>,
 there are about 1700 active clients using my resolver. Lots of them are from Brazil.</p>
 
 <figure>
-	<img src="/assets/2025-11-28-resources/publicResolver.png" alt="Public resolver" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
-	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Pi-hole is being used as a public resolver, I'm pissed</figcaption>
+ <img src="/assets/2025-11-28-resources/publicResolver.png" alt="Public resolver" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+ <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Pi-hole is being used as a public resolver, I'm pissed</figcaption>
 </figure>
 
 <p><strong>How did I solve it?</strong>
 I used a firewall, not <strong>UFW</strong>. The firewall provided by <strong>Hostinger</strong>, it is at a bigger scope and drops requests from the outside world.</p>
 
 <h2 id="what-do-i-host-in-my-tailnet">What do I host in my tailnet?</h2>
+
 <p>Self-hosting is so much fun. And you hold your own data.</p>
+
 <ol>
   <li><a href="https://pi-hole.net/"><strong>Pi-hole</strong></a> A super lightweight DNS resolver, block ads in the tailnet. Takes about
 30Mb with container.</li>
@@ -595,7 +603,8 @@ I used a firewall, not <strong>UFW</strong>. The firewall provided by <strong>Ho
 </ol>
 
 <h3 id="minimalist">Minimalist</h3>
-<p><a href="https://github.com/ZihaoFU245/mcserver"><strong>Minimal MC server</strong></a>, 
+
+<p><a href="https://github.com/ZihaoFU245/mcserver"><strong>Minimal MC server</strong></a>,
 I wrote a Dockerfile along with a start shell script. Place your <strong>downloaded server.jar</strong> under that directory and build the images, and you will have a running mc server!</p>
 
 <h2 id="setting-up-my-own-proxies">Setting up my own proxies</h2>
@@ -627,9 +636,10 @@ I wrote a Dockerfile along with a start shell script. Place your <strong>downloa
 
 <p>I then went on further, deeper research. Later I found another tool: <a href="https://github.com/amnezia-vpn"><strong>AmneziaWG</strong></a>, can avoid <strong>DPI</strong> inspection, while retaining the speed of <strong>WireGuard</strong>. But the installation is a little complicated on a self-hosted <strong>Linux</strong> machine, which I modified a script, <a href="https://github.com/ZihaoFU245/amneziawg-install"><strong>Source</strong></a>, a fork from <a href="https://github.com/Varckin/amneziawg-install">Varkin’s script</a>. In 2025, the apt source list of <strong>Amnezia</strong>, I haven’t dived into that. But the installation script would fail for newer <strong>Linux</strong> kernel. (You can find it in the issues) That’s the motivation for modifying the script. It does not involve kernel modules, all lives under userspace. It builds the official go source code and installs it. Again, make life easier.</p>
 
-<h3 id="what-i-also-tried">What I also tried.</h3>
+<h3 id="what-i-also-tried">What I also tried</h3>
+
 <p>I also tried <strong>V2Ray</strong>, <strong>Hysteria</strong> and <strong>Shadowsocks</strong>.
-<strong>V2Ray</strong> and <strong>Hysteria</strong> seems to have many active users, but the setting up is rather complicated, or like <strong>Hysteria</strong>, very hard to find cross platform client GUI binaries. 
+<strong>V2Ray</strong> and <strong>Hysteria</strong> seems to have many active users, but the setting up is rather complicated, or like <strong>Hysteria</strong>, very hard to find cross platform client GUI binaries.
 I want to mention as well, all of them cannot achieve the speed as <strong>WireGuard</strong> and <strong>AmneziaWG</strong>.</p>
 
 <p>Among them, I recommend <strong>Shadowsocks</strong> first. It has well maintained client applications for <strong>Android</strong>, <strong>Windows</strong>, <strong>Apple</strong> ecosystem. <a href="https://github.com/shadowsocks/shadowsocks-rust"><strong>Source</strong></a> <strong>Shadowsocks</strong> rust is safe and very memory efficient.</p>
@@ -650,6 +660,7 @@ I want to mention as well, all of them cannot achieve the speed as <strong>WireG
 <p>See the <strong>Shadowsocks</strong> server in <strong>Rust</strong>, is a memory saver. When running a wifi speed test on my device, the memory would only increase to around 10Mb.</p>
 
 <h3 id="shadowsocks">How to set it up?</h3>
+
 <ol>
   <li>Clone the repo, and run <code class="language-plaintext highlighter-rouge">cargo build --release</code>, use native build flag if possible, it can achieve better performance in crypto.</li>
   <li>In <code class="language-plaintext highlighter-rouge">./target/release</code> you can find the <code class="language-plaintext highlighter-rouge">ssserver</code> binary, move this to your VPS. If you build it directly on your VPS ignore this.</li>
@@ -702,6 +713,7 @@ I want to mention as well, all of them cannot achieve the speed as <strong>WireG
 <p>Step 6. Configure on your client side. You may find the client app in shadowsocks repo.</p>
 
 <h2 id="at-last">At Last</h2>
+
 <p>I learned a lot during November. Also learned a lot this term. Nov 28, Friday should be the last of the fall term. I’m writing this up to conclude my fall term at 2025.</p>
 
 <ul>
@@ -767,7 +779,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <a href="/general/2025/10/26/recent.html" class="pagination--pager" title="Midterm - What I’ve Been Through?">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/chitchat/2025/12/19/end-of-beginning.html" class="pagination--pager" title="End of beginning">Next</a>
     
   </nav>
 

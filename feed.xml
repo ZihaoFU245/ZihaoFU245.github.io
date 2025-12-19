@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-12-07T07:47:44+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Building My Self-Hosted Digital Ecosystem :)</title><link href="https://zihaofu245.me/general/2025/11/28/infrastructure.html" rel="alternate" type="text/html" title="Building My Self-Hosted Digital Ecosystem :)" /><published>2025-11-28T00:00:00+00:00</published><updated>2025-11-28T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/11/28/infrastructure</id><content type="html" xml:base="https://zihaofu245.me/general/2025/11/28/infrastructure.html"><![CDATA[<h1 id="-november-engineering-retrospective">← November Engineering Retrospective</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2025-12-19T12:41:31+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">End of beginning</title><link href="https://zihaofu245.me/chitchat/2025/12/19/end-of-beginning.html" rel="alternate" type="text/html" title="End of beginning" /><published>2025-12-19T00:00:00+00:00</published><updated>2025-12-19T00:00:00+00:00</updated><id>https://zihaofu245.me/chitchat/2025/12/19/end-of-beginning</id><content type="html" xml:base="https://zihaofu245.me/chitchat/2025/12/19/end-of-beginning.html"><![CDATA[<blockquote>
+  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3qhlB30KknSejmIvZZLjOD?utm_source=generator" width="100%" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <p>A song I recently like</p>
+</blockquote>
+
+<h2 id="every-action-comes-with-an-consequence">Every Action comes with an consequence</h2>
+
+<p>After I decided to live in the moment back in September, the consequences came quickly.
+December has arrived, would
+there be a miracle in the rest 11 days to save me from reality?</p>
+
+<p>Back to todays topic, end of beginning. Why do I choose this header?</p>
+
+<ol>
+  <li>
+    <p>December is my birthday month, and I turned 19, which I realized my joyful childhood
+has came to an end. End of 18 years of child life, what waiting for me is the next 10 years of new era.
+I little bit sad.</p>
+  </li>
+  <li>
+    <p>From 2025 spring term, I tried so hard to improve my GPA. And after all that
+hard works, I improved <strong>0.01</strong>. So I wondered, what is the necessity of studying so hard?
+To fulfil my ego? Thus this term I decided to live the moment, and consequences came.
+I have an answer now, to make me feel good, get a below median do hurts. End of my
+experiment of living the moment. <strong>Reserve a seat for myself in library.</strong></p>
+  </li>
+  <li>
+    <p>I am watching “Dark”, that famous show. It really inspired me of thinking about time,
+and Causality. The “dark world” is really fascinating, a circled timeline. Past effects future,
+and future effects past, like past and future are if and only if relationships. When is end?
+When is beginning? End of beginning should be end <strong>and</strong> beginning.</p>
+  </li>
+</ol>
+
+<figure style="text-align:center;">
+  <img src="/assets/2025-12-19-resources/whiskey.jpg" alt="Thai food" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
+<div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Bar at coast</div>
+
+<p>This term, I did not take too much photos. It feels like September and October slipped away
+in a sudden, while November are surprisingly slow.</p>
+
+<h2 id="what-ive-been-doing">What I’ve been doing</h2>
+
+<h3 id="my-first-pr-contribute-to-public-repo">My first PR contribute to public repo</h3>
+
+<p>I am making docker container support for <a href="https://github.com/cuberite/cuberite/pull/5621">cuberite</a>,
+a community version of minecraft server. The server only supports up to 1.14 version of minecraft,
+it is a major drawback. But in contrast to official server, it is written in C++, giving high performance
+comparing to java server. It can run easily on a raspberry pi. This server is missing container shipping,
+therefore I am writing one.</p>
+
+<blockquote>
+  <p>An annoying thing is the CI, MSVC build failed, but clang and g++ on ubuntu has no problem.</p>
+</blockquote>
+
+<h3 id="netcat-implemented-in-golang">Netcat implemented in Golang</h3>
+
+<p>I am new to golang, it is used widely in network scenarios, concurrency has made go unique.
+There are people already implemented netcat in golang, mine is for learning go. Here is the repo,
+<a href="https://github.com/ZihaoFU245/netcat-go">netcat-go</a>. Some basic features are ready to use, while
+some fancy ones, like hexdump, file sharing, is not yet ready.</p>
+
+<p>Netcat <code class="language-plaintext highlighter-rouge">-e</code> flag in history is considered as a backdoor, which can act like a reverse shell.
+<code class="language-plaintext highlighter-rouge">nc &lt;dest ip&gt; &lt;port&gt; -e /bin/bash</code>, this can act like a backdoor. 50 lines of code can make your
+device insecure.</p>
+
+<h3 id="remotely-playing-ps5">Remotely playing PS5</h3>
+
+<p>I am thinking of a way to remotely playing PS5 in low latency. The official PS remote app
+is dummy, even under a VPN which is Layer 3, it can not find PS5 machine, and traffic will be routed
+through Sony’s server giving higher latency and introduce instability. If PS5 is directly exposed
+in public internet, then it will be direct, but under most cases, it is behind a NAT.</p>
+
+<p>I will be setting up PS5 in my madrid house, and use chiaki, a community PS remote application,
+which support a direct ip connection. I can utilize my tailnet, to give a direct connection.</p>
+
+<p>Inspired by this, I have bought a HDMI video capture card. Combined with a remote IR control</p>
+
+<h2 id="what-i-gonna-do-in-winter-holiday">What I gonna do in winter holiday</h2>
+
+<h3 id="home-lab-set-up">Home Lab Set up</h3>
+
+<p>I will be setting up my own home lab in Madrid. A usual home lab, you could possibly think of,
+require powerful CPUs or 4090s. Mine is much shallower, a raspberry pi. I small raspberry pi
+with a public ipv4 can be way powerful then you think. Set up services that only used by few people,
+VPNs, remote control, minecraft server (I would use an old thinkbook laptop more likely), etc.</p>
+
+<h3 id="switch-to-linux-ubuntu">Switch to Linux (Ubuntu)</h3>
+
+<p>I am quite tired of using windows. Windows file systems, services, powershell, cmd, etc, are
+not as easy as Unix I personally believe. With the power of Wine and Proton, developed by valve,
+I can play my games on Linux as well.</p>
+
+<h3 id="traveling">Traveling</h3>
+
+<p>Dec 22th to 25th, I will be Nice, France. Jan 1th to 8th I will go to Denmark and Norway, mainly go
+to watch northern lights. By that time, I will have posted a travel blog contained my best photos.</p>
+
+<hr />
+
+<blockquote>
+  <p>I do feel this term one reason I didn’t get good grades is because I focus on too much on my
+personal hobbies</p>
+</blockquote>
+
+<blockquote>
+  <p>I have decided to separate technical blogs with general chitchat blogs, with better focus.</p>
+</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="ChitChat" /><summary type="html"><![CDATA[A song I recently like]]></summary></entry><entry><title type="html">Building My Self-Hosted Digital Ecosystem :)</title><link href="https://zihaofu245.me/general/2025/11/28/infrastructure.html" rel="alternate" type="text/html" title="Building My Self-Hosted Digital Ecosystem :)" /><published>2025-11-28T00:00:00+00:00</published><updated>2025-11-28T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/11/28/infrastructure</id><content type="html" xml:base="https://zihaofu245.me/general/2025/11/28/infrastructure.html"><![CDATA[<h1 id="-november-engineering-retrospective">← November Engineering Retrospective</h1>
 
 <blockquote>
   <p>I made significant progress through the past month. A multi-regional tailnet
@@ -25,111 +133,117 @@ tailscale, <a href="/general/2025/10/09/tailscale.html#tailscale-intro">Check th
 
 <h2 id="tailnet">Tailnet</h2>
 
-<p><strong>Tailscale</strong> is one of the best choices to build a secure mesh network, connecting all 
+<p><strong>Tailscale</strong> is one of the best choices to build a secure mesh network, connecting all
 devices together. <strong>Access Control</strong> is a central topic if we are to manage many devices and users.
-On this year’s Black Friday, I bought a VPS at <strong>Hostinger</strong> with 4GB of RAM, then I decided to run 
+On this year’s Black Friday, I bought a VPS at <strong>Hostinger</strong> with 4GB of RAM, then I decided to run
 it as a <strong>Minecraft</strong> server, and play with my friends. Now I finally have to face <strong>Access Control</strong> in
-my tailnet. I don’t want to expose my server on public internet, so <strong>Tailscale</strong> is the best choice, 
+my tailnet. I don’t want to expose my server on public internet, so <strong>Tailscale</strong> is the best choice,
 and also I don’t want any of my friends hacking around devices in it. Thus, I am changing my <strong>ACL</strong>.</p>
 
 <p>What my ACL looked like before:</p>
+
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-	</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 
-	</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 
-	</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
 <p>which essentially grants everyone access to any devices. This works perfectly fine with a small
 number of users. But, I can imagine my friends posing thousands of pings to my computer just for fun.
 That is not acceptable, I changed my ACL to something like:</p>
+
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-	</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
 
-	</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-		</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
-	</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+ </span><span class="p">],</span><span class="w">
 
-	</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+ </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
 <p>This version seems to work but I tried it and got stuck on it. This was given by an LLM. I should never trust it
 in the first place. What this means is granting all members access to devices with some tags, and use of exit-node.
 The problem is Tailscale ACL is deny on default, I am the owner of the tailnet, owner is a member, but without
-explicitly allowing owner to access, an owner or in this case admins are not granted with access. 
+explicitly allowing owner to access, an owner or in this case admins are not granted with access.
 With final fine tuning, I get:</p>
+
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    	</span><span class="nl">"grants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="err">//</span><span class="w"> </span><span class="err">All</span><span class="w"> </span><span class="err">members</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">peer</span><span class="w"> </span><span class="err">relays</span><span class="w"> </span><span class="err">(tag:relays)</span><span class="w">
-			</span><span class="err">//</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">Tailscale</span><span class="w"> </span><span class="err">Peer</span><span class="w"> </span><span class="err">Relays</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
+     </span><span class="nl">"grants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="err">//</span><span class="w"> </span><span class="err">All</span><span class="w"> </span><span class="err">members</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">peer</span><span class="w"> </span><span class="err">relays</span><span class="w"> </span><span class="err">(tag:relays)</span><span class="w">
+   </span><span class="err">//</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">Tailscale</span><span class="w"> </span><span class="err">Peer</span><span class="w"> </span><span class="err">Relays</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:members"</span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag:relays"</span><span class="p">],</span><span class="w">
-			</span><span class="nl">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"tailscale.com/cap/relay"</span><span class="p">:</span><span class="w"> </span><span class="p">[]},</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="err">//</span><span class="w"> </span><span class="err">Members</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag:relays"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"tailscale.com/cap/relay"</span><span class="p">:</span><span class="w"> </span><span class="p">[]},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Members</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-				</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
-			</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+   </span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="err">//</span><span class="w"> </span><span class="err">Admins</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-				</span><span class="s2">"autogroup:admin"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:it-admin"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:network-admin"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:billing-admin"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:auditor"</span><span class="p">,</span><span class="w">
-			</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Admins</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"autogroup:admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:it-admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:network-admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:billing-admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:auditor"</span><span class="p">,</span><span class="w">
+   </span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-				</span><span class="s2">"autogroup:members"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"autogroup:self"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:service-admin"</span><span class="p">,</span><span class="w">
-			</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"autogroup:members"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:internet"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autogroup:self"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:service-admin"</span><span class="p">,</span><span class="w">
+   </span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="err">//</span><span class="w"> </span><span class="err">Owner</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:owner"</span><span class="p">],</span><span class="w">
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:tagged"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Owner</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:owner"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autogroup:tagged"</span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-				</span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
-				</span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
-			</span><span class="p">],</span><span class="w">
+   </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"tag:service-member"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:gpt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:hkust"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:relays"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag:server"</span><span class="p">,</span><span class="w">
+   </span><span class="p">],</span><span class="w">
 
-			</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-	</span><span class="p">]</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+ </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
 <p>Explicit and strict.</p>
 
 <h2 id="container-bypassed-ufw">Container bypassed ufw</h2>
@@ -156,19 +270,21 @@ flowchart LR
     piholeDocker --&gt;|DNS reply| ext
 </div>
 
-<p>This made my <strong>Pi-hole</strong> a public container, once I went to check the admin panel of my <strong>Pi-hole</strong>, 
+<p>This made my <strong>Pi-hole</strong> a public container, once I went to check the admin panel of my <strong>Pi-hole</strong>,
 there are about 1700 active clients using my resolver. Lots of them are from Brazil.</p>
 
 <figure>
-	<img src="/assets/2025-11-28-resources/publicResolver.png" alt="Public resolver" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
-	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Pi-hole is being used as a public resolver, I'm pissed</figcaption>
+ <img src="/assets/2025-11-28-resources/publicResolver.png" alt="Public resolver" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+ <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Pi-hole is being used as a public resolver, I'm pissed</figcaption>
 </figure>
 
 <p><strong>How did I solve it?</strong>
 I used a firewall, not <strong>UFW</strong>. The firewall provided by <strong>Hostinger</strong>, it is at a bigger scope and drops requests from the outside world.</p>
 
 <h2 id="what-do-i-host-in-my-tailnet">What do I host in my tailnet?</h2>
+
 <p>Self-hosting is so much fun. And you hold your own data.</p>
+
 <ol>
   <li><a href="https://pi-hole.net/"><strong>Pi-hole</strong></a> A super lightweight DNS resolver, block ads in the tailnet. Takes about
 30Mb with container.</li>
@@ -197,7 +313,8 @@ I used a firewall, not <strong>UFW</strong>. The firewall provided by <strong>Ho
 </ol>
 
 <h3 id="minimalist">Minimalist</h3>
-<p><a href="https://github.com/ZihaoFU245/mcserver"><strong>Minimal MC server</strong></a>, 
+
+<p><a href="https://github.com/ZihaoFU245/mcserver"><strong>Minimal MC server</strong></a>,
 I wrote a Dockerfile along with a start shell script. Place your <strong>downloaded server.jar</strong> under that directory and build the images, and you will have a running mc server!</p>
 
 <h2 id="setting-up-my-own-proxies">Setting up my own proxies</h2>
@@ -229,9 +346,10 @@ I wrote a Dockerfile along with a start shell script. Place your <strong>downloa
 
 <p>I then went on further, deeper research. Later I found another tool: <a href="https://github.com/amnezia-vpn"><strong>AmneziaWG</strong></a>, can avoid <strong>DPI</strong> inspection, while retaining the speed of <strong>WireGuard</strong>. But the installation is a little complicated on a self-hosted <strong>Linux</strong> machine, which I modified a script, <a href="https://github.com/ZihaoFU245/amneziawg-install"><strong>Source</strong></a>, a fork from <a href="https://github.com/Varckin/amneziawg-install">Varkin’s script</a>. In 2025, the apt source list of <strong>Amnezia</strong>, I haven’t dived into that. But the installation script would fail for newer <strong>Linux</strong> kernel. (You can find it in the issues) That’s the motivation for modifying the script. It does not involve kernel modules, all lives under userspace. It builds the official go source code and installs it. Again, make life easier.</p>
 
-<h3 id="what-i-also-tried">What I also tried.</h3>
+<h3 id="what-i-also-tried">What I also tried</h3>
+
 <p>I also tried <strong>V2Ray</strong>, <strong>Hysteria</strong> and <strong>Shadowsocks</strong>.
-<strong>V2Ray</strong> and <strong>Hysteria</strong> seems to have many active users, but the setting up is rather complicated, or like <strong>Hysteria</strong>, very hard to find cross platform client GUI binaries. 
+<strong>V2Ray</strong> and <strong>Hysteria</strong> seems to have many active users, but the setting up is rather complicated, or like <strong>Hysteria</strong>, very hard to find cross platform client GUI binaries.
 I want to mention as well, all of them cannot achieve the speed as <strong>WireGuard</strong> and <strong>AmneziaWG</strong>.</p>
 
 <p>Among them, I recommend <strong>Shadowsocks</strong> first. It has well maintained client applications for <strong>Android</strong>, <strong>Windows</strong>, <strong>Apple</strong> ecosystem. <a href="https://github.com/shadowsocks/shadowsocks-rust"><strong>Source</strong></a> <strong>Shadowsocks</strong> rust is safe and very memory efficient.</p>
@@ -252,6 +370,7 @@ I want to mention as well, all of them cannot achieve the speed as <strong>WireG
 <p>See the <strong>Shadowsocks</strong> server in <strong>Rust</strong>, is a memory saver. When running a wifi speed test on my device, the memory would only increase to around 10Mb.</p>
 
 <h3 id="shadowsocks">How to set it up?</h3>
+
 <ol>
   <li>Clone the repo, and run <code class="language-plaintext highlighter-rouge">cargo build --release</code>, use native build flag if possible, it can achieve better performance in crypto.</li>
   <li>In <code class="language-plaintext highlighter-rouge">./target/release</code> you can find the <code class="language-plaintext highlighter-rouge">ssserver</code> binary, move this to your VPS. If you build it directly on your VPS ignore this.</li>
@@ -304,6 +423,7 @@ I want to mention as well, all of them cannot achieve the speed as <strong>WireG
 <p>Step 6. Configure on your client side. You may find the client app in shadowsocks repo.</p>
 
 <h2 id="at-last">At Last</h2>
+
 <p>I learned a lot during November. Also learned a lot this term. Nov 28, Friday should be the last of the fall term. I’m writing this up to conclude my fall term at 2025.</p>
 
 <ul>
@@ -445,7 +565,7 @@ Somehow, I feel **a bit relieved**.
 So exciting! 🚀</p>
 
 <figure>
-	<img src="/assets/2025-10-26-resources/RasberryPiNVMe.jpg" alt="Pi server" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
+	<img src="/assets/2025-10-26-resources/RaspberryPiNVMe.jpg" alt="Pi server" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
 	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Raspberry Pi with a 512GB NVMe SSD ⚙️</figcaption>
 </figure>
 
@@ -470,7 +590,7 @@ any things from past, they are memories, alive. They just lived in another way, 
 
 <figure>
     <img src="/assets/2025-10-09-resources/pi.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
-    <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My Rasberry Pi</figcaption>
+    <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My Raspberry Pi</figcaption>
 </figure>
 
 <p>After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea of having a secure and private network was fascinating.</p>
@@ -587,7 +707,7 @@ serve, no manually enter ip / machine address and ports any more. So good for se
 secure connect, It can securly connect 2 computers, without relays if possible, offering low latency and 
 stablity. My friend in Spain, running a minecraft server on his side, and I can join his world with the magic
 of tailscale. Excellent game experience and convenience. One notable replacement for this is e4mc mod for minecraft,
-however it requires install mods and goes through relays.</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Start off Private Network with Tailscale It all started with a Raspberry Pi. My Rasberry Pi After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea of having a secure and private network was fascinating. However, I soon hit a roadblock. I was in Hong Kong, and my Raspberry Pi didn’t have a public IP address, a crucial requirement for PiVPN which uses WireGuard. After some head-scratching, I discovered Tailscale, and it turned out to be the perfect solution. Comment on 12/6/2025: HKUST resnet do provide public ipv4 over wall jack. To be more accurate, university firewall blocks all inbounds, and I incorrectly believe I did not have an public ipv4. My Tailscale homepage What is Tailscale? Tailscale is a zero-config VPN that creates a secure network between your computers, servers, and cloud instances — even when separated by firewalls and subnets. It’s built on top of WireGuard®, which means you get the speed and security of a modern VPN protocol without the setup complexity. For me, it meant I could finally connect all my devices, including my Raspberry Pi and a few cloud VMs from DigitalOcean, into a single, private “tailnet”. Getting Started with Tailscale Getting started with Tailscale was mostly straightforward, but I did run into a few configuration hurdles like enabling IP forwarding and disabling Generic Receive Offload (GRO) to get everything working smoothly. Here’s a breakdown of how I set up my tailnet, which might help you get started as well. 12/6/2025: Go read the docs and health check with tailscale status getting started is not that hard as you think 1. Installing Tailscale The first step is to install Tailscale on all the devices you want to connect. Tailscale has clients for almost every operating system. Go to the Tailscale download page: tailscale.com/download Download and install the client for your OS (Linux, Windows, macOS, Android, iOS, etc.). Log in: After installation, you’ll be prompted to log in with a Google, Microsoft, or GitHub account. Use the same account on all your devices to add them to the same tailnet. For my Raspberry Pi, I used the command line to install it: curl -fsSL https://tailscale.com/install.sh | sh 2. Advertising a Subnet (like a home network) One of the most powerful features of Tailscale is the ability to use a device as a gateway to a whole subnet. This is what I did with my Raspberry Pi to access my home network from anywhere. Enable IP forwarding on the gateway device (e.g., your Raspberry Pi). On Linux, you can do this by running: echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf sudo sysctl -p /etc/sysctl.d/99-tailscale.conf Advertise the subnet route. First, connect your device to your tailnet by running sudo tailscale up. Then, use the tailscale set command to advertise the route. You’ll need to know the IP range of your local network (e.g., 192.168.1.0/24). sudo tailscale set --advertise-routes=192.168.1.0/24 Approve the routes in the Tailscale admin console. Go to the Tailscale admin console. You will see your device with a “Subnet routes” badge. Click on it and approve the advertised routes. 3. Using an Exit Node An exit node allows you to route all your internet traffic through another device on your tailnet. This is useful for securing your traffic on public Wi-Fi or accessing geo-restricted content. I set up one of my DigitalOcean VMs as an exit node. Advertise a device as an exit node. On the device you want to be the exit node, run: sudo tailscale set --advertise-exit-node Approve the exit node in the admin console. Go to the admin console, find the machine, and approve it as an exit node. Use the exit node from another device. On any other device in your tailnet, you can now choose to route your traffic through the exit node. You can enable this from the Tailscale client menu. Conclusion With Tailscale, I now have a secure, private network that connects my Raspberry Pi, my laptops, my phone, and my cloud servers. It’s been a game-changer for accessing my devices and services from anywhere in the world. If you’re looking for a simple and powerful way to create your own private network, I highly recommend giving Tailscale a try. Appended on 12/6/2025 This is roughly about 2 month later I fully experienced tailscale. What a masterpiece. I have spinned up several VMs and running many docker containers. First amazing thing is, tailscale serve, no manually enter ip / machine address and ports any more. So good for self hosting. Second is secure connect, It can securly connect 2 computers, without relays if possible, offering low latency and stablity. My friend in Spain, running a minecraft server on his side, and I can join his world with the magic of tailscale. Excellent game experience and convenience. One notable replacement for this is e4mc mod for minecraft, however it requires install mods and goes through relays.]]></summary></entry><entry><title type="html">Projects: LM-Studio ToolPack / Bundle</title><link href="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html" rel="alternate" type="text/html" title="Projects: LM-Studio ToolPack / Bundle" /><published>2025-10-01T00:00:00+00:00</published><updated>2025-10-01T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/01/lms-toolpack</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html"><![CDATA[<h1 id="targeted-for-local-llm-use-mcp-tools-collection">Targeted for Local LLM use: MCP Tools Collection</h1>
+however it requires install mods and goes through relays.</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Start off Private Network with Tailscale It all started with a Raspberry Pi. My Raspberry Pi After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea of having a secure and private network was fascinating. However, I soon hit a roadblock. I was in Hong Kong, and my Raspberry Pi didn’t have a public IP address, a crucial requirement for PiVPN which uses WireGuard. After some head-scratching, I discovered Tailscale, and it turned out to be the perfect solution. Comment on 12/6/2025: HKUST resnet do provide public ipv4 over wall jack. To be more accurate, university firewall blocks all inbounds, and I incorrectly believe I did not have an public ipv4. My Tailscale homepage What is Tailscale? Tailscale is a zero-config VPN that creates a secure network between your computers, servers, and cloud instances — even when separated by firewalls and subnets. It’s built on top of WireGuard®, which means you get the speed and security of a modern VPN protocol without the setup complexity. For me, it meant I could finally connect all my devices, including my Raspberry Pi and a few cloud VMs from DigitalOcean, into a single, private “tailnet”. Getting Started with Tailscale Getting started with Tailscale was mostly straightforward, but I did run into a few configuration hurdles like enabling IP forwarding and disabling Generic Receive Offload (GRO) to get everything working smoothly. Here’s a breakdown of how I set up my tailnet, which might help you get started as well. 12/6/2025: Go read the docs and health check with tailscale status getting started is not that hard as you think 1. Installing Tailscale The first step is to install Tailscale on all the devices you want to connect. Tailscale has clients for almost every operating system. Go to the Tailscale download page: tailscale.com/download Download and install the client for your OS (Linux, Windows, macOS, Android, iOS, etc.). Log in: After installation, you’ll be prompted to log in with a Google, Microsoft, or GitHub account. Use the same account on all your devices to add them to the same tailnet. For my Raspberry Pi, I used the command line to install it: curl -fsSL https://tailscale.com/install.sh | sh 2. Advertising a Subnet (like a home network) One of the most powerful features of Tailscale is the ability to use a device as a gateway to a whole subnet. This is what I did with my Raspberry Pi to access my home network from anywhere. Enable IP forwarding on the gateway device (e.g., your Raspberry Pi). On Linux, you can do this by running: echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf sudo sysctl -p /etc/sysctl.d/99-tailscale.conf Advertise the subnet route. First, connect your device to your tailnet by running sudo tailscale up. Then, use the tailscale set command to advertise the route. You’ll need to know the IP range of your local network (e.g., 192.168.1.0/24). sudo tailscale set --advertise-routes=192.168.1.0/24 Approve the routes in the Tailscale admin console. Go to the Tailscale admin console. You will see your device with a “Subnet routes” badge. Click on it and approve the advertised routes. 3. Using an Exit Node An exit node allows you to route all your internet traffic through another device on your tailnet. This is useful for securing your traffic on public Wi-Fi or accessing geo-restricted content. I set up one of my DigitalOcean VMs as an exit node. Advertise a device as an exit node. On the device you want to be the exit node, run: sudo tailscale set --advertise-exit-node Approve the exit node in the admin console. Go to the admin console, find the machine, and approve it as an exit node. Use the exit node from another device. On any other device in your tailnet, you can now choose to route your traffic through the exit node. You can enable this from the Tailscale client menu. Conclusion With Tailscale, I now have a secure, private network that connects my Raspberry Pi, my laptops, my phone, and my cloud servers. It’s been a game-changer for accessing my devices and services from anywhere in the world. If you’re looking for a simple and powerful way to create your own private network, I highly recommend giving Tailscale a try. Appended on 12/6/2025 This is roughly about 2 month later I fully experienced tailscale. What a masterpiece. I have spinned up several VMs and running many docker containers. First amazing thing is, tailscale serve, no manually enter ip / machine address and ports any more. So good for self hosting. Second is secure connect, It can securly connect 2 computers, without relays if possible, offering low latency and stablity. My friend in Spain, running a minecraft server on his side, and I can join his world with the magic of tailscale. Excellent game experience and convenience. One notable replacement for this is e4mc mod for minecraft, however it requires install mods and goes through relays.]]></summary></entry><entry><title type="html">Projects: LM-Studio ToolPack / Bundle</title><link href="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html" rel="alternate" type="text/html" title="Projects: LM-Studio ToolPack / Bundle" /><published>2025-10-01T00:00:00+00:00</published><updated>2025-10-01T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/10/01/lms-toolpack</id><content type="html" xml:base="https://zihaofu245.me/general/2025/10/01/lms-toolpack.html"><![CDATA[<h1 id="targeted-for-local-llm-use-mcp-tools-collection">Targeted for Local LLM use: MCP Tools Collection</h1>
 
 <figure>
     <img src="/assets/2025-10-01-resources/teaser.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
@@ -653,7 +773,7 @@ The ultimate solution I found is stream the browser live. Further thinking, use 
 
 <figure>
 	<img src="/assets/2025-09-22-resources/pi.jpg" alt="Shopping for storm" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
-	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Rasberry Pi setup.</figcaption>
+	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Raspberry Pi setup.</figcaption>
 </figure>
 <p>I made it a VPN / Linux server.</p>
 
@@ -672,7 +792,7 @@ The ultimate solution I found is stream the browser live. Further thinking, use 
 <figure>
 	<img src="/assets/2025-09-22-resources/shopping.jpg" alt="Shopping for storm" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
 	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Typhoon (Storm) is coming preparing for food</figcaption>
-</figure>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Weekly review, what happened? Another few weeks passed at HKUST. This post is continued from Sep 7th - first week back in HK What’s fun If you’ve been checking my website regularly, you might think there haven’t been any updates—no new posts, no new projects. But that’s not entirely true. I’ve been secretly working on something new! A brand new landing page — Check it out here It’s now in great shape, with a growing collection of resources. I designed it specifically for my college friends and their needs. And there’s more! I partnered with shengwxnw, sergio’s Portfolio, to create a network request routing service. We’re leveraging the free tier offered by Cloudflare Workers to send requests locally, with the Workers fetching URLs and returning the information to us. However, it’s not as powerful as a full VPN solution. Note: Some websites have blocked visitors from Cloudflare IP addresses, which is a significant disadvantage. Comment at 12/6/2025: This idea is utterly naive. Albeit it is viable, the effort is huge. I soon turned into another solution, neko, a virtual browser. To proxy in a browser tab, there are so many things that needs to consider. How to render css? How to run js? How to handle relative url? How to handle redirect? That’s why the above idea did not workout. The ultimate solution I found is stream the browser live. Further thinking, use rustdesk web to use computer at your home. You can check out our Local Connector Prototypes here. The local connector has been removed now, it supposed to be a static website that served through github pages Rasberry Pi setup. I made it a VPN / Linux server. What’s Boring Assignments: Linear Algebra, Discrete math, Circuit design, UML Diagram The term officially kicks off, becoming more busy Where I spent most of my time I am watching Strangers Things, such a good one. I am now onto season 03. Jim Hopper Live! Storm is coming Typhoon (Storm) is coming preparing for food]]></summary></entry><entry><title type="html">Git LFS with GitHub Pages: A Practical Guide</title><link href="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html" rel="alternate" type="text/html" title="Git LFS with GitHub Pages: A Practical Guide" /><published>2025-09-12T00:00:00+00:00</published><updated>2025-09-12T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/09/12/git-lfs-guide</id><content type="html" xml:base="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html"><![CDATA[<blockquote>
+</figure>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Weekly review, what happened? Another few weeks passed at HKUST. This post is continued from Sep 7th - first week back in HK What’s fun If you’ve been checking my website regularly, you might think there haven’t been any updates—no new posts, no new projects. But that’s not entirely true. I’ve been secretly working on something new! A brand new landing page — Check it out here It’s now in great shape, with a growing collection of resources. I designed it specifically for my college friends and their needs. And there’s more! I partnered with shengwxnw, sergio’s Portfolio, to create a network request routing service. We’re leveraging the free tier offered by Cloudflare Workers to send requests locally, with the Workers fetching URLs and returning the information to us. However, it’s not as powerful as a full VPN solution. Note: Some websites have blocked visitors from Cloudflare IP addresses, which is a significant disadvantage. Comment at 12/6/2025: This idea is utterly naive. Albeit it is viable, the effort is huge. I soon turned into another solution, neko, a virtual browser. To proxy in a browser tab, there are so many things that needs to consider. How to render css? How to run js? How to handle relative url? How to handle redirect? That’s why the above idea did not workout. The ultimate solution I found is stream the browser live. Further thinking, use rustdesk web to use computer at your home. You can check out our Local Connector Prototypes here. The local connector has been removed now, it supposed to be a static website that served through github pages Raspberry Pi setup. I made it a VPN / Linux server. What’s Boring Assignments: Linear Algebra, Discrete math, Circuit design, UML Diagram The term officially kicks off, becoming more busy Where I spent most of my time I am watching Strangers Things, such a good one. I am now onto season 03. Jim Hopper Live! Storm is coming Typhoon (Storm) is coming preparing for food]]></summary></entry><entry><title type="html">Git LFS with GitHub Pages: A Practical Guide</title><link href="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html" rel="alternate" type="text/html" title="Git LFS with GitHub Pages: A Practical Guide" /><published>2025-09-12T00:00:00+00:00</published><updated>2025-09-12T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/09/12/git-lfs-guide</id><content type="html" xml:base="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html"><![CDATA[<blockquote>
   <p>Written on 12th Sep 2025, after spending an afternoon figuring out how to use both Git LFS and deploy to GitHub Pages. An ultimate shortcut guide.</p>
 </blockquote>
 
@@ -1192,107 +1312,4 @@ $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathb
 <blockquote>
   <p>Update on <strong>Aug 26th</strong>: This blog is written on <strong>Aug 14th</strong>, when i’m taking the exam at 12 a.m.
  And the $Latex$ display is failed, ChatGPT can’t fix that, quite disappointed. And finally i fixed it:)</p>
-</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Multivariable Calculus – Integral &amp; Theorem Cheat Sheet Conventions. In 2D: $\mathbf{F}=\langle M,N\rangle$. In 3D: $\mathbf{F}=\langle P,Q,R\rangle$. A smooth curve $C$ is parameterized by $\mathbf{r}(t)$, $a\le t\le b$. A smooth surface $S$ is parameterized by $\mathbf{r}(u,v)$ on a domain $D_{uv}$. Unit normal $\mathbf{n}$ is chosen by orientation (right-hand rule when paired with boundary orientation). 1) Line Integrals Scalar line integral (with respect to arc length) \(\int_C f\,ds \;=\; \int_a^b f(\mathbf{r}(t))\,\|\mathbf{r}'(t)\|\,dt.\) Vector line integral (work) \(W=\int_C \mathbf{F}\cdot d\mathbf{r} \;=\; \int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt.\) Work/energy interpretation: moving a particle through a force field $\mathbf{F}$ along $C$. “Is $\mathbf{F}$ conservative?” (in a simply connected open set) Equivalent tests: $\displaystyle \oint_C \mathbf{F}\cdot d\mathbf{r}=0$ for every closed $C$. Path independence: $\int_{C_1}\mathbf{F}\cdot d\mathbf{r}=\int_{C_2}\mathbf{F}\cdot d\mathbf{r}$ for any two paths with same endpoints. There exists potential $f$ with $\mathbf{F}=\nabla f$. In 2D: $N_x=M_y$. In 3D: $\nabla\times \mathbf{F}=\mathbf{0}$. Finding $f$ when conservative (2D): Integrate $M=\partial f/\partial x$ in $x$, then determine the “constant in $x$” via $N=\partial f/\partial y$. 2) Green’s Theorem (2D) Let $C$ be positively oriented, piecewise smooth, simple closed curve bounding region $D$ and $M,N$ have continuous partials on an open set containing $D$. Circulation form \(\oint_C M\,dx+N\,dy \;=\; \iint_D \left(N_x - M_y\right)\,dA.\) Flux / normal form \(\oint_C \mathbf{F}\cdot \mathbf{n}\,ds \;=\; \oint_C (-N)\,dx + M\,dy \;=\; \iint_D \left(M_x + N_y\right)\,dA \;=\; \iint_D \nabla\cdot\mathbf{F}\,dA.\) Area corollaries \(ext{Area}(D)=\frac12\oint_C (x\,dy - y\,dx) \;=\;\oint_C x\,dy \;=\; -\oint_C y\,dx \quad (\text{choose any one}).\) 3) Surface Integrals Scalar surface integral Given $\mathbf{r}(u,v)$ on $D_{uv}$, \[\iint_S f\,dS \;=\; \iint_{D_{uv}} f(\mathbf{r}(u,v))\,\|\mathbf{r}_u\times \mathbf{r}_v\|\,du\,dv.\] For a graph $z=g(x,y)$: \(dS = \sqrt{1+g_x^2+g_y^2}\,dx\,dy.\) Flux of a vector field across a surface \[\iint_S \mathbf{F}\cdot \mathbf{n}\,dS \;=\; \iint_{D_{uv}} \mathbf{F}(\mathbf{r}(u,v))\cdot\left(\mathbf{r}_u\times \mathbf{r}_v\right)\,du\,dv.\] 4) Stokes’ Theorem (3D) Let $S$ be an oriented smooth surface with boundary curve $C=\partial S$ (positively oriented by the right-hand rule). If $\mathbf{F}$ has continuous partials, \[\oint_C \mathbf{F}\cdot d\mathbf{r} \;=\; \iint_S (\nabla\times\mathbf{F})\cdot \mathbf{n}\,dS.\] 5) Divergence Theorem (Gauss) Let $E$ be a solid region with boundary surface $S=\partial E$ oriented outward, and $\mathbf{F}$ have continuous partials: \[\iint_S \mathbf{F}\cdot \mathbf{n}\,dS \;=\; \iiint_E \nabla\cdot\mathbf{F}\,dV.\] 6) Double &amp; Triple Integrals Double integral (Cartesian) \[\iint_D f(x,y)\,dA \;=\; \int_{x=a}^b\int_{y=g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx \quad \text{or} \quad \int_{y=c}^d\int_{x=h_1(y)}^{h_2(y)} f(x,y)\,dx\,dy.\] Double integral (polar) Use $x=r\cos\theta,\;y=r\sin\theta,\; dA = r\,dr\,d\theta$: \[\iint_D f(x,y)\,dA \;=\; \int_{\theta=\alpha}^{\beta}\int_{r=r_1(\theta)}^{r_2(\theta)} f\!\big(r\cos\theta, r\sin\theta\big)\; r\,dr\,d\theta.\] Triple integral (Cartesian) \[\iiint_E f(x,y,z)\,dV \;=\; \int\!\!\int\!\!\int f(x,y,z)\,dz\,dy\,dx \quad (\text{order to fit }E).\] Triple integral (cylindrical) Use $x=r\cos\theta,\;y=r\sin\theta,\;z=z,\; dV=r\,dr\,d\theta\,dz$: \[\iiint_E f\,dV = \int_{\theta=\alpha}^{\beta}\int_{r=r_1(\theta)}^{r_2(\theta)}\int_{z=z_1(r,\theta)}^{z_2(r,\theta)} f(r\cos\theta,r\sin\theta,z)\; r\,dz\,dr\,d\theta.\] Triple integral (spherical) Use $x=\rho\sin\phi\cos\theta,\; y=\rho\sin\phi\sin\theta,\; z=\rho\cos\phi,\; dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta$: \[\iiint_E f\,dV = \int_{\theta=\alpha}^{\beta}\int_{\phi=\phi_1(\theta)}^{\phi_2(\theta)}\int_{\rho=\rho_1(\phi,\theta)}^{\rho_2(\phi,\theta)} f(\rho,\phi,\theta)\; \rho^2\sin\phi\, d\rho\, d\phi\, d\theta.\] 7) Change of Variables (Jacobian) In 2D If $(x,y)=(x(u,v),y(u,v))$ is one-to-one with nonzero Jacobian \(J=\frac{\partial(x,y)}{\partial(u,v)}= \begin{vmatrix} x_u &amp; x_v\\ y_u &amp; y_v \end{vmatrix},\) then \(\iint_D f(x,y)\,dx\,dy = \iint_{D^*} f\big(x(u,v),y(u,v)\big)\; \left|J\right|\,du\,dv.\) In 3D Similarly with $(x,y,z)=(x(u,v,w),y(u,v,w),z(u,v,w))$ and \(J=\frac{\partial(x,y,z)}{\partial(u,v,w)}= \det \begin{bmatrix} x_u &amp; x_v &amp; x_w\\ y_u &amp; y_v &amp; y_w\\ z_u &amp; z_v &amp; z_w \end{bmatrix}.\) 8) Curl and Divergence (Cartesian) \[\nabla\times\mathbf{F}= \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k}\\ \partial_x &amp; \partial_y &amp; \partial_z\\ P &amp; Q &amp; R \end{vmatrix} = \langle R_y-Q_z,\; P_z-R_x,\; Q_x-P_y\rangle.\] \[\nabla\cdot\mathbf{F} = P_x + Q_y + R_z.\] Vector identities: $\nabla\times(\nabla f)=\mathbf{0}$, $\nabla\cdot(\nabla\times\mathbf{F})=0$. 9) Second Derivative Test (2D) Let $f_x=f_y=0$ at $(a,b)$. Define $ D=f_{xx}(a,b)\,f_{yy}(a,b)-\big(f_{xy}(a,b)\big)^2. $ If $D&gt;0$ and $f_{xx}(a,b)&gt;0$: local minimum. If $D&gt;0$ and $f_{xx}(a,b)&lt;0$: local maximum. If $D&lt;0$: saddle. If $D=0$: test inconclusive. 10) Lagrange Multipliers One constraint $g(x,y,z)=c$: Solve \[\nabla f=\lambda \nabla g,\qquad g(x,y,z)=c.\] Two constraints $g(x,y,z)=c,\; h(x,y,z)=k$: \[\nabla f=\lambda \nabla g+\mu \nabla h,\quad g=c,\quad h=k.\] 11) Flux (quick references) Across a plane curve $C$ (Green’s normal form): $\displaystyle \oint_C \mathbf{F}\cdot \mathbf{n}\,ds = \oint_C (M\,dy - N\,dx) = \iint_D \nabla\cdot\mathbf{F}\,dA$. Across a surface $S$: $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iint_{D_{uv}}\mathbf{F}(\mathbf{r}(u,v))\cdot(\mathbf{r}_u\times\mathbf{r}_v)\,du\,dv$. Closed surface $S=\partial E$ (Divergence Thm): $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathbf{F}\,dV.$ 12) Common Regional Setups (quick memory) Disk/annulus: use polar $(r,\theta)$, $dA=r\,dr\,d\theta$. Cylinder-like regions: use cylindrical $(r,\theta,z)$, $dV=r\,dr\,d\theta\,dz$. Spheres/balls/cones: use spherical $(\rho,\phi,\theta)$, $dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta$. Update on Aug 26th: This blog is written on Aug 14th, when i’m taking the exam at 12 a.m. And the $Latex$ display is failed, ChatGPT can’t fix that, quite disappointed. And finally i fixed it:)]]></summary></entry><entry><title type="html">What is the color of Berkeley?</title><link href="https://zihaofu245.me/general/2025/08/12/summer-ending.html" rel="alternate" type="text/html" title="What is the color of Berkeley?" /><published>2025-08-12T00:00:00+00:00</published><updated>2025-08-12T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/08/12/summer-ending</id><content type="html" xml:base="https://zihaofu245.me/general/2025/08/12/summer-ending.html"><![CDATA[<style>
-.color-chip {
-  cursor: pointer; border-bottom: 1px dotted currentColor; padding: 0 .1em;
-}
-.color-chip:active { transform: scale(0.98); }
-.color-chip.success { background: rgba(0,0,0,.06); border-bottom-color: transparent; }
-</style>
-
-<script defer="" src="/assets/js/color-sequence.js"></script>
-
-<h1 id="伯克利的夏天是五彩斑斓的告别">伯克利的夏天，是五彩斑斓的告别</h1>
-<blockquote>
-  <p><em>如果这个夏天可以用颜色来描绘，那一定不止一种：有燃烧的红，有离别的灰，有忙碌的橙，有成长的金黄，也有无法说出口的蓝</em></p>
-</blockquote>
-
-<h2 id="红是伯克利跳动的心脏">红，是伯克利跳动的心脏</h2>
-<p>伯克利在我眼里是红色的。</p>
-
-<p>不是校园砖红的建筑，而是那种藏在日常里的热烈与躁动。
-红，是午后晒得发烫的台阶。
-红，是深夜还亮着灯的自习室 （不真， 是白天。
-红，是和朋友辩论时那种眼里的光。
-红，是热情洋溢的青春。</p>
-
-<p>这个夏天的伯克利，不安静，却充满了生命力。</p>
-
-<p><img src="/assets/2025-08-12-resources/GoodByeHYF.jpg" alt="*08-12-2025 GoodBye Photo*" />
-<img src="/assets/2025-08-12-resources/GoodByeHFY2.jpg" alt="*Photos that i got*" /></p>
-
-<p><img src="/assets/2025-08-12-resources/MusicianSF.jpg" alt="街头音乐人·旧金山" />
-<img src="/assets/2025-08-12-resources/EnclaveDawn.jpg" alt="晚霞的橙红·Enclave" />
-<img src="/assets/2025-08-12-resources/SFpeakView.jpg" alt="城市远眺·SF" /></p>
-
-<h2 id="灰是分别那天的天气">灰，是分别那天的天气</h2>
-<p>这个夏天的最后一天，我送别了一位非常特别的朋友。
-我们一起走过伯克利的街道，一起在钟楼下说再见。
-没有煽情的话语，也没有过多的承诺，只是安静地道别，目送着彼此走向各自的方向。</p>
-
-<p>那一刻，我感受到的是灰色。
-不是冷漠的灰，而是那种淡淡的、潮湿的、像旧照片边缘褪色的灰。
-天气明明很好，可我总觉得天有些阴，像是云层藏住了光。</p>
-
-<p>灰，是结束时那种轻轻的痛感，是知道再见之后，各自都会走向不同人生的沉默。</p>
-
-<p><img src="/assets/2025-08-12-resources/FoggyGGBridge.jpg" alt="雾中的金门大桥" />
-<img src="/assets/2025-08-12-resources/GGBridgeUnder.jpg" alt="桥下的阴影" />
-<img src="/assets/2025-08-12-resources/DarkBeach.jpg" alt="海边的灰色海滩" />
-<img src="/assets/2025-08-12-resources/GGBridgeWholeView.jpg" alt="远景里的大桥与雾" /></p>
-
-<h2 id="忙碌是什么颜色">忙碌是什么颜色？</h2>
-<p>夏天的伯克利，真的太忙了。
-从早到晚的课程、project、labs，还有数不清的todo list。
-忙碌是什么颜色？我想是亮橙色的——像深夜屏幕的光，像便签纸上乱涂的笔记，像我们头脑风暴时快速闪过的灵感。</p>
-
-<p>那种橙色，是燃烧，是疲惫，是青春最真实的模样。</p>
-
-<p><img src="/assets/2025-08-12-resources/BancroftLibrary.jpg" alt="Bancroft 图书馆" />
-<img src="/assets/2025-08-12-resources/SatherTower.jpg" alt="Sather Tower" />
-<img src="/assets/2025-08-12-resources/ViewAtSatherTower.jpg" alt="从钟楼望去" />
-<img src="/assets/2025-08-12-resources/Lawrence.jpg" alt="Lawrence 实验室" />
-<img src="/assets/2025-08-12-resources/BerkeleySquirrel.jpg" alt="伯克利松鼠·日常" /></p>
-
-<h2 id="收获是金黄色的阳光">收获，是金黄色的阳光</h2>
-<p>我也收获了很多。</p>
-
-<p>收获了一个自己曾经不认识的我，
-收获了新的朋友，新的城市，新的勇气。
-我骑车穿过金门大桥，风吹乱头发，却觉得自己自由得像只鸟。
-我在优胜美地抬头仰望，那些高耸入云的岩壁让我觉得，
-自己虽渺小，却也踏实地存在着。</p>
-
-<p>收获是金黄色的，像傍晚洒在脸上的暖光，像内心悄悄长大的感觉。</p>
-
-<p><img src="/assets/2025-08-12-resources/Sausalito.jpg" alt="Sausalito 的金色海湾" />
-<img src="/assets/2025-08-12-resources/GGBridgeGrassLand.jpg" alt="大桥与草地的金色" />
-<img src="/assets/2025-08-12-resources/ElCapitan.jpg" alt="El Capitan 直面震撼" />
-<img src="/assets/2025-08-12-resources/ElCapitan2.jpg" alt="El Capitan·另一角度" />
-<img src="/assets/2025-08-12-resources/YosemiteFall.jpg" alt="Yosemite 的瀑布" />
-<img src="/assets/2025-08-12-resources/YosemiteNight.jpg" alt="Yosemite 夜色" />
-<img src="/assets/2025-08-12-resources/Hiking.jpg" alt="徒步的路" />
-<img src="/assets/2025-08-12-resources/Hiking22.jpg" alt="徒步的另一段" />
-<img src="/assets/2025-08-12-resources/YosemitePoPo.jpg" alt="Yosemite 的瞬间" /></p>
-
-<h2 id="两个月真的飞快">两个月，真的飞快！</h2>
-<p>两个月，转瞬即逝。
-明明才刚刚熟悉这个城市、这些人，这种感觉，却又要说再见了。</p>
-
-<p>我们说：“慢慢来吧。”
-可生活不给慢慢来的时间。
-我们一点点靠近，又在最不舍的时候分开。</p>
-
-<p>有些故事，还没写完就翻篇了。
-可即使没能继续，它依然很美。</p>
-
-<h2 id="所以这个夏天到底是什么颜色">所以，这个夏天，到底是什么颜色？</h2>
-<p>是<span class="color-chip" data-key="red">红</span>，
-是<span class="color-chip" data-key="gray">灰</span>，
-是<span class="color-chip" data-key="orange">橙</span>，
-是<span class="color-chip" data-key="blue">蓝</span>，
-是<span class="color-chip" data-key="gold">金</span>，
-是我们一起经历的一切。
-是我们在照片里笑着的模样，是我在黄昏时落泪的片刻。</p>
-
-<p>这个夏天，是我不舍地放下、却永远不会忘记的颜色。</p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[How I feel about Berkeley.]]></summary></entry></feed>
+</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Multivariable Calculus – Integral &amp; Theorem Cheat Sheet Conventions. In 2D: $\mathbf{F}=\langle M,N\rangle$. In 3D: $\mathbf{F}=\langle P,Q,R\rangle$. A smooth curve $C$ is parameterized by $\mathbf{r}(t)$, $a\le t\le b$. A smooth surface $S$ is parameterized by $\mathbf{r}(u,v)$ on a domain $D_{uv}$. Unit normal $\mathbf{n}$ is chosen by orientation (right-hand rule when paired with boundary orientation). 1) Line Integrals Scalar line integral (with respect to arc length) \(\int_C f\,ds \;=\; \int_a^b f(\mathbf{r}(t))\,\|\mathbf{r}'(t)\|\,dt.\) Vector line integral (work) \(W=\int_C \mathbf{F}\cdot d\mathbf{r} \;=\; \int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt.\) Work/energy interpretation: moving a particle through a force field $\mathbf{F}$ along $C$. “Is $\mathbf{F}$ conservative?” (in a simply connected open set) Equivalent tests: $\displaystyle \oint_C \mathbf{F}\cdot d\mathbf{r}=0$ for every closed $C$. Path independence: $\int_{C_1}\mathbf{F}\cdot d\mathbf{r}=\int_{C_2}\mathbf{F}\cdot d\mathbf{r}$ for any two paths with same endpoints. There exists potential $f$ with $\mathbf{F}=\nabla f$. In 2D: $N_x=M_y$. In 3D: $\nabla\times \mathbf{F}=\mathbf{0}$. Finding $f$ when conservative (2D): Integrate $M=\partial f/\partial x$ in $x$, then determine the “constant in $x$” via $N=\partial f/\partial y$. 2) Green’s Theorem (2D) Let $C$ be positively oriented, piecewise smooth, simple closed curve bounding region $D$ and $M,N$ have continuous partials on an open set containing $D$. Circulation form \(\oint_C M\,dx+N\,dy \;=\; \iint_D \left(N_x - M_y\right)\,dA.\) Flux / normal form \(\oint_C \mathbf{F}\cdot \mathbf{n}\,ds \;=\; \oint_C (-N)\,dx + M\,dy \;=\; \iint_D \left(M_x + N_y\right)\,dA \;=\; \iint_D \nabla\cdot\mathbf{F}\,dA.\) Area corollaries \(ext{Area}(D)=\frac12\oint_C (x\,dy - y\,dx) \;=\;\oint_C x\,dy \;=\; -\oint_C y\,dx \quad (\text{choose any one}).\) 3) Surface Integrals Scalar surface integral Given $\mathbf{r}(u,v)$ on $D_{uv}$, \[\iint_S f\,dS \;=\; \iint_{D_{uv}} f(\mathbf{r}(u,v))\,\|\mathbf{r}_u\times \mathbf{r}_v\|\,du\,dv.\] For a graph $z=g(x,y)$: \(dS = \sqrt{1+g_x^2+g_y^2}\,dx\,dy.\) Flux of a vector field across a surface \[\iint_S \mathbf{F}\cdot \mathbf{n}\,dS \;=\; \iint_{D_{uv}} \mathbf{F}(\mathbf{r}(u,v))\cdot\left(\mathbf{r}_u\times \mathbf{r}_v\right)\,du\,dv.\] 4) Stokes’ Theorem (3D) Let $S$ be an oriented smooth surface with boundary curve $C=\partial S$ (positively oriented by the right-hand rule). If $\mathbf{F}$ has continuous partials, \[\oint_C \mathbf{F}\cdot d\mathbf{r} \;=\; \iint_S (\nabla\times\mathbf{F})\cdot \mathbf{n}\,dS.\] 5) Divergence Theorem (Gauss) Let $E$ be a solid region with boundary surface $S=\partial E$ oriented outward, and $\mathbf{F}$ have continuous partials: \[\iint_S \mathbf{F}\cdot \mathbf{n}\,dS \;=\; \iiint_E \nabla\cdot\mathbf{F}\,dV.\] 6) Double &amp; Triple Integrals Double integral (Cartesian) \[\iint_D f(x,y)\,dA \;=\; \int_{x=a}^b\int_{y=g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx \quad \text{or} \quad \int_{y=c}^d\int_{x=h_1(y)}^{h_2(y)} f(x,y)\,dx\,dy.\] Double integral (polar) Use $x=r\cos\theta,\;y=r\sin\theta,\; dA = r\,dr\,d\theta$: \[\iint_D f(x,y)\,dA \;=\; \int_{\theta=\alpha}^{\beta}\int_{r=r_1(\theta)}^{r_2(\theta)} f\!\big(r\cos\theta, r\sin\theta\big)\; r\,dr\,d\theta.\] Triple integral (Cartesian) \[\iiint_E f(x,y,z)\,dV \;=\; \int\!\!\int\!\!\int f(x,y,z)\,dz\,dy\,dx \quad (\text{order to fit }E).\] Triple integral (cylindrical) Use $x=r\cos\theta,\;y=r\sin\theta,\;z=z,\; dV=r\,dr\,d\theta\,dz$: \[\iiint_E f\,dV = \int_{\theta=\alpha}^{\beta}\int_{r=r_1(\theta)}^{r_2(\theta)}\int_{z=z_1(r,\theta)}^{z_2(r,\theta)} f(r\cos\theta,r\sin\theta,z)\; r\,dz\,dr\,d\theta.\] Triple integral (spherical) Use $x=\rho\sin\phi\cos\theta,\; y=\rho\sin\phi\sin\theta,\; z=\rho\cos\phi,\; dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta$: \[\iiint_E f\,dV = \int_{\theta=\alpha}^{\beta}\int_{\phi=\phi_1(\theta)}^{\phi_2(\theta)}\int_{\rho=\rho_1(\phi,\theta)}^{\rho_2(\phi,\theta)} f(\rho,\phi,\theta)\; \rho^2\sin\phi\, d\rho\, d\phi\, d\theta.\] 7) Change of Variables (Jacobian) In 2D If $(x,y)=(x(u,v),y(u,v))$ is one-to-one with nonzero Jacobian \(J=\frac{\partial(x,y)}{\partial(u,v)}= \begin{vmatrix} x_u &amp; x_v\\ y_u &amp; y_v \end{vmatrix},\) then \(\iint_D f(x,y)\,dx\,dy = \iint_{D^*} f\big(x(u,v),y(u,v)\big)\; \left|J\right|\,du\,dv.\) In 3D Similarly with $(x,y,z)=(x(u,v,w),y(u,v,w),z(u,v,w))$ and \(J=\frac{\partial(x,y,z)}{\partial(u,v,w)}= \det \begin{bmatrix} x_u &amp; x_v &amp; x_w\\ y_u &amp; y_v &amp; y_w\\ z_u &amp; z_v &amp; z_w \end{bmatrix}.\) 8) Curl and Divergence (Cartesian) \[\nabla\times\mathbf{F}= \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k}\\ \partial_x &amp; \partial_y &amp; \partial_z\\ P &amp; Q &amp; R \end{vmatrix} = \langle R_y-Q_z,\; P_z-R_x,\; Q_x-P_y\rangle.\] \[\nabla\cdot\mathbf{F} = P_x + Q_y + R_z.\] Vector identities: $\nabla\times(\nabla f)=\mathbf{0}$, $\nabla\cdot(\nabla\times\mathbf{F})=0$. 9) Second Derivative Test (2D) Let $f_x=f_y=0$ at $(a,b)$. Define $ D=f_{xx}(a,b)\,f_{yy}(a,b)-\big(f_{xy}(a,b)\big)^2. $ If $D&gt;0$ and $f_{xx}(a,b)&gt;0$: local minimum. If $D&gt;0$ and $f_{xx}(a,b)&lt;0$: local maximum. If $D&lt;0$: saddle. If $D=0$: test inconclusive. 10) Lagrange Multipliers One constraint $g(x,y,z)=c$: Solve \[\nabla f=\lambda \nabla g,\qquad g(x,y,z)=c.\] Two constraints $g(x,y,z)=c,\; h(x,y,z)=k$: \[\nabla f=\lambda \nabla g+\mu \nabla h,\quad g=c,\quad h=k.\] 11) Flux (quick references) Across a plane curve $C$ (Green’s normal form): $\displaystyle \oint_C \mathbf{F}\cdot \mathbf{n}\,ds = \oint_C (M\,dy - N\,dx) = \iint_D \nabla\cdot\mathbf{F}\,dA$. Across a surface $S$: $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iint_{D_{uv}}\mathbf{F}(\mathbf{r}(u,v))\cdot(\mathbf{r}_u\times\mathbf{r}_v)\,du\,dv$. Closed surface $S=\partial E$ (Divergence Thm): $\displaystyle \iint_S \mathbf{F}\cdot \mathbf{n}\,dS=\iiint_E \nabla\cdot\mathbf{F}\,dV.$ 12) Common Regional Setups (quick memory) Disk/annulus: use polar $(r,\theta)$, $dA=r\,dr\,d\theta$. Cylinder-like regions: use cylindrical $(r,\theta,z)$, $dV=r\,dr\,d\theta\,dz$. Spheres/balls/cones: use spherical $(\rho,\phi,\theta)$, $dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta$. Update on Aug 26th: This blog is written on Aug 14th, when i’m taking the exam at 12 a.m. And the $Latex$ display is failed, ChatGPT can’t fix that, quite disappointed. And finally i fixed it:)]]></summary></entry></feed>

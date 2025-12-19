@@ -96,7 +96,7 @@ var store = [{
         "teaser": "/assets/2025-10-01-resources/teaser.png"
       },{
         "title": "Tailscale setup experience",
-        "excerpt":"Start off Private Network with Tailscale It all started with a Raspberry Pi. My Rasberry Pi After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea of having a...","categories": ["General"],
+        "excerpt":"Start off Private Network with Tailscale It all started with a Raspberry Pi. My Raspberry Pi After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea of having a...","categories": ["General"],
         "tags": [],
         "url": "/general/2025/10/09/tailscale.html",
         "teaser": "https://cdn.sanity.io/images/w77i7m8x/production/481ad859f0d7ae07295066a7b655588b1069ab1c-1280x584.svg?w=1920&q=75&fit=clip&auto=format"
@@ -112,6 +112,12 @@ var store = [{
         "tags": [],
         "url": "/general/2025/11/28/infrastructure.html",
         "teaser": "https://images.alphacoders.com/100/thumb-1920-1003903.jpg"
+      },{
+        "title": "End of beginning",
+        "excerpt":"A song I recently like Every Action comes with an consequence After I decided to live in the moment back in September, the consequences came quickly. December has arrived, would there be a miracle in the rest 11 days to save me from reality? Back to todays topic, end of...","categories": ["ChitChat"],
+        "tags": [],
+        "url": "/chitchat/2025/12/19/end-of-beginning.html",
+        "teaser": "/assets/2025-12-19-resources/teaser.jpg"
       },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
