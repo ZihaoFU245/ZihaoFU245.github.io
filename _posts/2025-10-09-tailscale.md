@@ -16,7 +16,7 @@ header:
 
 <figure>
     <img src="/assets/2025-10-09-resources/pi.png" alt="Repo" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
-    <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My Rasberry Pi</figcaption>
+    <figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My Raspberry Pi</figcaption>
 </figure>
 
 After getting my hands on a Raspberry Pi, I was eager to explore its potential. Among the many projects, setting up a personal VPN with PiVPN caught my interest. The idea of having a secure and private network was fascinating.
