@@ -120,10 +120,10 @@ var store = [{
         "teaser": "/assets/2025-12-19-resources/teaser.jpg"
       },{
         "title": "Travel album Jan.2026",
-        "excerpt":"As I mentioned in the last blog, I will post out some selected photos during my winter holiday. You can click the photos on the “photo wall” to view the original photos. The photo wall is refreshed dynamically and there are hundreds of photos, on some old devices it might...","categories": ["Travel"],
+        "excerpt":"Travel blogs during end of 2025 and start of 2026 As I mentioned in the last blog, I will post out some selected photos during my winter holiday. You can click the photos on the “photo wall” to view the original photos. The photo wall is refreshed dynamically and there...","categories": ["Travel"],
         "tags": [],
         "url": "/travel/2026/01/15/2026-first-post.html",
-        "teaser": "/assets/2025-12-19-resources/teaser.jpg"
+        "teaser": "/assets/2026-1-15-resources/Tromso/48.avif"
       },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
