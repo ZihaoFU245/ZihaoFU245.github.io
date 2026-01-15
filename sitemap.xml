@@ -2,23 +2,23 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zihaofu245.me/about/</loc>
-<lastmod>2025-12-19T12:41:31+00:00</lastmod>
+<lastmod>2026-01-15T16:32:19+00:00</lastmod>
 </url>
 <url>
 <loc>https://zihaofu245.me/archive/</loc>
-<lastmod>2025-12-19T12:41:31+00:00</lastmod>
+<lastmod>2026-01-15T16:32:19+00:00</lastmod>
 </url>
 <url>
 <loc>https://zihaofu245.me/blog/</loc>
-<lastmod>2025-12-19T12:41:31+00:00</lastmod>
+<lastmod>2026-01-15T16:32:19+00:00</lastmod>
 </url>
 <url>
 <loc>https://zihaofu245.me/projects/</loc>
-<lastmod>2025-12-19T12:41:31+00:00</lastmod>
+<lastmod>2026-01-15T16:32:19+00:00</lastmod>
 </url>
 <url>
 <loc>https://zihaofu245.me/resume/</loc>
-<lastmod>2025-12-19T12:41:31+00:00</lastmod>
+<lastmod>2026-01-15T16:32:19+00:00</lastmod>
 </url>
 <url>
 <loc>https://zihaofu245.me/general/2025/07/30/first-post.html</loc>
@@ -81,6 +81,10 @@
 <lastmod>2025-12-19T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>https://zihaofu245.me/travel/2026/01/15/2026-first-post.html</loc>
+<lastmod>2026-01-15T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://zihaofu245.me/projects/ml-projects/</loc>
 <lastmod>2025-04-01T00:00:00+00:00</lastmod>
 </url>
@@ -105,6 +109,6 @@
 </url>
 <url>
 <loc>https://zihaofu245.me/assets/resume/Resume.html</loc>
-<lastmod>2025-12-19T12:41:24+00:00</lastmod>
+<lastmod>2026-01-15T16:32:08+00:00</lastmod>
 </url>
 </urlset>
