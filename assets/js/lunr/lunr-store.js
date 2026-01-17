@@ -18,7 +18,7 @@ var store = [{
         "teaser": "/assets/cover.png"
       },{
         "title": "Projects",
-        "excerpt":"My Project Collections LM Studio Tool Bundle Targeted for Local LLM use: MCP Tools Collection A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options. Why … Read more New Agent Application Aurora Aurora is a modular, multi-node agent platform for building and running...","categories": [],
+        "excerpt":"My Project Collections LM Studio Tool Bundle Targeted for Local LLM use: MCP Tools Collection Read more New Agent Application Aurora Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to en… Read more 2D Tile Engine A...","categories": [],
         "tags": [],
         "url": "/projects/",
         "teaser": "/assets/cover.png"
