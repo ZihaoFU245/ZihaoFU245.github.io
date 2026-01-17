@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-01-17T12:27:31+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Travel album Jan.2026</title><link href="https://zihaofu245.me/travel/2026/01/15/2026-first-post.html" rel="alternate" type="text/html" title="Travel album Jan.2026" /><published>2026-01-15T00:00:00+00:00</published><updated>2026-01-15T00:00:00+00:00</updated><id>https://zihaofu245.me/travel/2026/01/15/2026-first-post</id><content type="html" xml:base="https://zihaofu245.me/travel/2026/01/15/2026-first-post.html"><![CDATA[<p>Travel blogs during end of 2025 and start of 2026</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-01-17T12:34:18+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Travel album Jan.2026</title><link href="https://zihaofu245.me/travel/2026/01/15/2026-first-post.html" rel="alternate" type="text/html" title="Travel album Jan.2026" /><published>2026-01-15T00:00:00+00:00</published><updated>2026-01-15T00:00:00+00:00</updated><id>https://zihaofu245.me/travel/2026/01/15/2026-first-post</id><content type="html" xml:base="https://zihaofu245.me/travel/2026/01/15/2026-first-post.html"><![CDATA[<p>Travel blogs during end of 2025 and start of 2026</p>
 
 <!-- markdownlint-disable MD033 -->
 
@@ -19,32 +19,32 @@ time for the algorithm.</p>
 
 <section class="heart-gallery" aria-label="Nice and Monaco photo collage" data-gallery="nice">
   <div class="heart-grid" role="list">
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/1.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/1.avif" aria-label="Open photo 1"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/2.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/2.avif" aria-label="Open photo 2"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/3.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/3.avif" aria-label="Open photo 3"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/4.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/4.avif" aria-label="Open photo 4"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/5.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/5.avif" aria-label="Open photo 5"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/6.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/6.avif" aria-label="Open photo 6"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/7.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/7.avif" aria-label="Open photo 7"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/8.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/8.avif" aria-label="Open photo 8"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/9.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/9.avif" aria-label="Open photo 9"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/10.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/10.avif" aria-label="Open photo 10"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/11.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/11.avif" aria-label="Open photo 11"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/12.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/12.avif" aria-label="Open photo 12"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/13.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/13.avif" aria-label="Open photo 13"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/14.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/14.avif" aria-label="Open photo 14"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/15.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/15.avif" aria-label="Open photo 15"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/16.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/16.avif" aria-label="Open photo 16"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/17.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/17.avif" aria-label="Open photo 17"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/18.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/18.avif" aria-label="Open photo 18"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/19.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/19.avif" aria-label="Open photo 19"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/20.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/20.avif" aria-label="Open photo 20"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/21.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/21.avif" aria-label="Open photo 21"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/22.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/22.avif" aria-label="Open photo 22"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/23.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/23.avif" aria-label="Open photo 23"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/24.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/24.avif" aria-label="Open photo 24"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/25.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/25.avif" aria-label="Open photo 25"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Nice_Monacco/26.avif')" data-src="/assets/2026-1-15-resources/Nice_Monacco/26.avif" aria-label="Open photo 26"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/1.avif" aria-label="Open photo 1"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/2.avif" aria-label="Open photo 2"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/3.avif" aria-label="Open photo 3"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/4.avif" aria-label="Open photo 4"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/5.avif" aria-label="Open photo 5"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/6.avif" aria-label="Open photo 6"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/7.avif" aria-label="Open photo 7"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/8.avif" aria-label="Open photo 8"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/9.avif" aria-label="Open photo 9"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/10.avif" aria-label="Open photo 10"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/11.avif" aria-label="Open photo 11"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/12.avif" aria-label="Open photo 12"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/13.avif" aria-label="Open photo 13"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/14.avif" aria-label="Open photo 14"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/15.avif" aria-label="Open photo 15"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/16.avif" aria-label="Open photo 16"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/17.avif" aria-label="Open photo 17"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/18.avif" aria-label="Open photo 18"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/19.avif" aria-label="Open photo 19"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/20.avif" aria-label="Open photo 20"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/21.avif" aria-label="Open photo 21"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/22.avif" aria-label="Open photo 22"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/23.avif" aria-label="Open photo 23"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/24.avif" aria-label="Open photo 24"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/25.avif" aria-label="Open photo 25"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Nice_Monacco/26.avif" aria-label="Open photo 26"></button>
   </div>
 </section>
 
@@ -60,33 +60,33 @@ time for the algorithm.</p>
 
 <section class="heart-gallery" aria-label="Copenhagen photo heart collage" data-gallery="copenhagen">
   <div class="heart-grid" role="list">
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/1.avif')" data-src="/assets/2026-1-15-resources/copenhagen/1.avif" aria-label="Open photo 1"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/2.avif')" data-src="/assets/2026-1-15-resources/copenhagen/2.avif" aria-label="Open photo 2"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/3.avif')" data-src="/assets/2026-1-15-resources/copenhagen/3.avif" aria-label="Open photo 3"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/4.avif')" data-src="/assets/2026-1-15-resources/copenhagen/4.avif" aria-label="Open photo 4"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/5.avif')" data-src="/assets/2026-1-15-resources/copenhagen/5.avif" aria-label="Open photo 5"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/6.avif')" data-src="/assets/2026-1-15-resources/copenhagen/6.avif" aria-label="Open photo 6"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/7.avif')" data-src="/assets/2026-1-15-resources/copenhagen/7.avif" aria-label="Open photo 7"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/8.avif')" data-src="/assets/2026-1-15-resources/copenhagen/8.avif" aria-label="Open photo 8"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/9.avif')" data-src="/assets/2026-1-15-resources/copenhagen/9.avif" aria-label="Open photo 9"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/10.avif')" data-src="/assets/2026-1-15-resources/copenhagen/10.avif" aria-label="Open photo 10"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/11.avif')" data-src="/assets/2026-1-15-resources/copenhagen/11.avif" aria-label="Open photo 11"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/12.avif')" data-src="/assets/2026-1-15-resources/copenhagen/12.avif" aria-label="Open photo 12"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/13.avif')" data-src="/assets/2026-1-15-resources/copenhagen/13.avif" aria-label="Open photo 13"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/14.avif')" data-src="/assets/2026-1-15-resources/copenhagen/14.avif" aria-label="Open photo 14"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/15.avif')" data-src="/assets/2026-1-15-resources/copenhagen/15.avif" aria-label="Open photo 15"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/16.avif')" data-src="/assets/2026-1-15-resources/copenhagen/16.avif" aria-label="Open photo 16"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/17.avif')" data-src="/assets/2026-1-15-resources/copenhagen/17.avif" aria-label="Open photo 17"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/18.avif')" data-src="/assets/2026-1-15-resources/copenhagen/18.avif" aria-label="Open photo 18"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/19.avif')" data-src="/assets/2026-1-15-resources/copenhagen/19.avif" aria-label="Open photo 19"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/20.avif')" data-src="/assets/2026-1-15-resources/copenhagen/20.avif" aria-label="Open photo 20"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/21.avif')" data-src="/assets/2026-1-15-resources/copenhagen/21.avif" aria-label="Open photo 21"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/22.avif')" data-src="/assets/2026-1-15-resources/copenhagen/22.avif" aria-label="Open photo 22"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/23.avif')" data-src="/assets/2026-1-15-resources/copenhagen/23.avif" aria-label="Open photo 23"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/24.avif')" data-src="/assets/2026-1-15-resources/copenhagen/24.avif" aria-label="Open photo 24"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/25.avif')" data-src="/assets/2026-1-15-resources/copenhagen/25.avif" aria-label="Open photo 25"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/26.avif')" data-src="/assets/2026-1-15-resources/copenhagen/26.avif" aria-label="Open photo 26"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/copenhagen/27.avif')" data-src="/assets/2026-1-15-resources/copenhagen/27.avif" aria-label="Open photo 27"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/1.avif" aria-label="Open photo 1"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/2.avif" aria-label="Open photo 2"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/3.avif" aria-label="Open photo 3"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/4.avif" aria-label="Open photo 4"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/5.avif" aria-label="Open photo 5"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/6.avif" aria-label="Open photo 6"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/7.avif" aria-label="Open photo 7"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/8.avif" aria-label="Open photo 8"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/9.avif" aria-label="Open photo 9"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/10.avif" aria-label="Open photo 10"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/11.avif" aria-label="Open photo 11"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/12.avif" aria-label="Open photo 12"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/13.avif" aria-label="Open photo 13"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/14.avif" aria-label="Open photo 14"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/15.avif" aria-label="Open photo 15"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/16.avif" aria-label="Open photo 16"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/17.avif" aria-label="Open photo 17"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/18.avif" aria-label="Open photo 18"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/19.avif" aria-label="Open photo 19"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/20.avif" aria-label="Open photo 20"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/21.avif" aria-label="Open photo 21"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/22.avif" aria-label="Open photo 22"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/23.avif" aria-label="Open photo 23"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/24.avif" aria-label="Open photo 24"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/25.avif" aria-label="Open photo 25"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/26.avif" aria-label="Open photo 26"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/copenhagen/27.avif" aria-label="Open photo 27"></button>
   </div>
 </section>
 
@@ -102,45 +102,45 @@ time for the algorithm.</p>
 
 <section class="heart-gallery" aria-label="Oslo photo collage" data-gallery="oslo">
   <div class="heart-grid" role="list">
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/1.avif')" data-src="/assets/2026-1-15-resources/Oslo/1.avif" aria-label="Open photo 1"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/2.avif')" data-src="/assets/2026-1-15-resources/Oslo/2.avif" aria-label="Open photo 2"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/3.avif')" data-src="/assets/2026-1-15-resources/Oslo/3.avif" aria-label="Open photo 3"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/4.avif')" data-src="/assets/2026-1-15-resources/Oslo/4.avif" aria-label="Open photo 4"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/5.avif')" data-src="/assets/2026-1-15-resources/Oslo/5.avif" aria-label="Open photo 5"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/6.avif')" data-src="/assets/2026-1-15-resources/Oslo/6.avif" aria-label="Open photo 6"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/7.avif')" data-src="/assets/2026-1-15-resources/Oslo/7.avif" aria-label="Open photo 7"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/8.avif')" data-src="/assets/2026-1-15-resources/Oslo/8.avif" aria-label="Open photo 8"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/9.avif')" data-src="/assets/2026-1-15-resources/Oslo/9.avif" aria-label="Open photo 9"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/10.avif')" data-src="/assets/2026-1-15-resources/Oslo/10.avif" aria-label="Open photo 10"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/11.avif')" data-src="/assets/2026-1-15-resources/Oslo/11.avif" aria-label="Open photo 11"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/12.avif')" data-src="/assets/2026-1-15-resources/Oslo/12.avif" aria-label="Open photo 12"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/13.avif')" data-src="/assets/2026-1-15-resources/Oslo/13.avif" aria-label="Open photo 13"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/14.avif')" data-src="/assets/2026-1-15-resources/Oslo/14.avif" aria-label="Open photo 14"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/15.avif')" data-src="/assets/2026-1-15-resources/Oslo/15.avif" aria-label="Open photo 15"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/16.avif')" data-src="/assets/2026-1-15-resources/Oslo/16.avif" aria-label="Open photo 16"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/17.avif')" data-src="/assets/2026-1-15-resources/Oslo/17.avif" aria-label="Open photo 17"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/18.avif')" data-src="/assets/2026-1-15-resources/Oslo/18.avif" aria-label="Open photo 18"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/19.avif')" data-src="/assets/2026-1-15-resources/Oslo/19.avif" aria-label="Open photo 19"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/20.avif')" data-src="/assets/2026-1-15-resources/Oslo/20.avif" aria-label="Open photo 20"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/21.avif')" data-src="/assets/2026-1-15-resources/Oslo/21.avif" aria-label="Open photo 21"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/22.avif')" data-src="/assets/2026-1-15-resources/Oslo/22.avif" aria-label="Open photo 22"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/23.avif')" data-src="/assets/2026-1-15-resources/Oslo/23.avif" aria-label="Open photo 23"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/24.avif')" data-src="/assets/2026-1-15-resources/Oslo/24.avif" aria-label="Open photo 24"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/25.avif')" data-src="/assets/2026-1-15-resources/Oslo/25.avif" aria-label="Open photo 25"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/26.avif')" data-src="/assets/2026-1-15-resources/Oslo/26.avif" aria-label="Open photo 26"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/27.avif')" data-src="/assets/2026-1-15-resources/Oslo/27.avif" aria-label="Open photo 27"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/28.avif')" data-src="/assets/2026-1-15-resources/Oslo/28.avif" aria-label="Open photo 28"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/29.avif')" data-src="/assets/2026-1-15-resources/Oslo/29.avif" aria-label="Open photo 29"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/30.avif')" data-src="/assets/2026-1-15-resources/Oslo/30.avif" aria-label="Open photo 30"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/31.avif')" data-src="/assets/2026-1-15-resources/Oslo/31.avif" aria-label="Open photo 31"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/32.avif')" data-src="/assets/2026-1-15-resources/Oslo/32.avif" aria-label="Open photo 32"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/33.avif')" data-src="/assets/2026-1-15-resources/Oslo/33.avif" aria-label="Open photo 33"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/34.avif')" data-src="/assets/2026-1-15-resources/Oslo/34.avif" aria-label="Open photo 34"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/35.avif')" data-src="/assets/2026-1-15-resources/Oslo/35.avif" aria-label="Open photo 35"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/36.avif')" data-src="/assets/2026-1-15-resources/Oslo/36.avif" aria-label="Open photo 36"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/37.avif')" data-src="/assets/2026-1-15-resources/Oslo/37.avif" aria-label="Open photo 37"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/38.avif')" data-src="/assets/2026-1-15-resources/Oslo/38.avif" aria-label="Open photo 38"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Oslo/39.avif')" data-src="/assets/2026-1-15-resources/Oslo/39.avif" aria-label="Open photo 39"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/1.avif" aria-label="Open photo 1"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/2.avif" aria-label="Open photo 2"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/3.avif" aria-label="Open photo 3"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/4.avif" aria-label="Open photo 4"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/5.avif" aria-label="Open photo 5"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/6.avif" aria-label="Open photo 6"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/7.avif" aria-label="Open photo 7"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/8.avif" aria-label="Open photo 8"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/9.avif" aria-label="Open photo 9"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/10.avif" aria-label="Open photo 10"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/11.avif" aria-label="Open photo 11"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/12.avif" aria-label="Open photo 12"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/13.avif" aria-label="Open photo 13"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/14.avif" aria-label="Open photo 14"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/15.avif" aria-label="Open photo 15"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/16.avif" aria-label="Open photo 16"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/17.avif" aria-label="Open photo 17"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/18.avif" aria-label="Open photo 18"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/19.avif" aria-label="Open photo 19"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/20.avif" aria-label="Open photo 20"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/21.avif" aria-label="Open photo 21"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/22.avif" aria-label="Open photo 22"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/23.avif" aria-label="Open photo 23"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/24.avif" aria-label="Open photo 24"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/25.avif" aria-label="Open photo 25"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/26.avif" aria-label="Open photo 26"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/27.avif" aria-label="Open photo 27"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/28.avif" aria-label="Open photo 28"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/29.avif" aria-label="Open photo 29"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/30.avif" aria-label="Open photo 30"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/31.avif" aria-label="Open photo 31"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/32.avif" aria-label="Open photo 32"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/33.avif" aria-label="Open photo 33"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/34.avif" aria-label="Open photo 34"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/35.avif" aria-label="Open photo 35"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/36.avif" aria-label="Open photo 36"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/37.avif" aria-label="Open photo 37"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/38.avif" aria-label="Open photo 38"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Oslo/39.avif" aria-label="Open photo 39"></button>
   </div>
 </section>
 
@@ -157,27 +157,27 @@ The road in city is covered by ice, made it difficult to walk on. A nightmare to
 
 <section class="heart-gallery" aria-label="Bergen photo collage" data-gallery="bergen">
   <div class="heart-grid" role="list">
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/1.avif')" data-src="/assets/2026-1-15-resources/Bergen/1.avif" aria-label="Open photo 1"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/2.avif')" data-src="/assets/2026-1-15-resources/Bergen/2.avif" aria-label="Open photo 2"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/3.avif')" data-src="/assets/2026-1-15-resources/Bergen/3.avif" aria-label="Open photo 3"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/4.avif')" data-src="/assets/2026-1-15-resources/Bergen/4.avif" aria-label="Open photo 4"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/5.avif')" data-src="/assets/2026-1-15-resources/Bergen/5.avif" aria-label="Open photo 5"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/6.avif')" data-src="/assets/2026-1-15-resources/Bergen/6.avif" aria-label="Open photo 6"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/7.avif')" data-src="/assets/2026-1-15-resources/Bergen/7.avif" aria-label="Open photo 7"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/8.avif')" data-src="/assets/2026-1-15-resources/Bergen/8.avif" aria-label="Open photo 8"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/9.avif')" data-src="/assets/2026-1-15-resources/Bergen/9.avif" aria-label="Open photo 9"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/10.avif')" data-src="/assets/2026-1-15-resources/Bergen/10.avif" aria-label="Open photo 10"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/11.avif')" data-src="/assets/2026-1-15-resources/Bergen/11.avif" aria-label="Open photo 11"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/12.avif')" data-src="/assets/2026-1-15-resources/Bergen/12.avif" aria-label="Open photo 12"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/13.avif')" data-src="/assets/2026-1-15-resources/Bergen/13.avif" aria-label="Open photo 13"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/14.avif')" data-src="/assets/2026-1-15-resources/Bergen/14.avif" aria-label="Open photo 14"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/15.avif')" data-src="/assets/2026-1-15-resources/Bergen/15.avif" aria-label="Open photo 15"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/16.avif')" data-src="/assets/2026-1-15-resources/Bergen/16.avif" aria-label="Open photo 16"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/17.avif')" data-src="/assets/2026-1-15-resources/Bergen/17.avif" aria-label="Open photo 17"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/18.avif')" data-src="/assets/2026-1-15-resources/Bergen/18.avif" aria-label="Open photo 18"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/19.avif')" data-src="/assets/2026-1-15-resources/Bergen/19.avif" aria-label="Open photo 19"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/20.avif')" data-src="/assets/2026-1-15-resources/Bergen/20.avif" aria-label="Open photo 20"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Bergen/21.avif')" data-src="/assets/2026-1-15-resources/Bergen/21.avif" aria-label="Open photo 21"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/1.avif" aria-label="Open photo 1"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/2.avif" aria-label="Open photo 2"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/3.avif" aria-label="Open photo 3"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/4.avif" aria-label="Open photo 4"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/5.avif" aria-label="Open photo 5"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/6.avif" aria-label="Open photo 6"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/7.avif" aria-label="Open photo 7"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/8.avif" aria-label="Open photo 8"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/9.avif" aria-label="Open photo 9"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/10.avif" aria-label="Open photo 10"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/11.avif" aria-label="Open photo 11"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/12.avif" aria-label="Open photo 12"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/13.avif" aria-label="Open photo 13"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/14.avif" aria-label="Open photo 14"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/15.avif" aria-label="Open photo 15"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/16.avif" aria-label="Open photo 16"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/17.avif" aria-label="Open photo 17"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/18.avif" aria-label="Open photo 18"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/19.avif" aria-label="Open photo 19"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/20.avif" aria-label="Open photo 20"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Bergen/21.avif" aria-label="Open photo 21"></button>
   </div>
 </section>
 
@@ -195,73 +195,73 @@ Though the weather is clear, I did not see any northern lights on Jan 6. But on 
 
 <section class="heart-gallery" aria-label="Tromso photo collage" data-gallery="tromso">
   <div class="heart-grid" role="list">
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/1.avif')" data-src="/assets/2026-1-15-resources/Tromso/1.avif" aria-label="Open photo 1"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/2.avif')" data-src="/assets/2026-1-15-resources/Tromso/2.avif" aria-label="Open photo 2"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/3.avif')" data-src="/assets/2026-1-15-resources/Tromso/3.avif" aria-label="Open photo 3"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/4.avif')" data-src="/assets/2026-1-15-resources/Tromso/4.avif" aria-label="Open photo 4"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/5.avif')" data-src="/assets/2026-1-15-resources/Tromso/5.avif" aria-label="Open photo 5"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/6.avif')" data-src="/assets/2026-1-15-resources/Tromso/6.avif" aria-label="Open photo 6"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/7.avif')" data-src="/assets/2026-1-15-resources/Tromso/7.avif" aria-label="Open photo 7"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/8.avif')" data-src="/assets/2026-1-15-resources/Tromso/8.avif" aria-label="Open photo 8"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/9.avif')" data-src="/assets/2026-1-15-resources/Tromso/9.avif" aria-label="Open photo 9"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/10.avif')" data-src="/assets/2026-1-15-resources/Tromso/10.avif" aria-label="Open photo 10"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/11.avif')" data-src="/assets/2026-1-15-resources/Tromso/11.avif" aria-label="Open photo 11"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/12.avif')" data-src="/assets/2026-1-15-resources/Tromso/12.avif" aria-label="Open photo 12"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/13.avif')" data-src="/assets/2026-1-15-resources/Tromso/13.avif" aria-label="Open photo 13"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/14.avif')" data-src="/assets/2026-1-15-resources/Tromso/14.avif" aria-label="Open photo 14"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/15.avif')" data-src="/assets/2026-1-15-resources/Tromso/15.avif" aria-label="Open photo 15"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/16.avif')" data-src="/assets/2026-1-15-resources/Tromso/16.avif" aria-label="Open photo 16"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/17.avif')" data-src="/assets/2026-1-15-resources/Tromso/17.avif" aria-label="Open photo 17"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/18.avif')" data-src="/assets/2026-1-15-resources/Tromso/18.avif" aria-label="Open photo 18"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/19.avif')" data-src="/assets/2026-1-15-resources/Tromso/19.avif" aria-label="Open photo 19"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/20.avif')" data-src="/assets/2026-1-15-resources/Tromso/20.avif" aria-label="Open photo 20"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/21.avif')" data-src="/assets/2026-1-15-resources/Tromso/21.avif" aria-label="Open photo 21"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/22.avif')" data-src="/assets/2026-1-15-resources/Tromso/22.avif" aria-label="Open photo 22"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/23.avif')" data-src="/assets/2026-1-15-resources/Tromso/23.avif" aria-label="Open photo 23"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/24.avif')" data-src="/assets/2026-1-15-resources/Tromso/24.avif" aria-label="Open photo 24"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/25.avif')" data-src="/assets/2026-1-15-resources/Tromso/25.avif" aria-label="Open photo 25"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/26.avif')" data-src="/assets/2026-1-15-resources/Tromso/26.avif" aria-label="Open photo 26"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/27.avif')" data-src="/assets/2026-1-15-resources/Tromso/27.avif" aria-label="Open photo 27"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/28.avif')" data-src="/assets/2026-1-15-resources/Tromso/28.avif" aria-label="Open photo 28"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/29.avif')" data-src="/assets/2026-1-15-resources/Tromso/29.avif" aria-label="Open photo 29"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/30.avif')" data-src="/assets/2026-1-15-resources/Tromso/30.avif" aria-label="Open photo 30"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/31.avif')" data-src="/assets/2026-1-15-resources/Tromso/31.avif" aria-label="Open photo 31"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/32.avif')" data-src="/assets/2026-1-15-resources/Tromso/32.avif" aria-label="Open photo 32"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/33.avif')" data-src="/assets/2026-1-15-resources/Tromso/33.avif" aria-label="Open photo 33"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/34.avif')" data-src="/assets/2026-1-15-resources/Tromso/34.avif" aria-label="Open photo 34"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/35.avif')" data-src="/assets/2026-1-15-resources/Tromso/35.avif" aria-label="Open photo 35"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/36.avif')" data-src="/assets/2026-1-15-resources/Tromso/36.avif" aria-label="Open photo 36"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/37.avif')" data-src="/assets/2026-1-15-resources/Tromso/37.avif" aria-label="Open photo 37"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/38.avif')" data-src="/assets/2026-1-15-resources/Tromso/38.avif" aria-label="Open photo 38"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/39.avif')" data-src="/assets/2026-1-15-resources/Tromso/39.avif" aria-label="Open photo 39"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/40.avif')" data-src="/assets/2026-1-15-resources/Tromso/40.avif" aria-label="Open photo 40"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/41.avif')" data-src="/assets/2026-1-15-resources/Tromso/41.avif" aria-label="Open photo 41"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/42.avif')" data-src="/assets/2026-1-15-resources/Tromso/42.avif" aria-label="Open photo 42"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/43.avif')" data-src="/assets/2026-1-15-resources/Tromso/43.avif" aria-label="Open photo 43"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/44.avif')" data-src="/assets/2026-1-15-resources/Tromso/44.avif" aria-label="Open photo 44"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/45.avif')" data-src="/assets/2026-1-15-resources/Tromso/45.avif" aria-label="Open photo 45"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/46.avif')" data-src="/assets/2026-1-15-resources/Tromso/46.avif" aria-label="Open photo 46"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/47.avif')" data-src="/assets/2026-1-15-resources/Tromso/47.avif" aria-label="Open photo 47"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/48.avif')" data-src="/assets/2026-1-15-resources/Tromso/48.avif" aria-label="Open photo 48"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/49.avif')" data-src="/assets/2026-1-15-resources/Tromso/49.avif" aria-label="Open photo 49"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/50.avif')" data-src="/assets/2026-1-15-resources/Tromso/50.avif" aria-label="Open photo 50"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/51.avif')" data-src="/assets/2026-1-15-resources/Tromso/51.avif" aria-label="Open photo 51"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/52.avif')" data-src="/assets/2026-1-15-resources/Tromso/52.avif" aria-label="Open photo 52"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/53.avif')" data-src="/assets/2026-1-15-resources/Tromso/53.avif" aria-label="Open photo 53"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/54.avif')" data-src="/assets/2026-1-15-resources/Tromso/54.avif" aria-label="Open photo 54"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/55.avif')" data-src="/assets/2026-1-15-resources/Tromso/55.avif" aria-label="Open photo 55"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/56.avif')" data-src="/assets/2026-1-15-resources/Tromso/56.avif" aria-label="Open photo 56"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/57.avif')" data-src="/assets/2026-1-15-resources/Tromso/57.avif" aria-label="Open photo 57"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/58.avif')" data-src="/assets/2026-1-15-resources/Tromso/58.avif" aria-label="Open photo 58"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/59.avif')" data-src="/assets/2026-1-15-resources/Tromso/59.avif" aria-label="Open photo 59"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/60.avif')" data-src="/assets/2026-1-15-resources/Tromso/60.avif" aria-label="Open photo 60"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/61.avif')" data-src="/assets/2026-1-15-resources/Tromso/61.avif" aria-label="Open photo 61"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/62.avif')" data-src="/assets/2026-1-15-resources/Tromso/62.avif" aria-label="Open photo 62"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/63.avif')" data-src="/assets/2026-1-15-resources/Tromso/63.avif" aria-label="Open photo 63"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/64.avif')" data-src="/assets/2026-1-15-resources/Tromso/64.avif" aria-label="Open photo 64"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/65.avif')" data-src="/assets/2026-1-15-resources/Tromso/65.avif" aria-label="Open photo 65"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/66.avif')" data-src="/assets/2026-1-15-resources/Tromso/66.avif" aria-label="Open photo 66"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/Tromso/67.avif')" data-src="/assets/2026-1-15-resources/Tromso/67.avif" aria-label="Open photo 67"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/1.avif" aria-label="Open photo 1"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/2.avif" aria-label="Open photo 2"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/3.avif" aria-label="Open photo 3"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/4.avif" aria-label="Open photo 4"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/5.avif" aria-label="Open photo 5"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/6.avif" aria-label="Open photo 6"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/7.avif" aria-label="Open photo 7"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/8.avif" aria-label="Open photo 8"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/9.avif" aria-label="Open photo 9"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/10.avif" aria-label="Open photo 10"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/11.avif" aria-label="Open photo 11"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/12.avif" aria-label="Open photo 12"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/13.avif" aria-label="Open photo 13"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/14.avif" aria-label="Open photo 14"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/15.avif" aria-label="Open photo 15"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/16.avif" aria-label="Open photo 16"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/17.avif" aria-label="Open photo 17"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/18.avif" aria-label="Open photo 18"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/19.avif" aria-label="Open photo 19"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/20.avif" aria-label="Open photo 20"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/21.avif" aria-label="Open photo 21"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/22.avif" aria-label="Open photo 22"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/23.avif" aria-label="Open photo 23"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/24.avif" aria-label="Open photo 24"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/25.avif" aria-label="Open photo 25"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/26.avif" aria-label="Open photo 26"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/27.avif" aria-label="Open photo 27"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/28.avif" aria-label="Open photo 28"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/29.avif" aria-label="Open photo 29"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/30.avif" aria-label="Open photo 30"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/31.avif" aria-label="Open photo 31"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/32.avif" aria-label="Open photo 32"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/33.avif" aria-label="Open photo 33"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/34.avif" aria-label="Open photo 34"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/35.avif" aria-label="Open photo 35"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/36.avif" aria-label="Open photo 36"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/37.avif" aria-label="Open photo 37"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/38.avif" aria-label="Open photo 38"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/39.avif" aria-label="Open photo 39"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/40.avif" aria-label="Open photo 40"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/41.avif" aria-label="Open photo 41"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/42.avif" aria-label="Open photo 42"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/43.avif" aria-label="Open photo 43"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/44.avif" aria-label="Open photo 44"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/45.avif" aria-label="Open photo 45"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/46.avif" aria-label="Open photo 46"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/47.avif" aria-label="Open photo 47"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/48.avif" aria-label="Open photo 48"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/49.avif" aria-label="Open photo 49"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/50.avif" aria-label="Open photo 50"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/51.avif" aria-label="Open photo 51"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/52.avif" aria-label="Open photo 52"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/53.avif" aria-label="Open photo 53"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/54.avif" aria-label="Open photo 54"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/55.avif" aria-label="Open photo 55"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/56.avif" aria-label="Open photo 56"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/57.avif" aria-label="Open photo 57"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/58.avif" aria-label="Open photo 58"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/59.avif" aria-label="Open photo 59"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/60.avif" aria-label="Open photo 60"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/61.avif" aria-label="Open photo 61"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/62.avif" aria-label="Open photo 62"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/63.avif" aria-label="Open photo 63"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/64.avif" aria-label="Open photo 64"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/65.avif" aria-label="Open photo 65"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/66.avif" aria-label="Open photo 66"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/Tromso/67.avif" aria-label="Open photo 67"></button>
   </div>
 </section>
 
@@ -277,18 +277,18 @@ Though the weather is clear, I did not see any northern lights on Jan 6. But on 
 
 <section class="heart-gallery" aria-label="Madrid photo collage" data-gallery="madrid">
   <div class="heart-grid" role="list">
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/1.avif')" data-src="/assets/2026-1-15-resources/madrid/1.avif" aria-label="Open photo 1"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/2.avif')" data-src="/assets/2026-1-15-resources/madrid/2.avif" aria-label="Open photo 2"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/3.avif')" data-src="/assets/2026-1-15-resources/madrid/3.avif" aria-label="Open photo 3"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/4.avif')" data-src="/assets/2026-1-15-resources/madrid/4.avif" aria-label="Open photo 4"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/5.avif')" data-src="/assets/2026-1-15-resources/madrid/5.avif" aria-label="Open photo 5"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/6.avif')" data-src="/assets/2026-1-15-resources/madrid/6.avif" aria-label="Open photo 6"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/7.avif')" data-src="/assets/2026-1-15-resources/madrid/7.avif" aria-label="Open photo 7"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/8.avif')" data-src="/assets/2026-1-15-resources/madrid/8.avif" aria-label="Open photo 8"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/9.avif')" data-src="/assets/2026-1-15-resources/madrid/9.avif" aria-label="Open photo 9"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/10.avif')" data-src="/assets/2026-1-15-resources/madrid/10.avif" aria-label="Open photo 10"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/11.avif')" data-src="/assets/2026-1-15-resources/madrid/11.avif" aria-label="Open photo 11"></button>
-    <button class="cell" type="button" style="--img:url('/assets/2026-1-15-resources/madrid/12.avif')" data-src="/assets/2026-1-15-resources/madrid/12.avif" aria-label="Open photo 12"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/1.avif" aria-label="Open photo 1"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/2.avif" aria-label="Open photo 2"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/3.avif" aria-label="Open photo 3"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/4.avif" aria-label="Open photo 4"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/5.avif" aria-label="Open photo 5"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/6.avif" aria-label="Open photo 6"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/7.avif" aria-label="Open photo 7"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/8.avif" aria-label="Open photo 8"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/9.avif" aria-label="Open photo 9"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/10.avif" aria-label="Open photo 10"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/11.avif" aria-label="Open photo 11"></button>
+    <button class="cell" type="button" data-src="/assets/2026-1-15-resources/madrid/12.avif" aria-label="Open photo 12"></button>
   </div>
 </section>
 
@@ -527,6 +527,41 @@ Though the weather is clear, I did not see any northern lights on Jan 6. But on 
       document.querySelectorAll('.heart-gallery').forEach(scatterGallery);
     }
 
+    // Lazy-load background images using IntersectionObserver for performance
+    function setupLazyLoading() {
+      const cells = document.querySelectorAll('.heart-gallery .cell[data-src]');
+      
+      // Fallback for browsers without IntersectionObserver
+      if (!('IntersectionObserver' in window)) {
+        cells.forEach(cell => {
+          const src = cell.getAttribute('data-src');
+          if (src) {
+            cell.style.setProperty('--img', `url('${src}')`);
+          }
+        });
+        return;
+      }
+
+      // Modern approach with IntersectionObserver
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const cell = entry.target;
+            const src = cell.getAttribute('data-src');
+            if (src && !cell.style.getPropertyValue('--img')) {
+              cell.style.setProperty('--img', `url('${src}')`);
+              observer.unobserve(cell);
+            }
+          }
+        });
+      }, {
+        rootMargin: '50px', // Start loading slightly before entering viewport
+        threshold: 0.01
+      });
+
+      cells.forEach(cell => observer.observe(cell));
+    }
+
     const lightbox = document.querySelector(".lightbox");
     if (!lightbox) return;
 
@@ -610,6 +645,7 @@ Though the weather is clear, I did not see any northern lights on Jan 6. But on 
     // Scatter once the page is ready, and re-apply on resize (no reshuffle).
     // Throttled to animation frames so we don't do heavy work for every resize event.
     scatterAllGalleries();
+    setupLazyLoading();
     let scatterRaf = 0;
     function scheduleScatter() {
       if (scatterRaf) return;
