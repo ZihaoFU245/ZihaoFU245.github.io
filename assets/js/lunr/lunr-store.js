@@ -1,24 +1,24 @@
 var store = [{
         "title": "About Me",
-        "excerpt":"Who I Am Hello! I’m Zihao, a passionate and driven Computer Science student at the Hong Kong University of Science and Technology (HKUST). My journey in technology is fueled by a deep curiosity for how things work and a desire to build innovative solutions. My Journey My academic and personal...","categories": [],
+        "excerpt":"Who I Am I’m Zihao FU, a passionate and driven Computer Science student at the Hong Kong University of Science and Technology (HKUST). My journey in technology is fueled by a deep curiosity for how things work and a desire to build innovative solutions. My Journey My academic and personal...","categories": [],
         "tags": [],
         "url": "/about/",
         "teaser": "/assets/cover.png"
       },{
         "title": "Archive",
-        "excerpt":"Projects Below are some notable projects. For full details and links, see the repositories. A Tile Engine 2D and a demo game uses it — Data structures, algorithms: AABB, Hash Grid, A* shortest path, etc — Repo This is currently using StdDraw – an education used package, using CPU for...","categories": [],
+        "excerpt":"Projects   Go to this page for more detail.     Posts by Year   Browse all posts grouped by year below. For categories or tags, use site search or add dedicated pages later.  ","categories": [],
         "tags": [],
         "url": "/archive/",
         "teaser": "/assets/cover.png"
       },{
         "title": "Blog",
-        "excerpt":"Here are all my blogs!      ","categories": [],
+        "excerpt":"   This page is updated frequently    Here are all my blogs!      ","categories": [],
         "tags": [],
         "url": "/blog/",
         "teaser": "/assets/cover.png"
       },{
         "title": "Projects",
-        "excerpt":"My Project Collections LM Studio Tool Bundle Targeted for Local LLM use: MCP Tools Collection Read more New Agent Application Aurora Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to en… Read more 2D Tile Engine A...","categories": [],
+        "excerpt":"My Project Collections Projects are updated in a slow pace. It would come from blogs that I’ve written. LM Studio Tool Bundle Targeted for Local LLM use: MCP Tools Collection Read more New Agent Application Aurora Aurora is a modular, multi-node agent platform for building and running extensible AI assistants....","categories": [],
         "tags": [],
         "url": "/projects/",
         "teaser": "/assets/cover.png"
@@ -126,31 +126,31 @@ var store = [{
         "teaser": "/assets/2026-1-15-resources/Tromso/48.avif"
       },{
         "title": "Machine Learning Mini Projects",
-        "excerpt":"Collection of small learning-focused ML builds: Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect Four AI — Minimax with pruning Mini...","categories": ["projects"],
+        "excerpt":"Collection of small learning-focused ML builds: ⚠ Warning This project is archived permanently. Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect...","categories": ["projects"],
         "tags": [],
         "url": "/projects/ml-projects/",
         "teaser": "/assets/cover.png"
       },{
         "title": "Friday — AI Assistant",
-        "excerpt":"Modular skill-based assistant with an MCP server backend (Python, FastAPI, React, Electron). Key points: MCP-connected Agents SDK integration Uses LiteLLM as the model backend (experimenting with TensorZero/Rust later) Designed for extensible skills and local-first execution Repo Link Status I decided not to continue working on this repo, but the project...","categories": ["projects"],
+        "excerpt":"Modular skill-based assistant with an MCP server backend (Python, FastAPI, React, Electron). Key points: ⚠ Warning This project is archived permanently. MCP-connected Agents SDK integration Uses LiteLLM as the model backend (experimenting with TensorZero/Rust later) Designed for extensible skills and local-first execution Repo Link Status I decided not to continue...","categories": ["projects"],
         "tags": [],
         "url": "/projects/friday-ai/",
         "teaser": "/assets/cover.png"
       },{
         "title": "2D Tile Engine",
-        "excerpt":"A simple, tile-based engine built in Java for learning, tinkering, and creative projects. It features: Scene-based architecture Layered rendering Collision handling Basic entity system Repo Link A simple tile-based 2D engine built in Java, designed for learning, tinkering, and creative projects. Whether you’re experimenting with game mechanics, building prototypes, or...","categories": ["projects"],
+        "excerpt":"A simple, tile-based engine built in Java for learning, tinkering, and creative projects. It features: ⚠ Warning This project is archived permanently. Scene-based architecture Layered rendering Collision handling Basic entity system Repo Link A simple tile-based 2D engine built in Java, designed for learning, tinkering, and creative projects. Whether you’re...","categories": ["projects"],
         "tags": [],
         "url": "/projects/tile-engine/",
         "teaser": "/assets/cover.png"
       },{
         "title": "New Agent Application Aurora",
-        "excerpt":"Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to enable conversational, tool-enabled agents. Key points: Multi-node LangGraph architecture (router, planner, executor, critic) Built-in tools for web search/browsing, crawling, time, file operations, and Gmail (OAuth) CLI and Web...","categories": ["projects"],
+        "excerpt":"Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to enable conversational, tool-enabled agents. ⚠ Warning This project is archived permanently. Key points: Multi-node LangGraph architecture (router, planner, executor, critic) Built-in tools for web search/browsing, crawling, time, file...","categories": ["projects"],
         "tags": [],
         "url": "/projects/aurora-agent/",
         "teaser": "/assets/cover.png"
       },{
         "title": "LM Studio Tool Bundle",
-        "excerpt":"Targeted for Local LLM use: MCP Tools Collection A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options. Why is exists? The MCP server now is mostly scattered. There is no simple tool-pack. We need to set it up per-tool. This tool pack is...","categories": ["projects"],
+        "excerpt":"Targeted for Local LLM use: MCP Tools Collection ⚠ Warning This project is archived permanently. A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options. Why is exists? The MCP server now is mostly scattered. There is no simple tool-pack. We need to set...","categories": ["projects"],
         "tags": [],
         "url": "/projects/lmstudio-toolpack/",
         "teaser": "/assets/cover.png"

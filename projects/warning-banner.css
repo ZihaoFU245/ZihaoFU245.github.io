@@ -1,0 +1,34 @@
+.alert{
+  display: flex;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border-left: 5px solid;
+  margin: 18px 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 🔴 Dark Red Theme */
+.alert-red{
+  background: #1a0505;
+  border-left-color: #d62828;
+  color: #ffdada;
+}
+
+.alert-icon{
+  font-size: 22px;
+  line-height: 1;
+  margin-top: 2px;
+  color: #ff6b6b;
+}
+
+.alert-title{
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.alert-text{
+  margin-top: 4px;
+  opacity: 0.95;
+  font-size: 0.95rem;
+}
