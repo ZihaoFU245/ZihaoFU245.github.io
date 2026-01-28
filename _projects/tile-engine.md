@@ -7,6 +7,20 @@ cover: /assets/2025-08-08-resources/cover.jpg
 
 A simple, tile-based engine built in Java for learning, tinkering, and creative projects. It features:
 
+<div class="alert alert-red" role="alert">
+  <div class="alert-icon" aria-hidden="true">
+    ⚠
+  </div>
+  <div class="alert-content">
+    <div class="alert-title">Warning</div>
+    <div class="alert-text">
+      This project is archived permanently.
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/projects/warning-banner.css">
+
 - Scene-based architecture
 - Layered rendering
 - Collision handling

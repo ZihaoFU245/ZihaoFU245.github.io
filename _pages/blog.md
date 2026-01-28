@@ -18,8 +18,9 @@ pagination:
     after: 2
 ---
 
-<h3>Here are all my blogs!</h3>
+> This page is updated frequently
 
+## Here are all my blogs!
 
 <!-- Page Effects -->
 <script defer src="{{ '/assets/js/blog-effects.js' | relative_url }}"></script>

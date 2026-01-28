@@ -7,6 +7,20 @@ cover: "/assets/2025-10-01-resources/teaser.png"
 
 # Targeted for Local LLM use: MCP Tools Collection
 
+<div class="alert alert-red" role="alert">
+  <div class="alert-icon" aria-hidden="true">
+    ⚠
+  </div>
+  <div class="alert-content">
+    <div class="alert-title">Warning</div>
+    <div class="alert-text">
+      This project is archived permanently.
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/projects/warning-banner.css">
+
 > A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options.
 
 ## Why is exists?

@@ -7,6 +7,8 @@ author_profile: true
 ---
 ## My Project Collections
 
+Projects are updated in a slow pace. It would come from blogs that I've written.
+
 {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
 {% for project in sorted_projects %}
 ### [{{ project.title }}]({{ project.url | relative_url }})

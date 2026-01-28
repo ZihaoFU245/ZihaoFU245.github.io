@@ -6,6 +6,20 @@ categories: projects
 
 Collection of small learning-focused ML builds:
 
+<div class="alert alert-red" role="alert">
+  <div class="alert-icon" aria-hidden="true">
+    ⚠
+  </div>
+  <div class="alert-content">
+    <div class="alert-title">Warning</div>
+    <div class="alert-text">
+      This project is archived permanently.
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/projects/warning-banner.css">
+
 1. Spam Email Classification — Naive Bayes
 2. Titanic Survival — MLP
 3. California Housing — MLP Regressor

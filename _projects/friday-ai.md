@@ -6,6 +6,20 @@ categories: projects
 
 Modular skill-based assistant with an MCP server backend (Python, FastAPI, React, Electron). Key points:
 
+<div class="alert alert-red" role="alert">
+  <div class="alert-icon" aria-hidden="true">
+    ⚠
+  </div>
+  <div class="alert-content">
+    <div class="alert-title">Warning</div>
+    <div class="alert-text">
+      This project is archived permanently.
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/projects/warning-banner.css">
+
 - **MCP-connected Agents SDK integration**
 - **Uses LiteLLM as the model backend** (experimenting with TensorZero/Rust later)
 - **Designed for extensible skills and local-first execution**

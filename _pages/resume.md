@@ -17,8 +17,6 @@ author_profile: true
     title="Resume">
 </iframe>
 
-
-
 <script>
 function printResume() {
     const iframe = document.getElementById('resume-iframe');
@@ -34,5 +32,3 @@ function printResume() {
 
 }
 </script>
-
-

@@ -6,6 +6,20 @@ categories: projects
 
 Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to enable conversational, tool-enabled agents.
 
+<div class="alert alert-red" role="alert">
+  <div class="alert-icon" aria-hidden="true">
+    ⚠
+  </div>
+  <div class="alert-content">
+    <div class="alert-title">Warning</div>
+    <div class="alert-text">
+      This project is archived permanently.
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/projects/warning-banner.css">
+
 Key points:
 
 - **Multi-node LangGraph architecture** (router, planner, executor, critic)
