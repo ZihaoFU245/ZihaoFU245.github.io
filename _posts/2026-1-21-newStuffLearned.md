@@ -4,7 +4,7 @@ title: "Tech I've picked up this winter"
 author_profile: true
 date: 2026-1-30
 categories:
-  - Tech
+  - general
 classes: wide
 header:
   teaser: "/assets/2026-1-28-resources/myUbuntuDesktop.avif"
