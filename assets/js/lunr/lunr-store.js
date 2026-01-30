@@ -125,6 +125,12 @@ var store = [{
         "url": "/travel/2026/01/15/2026-first-post.html",
         "teaser": "/assets/2026-1-15-resources/Tromso/48.avif"
       },{
+        "title": "Tech I've picked up this winter",
+        "excerpt":"Lots of fun, and lots of self-hosting projects! I’ve now abandoned Windows entirely; all of my devices are running Ubuntu or Debian. My Ubuntu Desktop Intro During this winter, I have picked up lots of new stuff. Firewalls that filter outbound connections are annoying, and I hated them. There are...","categories": ["general"],
+        "tags": [],
+        "url": "/general/2026/01/30/newStuffLearned.html",
+        "teaser": "/assets/2026-1-28-resources/myUbuntuDesktop.avif"
+      },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: ⚠ Warning This project is archived permanently. Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect...","categories": ["projects"],
         "tags": [],

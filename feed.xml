@@ -1,4 +1,152 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-01-29T23:57:16+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Travel album Jan.2026</title><link href="https://zihaofu245.me/travel/2026/01/15/2026-first-post.html" rel="alternate" type="text/html" title="Travel album Jan.2026" /><published>2026-01-15T00:00:00+00:00</published><updated>2026-01-15T00:00:00+00:00</updated><id>https://zihaofu245.me/travel/2026/01/15/2026-first-post</id><content type="html" xml:base="https://zihaofu245.me/travel/2026/01/15/2026-first-post.html"><![CDATA[<p>Travel blogs during end of 2025 and start of 2026</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-01-30T00:17:07+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Tech I’ve picked up this winter</title><link href="https://zihaofu245.me/general/2026/01/30/newStuffLearned.html" rel="alternate" type="text/html" title="Tech I’ve picked up this winter" /><published>2026-01-30T00:00:00+00:00</published><updated>2026-01-30T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2026/01/30/newStuffLearned</id><content type="html" xml:base="https://zihaofu245.me/general/2026/01/30/newStuffLearned.html"><![CDATA[<p>Lots of fun, and lots of self-hosting projects! I’ve now abandoned Windows entirely; all of my devices
+are running Ubuntu or Debian.</p>
+
+<p><em>My Ubuntu Desktop</em>
+<img src="/assets/2026-1-28-resources/myUbuntuDesktop.avif" alt="My Ubuntu Desktop" /></p>
+
+<h2 id="intro">Intro</h2>
+
+<p>During this winter, I have picked up lots of new stuff.</p>
+
+<p>Firewalls that filter outbound connections are annoying, and I hated them. There are technologies
+that can help bypass these restrictions: a proxy or a virtual private network (VPN).
+I used to use a commercial VPN, but I no longer trusted it. The VPN provider can act as a man-in-the-middle,
+and they can observe your traffic metadata. If it is unencrypted (HTTP), they can see the
+content you are sending. For HTTPS, it’s better, but they can still log your information: what websites you visit, and how much data is transferred.
+Therefore, I decided to set up my own solution.
+The main motivation is that this used to be a black box to me, and I started to worry about my privacy.</p>
+
+<p>On my way to seeking freedom and privacy, I picked up lots of network- and Linux-related knowledge.</p>
+
+<h3 id="jumping">Jumping</h3>
+
+<ul>
+  <li><a href="#rustdesk"><strong>RustDesk</strong></a></li>
+  <li><a href="#nginx"><strong>Nginx</strong></a></li>
+  <li><a href="#home-server"><strong>Home Server</strong></a></li>
+  <li><a href="#protocols"><strong>Experience different proxy protocols</strong></a></li>
+  <li><a href="#reverse-shell"><strong>Reverse Shell</strong></a></li>
+</ul>
+
+<h2 id="rustdesk">RustDesk OSS</h2>
+
+<p>When I was back at King’s College, we all needed to use Chromebooks. Chrome OS is a very secure operating system due to its nature: only web apps can be installed, and malware has little chance to survive.
+ChromeOS settings can also be easily managed by the school. They can configure your browser settings and even prevent you from entering the bootloader. (You can’t enter the bootloader and flash another operating system.)
+The rules back in 2022 were already strict, but now their security has gotten even better. JavaScript from <code class="language-plaintext highlighter-rouge">file://</code>
+is disabled, according to my friends still at the college. That means drag-and-drop games can’t be played.</p>
+
+<h3 id="some-observations-for-jailbreaker">Some observations for “jailbreaker”</h3>
+
+<ol>
+  <li>ChromeOS restricts users to browsers only. You can’t change extensions.</li>
+  <li>Hard coded bans. Some websites are banned entirely even if you switch to different networks. This seems like an on-device blocking mechanism.</li>
+  <li>Some websites are only banned when connected to school network. Often redirect to a school page that says this
+site is not allowed. We can confirm it is DNS-level blocking. Using a direct IP can bypass this blocking. But may face SNI issue.</li>
+  <li>The school firewall uses a blacklist to restrict access.</li>
+</ol>
+
+<p>From these observations, one possible solution is to use a proxy that can be used in a browser. The first idea I came up with was to write a simple browser in JS with proxy support. This is naïve in hindsight.
+The second idea was to use a remote VPS to stream a browser to users. This is extremely slow, needs lots of compute resources, and latency can be high. The second solution was implemented for a few months and reached an “able to use” level, but it was far from pleasant. It was called <strong>neko browser</strong>.</p>
+
+<p>The last idea is <strong>RustDesk</strong>. The server can be self-hosted and open-source, with web client support. I had a public IPv4 from my house in Madrid, and I hosted the server from home; my friends lived in Madrid as well. This
+gave them a chance to use their own computers with super low latency. It is by far the best solution. The setup using
+Docker is super simple. One thing to note is the web client uses HTTPS; it needs a reverse proxy tool like Nginx to terminate TLS and forward traffic to the RustDesk server.</p>
+
+<p><em>Rustdesk Demo</em>
+<img src="/assets/2026-1-28-resources/rustdesk.avif" alt="RustDesk" /></p>
+
+<p>If I don’t host my own relay and use the public one instead, the latency becomes terrible, a nightmare to use. All network packets have to traverse the public relay, and you can really feel the lag.</p>
+
+<h2 id="nginx">Nginx</h2>
+
+<p>Nginx is a powerful tool I’ve been using recently. Many VPN servers use port 443 to camouflage
+as normal websites. Nginx can read SNI (Server Name Indication), which lets you proxy different protocols to
+different backend servers while only using one port.</p>
+
+<h3 id="a-snippet-from-my-server-setup">A snippet from my server setup</h3>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stream</span> {
+  <span class="n">map</span> $<span class="n">ssl_preread_server_name</span> $<span class="n">tcp_backend</span> {
+      <span class="n">hostnames</span>;
+      <span class="n">manchester</span>.<span class="n">zihaofu245</span>.<span class="n">me</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">1212</span>;  <span class="c"># trojan server
+</span>      <span class="n">mirror</span>.<span class="n">zihaofu245</span>.<span class="n">me</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">8443</span>;      <span class="c"># nginx mirror server
+</span>      <span class="n">zihaofu245</span>.<span class="n">cloud</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">8443</span>;          <span class="c"># cloud
+</span>      <span class="n">default</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">1212</span>;                   <span class="c"># default backend
+</span>  }
+
+  <span class="c"># Forward all 443 traffic based on SNI
+</span>  <span class="n">server</span> {
+      <span class="n">listen</span> <span class="m">443</span>;
+      <span class="n">listen</span> [::]:<span class="m">443</span>;
+      <span class="n">proxy_pass</span> $<span class="n">tcp_backend</span>;
+      <span class="n">ssl_preread</span> <span class="n">on</span>;
+  }
+
+  <span class="c"># HTTP3 / QUIC support
+</span>  <span class="n">server</span> {
+      <span class="n">listen</span> <span class="m">443</span> <span class="n">udp</span>;
+      <span class="n">proxy_pass</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">1212</span>;                <span class="c"># Hysteria server
+</span>  }
+}
+</code></pre></div></div>
+
+<p>Before using Nginx, I had to remember different ports for each configuration. Now it’s all on port 443, easier to
+remember and better camouflage.</p>
+
+<h2 id="home-server">Raspberry Pi deployed as a server in Madrid</h2>
+
+<p>I brought a Raspberry Pi to Madrid this winter. After requesting a public static IPv4 address,
+I made it my home server. I deployed an Nginx server, a RustDesk relay, and many other services.</p>
+
+<p><em>Tiny, yet powerful</em>
+<img src="/assets/2026-1-28-resources/homeServer.avif" alt="hs" /></p>
+
+<h2 id="protocols">Other proxy protocols that I have tried besides WireGuard</h2>
+
+<p>Open source stuff that I’ve tried:</p>
+
+<ol>
+  <li>Shadowsocks</li>
+  <li>Trojan</li>
+  <li>Hysteria2</li>
+  <li>sing-box</li>
+  <li>Lightway (ExpressVPN)</li>
+  <li>WireGuard</li>
+</ol>
+
+<p>I’ve heard many people say WireGuard is a light and super fast VPN protocol. After my tests,
+I don’t think that’s always true. WireGuard uses the ChaCha20-Poly1305 encryption algorithm, a CPU-friendly
+choice, but it can be a bottleneck in some cases. Other protocols may rely on the system OpenSSL
+shared library. These libraries are highly optimized and native. With AES encryption and
+hardware acceleration (AES-NI), performance can surpass WireGuard in some scenarios.</p>
+
+<h2 id="reverse-shell">Reverse Shell</h2>
+
+<blockquote>
+  <p><strong>Disclaimer:</strong> This reverse shell project is created strictly for educational and experimental purposes in controlled environments only. I do not condone or take responsibility for any misuse, unauthorized access, or illegal activity resulting from this work.</p>
+</blockquote>
+
+<p>A reverse shell is often used as a backdoor; it can bypass firewalls easily. It’s often considered a
+harmful tool. Many AI tools aren’t willing to help implement it, so I did some research and implemented
+my own version.</p>
+
+<p><a href="/assets/2026-1-28-resources/reverse-shell.tar.xz"><strong>reverse-shell.tar.xz</strong></a></p>
+
+<p>This is cross-platform. TTY works perfectly on Linux; Darwin should behave similarly.
+Windows usage is limited: it’s not interactive, only stdio over TCP. The <code class="language-plaintext highlighter-rouge">main.go</code> file is a Windows service,
+use <code class="language-plaintext highlighter-rouge">sc.exe</code> to start it.
+You’ll likely want to modify the source code
+and build it again. As-is, the shell destination points to my server, so don’t run the attached binary unless you understand what it does.</p>
+
+<h2 id="winter-wrap-up-on-jan-30th">Winter wrap-up on Jan 30th</h2>
+
+<p>This winter was fantastic. I left Madrid for a year and a half and finally came back for a visit.
+I went to France, Denmark, and Norway, such beautiful places. <a href="/travel/2026/01/15/2026-first-post">Check the photos here.</a>
+I learned a lot and had lots of fun. Kicking off 2026 perfectly. Time flies; I’m 15 now.</p>
+
+<blockquote>
+  <p>I hate going to school, especially at the end of a holiday.</p>
+</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="general" /><summary type="html"><![CDATA[Lots of fun, and lots of self-hosting projects! I’ve now abandoned Windows entirely; all of my devices are running Ubuntu or Debian.]]></summary></entry><entry><title type="html">Travel album Jan.2026</title><link href="https://zihaofu245.me/travel/2026/01/15/2026-first-post.html" rel="alternate" type="text/html" title="Travel album Jan.2026" /><published>2026-01-15T00:00:00+00:00</published><updated>2026-01-15T00:00:00+00:00</updated><id>https://zihaofu245.me/travel/2026/01/15/2026-first-post</id><content type="html" xml:base="https://zihaofu245.me/travel/2026/01/15/2026-first-post.html"><![CDATA[<p>Travel blogs during end of 2025 and start of 2026</p>
 
 <!-- markdownlint-disable MD033 -->
 
@@ -1696,63 +1844,4 @@ git push origin main
 <p><strong>We ended up benchmarking a lightweight open‑source model variant just for fun—turns out the 12GB buffer is enough for a surprisingly capable context window when you prune and quantize smartly.</strong></p>
 
 <h2 id="me-at-the-mtr-metro">Me at the MTR metro</h2>
-<p><img src="/assets/2025-09-07-resources/Me.jpg" alt="Me" /></p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Back at HKUST, new story, new life.]]></summary></entry><entry><title type="html">Recent updates 2025/8/22</title><link href="https://zihaofu245.me/general/2025/08/22/recent.html" rel="alternate" type="text/html" title="Recent updates 2025/8/22" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/08/22/recent</id><content type="html" xml:base="https://zihaofu245.me/general/2025/08/22/recent.html"><![CDATA[<h1 id="最近的小更新沪上日式味觉冒险-">最近的小更新｜沪上日式味觉冒险 🍣🔥</h1>
-
-<blockquote>
-  <p><em>这一篇，献给被烟火气、酱香味与霓虹灯包裹的夜晚。也献给忙碌间隙里，能让人瞬间回血的那一口 —— 好吃到想原地鼓掌的日式风味。</em></p>
-</blockquote>
-
-<h2 id="入口即是一碗牛丼的安慰">入口即是一碗牛丼的安慰</h2>
-<p>第一站，是最不能失败的「牛丼」。</p>
-
-<p>那碗端上来的时候还在冒热气——米粒松紧刚好，酱汁是微甜带一点洋葱慢炖出来的温柔，牛肉薄而不散，油脂在灯光下反着轻微亮光。混着汤汁扒第一口，直接让大脑切换到 “安全模式”。</p>
-
-<p><img src="/assets/2025-08-22-resources/beefBowl.jpg" alt="牛丼的热气 / beef bowl" /></p>
-
-<h2 id="滑蛋--土豆深度治愈组合">滑蛋 + 土豆：深度治愈组合</h2>
-<p>旁边那份蛋与土豆——看似家常，却是加分 MVP。鸡蛋滑到像云，土豆糯到像在和酱汁握手，入口是层次分明的软。它不惊艳，但它让整顿饭的情绪基线提高了两个档。你会忽然觉得：啊，好像很多烦恼没那么急了。</p>
-
-<p><img src="/assets/2025-08-22-resources/eggyPotatos.jpg" alt="柔滑鸡蛋土豆 / eggy potatos" /></p>
-
-<h2 id="双重酱香厚实与收敛的对话">双重酱香：厚实与收敛的对话</h2>
-<p>两盘“重口味”肉：一份是稍微勾芡、酱香厚重的；另一份（第二版）收汁更干，带一点焦化的边缘。前者像一个热情的拥抱，后者像一个淡定的点头。一起上桌，反而让人循环对比着吃，意外耐心。味觉就这样被训练成一台差分分析器。</p>
-
-<p><img src="/assets/2025-08-22-resources/gravyBeef.jpg" alt="酱汁版肉料理" />
-<img src="/assets/2025-08-22-resources/gravyBeef2.jpg" alt="收汁更干的版本" /></p>
-
-<h2 id="串烧与酒夜色加载进度-80">串烧与酒：夜色加载进度 80%</h2>
-<p>夜快一点点塌下来，就该换串烧登场。铁签划破焦香的小爆点，脂肪被火焰卷过后留下的是带一点点脆的边缘。配上一口波本（是的，随意的一小杯），嗓子里升起一条温热的下坠线路，胃和脑同步被点亮。</p>
-
-<p><img src="/assets/2025-08-22-resources/skewers.jpg" alt="串烧——焦香与夜晚" />
-<img src="/assets/2025-08-22-resources/JimBeam.jpg" alt="随手的小酒 / Jim Beam" /></p>
-
-<h2 id="生鱼片的安静时刻">生鱼片的安静时刻</h2>
-<p>和前面的“热”完全不同，寿司 / 生鱼片那一刻像有人突然帮夜晚按了静音。米饭温度刚好不过界，鱼肉是“软+弹”的中间态，蘸一点芥末与酱油融合后回甜。吃到这里，你会意识到：真正高级的放松，是可以在一桌喧闹里自带一个静音泡泡。</p>
-
-<p><img src="/assets/2025-08-22-resources/sushi.jpg" alt="寿司 / 生鱼片的平衡" /></p>
-
-<h2 id="labubu-的小插曲-">Labubu 的小插曲 🐾</h2>
-<p>桌边还坐着一只 Labubu（当然，是它被“邀请”来的）。它那种永远兴奋又略欠揍的表情，莫名契合今晚的能量值。仪式感，有时候就靠这些“没必要但快乐”的道具来撑起。</p>
-
-<p><img src="/assets/2025-08-22-resources/Labubu.jpg" alt="Labubu 今日营业" /></p>
-
-<h2 id="夜色一切风味的背景层">夜色：一切风味的背景层</h2>
-<p>最后走出店门，被上海夜晚的潮湿与霓虹兜头盖住。楼宇反光像水面，空气里还有食物残存的暖味。那一刻才意识到：味觉体验不是盘子里结束的，它会被城市的温度继续渲染一截。</p>
-
-<p><img src="/assets/2025-08-22-resources/shangHaiNight.jpg" alt="上海的夜景收尾" /></p>
-
-<h2 id="小结--一点点抽象的后味">小结 / 一点点抽象的后味</h2>
-<ul>
-  <li>食物是“即时满足 + 情绪缓存”：忙碌里临时的停机维护。</li>
-  <li>日式料理在上海，会被这座城市的节奏再调一次味——更快，也更混合。</li>
-  <li>拍下来的每一张图，都是未来压力时刻的“快捷回血档”。</li>
-</ul>
-
-<h2 id="下次想做什么">下次想做什么？</h2>
-<p>也许下一篇写点纯技术；也许还是继续记录“生活里的增量”。反正：写，是保持感知的方式。吃，是保持动力的方式。两者结合 = 续航模式已开启。</p>
-
-<p>— End of tonight’s flavor log.</p>
-
-<blockquote>
-  <p><em>“好好吃饭，是与世界和解的一种微型协议。”</em></p>
-</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[最近的小更新｜沪上日式味觉冒险 🍣🔥]]></summary></entry></feed>
+<p><img src="/assets/2025-09-07-resources/Me.jpg" alt="Me" /></p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Back at HKUST, new story, new life.]]></summary></entry></feed>

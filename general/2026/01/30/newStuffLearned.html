@@ -1,0 +1,626 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Tech I’ve picked up this winter - Zihao’s Portfolio</title>
+<meta name="description" content="Lots of fun, and lots of self-hosting projects! I’ve now abandoned Windows entirely; all of my devices are running Ubuntu or Debian.">
+
+
+  <meta name="author" content="Zihao Fu">
+  
+  <meta property="article:author" content="Zihao Fu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Zihao&#39;s Portfolio">
+<meta property="og:title" content="Tech I’ve picked up this winter">
+<meta property="og:url" content="https://zihaofu245.me/general/2026/01/30/newStuffLearned.html">
+
+
+  <meta property="og:description" content="Lots of fun, and lots of self-hosting projects! I’ve now abandoned Windows entirely; all of my devices are running Ubuntu or Debian.">
+
+
+
+  <meta property="og:image" content="https://zihaofu245.me/assets/2026-1-28-resources/myUbuntuDesktop.avif">
+
+
+
+
+
+  <meta property="article:published_time" content="2026-01-30T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://zihaofu245.me/general/2026/01/30/newStuffLearned.html">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Zihao's Portfolio Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+
+  <body class="layout--single wide" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Welcome to My Portfolio!
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/archive/"
+                
+                
+              >Archive</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/resume/"
+                
+                
+              >Résumé</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/general" itemprop="item"><span itemprop="name">General</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/2026" itemprop="item"><span itemprop="name">2026</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/01" itemprop="item"><span itemprop="name">01</span></a>
+          <meta itemprop="position" content="4" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/30" itemprop="item"><span itemprop="name">30</span></a>
+          <meta itemprop="position" content="5" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Tech I've picked up this winter</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://zihaofu245.me/">
+        <img src="/assets/images/profile.jpg" alt="Zihao Fu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://zihaofu245.me/" itemprop="url">Zihao Fu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Engineer, Computer Science student at HKUST. Interested in AI, systems, and more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Hong Kong</span>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:zihaofu12@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="zihaofu12@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/zihao-fu-198b02374" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://instagram.com/zihao_fu06" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ZihaoFU245" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Tech I’ve picked up this winter">
+    <meta itemprop="description" content="Lots of fun, and lots of self-hosting projects! I’ve now abandoned Windows entirely; all of my devicesare running Ubuntu or Debian.">
+    <meta itemprop="datePublished" content="2026-01-30T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://zihaofu245.me/general/2026/01/30/newStuffLearned.html" itemprop="url">Tech I’ve picked up this winter
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Lots of fun, and lots of self-hosting projects! I’ve now abandoned Windows entirely; all of my devices
+are running Ubuntu or Debian.</p>
+
+<p><em>My Ubuntu Desktop</em>
+<img src="/assets/2026-1-28-resources/myUbuntuDesktop.avif" alt="My Ubuntu Desktop" /></p>
+
+<h2 id="intro">Intro</h2>
+
+<p>During this winter, I have picked up lots of new stuff.</p>
+
+<p>Firewalls that filter outbound connections are annoying, and I hated them. There are technologies
+that can help bypass these restrictions: a proxy or a virtual private network (VPN).
+I used to use a commercial VPN, but I no longer trusted it. The VPN provider can act as a man-in-the-middle,
+and they can observe your traffic metadata. If it is unencrypted (HTTP), they can see the
+content you are sending. For HTTPS, it’s better, but they can still log your information: what websites you visit, and how much data is transferred.
+Therefore, I decided to set up my own solution.
+The main motivation is that this used to be a black box to me, and I started to worry about my privacy.</p>
+
+<p>On my way to seeking freedom and privacy, I picked up lots of network- and Linux-related knowledge.</p>
+
+<h3 id="jumping">Jumping</h3>
+
+<ul>
+  <li><a href="#rustdesk"><strong>RustDesk</strong></a></li>
+  <li><a href="#nginx"><strong>Nginx</strong></a></li>
+  <li><a href="#home-server"><strong>Home Server</strong></a></li>
+  <li><a href="#protocols"><strong>Experience different proxy protocols</strong></a></li>
+  <li><a href="#reverse-shell"><strong>Reverse Shell</strong></a></li>
+</ul>
+
+<h2 id="rustdesk">RustDesk OSS</h2>
+
+<p>When I was back at King’s College, we all needed to use Chromebooks. Chrome OS is a very secure operating system due to its nature: only web apps can be installed, and malware has little chance to survive.
+ChromeOS settings can also be easily managed by the school. They can configure your browser settings and even prevent you from entering the bootloader. (You can’t enter the bootloader and flash another operating system.)
+The rules back in 2022 were already strict, but now their security has gotten even better. JavaScript from <code class="language-plaintext highlighter-rouge">file://</code>
+is disabled, according to my friends still at the college. That means drag-and-drop games can’t be played.</p>
+
+<h3 id="some-observations-for-jailbreaker">Some observations for “jailbreaker”</h3>
+
+<ol>
+  <li>ChromeOS restricts users to browsers only. You can’t change extensions.</li>
+  <li>Hard coded bans. Some websites are banned entirely even if you switch to different networks. This seems like an on-device blocking mechanism.</li>
+  <li>Some websites are only banned when connected to school network. Often redirect to a school page that says this
+site is not allowed. We can confirm it is DNS-level blocking. Using a direct IP can bypass this blocking. But may face SNI issue.</li>
+  <li>The school firewall uses a blacklist to restrict access.</li>
+</ol>
+
+<p>From these observations, one possible solution is to use a proxy that can be used in a browser. The first idea I came up with was to write a simple browser in JS with proxy support. This is naïve in hindsight.
+The second idea was to use a remote VPS to stream a browser to users. This is extremely slow, needs lots of compute resources, and latency can be high. The second solution was implemented for a few months and reached an “able to use” level, but it was far from pleasant. It was called <strong>neko browser</strong>.</p>
+
+<p>The last idea is <strong>RustDesk</strong>. The server can be self-hosted and open-source, with web client support. I had a public IPv4 from my house in Madrid, and I hosted the server from home; my friends lived in Madrid as well. This
+gave them a chance to use their own computers with super low latency. It is by far the best solution. The setup using
+Docker is super simple. One thing to note is the web client uses HTTPS; it needs a reverse proxy tool like Nginx to terminate TLS and forward traffic to the RustDesk server.</p>
+
+<p><em>Rustdesk Demo</em>
+<img src="/assets/2026-1-28-resources/rustdesk.avif" alt="RustDesk" /></p>
+
+<p>If I don’t host my own relay and use the public one instead, the latency becomes terrible, a nightmare to use. All network packets have to traverse the public relay, and you can really feel the lag.</p>
+
+<h2 id="nginx">Nginx</h2>
+
+<p>Nginx is a powerful tool I’ve been using recently. Many VPN servers use port 443 to camouflage
+as normal websites. Nginx can read SNI (Server Name Indication), which lets you proxy different protocols to
+different backend servers while only using one port.</p>
+
+<h3 id="a-snippet-from-my-server-setup">A snippet from my server setup</h3>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stream</span> {
+  <span class="n">map</span> $<span class="n">ssl_preread_server_name</span> $<span class="n">tcp_backend</span> {
+      <span class="n">hostnames</span>;
+      <span class="n">manchester</span>.<span class="n">zihaofu245</span>.<span class="n">me</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">1212</span>;  <span class="c"># trojan server
+</span>      <span class="n">mirror</span>.<span class="n">zihaofu245</span>.<span class="n">me</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">8443</span>;      <span class="c"># nginx mirror server
+</span>      <span class="n">zihaofu245</span>.<span class="n">cloud</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">8443</span>;          <span class="c"># cloud
+</span>      <span class="n">default</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">1212</span>;                   <span class="c"># default backend
+</span>  }
+
+  <span class="c"># Forward all 443 traffic based on SNI
+</span>  <span class="n">server</span> {
+      <span class="n">listen</span> <span class="m">443</span>;
+      <span class="n">listen</span> [::]:<span class="m">443</span>;
+      <span class="n">proxy_pass</span> $<span class="n">tcp_backend</span>;
+      <span class="n">ssl_preread</span> <span class="n">on</span>;
+  }
+
+  <span class="c"># HTTP3 / QUIC support
+</span>  <span class="n">server</span> {
+      <span class="n">listen</span> <span class="m">443</span> <span class="n">udp</span>;
+      <span class="n">proxy_pass</span> <span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">1212</span>;                <span class="c"># Hysteria server
+</span>  }
+}
+</code></pre></div></div>
+
+<p>Before using Nginx, I had to remember different ports for each configuration. Now it’s all on port 443, easier to
+remember and better camouflage.</p>
+
+<h2 id="home-server">Raspberry Pi deployed as a server in Madrid</h2>
+
+<p>I brought a Raspberry Pi to Madrid this winter. After requesting a public static IPv4 address,
+I made it my home server. I deployed an Nginx server, a RustDesk relay, and many other services.</p>
+
+<p><em>Tiny, yet powerful</em>
+<img src="/assets/2026-1-28-resources/homeServer.avif" alt="hs" /></p>
+
+<h2 id="protocols">Other proxy protocols that I have tried besides WireGuard</h2>
+
+<p>Open source stuff that I’ve tried:</p>
+
+<ol>
+  <li>Shadowsocks</li>
+  <li>Trojan</li>
+  <li>Hysteria2</li>
+  <li>sing-box</li>
+  <li>Lightway (ExpressVPN)</li>
+  <li>WireGuard</li>
+</ol>
+
+<p>I’ve heard many people say WireGuard is a light and super fast VPN protocol. After my tests,
+I don’t think that’s always true. WireGuard uses the ChaCha20-Poly1305 encryption algorithm, a CPU-friendly
+choice, but it can be a bottleneck in some cases. Other protocols may rely on the system OpenSSL
+shared library. These libraries are highly optimized and native. With AES encryption and
+hardware acceleration (AES-NI), performance can surpass WireGuard in some scenarios.</p>
+
+<h2 id="reverse-shell">Reverse Shell</h2>
+
+<blockquote>
+  <p><strong>Disclaimer:</strong> This reverse shell project is created strictly for educational and experimental purposes in controlled environments only. I do not condone or take responsibility for any misuse, unauthorized access, or illegal activity resulting from this work.</p>
+</blockquote>
+
+<p>A reverse shell is often used as a backdoor; it can bypass firewalls easily. It’s often considered a
+harmful tool. Many AI tools aren’t willing to help implement it, so I did some research and implemented
+my own version.</p>
+
+<p><a href="/assets/2026-1-28-resources/reverse-shell.tar.xz"><strong>reverse-shell.tar.xz</strong></a></p>
+
+<p>This is cross-platform. TTY works perfectly on Linux; Darwin should behave similarly.
+Windows usage is limited: it’s not interactive, only stdio over TCP. The <code class="language-plaintext highlighter-rouge">main.go</code> file is a Windows service,
+use <code class="language-plaintext highlighter-rouge">sc.exe</code> to start it.
+You’ll likely want to modify the source code
+and build it again. As-is, the shell destination points to my server, so don’t run the attached binary unless you understand what it does.</p>
+
+<h2 id="winter-wrap-up-on-jan-30th">Winter wrap-up on Jan 30th</h2>
+
+<p>This winter was fantastic. I left Madrid for a year and a half and finally came back for a visit.
+I went to France, Denmark, and Norway, such beautiful places. <a href="/travel/2026/01/15/2026-first-post">Check the photos here.</a>
+I learned a lot and had lots of fun. Kicking off 2026 perfectly. Time flies; I’m 15 now.</p>
+
+<blockquote>
+  <p>I hate going to school, especially at the end of a holiday.</p>
+</blockquote>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-01-30T00:00:00+00:00">January 30, 2026</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/travel/2026/01/15/2026-first-post.html" class="pagination--pager" title="Travel album Jan.2026">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="site-footer-meta" style="text-align:center; margin-top:20px; font-size:0.9em; color:#777;">
+    <div
+        style="display:flex; flex-wrap:nowrap; justify-content:center; align-items:center; gap:12px; white-space:nowrap;">
+        <span>© 2025 - 2026 Zihao Fu</span>
+        <span aria-hidden="true">•</span>
+        <a href="https://www.buymeacoffee.com/zihaofu245" target="_blank" rel="noopener noreferrer"
+            title="Buy me a coffee" aria-label="Buy me a coffee" style="display:inline-flex; align-items:center;">
+            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+                style="height:48px; width:auto; vertical-align:middle; border-radius:6px;">
+        </a>
+        <span aria-hidden="true">•</span>
+        <span>Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> &amp; <a
+                href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal
+                Mistakes</a></span>
+    </div>
+</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
