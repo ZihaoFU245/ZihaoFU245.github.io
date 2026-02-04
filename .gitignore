@@ -2,3 +2,6 @@ _site/
 Legacy/*
 *cache*
 *.log
+.bundle/
+vendor/bundle/
+vendor/cache/
