@@ -3,9 +3,11 @@ title: "LM Studio Tool Bundle"
 date: 2025-10-01
 categories: projects
 cover: "/assets/2025-10-01-resources/teaser.png"
+status: archived
+excerpt: "A collection of MCP tools built for local LLM workflows."
 ---
 
-# Targeted for Local LLM use: MCP Tools Collection
+# Targeted for Local LLM Use: MCP Tools Collection
 
 <div class="alert alert-red" role="alert">
   <div class="alert-icon" aria-hidden="true">
@@ -23,10 +25,10 @@ cover: "/assets/2025-10-01-resources/teaser.png"
 
 > A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options.
 
-## Why is exists?
-The MCP server now is mostly scattered. There is no simple tool-pack. We need to set it up per-tool.
-This tool pack is targeted for local convenient use. I will expand the collections through time. 
-Make LocalLLMs more powerful yet simplier.
+## Why it exists
+The MCP server ecosystem is scattered. There is no simple tool pack, so we need to set it up per tool.
+This tool pack is targeted for convenient local use. I will expand the collection over time.
+Make local LLMs more powerful yet simpler.
 
 ## Features
 - MCP json Configuration file generation: Run `main.py` and go through the wizard to complete the generation
@@ -34,7 +36,7 @@ Make LocalLLMs more powerful yet simplier.
 
 ## Repo Location
 [**lmstudio-toolpack**](https://github.com/ZihaoFU245/lmstudio-toolpack)<br>
-**Your suppor could make a huge difference.**
+**Your support could make a huge difference.**
 
 ## MCP Servers
 - [Web Search](/MCPs/WebSearch.py): Use duckduckgo as search engine, fetch and summarize top results
@@ -91,6 +93,6 @@ And you will get something like this:
 Tweak the name, url, command, if you need.
 
 ## Another Idea
-If you choose using http. You can use 1mcp to unify them all.
-And run it on a remote server.
-Eg. Connect a Resberry PI to TailScale and set it up remotely.
+If you choose http, you can use 1mcp to unify them all
+and run it on a remote server.
+For example, connect a Raspberry Pi to Tailscale and set it up remotely.

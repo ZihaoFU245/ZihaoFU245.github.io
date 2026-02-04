@@ -3,6 +3,8 @@ title: "2D Tile Engine"
 date: 2025-08-08
 categories: projects
 cover: /assets/2025-08-08-resources/cover.jpg
+status: archived
+excerpt: "A lightweight Java tile engine with scenes, layers, and collision handling."
 ---
 
 A simple, tile-based engine built in Java for learning, tinkering, and creative projects. It features:
@@ -58,12 +60,10 @@ Whether you’re experimenting with game mechanics, building prototypes, or craf
 
 ---
 
-## Reason doing this
+## Reason for building this
 
-I was in Berkely summer 2025, took 61BL and the last project is "BYOW",
-Build your own world. And i decided to make a game, but inspired by Unity. I want 
-to make my own engine, handle collision, tile map all myself. Then I made this engine. 
-The demo game in repo is the game i handed, which got me full mark:)
-
+In summer 2025 at Berkeley, I took 61BL and the final project was "BYOW" (Build Your Own World).
+I decided to make a game inspired by Unity and build my own engine from scratch, including
+collision and tile mapping. The demo game in the repo is what I submitted, and it earned full marks.
 
 

@@ -5,16 +5,17 @@ layout: single
 classes: wide
 author_profile: true
 ---
-## My Project Collections
+## Active Projects
 
-Projects are updated in a slow pace. It would come from blogs that I've written.
+Work I am currently building and improving.
 
-{% assign sorted_projects = site.projects | sort: 'date' | reverse %}
-{% for project in sorted_projects %}
+{% assign active_projects = site.projects | where: 'status', 'active' | sort: 'date' | reverse %}
+{% if active_projects.size > 0 %}
+{% for project in active_projects %}
 ### [{{ project.title }}]({{ project.url | relative_url }})
 
 {% if project.cover %}
-![cover]({{ project.cover }})
+![{{ project.title }} cover]({{ project.cover }})
 {% endif %}
 
 {{ project.excerpt | default: project.content | strip_html | truncate: 160 }}
@@ -24,5 +25,27 @@ Projects are updated in a slow pace. It would come from blogs that I've written.
 ---
 
 {% endfor %}
+{% else %}
+No active projects listed yet. Check back soon.
+{% endif %}
 
+## Archived Projects
+
+Past work that I am no longer maintaining.
+
+{% assign archived_projects = site.projects | where: 'status', 'archived' | sort: 'date' | reverse %}
+{% for project in archived_projects %}
+### [{{ project.title }}]({{ project.url | relative_url }})
+
+{% if project.cover %}
+![{{ project.title }} cover]({{ project.cover }})
+{% endif %}
+
+{{ project.excerpt | default: project.content | strip_html | truncate: 160 }}
+
+[Read more]({{ project.url | relative_url }})
+
+---
+
+{% endfor %}
 

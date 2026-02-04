@@ -2,6 +2,8 @@
 title: "Machine Learning Mini Projects"
 date: 2025-04-01
 categories: projects
+status: archived
+excerpt: "A set of small ML builds, from Naive Bayes to CNNs and minimax."
 ---
 
 Collection of small learning-focused ML builds:
@@ -28,4 +30,3 @@ Collection of small learning-focused ML builds:
 6. Butterfly Species Classification — CNN (Kaggle dataset)
 7. Connect Four AI — Minimax with pruning
 8. Mini Autopilot (HKUST) — CNN + OpenCV lane/marker detection
-

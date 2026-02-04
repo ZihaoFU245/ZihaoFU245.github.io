@@ -2,23 +2,11 @@
 title: "New Agent Application Aurora"
 date: 2025-08-26
 categories: projects
+status: active
+excerpt: "A modular, multi-node agent platform for tool-enabled AI assistants."
 ---
 
 Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to enable conversational, tool-enabled agents.
-
-<div class="alert alert-red" role="alert">
-  <div class="alert-icon" aria-hidden="true">
-    ⚠
-  </div>
-  <div class="alert-content">
-    <div class="alert-title">Warning</div>
-    <div class="alert-text">
-      This project is archived permanently.
-    </div>
-  </div>
-</div>
-
-<link rel="stylesheet" href="/projects/warning-banner.css">
 
 Key points:
 
@@ -39,4 +27,3 @@ Aurora is the successor to the earlier "Friday" project and is currently active 
 
 ## Motivation
 **June 2025**: after finishing the Spring term, AI applications were rapidly advancing. I expected new model capabilities and agent integrations and wanted to explore practical agent architectures. Watching classic films like **Iron Man** reminded me of practical, tool-enabled assistants — that inspired deeper work in AI engineering and led to Aurora.
-

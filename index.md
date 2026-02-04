@@ -16,7 +16,7 @@ header:
     - label: "Résumé"
       url: "/resume/"
 excerpt: >
-  I like to tinker—coding agents, crafting music apps, and building games where ideas come alive.
+  I build AI agents, developer tools, and game tech, and I write about systems, ML, and learning.
 feature_row:
   - image_path: /assets/2025-08-08-resources/cover.jpg
     alt: "Tile Engine"
@@ -31,17 +31,17 @@ feature_row:
     url: "/projects/aurora-agent/"
     btn_label: "Read more"
   - image_path: /assets/2025-08-12-resources/ElCapitan.jpg
-    alt: "Blog"
+    alt: "Latest blog post"
     title: "Latest Writing"
-    excerpt: "Notes on engines, ML projects, and study logs."
-    url: "/blog/"
-    btn_label: "Browse posts"
+    excerpt: "Tech I picked up this winter: self-hosting, Nginx, and a home server."
+    url: "/general/2026/01/30/newStuffLearned"
+    btn_label: "Read the post"
   - image_path: /assets/2025-08-12-resources/ViewAtSatherTower.jpg
-    alt: "Blog"
-    title: "Num 1th favourite post"
-    excerpt: "Num 1th favourite post!"
+    alt: "Featured blog post"
+    title: "Featured Post"
+    excerpt: "A personal summer wrap-up from Berkeley and Madrid."
     url: "/general/2025/08/12/summer-ending"
-    btn_label: "Check it out!"
+    btn_label: "Read it"
 ---
 
 {% include feature_row %}
