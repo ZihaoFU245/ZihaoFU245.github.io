@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "For King's SOTO students!"
+title: "Some Games"
 author_profile: true
 permalink: /hehehehaw/
 sitemap: false

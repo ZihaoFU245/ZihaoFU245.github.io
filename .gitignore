@@ -3,5 +3,6 @@ Legacy/*
 *cache*
 *.log
 .bundle/
+vendor/
 vendor/bundle/
 vendor/cache/

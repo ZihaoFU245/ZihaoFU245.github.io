@@ -2,7 +2,7 @@
 title: "New Agent Application Aurora"
 date: 2025-08-26
 categories: projects
-status: active
+status: archived
 excerpt: "A modular, multi-node agent platform for tool-enabled AI assistants."
 ---
 

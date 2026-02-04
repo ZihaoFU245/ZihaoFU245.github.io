@@ -5,20 +5,25 @@ Built with Jekyll and the remote Minimal Mistakes theme.
 - `_config.yml`: theme and plugins
 - `_pages/`: content pages
 - `index.md`: homepage
-- `_data/`: optional navigation and config files
-- `assets/`: custom images or overrides
+- `_data/`: navigation and config
+- `assets/`: images, scripts, and styles
 
 ## Local Development
 1. Install Ruby (>= 3.3) and Bundler.
-2. Install gems:
-	```bash
-	bundle install
-	```
-3. Serve locally with drafts and live reload:
-	```bash
-	bundle exec jekyll serve --livereload
-	```
-4. Open http://localhost:4000.
+2. Configure Bundler to install gems locally:
+   ```bash
+   bundle config set --local path "vendor/bundle"
+   bundle config set --local cache_path "vendor/cache"
+   ```
+3. Install gems:
+   ```bash
+   bundle install
+   ```
+4. Start the local server:
+   ```bash
+   bundle exec jekyll serve --livereload
+   ```
+5. Open http://localhost:4000.
 
 ## Deployment Workflow
 This repo uses a GitHub Actions workflow (`.github/workflows/build.yml`) to build and deploy.
