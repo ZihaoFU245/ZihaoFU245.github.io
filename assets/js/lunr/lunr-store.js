@@ -1,6 +1,6 @@
 var store = [{
         "title": "About Me",
-        "excerpt":"Who I Am I’m Zihao FU, a passionate and driven Computer Science student at the Hong Kong University of Science and Technology (HKUST). My journey in technology is fueled by a deep curiosity for how things work and a desire to build innovative solutions. My Journey My academic and personal...","categories": [],
+        "excerpt":"Who I Am I’m Zihao Fu, a passionate and driven Computer Science student at the Hong Kong University of Science and Technology (HKUST). My journey in technology is fueled by a deep curiosity for how things work and a desire to build innovative solutions. My Journey My academic and personal...","categories": [],
         "tags": [],
         "url": "/about/",
         "teaser": "/assets/cover.png"
@@ -18,13 +18,13 @@ var store = [{
         "teaser": "/assets/cover.png"
       },{
         "title": "Projects",
-        "excerpt":"My Project Collections Projects are updated in a slow pace. It would come from blogs that I’ve written. LM Studio Tool Bundle Targeted for Local LLM use: MCP Tools Collection Read more New Agent Application Aurora Aurora is a modular, multi-node agent platform for building and running extensible AI assistants....","categories": [],
+        "excerpt":"Active Projects Work I am currently building and improving. No active projects listed yet. Check back soon. Archived Projects Past work that I am no longer maintaining. LM Studio Tool Bundle A collection of MCP tools built for local LLM workflows. Read more New Agent Application Aurora A modular, multi-node...","categories": [],
         "tags": [],
         "url": "/projects/",
         "teaser": "/assets/cover.png"
       },{
         "title": "Résumé",
-        "excerpt":"Print Resume        ","categories": [],
+        "excerpt":"   Open in new tab   Print Resume          ","categories": [],
         "tags": [],
         "url": "/resume/",
         "teaser": "/assets/cover.png"
@@ -150,13 +150,13 @@ var store = [{
         "teaser": "/assets/cover.png"
       },{
         "title": "New Agent Application Aurora",
-        "excerpt":"Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to enable conversational, tool-enabled agents. ⚠ Warning This project is archived permanently. Key points: Multi-node LangGraph architecture (router, planner, executor, critic) Built-in tools for web search/browsing, crawling, time, file...","categories": ["projects"],
+        "excerpt":"Aurora is a modular, multi-node agent platform for building and running extensible AI assistants. It orchestrates language models and tool integrations to enable conversational, tool-enabled agents. Key points: Multi-node LangGraph architecture (router, planner, executor, critic) Built-in tools for web search/browsing, crawling, time, file operations, and Gmail (OAuth) CLI and Web...","categories": ["projects"],
         "tags": [],
         "url": "/projects/aurora-agent/",
         "teaser": "/assets/cover.png"
       },{
         "title": "LM Studio Tool Bundle",
-        "excerpt":"Targeted for Local LLM use: MCP Tools Collection ⚠ Warning This project is archived permanently. A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options. Why is exists? The MCP server now is mostly scattered. There is no simple tool-pack. We need to set...","categories": ["projects"],
+        "excerpt":"Targeted for Local LLM Use: MCP Tools Collection ⚠ Warning This project is archived permanently. A collection of Model Context Protocol (MCP) tools, build for local LLMs. One venv, many options. Why it exists The MCP server ecosystem is scattered. There is no simple tool pack, so we need to...","categories": ["projects"],
         "tags": [],
         "url": "/projects/lmstudio-toolpack/",
         "teaser": "/assets/cover.png"
