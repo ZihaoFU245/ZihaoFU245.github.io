@@ -1,20 +1,20 @@
 ---
 layout: single
-title: "DIY Raspberry pi router tutorial, mt7925 used"
+title: "DIY Raspberry Pi router tutorial (MT7925)"
 author_profile: true
-date: 2026-3-05
+date: 2026-03-05
 categories:
   - general
 classes: wide
 header:
-  teaser: "/assets/2026-03-05-resources/2.avif"
+  teaser: "/assets/2026-03-05-resources/4.jpeg"
 ---
 
-> I have made a raspberry pi router, with raspi 5 and a wifi card.
+> I built a Raspberry Pi router with a Raspberry Pi 5 and a Wi-Fi card.
 
-Achieved **WIFI6** and **UPnP**, boost my throughput near the limit of ethernet bandwidth.
+I achieved **Wi-Fi 6** and **UPnP**, boosting throughput close to the Ethernet bandwidth limit.
 
-What's more? Symmetric NAT (eduroam) => Port Restricted NAT with UPnP.
+What is more? Symmetric NAT (eduroam) => port-restricted NAT with UPnP.
 
 <!-- markdownlint-disable MD033 -->
 
@@ -23,50 +23,52 @@ What's more? Symmetric NAT (eduroam) => Port Restricted NAT with UPnP.
 </figure>
 <div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My setup</div>
 
-## How to make a router with raspberry pi?
+## How to make a router with Raspberry Pi
 
 ### Introduction
 
-- Software used: 
-1. **Hostapd**: control wifi interfaces, handle signal broadcasting, WPA authentication.
-2. **Dnsmasq / pihole**: Both Dnsmasq and pihole can be used as a DHCP server (assign ips), and DNS server.
-I use pihole for DNS only(port 53) and Dnsmasq for DHCP (port 67)
-3. **Miniupnp**: miniupnpd is used for UPnP capability for P2P connection.
-4. **nftables**: Linux firewall, iptables is complicated to use and ufw lack of thorough control. Miniupnpd works great with nftables.
+- Software used:
+1. **hostapd**: Controls Wi-Fi interfaces, handles SSID broadcasting, and WPA authentication.
+2. **dnsmasq / Pi-hole**: Both dnsmasq and Pi-hole can be used as a DHCP server (assign IPs) and DNS server.
+   I use Pi-hole for DNS only (port 53) and dnsmasq for DHCP (port 67).
+3. **miniupnpd**: Provides UPnP capability for P2P connections.
+4. **nftables**: Linux firewall. `iptables` is more complex to manage, and `ufw` lacks thorough control.
+   miniupnpd works well with nftables.
 
-- Steps, Sections:
+- Steps / sections:
 1. [Driver handling](#Driver)
-2. [Hostapd installation](#Hostapd)
-3. [Configure pihole and dnsmasq](#DHCP)
+2. [hostapd installation](#Hostapd)
+3. [Configure Pi-hole and dnsmasq](#DHCP)
 4. [UPnP setup](#UPnP)
 5. [Benchmarking](#Benchmark)
-6. [Hardware selections](#Hardware)
+6. [Hardware selection](#Hardware)
 
-### Hardware List
+### Hardware list
 
-- Raspberry pi 5 8Gb
-- mt7925 MediaTek wifi card or any wifi card you have
-- A Raspberry pi HAT: PCIe to M.2 Key E
+- Raspberry Pi 5 (8 GB)
+- MediaTek MT7925 Wi-Fi card (or any Wi-Fi card you already have)
+- Raspberry Pi HAT: PCIe to M.2 Key E
 - 2 antennas
 
 Assemble the hardware before you continue.
 
-## 1. Check wifi card compatibility {#Driver}
+## 1. Check Wi-Fi card compatibility {#Driver}
 
-My wifi card mt7925 is not fully supported on raspberry pi OS with kernel 6.12.y. I plugged it in,
-and wifi interface did not show up. If you are on newer kernels, it might work out of the box. I could only rebuild the kernel myself. Below is
-how you would build it.
+My Wi-Fi card (MT7925) is not fully supported on Raspberry Pi OS with kernel `6.12.y`.
+After I plugged it in, the Wi-Fi interface did not appear. If you are on newer kernels,
+it might work out of the box. I had to rebuild the kernel myself. Below is how to do it.
 
-> If your wifi card driver works, you can find it in `ip addr`, skip this step.
+> If your Wi-Fi card driver already works and you can see it in `ip addr`, skip this step.
 
-If you are using Intel cards, like BE200 and AX210 they are likely supported. You would
-find the interface, usually called `wlan1` in `ip a` command. However, intel cards are
-good for client mode, AP mode is not good as MediaTek.
+If you are using Intel cards, like BE200 or AX210, they are likely supported. You should
+find an interface (usually `wlan1`) in `ip a`. However, Intel cards are generally better
+for client mode; AP mode has been better for me on MediaTek.
 
 > [Mediatek MT7925e fails to probe/bind on Raspberry Pi 5 PCIe bus with error -12](https://github.com/raspberrypi/linux/issues/7046#issuecomment-3794631559)
-By March 6, 2026, the kernel does not include support for mt7925.
+>
+> By March 6, 2026, mainline support in Raspberry Pi OS kernels for MT7925 on this setup is still incomplete.
 
-> [Raspberry pi official documentation on how to build custom kernel](https://www.raspberrypi.com/documentation/computers/linux_kernel.html#building)
+> [Raspberry Pi official documentation: build custom kernel](https://www.raspberrypi.com/documentation/computers/linux_kernel.html#building)
 
 ### Check PCIe
 
@@ -77,7 +79,8 @@ zihao@hkg:~ $ lspci
 0002:00:00.0 PCI bridge: Broadcom Inc. and subsidiaries BCM2712 PCIe Bridge (rev 30)
 0002:01:00.0 Ethernet controller: Raspberry Pi Ltd RP1 PCIe 2.0 South Bridge
 ```
-You need `MEDIATEK Corp. MT7925` appear here.
+
+You need `MEDIATEK Corp. MT7925` to appear here.
 
 ### Fetch kernel source, prepare
 
@@ -93,19 +96,21 @@ make bcm2712_defconfig
 make olddefconfig
 make menuconfig
 ```
-In make menuconfig, Device Drivers -> Wireless LAN -> MediaTek mt7925 support.
-Mark then as M, as a kernel loadable module.
 
-`grep MT7925 .config` make sure you have them.
+In `make menuconfig`: `Device Drivers -> Wireless LAN -> MediaTek mt7925 support`.
+Mark them as `M` (kernel loadable modules).
+
+Run `grep MT7925 .config` to make sure these options are enabled.
 
 ### Compile
 
 ```bash
-make -j$(nproc) Image modules dtbs
+make -j"$(nproc)" Image modules dtbs
 ```
+
 Wait for it to finish.
 
-- Install
+### Install
 
 ```bash
 sudo cp /boot/firmware/kernel_2712.img /boot/firmware/kernel_2712.img.bak.$(date +%F-%H%M)
@@ -114,8 +119,9 @@ sudo make modules_install
 sudo make dtbs_install
 sudo depmod -a
 ```
-You also need to add `dtoverlay=pcie-32bit-dma-pi5` in `[all]` section, in `/boot/firmware/config.txt`.
-After that `sudo reboot`.
+
+You also need to add `dtoverlay=pcie-32bit-dma-pi5` in the `[all]` section of `/boot/firmware/config.txt`.
+After that, run `sudo reboot`.
 
 ### Verify
 
@@ -125,14 +131,16 @@ zihao@hkg:~ $ ip a show wlan1
     link/ether 84:9e:56:9c:71:a5 brd ff:ff:ff:ff:ff:ff
     inet 192.168.50.1/24 scope global wlan1
        valid_lft forever preferred_lft forever
-    inet6 fe80::869e:56ff:fe9c:71a5/64 scope link proto kernel_ll 
+    inet6 fe80::869e:56ff:fe9c:71a5/64 scope link proto kernel_ll
        valid_lft forever preferred_lft forever
 ```
-If you see an interface appeared, then issue is solved. On Raspberry pi OS, nmcli should automatically manage this interface, and is set to client mode. Above illustration is already set to AP mode.
 
-## 2. Set to AP mode {#Hostapd}
+If you see the interface appear, the issue is solved. On Raspberry Pi OS, `nmcli` may automatically
+manage this interface in client mode. The output above is already configured for AP mode.
 
-- Unmanage from nmcli
+## 2. Set AP mode {#Hostapd}
+
+### Unmanage from NetworkManager
 
 ```bash
 zihao@hkg:~ $ cd /etc/NetworkManager/conf.d
@@ -145,12 +153,14 @@ unmanaged-devices=interface-name:wlan1
 
 ### Install hostapd
 
-1. Through apt
+1. Through apt:
+
 ```bash
 sudo apt install hostapd
 ```
 
-2. Self build if you need recent features 
+2. Build from source if you need newer features:
+
 ```bash
 sudo apt update
 sudo apt install -y \
@@ -163,21 +173,21 @@ cp defconfig .config
 nano .config
 ```
 
-set your needed feature in `.config`, eg. `CONFIG_SAE=y`. 
-The default config is generally complete, for wifi7, IEEE 802.11be is default to y
+Set your required features in `.config`, for example, `CONFIG_SAE=y`.
+The default config is generally complete. For Wi-Fi 7, `IEEE 802.11be` is usually enabled by default.
 
 ```bash
-make -j$(nproc)
+make -j"$(nproc)"
 ```
 
-Place build out `hostapd` to a location, like `/usr/local/bin`,
+Place the built `hostapd` binary in a location like `/usr/local/bin`,
 then add a systemd unit file.
 
 ```bash
 zihao@hkg:~ $ sudo systemctl cat hostapd
 # /etc/systemd/system/hostapd.service
 [Unit]
-Description=Hostapd IEEE 802.11 AP and authentication server
+Description=hostapd IEEE 802.11 AP and authentication server
 Wants=network-online.target
 After=network-online.target
 
@@ -197,7 +207,7 @@ RestartSec=2
 WantedBy=multi-user.target
 ```
 
-Create a conf file, `/etc/hostapd/hostapd.conf`
+Create `/etc/hostapd/hostapd.conf`:
 
 ```conf
 interface=wlan1
@@ -216,7 +226,7 @@ wmm_enabled=1
 ieee80211n=1
 ieee80211ac=1
 ieee80211ax=1
-# ieee80211be=1 # 6.12 kernel still lack of support for this. 
+# ieee80211be=1 # Kernel 6.12 still lacks full support for this setup.
 
 ht_capab=[HT40+][SHORT-GI-20][SHORT-GI-40]
 
@@ -246,13 +256,14 @@ wpa_passphrase=YOUR_PASSWORD
 
 ```bash
 sudo systemctl enable --now hostapd
-sudo systmectl status hostapd
+sudo systemctl status hostapd
 ```
 
-Expecting something like this:
+Expected output is similar to:
+
 ```bash
 zihao@hkg:~ $ sudo systemctl status hostapd
-● hostapd.service - Hostapd IEEE 802.11 AP and authentication server
+● hostapd.service - hostapd IEEE 802.11 AP and authentication server
      Loaded: loaded (/etc/systemd/system/hostapd.service; enabled; preset: enabled)
      Active: active (running) since Tue 2026-03-03 20:17:58 HKT; 2 days ago
  Invocation: 827f7ab3d457451c857c0bf0c4bf72d1
@@ -271,9 +282,9 @@ Mar 06 09:44:03 hkg hostapd[22706]: wlan1: STA 56:44:77:0d:1d:39 WPA: pairwise k
 Mar 06 09:50:23 hkg hostapd[22706]: wlan1: STA 56:44:77:0d:1d:39 IEEE 802.11: disassociated
 ```
 
-Now the hostapd is finished setting up. Your wifi can be discovered, but with out of DHCP, you can't use it yet.
+Now hostapd is set up. Your Wi-Fi can be discovered, but without DHCP, clients cannot use it yet.
 
-## 3. Dnsmasq and Pihole {#DHCP}
+## 3. dnsmasq and Pi-hole {#DHCP}
 
 ```bash
 sudo apt install dnsmasq
@@ -281,11 +292,12 @@ sudo apt install dnsmasq
 curl -sSL https://install.pi-hole.net | sudo bash
 ```
 
-This installs dnsmasq and pihole.
+This installs dnsmasq and Pi-hole.
 
-Create `/etc/dnsmasq.d/dhcp.conf`
+Create `/etc/dnsmasq.d/dhcp.conf`.
 
 Example config:
+
 ```conf
 # DHCP only for AP
 interface=wlan1
@@ -295,33 +307,36 @@ bind-interfaces
 port=0
 
 dhcp-range=192.168.50.50,192.168.50.200,255.255.255.0,12h
-dhcp-option=option:router,192.168.50.1      # You are free to choose private ip address ranges
+dhcp-option=option:router,192.168.50.1      # You are free to choose private IP ranges
 dhcp-option=option:dns-server,192.168.50.1
 
 log-dhcp
 ```
 
-For pihole, you can find configuration at `/etc/pihole`, do additional tuning if you want.
+For Pi-hole, configuration is in `/etc/pihole`; tune it as needed.
 
-From now on, your wifi is functioning. Remember if you are using a firewall, open port 53, 67 on `wlan1`.
+From this point, your Wi-Fi should function. If you use a firewall, open ports `53` and `67` on `wlan1`.
 
-## 4. Miniupnpd {#UPnP}
+## 4. miniupnpd {#UPnP}
 
-> UPnP: Universal Plug and Play. It can open ports on firewall automatically. Works great for Game consoles, bitTorrent, tailscale, etc. Offering direct connection capabilities, but requires security
-enforcements during set up.
+> UPnP: Universal Plug and Play. It can open firewall ports automatically.
+> It works well for game consoles, BitTorrent, Tailscale, etc., offering direct-connection capabilities,
+> but it requires proper security enforcement during setup.
 
 ### Installation
+
 ```bash
 sudo apt install miniupnpd nftables
 sudo apt remove ufw
-# Do no let ufw modify firewall from now on. Control nftbales entirely.
+# Do not let ufw modify the firewall from now on. Control nftables entirely.
 ```
 
 ### Setup
 
-Below showed debian miniupnpd unit file.
+Below is the Debian miniupnpd unit file:
+
 ```bash
-zihao@hkg:~ $ sudo systemctl  cat miniupnpd
+zihao@hkg:~ $ sudo systemctl cat miniupnpd
 # /usr/lib/systemd/system/miniupnpd.service
 [Unit]
 Description=Lightweight UPnP IGD & PCP/NAT-PMP daemon
@@ -361,43 +376,49 @@ RestrictSUIDSGID=yes
 [Install]
 WantedBy=multi-user.target
 ```
-Notice that there is a `miniupnpd-startstop-helper.sh` and `miniupnpd-startstop-helper.sh`
-shell script executed during startup and stop. 
 
-Both of the scripts will invoke helper scritps located at `/etc/miniupnpd`
+Notice that `miniupnpd-startstop-helper.sh` runs during startup and stop.
+
+These helper scripts call additional scripts in `/etc/miniupnpd`:
+
 ```bash
 zihao@hkg:/etc/miniupnpd $ ls
 miniupnpd.conf          nft_delete_chain.sh  nft_init.sh
 miniupnpd_functions.sh  nft_flush.sh         nft_removeall.sh
 ```
 
-The debian shipped miniupnp with these scripts contains **hard coded** value.
-Before exec an inet table called `filter` with priority 0 is created. If you have your own
-custom table, named `filter` will be overrided. Or for example, you have a table called `my_table`
-in nft and is loaded, after miniupnpd started, it will inject it's own table, called `filter`
-with default drop. Your client connected to this wifi, all packets can not be forwarded to `eth0`.
+The Debian-shipped miniupnpd helper scripts contain **hard-coded values**.
+Specifically, they can hard-code creation/use of an `inet` table named `filter`
+(priority 0). If you already use your own nftables design, this hard-coded `filter`
+table behavior can conflict with your rules and chain layout.
 
-My suggestion is modify the content these shell scripts. Delete parts where it create/delete
-filter tables. And in `/etc/miniupnpd/miniupnpd.conf` set `upnp_table_name` and `upnp_nat_table_name`
-to your created table.
+For example, if you load your own custom table and then start miniupnpd,
+it may inject/manage its own `filter` table/chains unexpectedly. In that case,
+clients on this Wi-Fi may fail to forward traffic to `eth0` until you align names/rules.
 
-Eg.
-```bash
-# table names for netfilter nft. Default is "filter" for both
+My suggestion: modify those helper scripts and remove the parts that create/delete
+tables you do not want managed automatically. Then, in `/etc/miniupnpd/miniupnpd.conf`,
+set `upnp_table_name` and `upnp_nat_table_name` to your intended table.
+
+Example:
+
+```conf
+# Table names for netfilter nft. Default is "filter" for both.
 upnp_table_name=filter
 upnp_nat_table_name=filter
-# chain names for netfilter and netfilter nft
-# netfilter : default are MINIUPNPD, MINIUPNPD, MINIUPNPD-POSTROUTING
-# netfilter nft : default are miniupnpd, prerouting_miniupnpd, postrouting_miniupnpd
+# Chain names for netfilter and netfilter nft
+# netfilter: defaults are MINIUPNPD, MINIUPNPD, MINIUPNPD-POSTROUTING
+# netfilter nft: defaults are miniupnpd, prerouting_miniupnpd, postrouting_miniupnpd
 upnp_forward_chain=forwardUPnP
 upnp_nat_chain=UPnP
 upnp_nat_postrouting_chain=UPnP_Postrouting
 upnp_nftables_family_split=no
 ```
 
-Before you start, make sure nftables contain these fields.
+Before you start, make sure nftables contains these fields.
 
-Example `/etc/nftbales.conf`
+Example `/etc/nftables.conf`:
+
 ```conf
 #!/usr/sbin/nft -f
 
@@ -411,12 +432,12 @@ table inet filter {
         type filter hook input priority 0; policy drop;
 
         iif "lo" accept
-        ct state established,related accept # Make it a stateful firewall
+        ct state established,related accept # Stateful firewall
 
-        # WAN services goes here
+        # WAN services go here
 
         # LAN -> router services
-        # 67 DNCP; 53 DNS; 1900 and 5351 for UPnP;
+        # 67 DHCP; 53 DNS; 1900 and 5351 for UPnP
         iif "wlan1" udp dport {67,53,1900,5351} accept
         iif "wlan1" tcp dport 53 accept
 
@@ -450,7 +471,6 @@ table inet filter {
     # miniupnpd will add/remove rules here:
     chain forwardUPnP { }
 
-
     # ---------- NAT ----------
     # miniupnpd will add DNAT rules in UPnP (jumped from prerouting)
     chain prerouting {
@@ -462,10 +482,10 @@ table inet filter {
     chain postrouting {
         type nat hook postrouting priority srcnat; policy accept;
 
-        # allow miniupnpd to do its nat postrouting work first
+        # Allow miniupnpd to do its NAT postrouting work first
         jump UPnP_Postrouting
 
-        # your masquerade rules
+        # Your masquerade rules
         oif "eth0" ip saddr 192.168.50.0/24 masquerade
         oif "tailscale0" ip saddr 192.168.50.0/24 masquerade
     }
@@ -473,14 +493,15 @@ table inet filter {
     # miniupnpd will add DNAT rules here:
     chain UPnP { }
 
-    # miniupnpd will add nat-postrouting rules here:
+    # miniupnpd will add NAT postrouting rules here:
     chain UPnP_Postrouting { }
 }
 ```
 
-### Security Tips
+### Security tips
 
-In `/etc/miniupnpd/miniupnpd.conf`, check this part
+In `/etc/miniupnpd/miniupnpd.conf`, check this part:
+
 ```bash
 # UPnP permission rules (also enforced for NAT-PMP and PCP) for IPv4
 # (allow|deny) (external port range) IP/mask (internal port range) (optional regex filter)
@@ -506,13 +527,15 @@ In `/etc/miniupnpd/miniupnpd.conf`, check this part
 allow 1024-65535 192.168.50.0/24 1024-65535
 deny 0-65535 0.0.0.0/0 0-65535
 ```
-Ensure that only your lan clients are able to to add UPnP rules.
+
+Ensure only your LAN clients are allowed to add UPnP rules.
 
 Run `sudo systemctl enable --now miniupnpd` to start.
 
-### Final Check
+### Final check
 
-Run `sudo nft list ruleset`, you should a filter table that is non empty with rules inside.
+Run `sudo nft list ruleset`. You should see a non-empty filter table with rules inside.
+
 ```conf
 table inet filter {
 	chain input {
@@ -566,35 +589,55 @@ table inet filter {
 	}
 }
 ```
-You can see that one of my client has already requested a UPnP rule, and is working.
+
+You can see one of my clients has already requested a UPnP rule, and it is working.
 
 ## Benchmarking {#Benchmark}
 
 <figure style="text-align:center;">
-  <img src="/assets/2026-03-05-resources/3.avif" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+  <img src="/assets/2026-03-05-resources/3.avif" alt="Router benchmark" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
 </figure>
-<div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Right side is my router and left side is eduroam</div>
+<div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Right side is my router, and left side is eduroam.</div>
 
-My WAN is using ethernet from my dorm, I know it is under 1000M but greater then 500M.
-I tested the raw cable speed with my computer. And this WIFI 6 at 5GHz is running at the
-maximum throughput of ethernet cable. WIFI 7 AP at 6GHz can not be achieved because 6.12 kernel has
-not yet support 6GHz AP for this card. If later this year, raspberry pi os rolls out 6.18.y kernels,
-I will try again with WIFI 7.
+My WAN uses Ethernet from my dorm. I know it is below 1000 Mbps but above 500 Mbps.
+I tested raw cable speed on my computer. This Wi-Fi 6 AP at 5 GHz reaches throughput
+close to the Ethernet bottleneck.
+
+Wi-Fi 7 AP at 6 GHz cannot be achieved yet in this setup because kernel `6.12` does not
+fully support 6 GHz AP mode for this card. If Raspberry Pi OS rolls out newer kernels
+later this year, I will test Wi-Fi 7 again.
 
 ## Hardware selection guide {#Hardware}
 
-Selecting hardware is important for a DIY router. In this tutorial I am using a Raspi 5 and mt7925 wifi card. Mt7925 raspi 5 requires custom kernel builds, more complicated overhead, but the price is cheap compare to a full feature WIFI 7 card. This card only partially support WIFI 7 160MHz.
+Selecting hardware is important for a DIY router. In this tutorial I use a Raspberry Pi 5
+and MT7925 Wi-Fi card. MT7925 on Raspberry Pi 5 may require custom kernel builds,
+which adds complexity, but the cost is low compared to some full-feature Wi-Fi 7 cards.
+This card currently has partial Wi-Fi 7 capability in this use case.
 
-If you need WIFI 7 as client, use Intel BE200 or AX210. You may want to check [Exploring WIFI 7 on a Raspberry pi 5 by Jeff Geerling released on Mar 14, 2025](https://www.jeffgeerling.com/blog/2025/exploring-wifi-7-2-gbps-on-raspberry-pi-5/)
+If you need Wi-Fi 7 as a client, check Intel BE200 / AX210 testing and reports.
+You may want to read:
 
-For AP mode, choose a wifi card that support dual or tri band that can runs concurrently. Mt7925 only
-support one band at a time, which means either 2.4GHz or 5GHz. 
+> [Exploring Wi-Fi 7 on a Raspberry Pi 5 by Jeff Geerling (Mar 14, 2025)](https://www.jeffgeerling.com/blog/2025/exploring-wifi-7-2-gbps-on-raspberry-pi-5/)
 
-`Mt7915` support dual band, 2.4 and 5 for WIFI 6. And
-it is not a new card, linux kernel has support for it. [mt7915e driver fails to load on Raspberry Pi 5 with error -12](https://github.com/raspberrypi/linux/issues/7026), driver may have some issues, custom
-build kernel could solve. Actually `mt7925e` for mt7925, without custom build kernel, exit code 12 is observed as well.
+For AP mode, choose a Wi-Fi card that supports dual- or tri-band operation concurrently.
+MT7925 typically supports one active band at a time in this setup (either 2.4 GHz or 5 GHz).
 
-`QCM865` is a wide recommended card by community as well, which provides full speed of WIFI 7.
-But a custom build kernel might still be needed. [ath11k PCI WIFI 6 card not detected](https://forums.raspberrypi.com/viewtopic.php?t=396484). `ath11k` driver is used by `QCM865` as well, not shipped by
-standard raspberry pi os kernel.
+`MT7915` supports dual-band (2.4 and 5 GHz) for Wi-Fi 6. It is older, and Linux kernel support
+is more mature. See:
 
+> [mt7915e driver fails to load on Raspberry Pi 5 with error -12](https://github.com/raspberrypi/linux/issues/7026)
+
+Driver issues can still occur; a custom kernel build may help. For `mt7925e`, without custom
+kernel changes, error `-12` can also appear.
+
+`QCM865` is also recommended by parts of the community and can provide full-speed Wi-Fi 7,
+but a custom kernel may still be needed. See:
+
+> [ath11k PCI Wi-Fi 6 card not detected](https://forums.raspberrypi.com/viewtopic.php?t=396484)
+
+`ath11k` is relevant for QCM865 as well and may not be fully enabled in your default
+Raspberry Pi OS kernel build.
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-03-05-resources/1.avif" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
