@@ -7,7 +7,7 @@ categories:
   - general
 classes: wide
 header:
-  teaser: "/assets/2026-03-05-resources/4.jpeg"
+  teaser: "/assets/2026-03-05-resources/5.jpeg"
 ---
 
 > I built a Raspberry Pi router with a Raspberry Pi 5 and a Wi-Fi card.
@@ -19,7 +19,7 @@ What is more? Symmetric NAT (eduroam) => port-restricted NAT with UPnP.
 <!-- markdownlint-disable MD033 -->
 
 <figure style="text-align:center;">
-  <img src="/assets/2026-03-05-resources/2.avif" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+  <img src="/assets/2026-03-05-resources/6.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
 </figure>
 <div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My setup</div>
 
@@ -313,9 +313,78 @@ dhcp-option=option:dns-server,192.168.50.1
 log-dhcp
 ```
 
-For Pi-hole, configuration is in `/etc/pihole`; tune it as needed.
+Now the interface does not have a ip, `hostapd` does not allocate a ip to the interface. So
+before starting dnsmasq, we need to add a ip to `wlan1`.
 
-From this point, your Wi-Fi should function. If you use a firewall, open ports `53` and `67` on `wlan1`.
+One time method:
+
+```bash
+sudo ip addr replace 192.168.50.1/24 dev wlan1
+```
+
+To make it presistant after reboot, prevent dnsmasq and miniupnpd failing, you would need a systmed unit runs before dnsmasq and miniupnpd.
+
+Create `/etc/systemd/system/wlan1-lan.service`
+
+```bash
+[Unit]
+Description=Configure LAN IPv4 on wlan1
+After=sys-subsystem-net-devices-wlan1.device
+BindsTo=sys-subsystem-net-devices-wlan1.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/ip link set wlan1 up
+ExecStart=/usr/sbin/ip addr replace 192.168.50.1/24 dev wlan1
+
+[Install]
+WantedBy=multi-user.target
+```
+
+This systemd unit will allocate ip to wlan1 and make it presistant after reboot.
+Don't forget to add the below snippet to `dnsmasq` and `miniupnpd` configuration file.
+If dnsmasq and miniupnpd does not wait for `wlan1-lan.service` they will fail.
+
+```bash
+After=hostapd.service wlan1-lan.service
+Requires=hostapd.service wlan1-lan.service
+```
+
+For Pi-hole, configuration is located at `/etc/pihole`; tune it as needed. Use `pihole status` to check it.
+
+Finally, start the service.
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart dnsmasq
+```
+
+From this point, your Wi-Fi Access Point, DHCP and DNS is done. Last puzzle is routing.
+
+> Below you can consider it as a branch, if you don't need UPnP, finish this section and your router is done.
+ Otherwise, continue to next
+section. Remember routing requires sysctl and firewall confiuration, you can always come back and it may help.
+
+```bash
+echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf # This is enables IP packets forwarding
+```
+
+and allow forwarding on your firewall from wlan1 to your WAN, also open port 53 and 67.
+
+```conf
+table ip filter {
+    chain forward {
+        type filter hook forward priority 0; policy drop;
+
+        # Stateful firewall
+        ct state established,related accept
+
+        # Allow forwarding from LAN to WAN
+        iifname "wlan1" oifname "eth0" accept
+    }
+}
+```
 
 ## 4. miniupnpd {#UPnP}
 
@@ -638,6 +707,15 @@ but a custom kernel may still be needed. See:
 `ath11k` is relevant for QCM865 as well and may not be fully enabled in your default
 Raspberry Pi OS kernel build.
 
+> Mar 14 2026: Pi5 PCie can only provide limited power, so even if you got a strong card you might not be able to power
+it. Don't expect Pi to be a good at AP. Buy a cheap router and flash OpenWrt, and set that router
+as an AP. Why not just use a router? Normal router has limited system resources, but pi isn't you can do more customization.
+
 <figure style="text-align:center;">
   <img src="/assets/2026-03-05-resources/1.avif" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
+
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-03-05-resources/2.avif" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
 </figure>
