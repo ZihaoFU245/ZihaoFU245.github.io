@@ -135,7 +135,7 @@ var store = [{
         "excerpt":"I built a Raspberry Pi router with a Raspberry Pi 5 and a Wi-Fi card. I achieved Wi-Fi 6 and UPnP, boosting throughput close to the Ethernet bandwidth limit. What is more? Symmetric NAT (eduroam) =&gt; port-restricted NAT with UPnP. My setup How to make a router with Raspberry Pi...","categories": ["general"],
         "tags": [],
         "url": "/general/2026/03/05/pi-router.html",
-        "teaser": "/assets/2026-03-05-resources/4.jpeg"
+        "teaser": "/assets/2026-03-05-resources/5.jpeg"
       },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: ⚠ Warning This project is archived permanently. Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect...","categories": ["projects"],

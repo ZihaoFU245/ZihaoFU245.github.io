@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-03-06T08:09:02+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">DIY Raspberry Pi router tutorial (MT7925)</title><link href="https://zihaofu245.me/general/2026/03/05/pi-router.html" rel="alternate" type="text/html" title="DIY Raspberry Pi router tutorial (MT7925)" /><published>2026-03-05T00:00:00+00:00</published><updated>2026-03-05T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2026/03/05/pi-router</id><content type="html" xml:base="https://zihaofu245.me/general/2026/03/05/pi-router.html"><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-03-14T09:41:34+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">DIY Raspberry Pi router tutorial (MT7925)</title><link href="https://zihaofu245.me/general/2026/03/05/pi-router.html" rel="alternate" type="text/html" title="DIY Raspberry Pi router tutorial (MT7925)" /><published>2026-03-05T00:00:00+00:00</published><updated>2026-03-05T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2026/03/05/pi-router</id><content type="html" xml:base="https://zihaofu245.me/general/2026/03/05/pi-router.html"><![CDATA[<blockquote>
   <p>I built a Raspberry Pi router with a Raspberry Pi 5 and a Wi-Fi card.</p>
 </blockquote>
 
@@ -9,7 +9,7 @@
 <!-- markdownlint-disable MD033 -->
 
 <figure style="text-align:center;">
-  <img src="/assets/2026-03-05-resources/2.avif" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+  <img src="/assets/2026-03-05-resources/6.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
 </figure>
 <div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">My setup</div>
 
@@ -307,9 +307,74 @@ curl <span class="nt">-sSL</span> https://install.pi-hole.net | <span class="nb"
 <span class="n">log</span>-<span class="n">dhcp</span>
 </code></pre></div></div>
 
-<p>For Pi-hole, configuration is in <code class="language-plaintext highlighter-rouge">/etc/pihole</code>; tune it as needed.</p>
+<p>Now the interface does not have a ip, <code class="language-plaintext highlighter-rouge">hostapd</code> does not allocate a ip to the interface. So
+before starting dnsmasq, we need to add a ip to <code class="language-plaintext highlighter-rouge">wlan1</code>.</p>
 
-<p>From this point, your Wi-Fi should function. If you use a firewall, open ports <code class="language-plaintext highlighter-rouge">53</code> and <code class="language-plaintext highlighter-rouge">67</code> on <code class="language-plaintext highlighter-rouge">wlan1</code>.</p>
+<p>One time method:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>ip addr replace 192.168.50.1/24 dev wlan1
+</code></pre></div></div>
+
+<p>To make it presistant after reboot, prevent dnsmasq and miniupnpd failing, you would need a systmed unit runs before dnsmasq and miniupnpd.</p>
+
+<p>Create <code class="language-plaintext highlighter-rouge">/etc/systemd/system/wlan1-lan.service</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>Unit]
+<span class="nv">Description</span><span class="o">=</span>Configure LAN IPv4 on wlan1
+<span class="nv">After</span><span class="o">=</span>sys-subsystem-net-devices-wlan1.device
+<span class="nv">BindsTo</span><span class="o">=</span>sys-subsystem-net-devices-wlan1.device
+
+<span class="o">[</span>Service]
+<span class="nv">Type</span><span class="o">=</span>oneshot
+<span class="nv">RemainAfterExit</span><span class="o">=</span><span class="nb">yes
+</span><span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/ip <span class="nb">link set </span>wlan1 up
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/ip addr replace 192.168.50.1/24 dev wlan1
+
+<span class="o">[</span>Install]
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div></div>
+
+<p>This systemd unit will allocate ip to wlan1 and make it presistant after reboot.
+Don’t forget to add the below snippet to <code class="language-plaintext highlighter-rouge">dnsmasq</code> and <code class="language-plaintext highlighter-rouge">miniupnpd</code> configuration file.
+If dnsmasq and miniupnpd does not wait for <code class="language-plaintext highlighter-rouge">wlan1-lan.service</code> they will fail.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">After</span><span class="o">=</span>hostapd.service wlan1-lan.service
+<span class="nv">Requires</span><span class="o">=</span>hostapd.service wlan1-lan.service
+</code></pre></div></div>
+
+<p>For Pi-hole, configuration is located at <code class="language-plaintext highlighter-rouge">/etc/pihole</code>; tune it as needed. Use <code class="language-plaintext highlighter-rouge">pihole status</code> to check it.</p>
+
+<p>Finally, start the service.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl daemon-reload
+<span class="nb">sudo </span>systemctl restart dnsmasq
+</code></pre></div></div>
+
+<p>From this point, your Wi-Fi Access Point, DHCP and DNS is done. Last puzzle is routing.</p>
+
+<blockquote>
+  <p>Below you can consider it as a branch, if you don’t need UPnP, finish this section and your router is done.
+ Otherwise, continue to next
+section. Remember routing requires sysctl and firewall confiuration, you can always come back and it may help.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"net.ipv4.ip_forward=1"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/sysctl.conf <span class="c"># This is enables IP packets forwarding</span>
+</code></pre></div></div>
+
+<p>and allow forwarding on your firewall from wlan1 to your WAN, also open port 53 and 67.</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">table</span> <span class="n">ip</span> <span class="n">filter</span> {
+    <span class="n">chain</span> <span class="n">forward</span> {
+        <span class="n">type</span> <span class="n">filter</span> <span class="n">hook</span> <span class="n">forward</span> <span class="n">priority</span> <span class="m">0</span>; <span class="n">policy</span> <span class="n">drop</span>;
+
+        <span class="c"># Stateful firewall
+</span>        <span class="n">ct</span> <span class="n">state</span> <span class="n">established</span>,<span class="n">related</span> <span class="n">accept</span>
+
+        <span class="c"># Allow forwarding from LAN to WAN
+</span>        <span class="n">iifname</span> <span class="s2">"wlan1"</span> <span class="n">oifname</span> <span class="s2">"eth0"</span> <span class="n">accept</span>
+    }
+}
+</code></pre></div></div>
 
 <h2 id="UPnP">4. miniupnpd</h2>
 
@@ -633,8 +698,18 @@ but a custom kernel may still be needed. See:</p>
 <p><code class="language-plaintext highlighter-rouge">ath11k</code> is relevant for QCM865 as well and may not be fully enabled in your default
 Raspberry Pi OS kernel build.</p>
 
+<blockquote>
+  <p>Mar 14 2026: Pi5 PCie can only provide limited power, so even if you got a strong card you might not be able to power
+it. Don’t expect Pi to be a good at AP. Buy a cheap router and flash OpenWrt, and set that router
+as an AP. Why not just use a router? Normal router has limited system resources, but pi isn’t you can do more customization.</p>
+</blockquote>
+
 <figure style="text-align:center;">
   <img src="/assets/2026-03-05-resources/1.avif" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-03-05-resources/2.avif" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
 </figure>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="general" /><summary type="html"><![CDATA[I built a Raspberry Pi router with a Raspberry Pi 5 and a Wi-Fi card.]]></summary></entry><entry><title type="html">Tech I’ve picked up this winter</title><link href="https://zihaofu245.me/general/2026/01/30/newStuffLearned.html" rel="alternate" type="text/html" title="Tech I’ve picked up this winter" /><published>2026-01-30T00:00:00+00:00</published><updated>2026-01-30T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2026/01/30/newStuffLearned</id><content type="html" xml:base="https://zihaofu245.me/general/2026/01/30/newStuffLearned.html"><![CDATA[<p>Lots of fun, and lots of self-hosting projects! I’ve now abandoned Windows entirely; all of my devices
 are running Ubuntu or Debian.</p>
 
