@@ -97,7 +97,7 @@ make olddefconfig
 make menuconfig
 ```
 
-In `make menuconfig`: `Device Drivers -> Wireless LAN -> MediaTek mt7925 support`.
+In `make menuconfig`: `Device Drivers -> Network device support -> Wireless LAN -> MediaTek mt7925 support`.
 Mark them as `M` (kernel loadable modules).
 
 Run `grep MT7925 .config` to make sure these options are enabled.
