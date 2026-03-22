@@ -435,6 +435,8 @@
 <p>What is more? Symmetric NAT (eduroam) =&gt; port-restricted NAT with UPnP.</p>
 
 <!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD051 -->
+<!-- markdownlint-disable MD026 -->
 
 <figure style="text-align:center;">
   <img src="/assets/2026-03-05-resources/6.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
@@ -445,28 +447,27 @@
 
 <h3 id="introduction">Introduction</h3>
 
-<ul>
-  <li>Software used:
-    <ol>
-      <li><strong>hostapd</strong>: Controls Wi-Fi interfaces, handles SSID broadcasting, and WPA authentication.</li>
-      <li><strong>dnsmasq / Pi-hole</strong>: Both dnsmasq and Pi-hole can be used as a DHCP server (assign IPs) and DNS server.
- I use Pi-hole for DNS only (port 53) and dnsmasq for DHCP (port 67).</li>
-      <li><strong>miniupnpd</strong>: Provides UPnP capability for P2P connections.</li>
-      <li><strong>nftables</strong>: Linux firewall. <code class="language-plaintext highlighter-rouge">iptables</code> is more complex to manage, and <code class="language-plaintext highlighter-rouge">ufw</code> lacks thorough control.
- miniupnpd works well with nftables.</li>
-    </ol>
-  </li>
-  <li>Steps / sections:
-    <ol>
-      <li><a href="#Driver">Driver handling</a></li>
-      <li><a href="#Hostapd">hostapd installation</a></li>
-      <li><a href="#DHCP">Configure Pi-hole and dnsmasq</a></li>
-      <li><a href="#UPnP">UPnP setup</a></li>
-      <li><a href="#Benchmark">Benchmarking</a></li>
-      <li><a href="#Hardware">Hardware selection</a></li>
-    </ol>
-  </li>
-</ul>
+<h4 id="software-used">Software used:</h4>
+
+<ol>
+  <li><strong>hostapd</strong>: Controls Wi-Fi interfaces, handles SSID broadcasting, and WPA authentication.</li>
+  <li><strong>dnsmasq / Pi-hole</strong>: Both dnsmasq and Pi-hole can be used as a DHCP server (assign IPs) and DNS server.
+I use Pi-hole for DNS only (port 53) and dnsmasq for DHCP (port 67).</li>
+  <li><strong>miniupnpd</strong>: Provides UPnP capability for P2P connections.</li>
+  <li><strong>nftables</strong>: Linux firewall. <code class="language-plaintext highlighter-rouge">iptables</code> is more complex to manage, and <code class="language-plaintext highlighter-rouge">ufw</code> lacks thorough control.
+miniupnpd works well with nftables.</li>
+</ol>
+
+<h4 id="steps--sections">Steps / sections:</h4>
+
+<ol>
+  <li><a href="#Driver">Driver handling</a></li>
+  <li><a href="#Hostapd">hostapd installation</a></li>
+  <li><a href="#DHCP">Configure Pi-hole and dnsmasq</a></li>
+  <li><a href="#UPnP">UPnP setup</a></li>
+  <li><a href="#Benchmark">Benchmarking</a></li>
+  <li><a href="#Hardware">Hardware selection</a></li>
+</ol>
 
 <h3 id="hardware-list">Hardware list</h3>
 
@@ -1169,7 +1170,7 @@ as an AP. Why not just use a router? Normal router has limited system resources,
       <a href="/general/2026/01/30/newStuffLearned.html" class="pagination--pager" title="Tech I’ve picked up this winter">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/general/2026/03/21/zeroclaw.html" class="pagination--pager" title="Running you own Jarvis on a 15$ computer">Next</a>
     
   </nav>
 

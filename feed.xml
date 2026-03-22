@@ -1,4 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-03-18T09:06:04+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">DIY Raspberry Pi router tutorial (MT7925)</title><link href="https://zihaofu245.me/general/2026/03/05/pi-router.html" rel="alternate" type="text/html" title="DIY Raspberry Pi router tutorial (MT7925)" /><published>2026-03-05T00:00:00+00:00</published><updated>2026-03-05T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2026/03/05/pi-router</id><content type="html" xml:base="https://zihaofu245.me/general/2026/03/05/pi-router.html"><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-03-22T09:53:33+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">Running you own Jarvis on a 15$ computer</title><link href="https://zihaofu245.me/general/2026/03/21/zeroclaw.html" rel="alternate" type="text/html" title="Running you own Jarvis on a 15$ computer" /><published>2026-03-21T00:00:00+00:00</published><updated>2026-03-21T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2026/03/21/zeroclaw</id><content type="html" xml:base="https://zihaofu245.me/general/2026/03/21/zeroclaw.html"><![CDATA[<blockquote>
+  <p>How to build deploy your own AI Agent? This is a tutorial about installing zeroclaw
+on your cheap hardware.</p>
+</blockquote>
+
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD051 -->
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-03-21-resources/7.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
+<div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Raspberry pi zero 2w</div>
+
+<p>This blog covered how to install alpine linux on raspberry pi zero2w, install
+OpenSSH, build zeroclaw against musl (latest or minor versions may not include musl support)
+and configure zeroclaw with OpenRC init system.</p>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-03-21-resources/6.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
+<div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">How it looks finally</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Zeroclaw is an Openclaw alternative, an autonomous AI agent. Openclaw is written in TypeScript, I do not like it at all. The runtime is heavy, while
+zeroclaw written in RUST, the response is almost instant. It is light, fast, efficient and superior to openclaw.</p>
+
+<h2 id="jump-links">Jump Links</h2>
+
+<ol>
+  <li><a href="#Flash"><strong>flash Alpine Linux</strong></a></li>
+  <li><a href="#ssh"><strong>preconfigure OpenSSH</strong></a></li>
+  <li><a href="#build"><strong>How to build zeroclaw against musl?</strong></a></li>
+  <li><a href="#deploy"><strong>Configure persistent service for zeroclaw</strong></a></li>
+</ol>
+
+<h2 id="Flash">Flash Alpine linux image onto raspi zero2w</h2>
+
+<p>Download the official <a href="https://www.raspberrypi.com/software/">raspberry pi imager</a>, and plug the SD card into your computer, follow its steps and
+flash the alpine Linux image.</p>
+
+<p>The alpine linux image provided is a diskless image, which means the entire system will be running on RAM, we will configure that later when we log
+into the machine. Don’t unplug the SD card yet, we need to preconfigure OpenSSH.</p>
+
+<h2 id="ssh">Preconfigure OpenSSH on alpine linux</h2>
+
+<p>Due to alpine linux nature, secure and minimum. It does not bundle the OpenBSD secure shell. We need a bootstrap program, that
+executed on the first boot and bring us OpenSSH. <a href="https://github.com/macmpi/alpine-linux-headless-bootstrap">Alpine Linux BootStrap Repo.</a>
+Go to that github repo, download headless.apkovl.tar.gz and place it under /boot, the partition usually called PIBOOT.</p>
+
+<p>Then configure wifi with</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wpa_passphrase <span class="s1">'YOUR_WIFI_NAME'</span> <span class="s1">'YOUR_WIFI_PASSWORD'</span> <span class="o">&gt;</span> wpa_supplicant.conf
+</code></pre></div></div>
+
+<p>If you want to use ssh public key login, place your public key inside a file called <code class="language-plaintext highlighter-rouge">authorized_keys</code>.</p>
+
+<p>Finally save all your modifications and eject it. Plug it in your raspi zero2w and boot it.</p>
+
+<p>Try ssh into your machine. If it did not respond, ping it first, then try again.
+I found the raspi zero2w alping wifi firmware quite unstable, so ping it first,
+could save you lots of time debugging. <a href="https://wiki.alpinelinux.org/wiki/Raspberry_Pi#Wireless_drivers">Alpine WIKI wireless driver post installation</a></p>
+
+<p>After gaining access, run <code class="language-plaintext highlighter-rouge">setup-alpine</code> to make a proper installation on raspi zero2w,
+then reboot, and <code class="language-plaintext highlighter-rouge">apk update &amp;&amp; apk upgrade</code> to keep software up to date.</p>
+
+<p><img src="/assets/2026-03-21-resources/4.jpeg" alt="/assets/2026-03-21-resources/4.jpeg" /></p>
+
+<h2 id="build">Build zeroclaw against musl C libray</h2>
+
+<p>Here comes the interesting part. If you go to zeroclaw-labs/zeroclaw, you will find out they don’t always provide linux-aarch64-musl binary. x86 and arm64
+glibc is usually provided, musl is ignored often. Then we must build it ourselves. The most straight forward way is to use a docker container as
+builder.</p>
+
+<p>Alpine uses musl libc instead of glibc. Prebuilt binaries targeting glibc will fail to run.
+Therefore we build inside an Alpine environment to ensure compatibility.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">--dns</span> 1.1.1.1  alpine:latest /bin/sh
+</code></pre></div></div>
+
+<p>You will now inside containers root. It’s recommend to check the network connections <code class="language-plaintext highlighter-rouge">ping 8.8.8.8</code> and <code class="language-plaintext highlighter-rouge">nslookup google.com</code>.</p>
+
+<h3 id="first-install-build-essentials">First install build essentials</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apk update
+apk upgrade
+apk add curl git gcc build-base
+
+curl <span class="nt">--proto</span> <span class="s1">'=https'</span> <span class="nt">--tlsv1</span>.2 <span class="nt">-sSf</span> https://sh.rustup.rs | sh  <span class="c"># Install Rust</span>
+</code></pre></div></div>
+<h3 id="build-the-binary">Build the binary</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone the repo</span>
+<span class="c"># You can specify a release tag, and clone with</span>
+<span class="c"># git clone --branch &lt;tag name&gt; --depth 1 https://github.com/zeroclaw-labs/zeroclaw.git</span>
+<span class="c"># This will save some time, and use smaller storage</span>
+git clone https://github.com/zeroclaw-labs/zeroclaw.git
+
+git switch <span class="nt">--detach</span> &lt;release tag name&gt; <span class="c"># Find the latest release tag on github</span>
+
+cargo build <span class="nt">--release</span>
+</code></pre></div></div>
+
+<h3 id="transfer-out-the-binary">Transfer out the binary</h3>
+
+<p>You will find the binary at <code class="language-plaintext highlighter-rouge">target/release</code>, transfer it out to your destination. If your firewall
+allows containers to reach LAN, you can try <code class="language-plaintext highlighter-rouge">scp zeroclaw &lt;YOUR NAME&gt;@&lt;LAN IP ADDRESS&gt;</code></p>
+
+<p>Otherwise, use <code class="language-plaintext highlighter-rouge">croc</code>, <a href="https://github.com/schollz/croc">schollz/croc</a>, which uses a public
+relay node provided by the author to transfer file. Also please consider donation to this beautiful opensource
+software.</p>
+
+<h2 id="deploy">Deploy and configure zeroclaw</h2>
+
+<p>Now comes to the final section, deploy <code class="language-plaintext highlighter-rouge">zeroclaw</code> to the target machine, you should now have
+the binary on your target machine.</p>
+
+<h3 id="install-zeroclaw">Install zeroclaw</h3>
+
+<p>Install zeroclaw to local machine, <code class="language-plaintext highlighter-rouge">mv ./zeroclaw /usr/local/bin/</code>.
+You should verify with <code class="language-plaintext highlighter-rouge">which zeroclaw</code> and <code class="language-plaintext highlighter-rouge">zeroclaw --version</code>, if instruction set matches,
+you should not encounter any errors.</p>
+
+<h3 id="configure-zeroclaw-daemon">Configure zeroclaw daemon</h3>
+
+<p>Alpine linux uses OpenRC init system. First add a dedicated user for zeroclaw.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adduser zeroclaw
+<span class="c"># I should prompt you to enter password</span>
+<span class="c"># Do not give Agent full root permission is a good practice</span>
+</code></pre></div></div>
+
+<p>Here we onboard zeroclaw</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su - zeroclaw
+<span class="c"># Follow onboard instructions, after you finish</span>
+<span class="c"># run `exit` return to root user</span>
+</code></pre></div></div>
+
+<p>Next configure the daemon unit file, <code class="language-plaintext highlighter-rouge">vi /etc/init.d/zeroclaw</code>,
+press i enter insert mode. Here is a example unit file.</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/sbin/openrc-run
+</span>
+<span class="n">name</span>=<span class="s2">"zeroclaw"</span>
+<span class="n">description</span>=<span class="s2">"ZeroClaw daemon"</span>
+
+<span class="n">command</span>=<span class="s2">"/usr/local/bin/zeroclaw"</span>
+<span class="n">command_args</span>=<span class="s2">"--config-dir /home/zeroclaw/.zeroclaw daemon"</span>
+<span class="n">command_user</span>=<span class="s2">"zeroclaw:zeroclaw"</span>
+<span class="n">directory</span>=<span class="s2">"/home/zeroclaw"</span>
+
+<span class="n">supervisor</span>=<span class="s2">"supervise-daemon"</span>
+<span class="n">pidfile</span>=<span class="s2">"/run/${RC_SVCNAME}.pid"</span>
+
+<span class="n">output_log</span>=<span class="s2">"/var/log/zeroclaw/access.log"</span>
+<span class="n">error_log</span>=<span class="s2">"/var/log/zeroclaw/error.log"</span>
+
+<span class="n">export</span> <span class="n">HOME</span>=<span class="s2">"/home/zeroclaw"</span>
+<span class="n">umask</span> <span class="m">027</span>
+
+<span class="n">depend</span>() {
+    <span class="n">need</span> <span class="n">net</span>
+    <span class="n">after</span> <span class="n">firewall</span>
+}
+
+<span class="n">start_pre</span>() {
+    <span class="n">checkpath</span> -<span class="n">d</span> -<span class="n">o</span> <span class="n">zeroclaw</span>:<span class="n">zeroclaw</span> -<span class="n">m</span> <span class="m">0755</span> /<span class="n">home</span>/<span class="n">zeroclaw</span>/.<span class="n">zeroclaw</span>
+    <span class="n">checkpath</span> -<span class="n">d</span> -<span class="n">o</span> <span class="n">zeroclaw</span>:<span class="n">zeroclaw</span> -<span class="n">m</span> <span class="m">0755</span> /<span class="n">var</span>/<span class="n">log</span>/<span class="n">zeroclaw</span>
+}
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">rc-service start zeroclaw</code> to start zeroclaw service, and use
+<code class="language-plaintext highlighter-rouge">rc-update add zeroclaw default</code> to make it presistent even after reboot.</p>
+
+<h2 id="ending">Ending</h2>
+
+<p>Raspi zero2w is a very tiny computer about 15$,
+with quad A53 core running at 1.0GHz and 512 MB of RAM. 
+Alpine linux is super light, which takes about 30MB of ram after boot. 
+Zeroclaw is light weight as well, uses about 20-30 MB. 
+I also intalled tailscale on it, this will take another few MB. In total, it used about
+70MB.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zihao@alpine:~<span class="nv">$ </span>free <span class="nt">-h</span>
+              total        used        free      shared  buff/cache   available
+Mem:         416.6M       65.8M      180.3M      320.0K      170.4M      340.1M
+Swap:             0           0           0
+</code></pre></div></div>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-03-21-resources/1.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-03-21-resources/2.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
+
+<blockquote>
+  <p>With this setup, you now have a persistent AI agent running on ultra-low-cost hardware.</p>
+</blockquote>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="general" /><summary type="html"><![CDATA[How to build deploy your own AI Agent? This is a tutorial about installing zeroclaw on your cheap hardware.]]></summary></entry><entry><title type="html">DIY Raspberry Pi router tutorial (MT7925)</title><link href="https://zihaofu245.me/general/2026/03/05/pi-router.html" rel="alternate" type="text/html" title="DIY Raspberry Pi router tutorial (MT7925)" /><published>2026-03-05T00:00:00+00:00</published><updated>2026-03-05T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2026/03/05/pi-router</id><content type="html" xml:base="https://zihaofu245.me/general/2026/03/05/pi-router.html"><![CDATA[<blockquote>
   <p>I built a Raspberry Pi router with a Raspberry Pi 5 and a Wi-Fi card.</p>
 </blockquote>
 
@@ -7,6 +205,8 @@
 <p>What is more? Symmetric NAT (eduroam) =&gt; port-restricted NAT with UPnP.</p>
 
 <!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD051 -->
+<!-- markdownlint-disable MD026 -->
 
 <figure style="text-align:center;">
   <img src="/assets/2026-03-05-resources/6.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
@@ -17,28 +217,27 @@
 
 <h3 id="introduction">Introduction</h3>
 
-<ul>
-  <li>Software used:
-    <ol>
-      <li><strong>hostapd</strong>: Controls Wi-Fi interfaces, handles SSID broadcasting, and WPA authentication.</li>
-      <li><strong>dnsmasq / Pi-hole</strong>: Both dnsmasq and Pi-hole can be used as a DHCP server (assign IPs) and DNS server.
- I use Pi-hole for DNS only (port 53) and dnsmasq for DHCP (port 67).</li>
-      <li><strong>miniupnpd</strong>: Provides UPnP capability for P2P connections.</li>
-      <li><strong>nftables</strong>: Linux firewall. <code class="language-plaintext highlighter-rouge">iptables</code> is more complex to manage, and <code class="language-plaintext highlighter-rouge">ufw</code> lacks thorough control.
- miniupnpd works well with nftables.</li>
-    </ol>
-  </li>
-  <li>Steps / sections:
-    <ol>
-      <li><a href="#Driver">Driver handling</a></li>
-      <li><a href="#Hostapd">hostapd installation</a></li>
-      <li><a href="#DHCP">Configure Pi-hole and dnsmasq</a></li>
-      <li><a href="#UPnP">UPnP setup</a></li>
-      <li><a href="#Benchmark">Benchmarking</a></li>
-      <li><a href="#Hardware">Hardware selection</a></li>
-    </ol>
-  </li>
-</ul>
+<h4 id="software-used">Software used:</h4>
+
+<ol>
+  <li><strong>hostapd</strong>: Controls Wi-Fi interfaces, handles SSID broadcasting, and WPA authentication.</li>
+  <li><strong>dnsmasq / Pi-hole</strong>: Both dnsmasq and Pi-hole can be used as a DHCP server (assign IPs) and DNS server.
+I use Pi-hole for DNS only (port 53) and dnsmasq for DHCP (port 67).</li>
+  <li><strong>miniupnpd</strong>: Provides UPnP capability for P2P connections.</li>
+  <li><strong>nftables</strong>: Linux firewall. <code class="language-plaintext highlighter-rouge">iptables</code> is more complex to manage, and <code class="language-plaintext highlighter-rouge">ufw</code> lacks thorough control.
+miniupnpd works well with nftables.</li>
+</ol>
+
+<h4 id="steps--sections">Steps / sections:</h4>
+
+<ol>
+  <li><a href="#Driver">Driver handling</a></li>
+  <li><a href="#Hostapd">hostapd installation</a></li>
+  <li><a href="#DHCP">Configure Pi-hole and dnsmasq</a></li>
+  <li><a href="#UPnP">UPnP setup</a></li>
+  <li><a href="#Benchmark">Benchmarking</a></li>
+  <li><a href="#Hardware">Hardware selection</a></li>
+</ol>
 
 <h3 id="hardware-list">Hardware list</h3>
 
@@ -2331,185 +2530,4 @@ The ultimate solution I found is stream the browser live. Further thinking, use 
 <figure>
 	<img src="/assets/2025-09-22-resources/shopping.jpg" alt="Shopping for storm" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
 	<figcaption style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Typhoon (Storm) is coming preparing for food</figcaption>
-</figure>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Weekly review, what happened?]]></summary></entry><entry><title type="html">Git LFS with GitHub Pages: A Practical Guide</title><link href="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html" rel="alternate" type="text/html" title="Git LFS with GitHub Pages: A Practical Guide" /><published>2025-09-12T00:00:00+00:00</published><updated>2025-09-12T00:00:00+00:00</updated><id>https://zihaofu245.me/general/2025/09/12/git-lfs-guide</id><content type="html" xml:base="https://zihaofu245.me/general/2025/09/12/git-lfs-guide.html"><![CDATA[<blockquote>
-  <p>Written on 12th Sep 2025, after spending an afternoon figuring out how to use both Git LFS and deploy to GitHub Pages. An ultimate shortcut guide.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>TL;DR: GitHub Pages does not auto-fetch Git LFS objects. You must fetch LFS files during your build/deploy step (e.g., GitHub Actions) so that the files in your publish branch (often gh-pages) are real binaries, not LFS pointer text files. Then set Settings → Pages → Build and deployment → Source: Deploy from a branch and choose your gh-pages branch.</strong></p>
-</blockquote>
-
-<figure>
-	<img src="/assets/2025-09-12-resources/teaser.svg" alt="Flow: repo → Git LFS (media pointers) → gh-pages deployment with large assets tracked separately" style="width:100%;max-width:880px;display:block;margin:0 auto;" />
-	<figcaption style="text-align:center;font-size:0.85rem;color:#64748b;margin-top:.4rem;">Light theme overview: keep source light, store heavy binaries via Git LFS, deploy cleanly to GitHub Pages.</figcaption>
-</figure>
-
-<h1 id="why-lfs--pages">Why LFS + Pages?</h1>
-
-<p>GitHub Pages is great for static sites (personal sites, docs, game pages). Git LFS keeps your main repo light by storing big binaries (videos, large images, game builds) in a separate object store and committing <strong>pointers</strong> instead. The trick is deployment: Pages serves whatever is <strong>committed</strong> in the publish branch. <strong>If you push LFS pointers there, your site will show broken images.</strong> If you push the <strong>resolved binaries</strong>, it will work.</p>
-
-<p>In this guide you’ll set up a workflow where your Pages site (often served from <code class="language-plaintext highlighter-rouge">main</code> or a dedicated <code class="language-plaintext highlighter-rouge">gh-pages</code> branch) stays lean while still referencing rich media.</p>
-
-<h1 id="the-deployment-model">The Deployment Model</h1>
-
-<ol>
-  <li>Develop on main (or source). Track large assets with LFS.</li>
-  <li>In CI (GitHub Actions), checkout with LFS so the runner downloads actual binaries.</li>
-  <li>Build your site (e.g., Jekyll → _site/).</li>
-  <li>Verify that the output contains no LFS pointers.</li>
-  <li>Publish the built site to the gh-pages branch.</li>
-  <li>In your repo, go to Settings → Pages → Build and deployment → Source: Deploy from a branch, choose Branch: gh-pages, and Save.</li>
-</ol>
-
-<h2 id="set-up-local">Set Up (Local)</h2>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># one-time per machine</span>
-git lfs <span class="nb">install</span>
-
-<span class="c"># track intentionally (add more as needed)</span>
-git lfs track <span class="s2">"*.png"</span>
-git lfs track <span class="s2">"*.mp4"</span>
-
-<span class="c"># You should see lfs pointers instead of binary </span>
-<span class="nb">cat</span> .gitattributes
-
-<span class="c"># add and push, as usual</span>
-git add .gitattributes assets/hero.mp4 assets/logo@2x.png
-git commit <span class="nt">-m</span> <span class="s2">"Track media via LFS"</span>
-git push origin main
-</code></pre></div></div>
-<blockquote>
-  <p>You can also directly edit <code class="language-plaintext highlighter-rouge">.gitattributes</code></p>
-</blockquote>
-
-<h2 id="ex-github-actions-workflow">Ex. GitHub Actions Workflow</h2>
-<blockquote>
-  <p><strong>build → push to <code class="language-plaintext highlighter-rouge">gh-pages</code></strong></p>
-</blockquote>
-
-<p>Save as <code class="language-plaintext highlighter-rouge">.github/workflows/build.yml</code></p>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Build and Deploy</span>
-
-<span class="na">on</span><span class="pi">:</span>
-  <span class="na">push</span><span class="pi">:</span>
-    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
-  <span class="na">workflow_dispatch</span><span class="pi">:</span>
-
-<span class="na">permissions</span><span class="pi">:</span>
-  <span class="na">contents</span><span class="pi">:</span> <span class="s">write</span>
-  <span class="na">pages</span><span class="pi">:</span> <span class="s">write</span>
-  <span class="na">id-token</span><span class="pi">:</span> <span class="s">write</span>
-
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">build-deploy</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="c1"># Checkout code and pull LFS files</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout (with LFS)</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">lfs</span><span class="pi">:</span> <span class="kc">true</span>
-          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
-
-      <span class="c1"># Cache LFS objects</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Cache Git LFS objects</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/cache@v4</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">path</span><span class="pi">:</span> <span class="s">.git/lfs/objects</span>
-          <span class="na">key</span><span class="pi">:</span> <span class="s">$-git-lfs-$-$</span>
-          <span class="na">restore-keys</span><span class="pi">:</span> <span class="pi">|</span>
-            <span class="s">$-git-lfs-$-</span>
-            <span class="s">$-git-lfs-</span>
-
-      <span class="c1"># Ensure LFS files are real (materialize)</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Ensure LFS files are real (materialize)</span>
-        <span class="na">shell</span><span class="pi">:</span> <span class="s">bash</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">set -euo pipefail</span>
-          <span class="s">git lfs install --local</span>
-          <span class="s">git lfs fetch origin "${GITHUB_SHA}"</span>
-          <span class="s">git lfs checkout</span>
-          <span class="s">echo "LFS files tracked (pointer -&gt; actual):"</span>
-          <span class="s">git lfs ls-files</span>
-
-      <span class="c1"># Verify no LFS pointers in source assets</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Verify no LFS pointers in source assets</span>
-        <span class="na">shell</span><span class="pi">:</span> <span class="s">bash</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">set -euo pipefail</span>
-          <span class="s">if grep -RIl "version https://git-lfs.github.com/spec" assets 2&gt;/dev/null; then</span>
-            <span class="s">echo "::error::Found LFS pointer(s) under assets/. 'git lfs checkout' did not materialize some files." &gt;&amp;2</span>
-            <span class="s">exit 1</span>
-          <span class="s">fi</span>
-          <span class="s">echo "No LFS pointers in raw source assets."</span>
-
-      <span class="c1"># Set up Ruby</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Ruby</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3'</span>
-          <span class="na">bundler-cache</span><span class="pi">:</span> <span class="kc">true</span>
-
-      <span class="c1"># Build site</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build site</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">bundle exec jekyll build --trace</span>
-
-      <span class="c1"># Deploy to gh-pages</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to gh-pages</span>
-        <span class="na">if</span><span class="pi">:</span> <span class="s">github.ref == 'refs/heads/main'</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">github_token</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">./_site</span>
-          <span class="na">publish_branch</span><span class="pi">:</span> <span class="s">gh-pages</span>
-</code></pre></div></div>
-<blockquote>
-  <p><strong>After the first successful run</strong>: Go to Settings → Pages → Build and deployment → Source: Deploy from a branch, select gh-pages and root (or /), then Save.</p>
-</blockquote>
-
-<h1 id="what-to-notice-important-caveats">What to Notice (Important Caveats)</h1>
-
-<ul>
-  <li>
-    <p><strong>Pages won’t fetch LFS for you</strong>. The build pipeline must convert pointers → binaries before publishing.</p>
-  </li>
-  <li>
-    <p><strong>gh-pages</strong> stores real binaries. They’re not tracked by LFS after deployment; they count toward repo/Pages limits. The Pages site limit is about <strong>1 GB</strong>. If your site is heavy, consider:</p>
-
-    <ul>
-      <li>
-        <p>External object storage + CDN (S3 + CloudFront, Cloudflare R2, etc.).</p>
-      </li>
-      <li>
-        <p>Optimizing images/video (transcode, compress, lazy-load).</p>
-      </li>
-      <li>
-        <p>Using the Pages “GitHub Actions” source (artifact-based deploy) instead of “branch” to keep heavy output out of your Git history.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>LFS quotas</strong>: Storage and bandwidth quotas apply. Monitor repo Settings → LFS.</p>
-  </li>
-  <li>
-    <p><strong>Migrations</strong>: To move existing history into LFS, use git lfs migrate import –include=”*.mp4” (history rewrite; coordinate with teammates).</p>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="quick-faq">Quick FAQ</h3>
-
-<p><strong>Does LFS make Pages faster?</strong> Not by itself. It just keeps your source branch light. Optimize/serve media appropriately.</p>
-
-<p><strong>Can I keep gh-pages small?</strong> Prefer the Pages Actions source (artifact deploy) or host large media off-repo.</p>
-
-<p><strong>Do I need extra steps for private repos?</strong> The workflow above works for both; Pages for private repos requires GitHub Pro/Team/Enterprise and appropriate visibility.</p>
-
-<p><strong>What if I don’t use Jekyll?</strong> Replace the build step with your tool (Hugo, Docusaurus, Next static export, Eleventy, VitePress, etc.). The LFS+deploy pattern is the same.</p>
-
-<hr />
-
-<p><strong>Happy shipping!</strong></p>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="general" /><summary type="html"><![CDATA[Keep your GitHub Pages repository fast and lean by off‑loading big media to Git LFS. Learn the workflow, caveats, and best practices.]]></summary></entry></feed>
+</figure>]]></content><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><category term="General" /><summary type="html"><![CDATA[Weekly review, what happened?]]></summary></entry></feed>

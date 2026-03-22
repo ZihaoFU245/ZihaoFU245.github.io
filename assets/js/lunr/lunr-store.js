@@ -137,6 +137,12 @@ var store = [{
         "url": "/general/2026/03/05/pi-router.html",
         "teaser": "/assets/2026-03-05-resources/5.jpeg"
       },{
+        "title": "Running you own Jarvis on a 15$ computer",
+        "excerpt":"How to build deploy your own AI Agent? This is a tutorial about installing zeroclaw on your cheap hardware. Raspberry pi zero 2w This blog covered how to install alpine linux on raspberry pi zero2w, install OpenSSH, build zeroclaw against musl (latest or minor versions may not include musl support)...","categories": ["general"],
+        "tags": [],
+        "url": "/general/2026/03/21/zeroclaw.html",
+        "teaser": "/assets/2026-03-21-resources/5.jpeg"
+      },{
         "title": "Machine Learning Mini Projects",
         "excerpt":"Collection of small learning-focused ML builds: ⚠ Warning This project is archived permanently. Spam Email Classification — Naive Bayes Titanic Survival — MLP California Housing — MLP Regressor Iris Flower — K-Means + KNN hybrid approach MNIST — MLP and CNN comparison Butterfly Species Classification — CNN (Kaggle dataset) Connect...","categories": ["projects"],
         "tags": [],
