@@ -17,6 +17,8 @@ I achieved **Wi-Fi 6** and **UPnP**, boosting throughput close to the Ethernet b
 What is more? Symmetric NAT (eduroam) => port-restricted NAT with UPnP.
 
 <!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD051 -->
+<!-- markdownlint-disable MD026 -->
 
 <figure style="text-align:center;">
   <img src="/assets/2026-03-05-resources/6.jpeg" alt="Pi router" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
@@ -27,7 +29,8 @@ What is more? Symmetric NAT (eduroam) => port-restricted NAT with UPnP.
 
 ### Introduction
 
-- Software used:
+#### Software used:
+
 1. **hostapd**: Controls Wi-Fi interfaces, handles SSID broadcasting, and WPA authentication.
 2. **dnsmasq / Pi-hole**: Both dnsmasq and Pi-hole can be used as a DHCP server (assign IPs) and DNS server.
    I use Pi-hole for DNS only (port 53) and dnsmasq for DHCP (port 67).
@@ -35,7 +38,8 @@ What is more? Symmetric NAT (eduroam) => port-restricted NAT with UPnP.
 4. **nftables**: Linux firewall. `iptables` is more complex to manage, and `ufw` lacks thorough control.
    miniupnpd works well with nftables.
 
-- Steps / sections:
+#### Steps / sections:
+
 1. [Driver handling](#Driver)
 2. [hostapd installation](#Hostapd)
 3. [Configure Pi-hole and dnsmasq](#DHCP)
