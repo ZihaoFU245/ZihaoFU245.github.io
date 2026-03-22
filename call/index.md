@@ -21,5 +21,5 @@ but none of it does well. Like the web interface, it is completely AI generated 
 it is not usable at all, features are broken and uses so many ram, thanks to AI's
 defensive programming, made everything bloat up as fuck.
 
-![chicken](/70xJS11XCBeO13rb-18QamyFA3z1clbODGzOcMSHDfs/1.jpeg)
+![chicken](/call/1.jpeg)
 
