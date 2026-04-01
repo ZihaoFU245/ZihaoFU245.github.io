@@ -16,7 +16,7 @@ header:
     - label: "Résumé"
       url: "/resume/"
 excerpt: >
-  This site is retired. Goto zihaofu245.me, ![new site](https://zihaofu245.me)
+  This site is retired. Goto zihaofu245.me, [new site](https://zihaofu245.me)
 feature_row:
   - image_path: /assets/2026-1-15-resources/copenhagen/1.avif
     alt: "Featured blog post"
