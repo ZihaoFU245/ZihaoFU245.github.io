@@ -5,7 +5,7 @@ subtitle: "Engineer • CS Student • Builder"
 header:
   overlay_color: "#000"
   overlay_filter: "0.45"
-  overlay_image: "/assets/2026-1-15-resources/Tromso/15.avif"   # you have this already
+  overlay_image: "/assets/2026-1-15-resources/Tromso/15.avif"
   actions:
     - label: "About"
       url: "/about/"
@@ -16,7 +16,7 @@ header:
     - label: "Résumé"
       url: "/resume/"
 excerpt: >
-  I build AI agents, developer tools, and game tech, and I write about systems, ML, and learning.
+  This site is retired. Goto zihaofu245.me, ![new site](https://zihaofu245.me)
 feature_row:
   - image_path: /assets/2026-1-15-resources/copenhagen/1.avif
     alt: "Featured blog post"
