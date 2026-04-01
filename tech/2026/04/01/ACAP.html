@@ -1,0 +1,907 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>How to set up a personal AC+AP style network? - Zihao’s Portfolio</title>
+<meta name="description" content="Shown below is a GL.iNet mt3600be router, used in this blog post for demonstration. It uses an OpenWrt- based system, providing excellent flexibility. It will be used as a powerful MLO (Wi-Fi 7) Access Point.">
+
+
+  <meta name="author" content="Zihao Fu">
+  
+  <meta property="article:author" content="Zihao Fu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Zihao&#39;s Portfolio">
+<meta property="og:title" content="How to set up a personal AC+AP style network?">
+<meta property="og:url" content="https://zihaofu245.me/tech/2026/04/01/ACAP.html">
+
+
+  <meta property="og:description" content="Shown below is a GL.iNet mt3600be router, used in this blog post for demonstration. It uses an OpenWrt- based system, providing excellent flexibility. It will be used as a powerful MLO (Wi-Fi 7) Access Point.">
+
+
+
+  <meta property="og:image" content="https://zihaofu245.me/assets/2026-04-04-resources/3.jpeg">
+  
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2026-04-01T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://zihaofu245.me/tech/2026/04/01/ACAP.html">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Zihao's Portfolio Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom MathJax loader (Minimal Mistakes will place this inside head) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['\\[','\\]'], ['$$','$$']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+
+  </head>
+
+  <body class="layout--single wide" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/">
+          Welcome to My Portfolio!
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/projects/"
+                
+                
+              >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/archive/"
+                
+                
+              >Archive</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/resume/"
+                
+                
+              >Résumé</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+  
+    
+
+
+
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/tech" itemprop="item"><span itemprop="name">Tech</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/2026" itemprop="item"><span itemprop="name">2026</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/04" itemprop="item"><span itemprop="name">04</span></a>
+          <meta itemprop="position" content="4" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/01" itemprop="item"><span itemprop="name">01</span></a>
+          <meta itemprop="position" content="5" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">How to set up a personal AC+AP style network?</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://zihaofu245.me/">
+        <img src="/assets/images/profile.jpg" alt="Zihao Fu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://zihaofu245.me/" itemprop="url">Zihao Fu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Engineer, Computer Science student at HKUST. Interested in AI, systems, and more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Hong Kong</span>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:zihaofu12@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="zihaofu12@gmail.com" />
+            <i class="fas fa-fw fa-square-envelope" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/zihao-fu-198b02374" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://instagram.com/zihao_fu06" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ZihaoFU245" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How to set up a personal AC+AP style network?">
+    <meta itemprop="description" content="Shown below is a GL.iNet mt3600be router, used in this blog post for demonstration. It uses an OpenWrt-based system, providing excellent flexibility. It will be used as a powerful MLO (Wi-Fi 7) Access Point.">
+    <meta itemprop="datePublished" content="2026-04-01T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://zihaofu245.me/tech/2026/04/01/ACAP.html" itemprop="url">How to set up a personal AC+AP style network?
+</a>
+          </h1>
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Shown below is a <strong>GL.iNet mt3600be</strong> router, used in this blog post for <strong>demonstration</strong>. It uses an OpenWrt-
+based system, providing excellent flexibility. It will be used as a powerful <strong>MLO (Wi-Fi 7) Access Point</strong>.</p>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-04-04-resources/1.jpeg" alt="mt3600be" style="width:50%;max-width:440px;display:block;margin:0 auto;" />
+</figure>
+
+<p>As you can see, this is a <strong>CN</strong> version of a GL.iNet router. Features including VPN and AdGuard Home
+are <strong>blocked</strong> (hidden). For Wi-Fi 7 MLO, 6 GHz bandwidth may also be limited. To achieve the best experience,
+you can unlock it by replacing the country code in the <strong>factory image</strong><sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. For the <strong>global version</strong>,
+you already have most features available.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#what-is-an-acap-style-network">What is an AC+AP style network?</a>
+    <ul>
+      <li><a href="#components-of-acap-network">Components of AC+AP network</a></li>
+    </ul>
+  </li>
+  <li><a href="#difference-to-mesh-architecture">Difference to mesh architecture?</a></li>
+  <li><a href="#access-controller--main-router-configuration">Access Controller &amp; Main Router configuration</a>
+    <ul>
+      <li><a href="#set-up-bridge-on-startup">Set up bridge on startup</a></li>
+      <li><a href="#configure-routing-firewall">Configure routing (firewall)</a></li>
+    </ul>
+  </li>
+  <li><a href="#access-point-configuration-on-openwrt">Access Point configuration on OpenWrt</a>
+    <ul>
+      <li><a href="#generic-openwrt">Generic OpenWrt</a></li>
+      <li><a href="#glinet-openwrt">GL.iNet OpenWrt</a></li>
+    </ul>
+  </li>
+  <li><a href="#useful-tips">Useful Tips</a></li>
+</ul>
+
+<h2 id="what-is-an-acap-style-network">What is an AC+AP style network?</h2>
+
+<p>An <strong>AC+AP network</strong> is composed of a central <strong>Access Controller</strong> and one or more <strong>Access Points</strong>.
+It is widely used in enterprise environments for large Wi-Fi coverage and fast roaming. <strong>Campus Wi-Fi</strong> is a
+classic example of an AC+AP style network. It can cover an entire campus, and users normally
+cannot feel the latency when a device switches APs. <strong>AC+AP</strong> architecture utilizes 802.11k/v/r
+standards to achieve seamless AP transitions, which is a key advantage.</p>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-04-04-resources/8.jpeg" alt="Final" style="width:80%;max-width:540px;display:block;margin:0 auto;" />
+</figure>
+<div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">Final setup</div>
+
+<p>The image above is an illustration of the finished setup. The <strong>Raspberry Pi 5</strong> on the left is my <strong>AC</strong>
+and <strong>gateway</strong>. The <strong>mt3600be</strong> on the right is used as a <strong>wireless access point</strong>, supporting Wi-Fi 7. The Wi-Fi card,
+<strong>mt7925</strong>, on top of the Pi is a secondary <strong>AP</strong> that I built in <a href="/blog/2026-3-05-pi-router">this post</a>. This post can be seen as an extension of that earlier blog on how to DIY your own router.</p>
+
+<h3 id="components-of-acap-network">Components of AC+AP network</h3>
+
+<ul>
+  <li><strong>AC</strong>: a central controller that manages one or more APs. In this setup, the Raspberry Pi also acts as the router/gateway.</li>
+  <li><strong>AP</strong>: Wireless access point. <strong>mt3600be</strong> and <strong>mt7925</strong> are used.</li>
+  <li><strong>PoE Switch</strong>: Optional. Use an Ethernet cable for power and data for a simpler setup. The switch ensures all AC and AP devices are in one subnet.</li>
+  <li><strong>Main router</strong>: Used to access WAN. A Raspberry Pi is used.</li>
+</ul>
+
+<h2 id="difference-to-mesh-architecture">Difference to mesh architecture?</h2>
+
+<p>An <strong>AC+AP (Access Controller + Access Points)</strong> network is a centralized
+Wi-Fi architecture where multiple APs are managed by a single controller that handles
+configuration, channel planning, and roaming, typically with all APs connected via wired Ethernet
+cable. In contrast, a <strong>mesh network</strong> is distributed: each node acts as both an AP and a relay,
+forwarding traffic over wireless links to other nodes without requiring a central controller. The key
+difference is therefore <strong>centralized control with wired connection (AC+AP)</strong> versus
+<strong>distributed forwarding with wireless connection (mesh)</strong>. As a result, AC+AP systems usually provide
+more stable performance and
+predictable latency, while mesh networks offer <strong>easier deployment</strong> but can suffer reduced throughput
+due to multi-hop wireless links.</p>
+
+<p><strong>AC+AP</strong> is designed to <strong>scale larger</strong>, targeted for enterprise scenarios, while mesh is targeted for
+<strong>smaller/home</strong> networks.</p>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-04-04-resources/2.jpeg" alt="Final" style="width:80%;max-width:540px;display:block;margin:0 auto;" />
+</figure>
+<div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">
+I have 2 OpenWrt routers. In this image, I set both of them as <b>Access Points</b>,
+all connected via physical Ethernet cable. This is an AC+AP style network.
+</div>
+
+<h2 id="access-controller--main-router-configuration">Access Controller &amp; Main Router configuration</h2>
+
+<p>Now let’s dive into configuration. On OpenWrt, when you inspect interfaces,
+you can find one called <code class="language-plaintext highlighter-rouge">br-lan</code>; it is a virtual switch. On the AC (Raspberry Pi), you need
+a virtual switch as well, to put multiple network interfaces into one LAN.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    <span class="nb">link</span>/ether 2c:cf:67:f5:96:bd brd ff:ff:ff:ff:ff:ff
+    inet 143.89.92.189/23 brd 143.89.93.255 scope global dynamic noprefixroute eth0
+       valid_lft 322039sec preferred_lft 322039sec
+    inet6 fe80::2ecf:67ff:fef5:96bd/64 scope <span class="nb">link </span>noprefixroute 
+       valid_lft forever preferred_lft forever
+3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master br0 state UP group default qlen 1000
+    <span class="nb">link</span>/ether 9c:69:d3:75:af:fe brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::9e69:d3ff:fe75:affe/64 scope <span class="nb">link </span>proto kernel_ll 
+       valid_lft forever preferred_lft forever
+5: wlan1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br0 state UP group default qlen 1000
+    <span class="nb">link</span>/ether 84:9e:56:9c:71:a5 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::869e:56ff:fe9c:71a5/64 scope <span class="nb">link </span>proto kernel_ll 
+       valid_lft forever preferred_lft forever
+6: br0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    <span class="nb">link</span>/ether 84:9e:56:9c:71:a5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.205.1/24 scope global br0
+       valid_lft forever preferred_lft forever
+</code></pre></div></div>
+
+<p>Above are the network interfaces used on my AC. <code class="language-plaintext highlighter-rouge">br0</code> is the virtual switch and holds my network subnet IP
+address: <code class="language-plaintext highlighter-rouge">192.168.205.1/24</code>. <code class="language-plaintext highlighter-rouge">wlan1</code> is the <strong>mt7925</strong> interface and provides a 5 GHz radio. <code class="language-plaintext highlighter-rouge">eth1</code> is
+my USB-to-Ethernet adapter, connected externally to my <strong>GL.iNet mt3600be AP</strong>. <code class="language-plaintext highlighter-rouge">eth0</code> is the WAN interface; all
+traffic will be <strong>masqueraded</strong> and exit through it.</p>
+
+<h3 id="set-up-bridge-on-startup">Set up bridge on startup</h3>
+
+<p>To maintain a persistent bridge even after reboot, the best approach is to use a systemd service.
+Create a <code class="language-plaintext highlighter-rouge">/usr/local/sbin/setup-br0.sh</code> shell script that runs on startup.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="nb">set</span> <span class="nt">-euo</span> pipefail
+
+<span class="nv">BR</span><span class="o">=</span>br0
+<span class="nv">LAN_IP</span><span class="o">=</span>192.168.205.1/24
+
+<span class="c"># Create bridge if missing</span>
+<span class="k">if</span> <span class="o">!</span> ip <span class="nb">link </span>show <span class="s2">"</span><span class="nv">$BR</span><span class="s2">"</span> <span class="o">&gt;</span>/dev/null 2&gt;&amp;1<span class="p">;</span> <span class="k">then
+    </span>ip <span class="nb">link </span>add name <span class="s2">"</span><span class="nv">$BR</span><span class="s2">"</span> <span class="nb">type </span>bridge
+<span class="k">fi</span>
+
+<span class="c"># Make sure bridge is up and owns the LAN IP</span>
+ip <span class="nb">link set </span>dev <span class="s2">"</span><span class="nv">$BR</span><span class="s2">"</span> up
+ip <span class="nb">link set </span>dev <span class="s2">"</span><span class="nv">$BR</span><span class="s2">"</span> <span class="nb">type </span>bridge stp_state 0 <span class="o">||</span> <span class="nb">true
+
+</span>ip addr flush dev <span class="s2">"</span><span class="nv">$BR</span><span class="s2">"</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">true
+</span>ip addr add <span class="s2">"</span><span class="nv">$LAN_IP</span><span class="s2">"</span> dev <span class="s2">"</span><span class="nv">$BR</span><span class="s2">"</span>
+
+<span class="c"># Add eth1 only if it exists</span>
+<span class="c"># eth1 is usb ethernet adaptor</span>
+<span class="k">if </span>ip <span class="nb">link </span>show eth1 <span class="o">&gt;</span>/dev/null 2&gt;&amp;1<span class="p">;</span> <span class="k">then
+    </span>ip addr flush dev eth1 2&gt;/dev/null <span class="o">||</span> <span class="nb">true
+    </span>ip <span class="nb">link set </span>dev eth1 nomaster 2&gt;/dev/null <span class="o">||</span> <span class="nb">true
+    </span>ip <span class="nb">link set </span>dev eth1 master <span class="s2">"</span><span class="nv">$BR</span><span class="s2">"</span>
+    ip <span class="nb">link set </span>dev eth1 up
+<span class="k">fi</span>
+
+<span class="c"># We don't set wlan1 master to br0 here is because</span>
+<span class="c"># hostapd will do the bridge configuration</span>
+<span class="c"># leave it to hostapd</span>
+</code></pre></div></div>
+
+<p>You may need to modify the script based on your actual setup. For a Raspberry Pi 5 with a USB Ethernet
+adapter, you can use the script as is.</p>
+
+<p>Create a systemd unit: <code class="language-plaintext highlighter-rouge">/etc/systemd/system/setup-br0.service</code></p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">Unit</span><span class="k">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="err">Create br</span><span class="mi">0</span> <span class="n">bridge</span> <span class="n">and</span> <span class="n">attach</span> <span class="n">eth1</span>
+<span class="n">Before</span><span class="o">=</span><span class="err">hostapd.service
+After=NetworkManager.service
+Requires=NetworkManager.service
+
+</span><span class="p">[</span><span class="err">Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/setup-br</span><span class="mi">0</span><span class="err">.sh
+RemainAfterExit=yes
+
+</span><span class="p">[</span><span class="err">Install]
+WantedBy=multi-user.target
+</span></code></pre></div></div>
+
+<p>Then run <code class="language-plaintext highlighter-rouge">sudo systemctl daemon-reload &amp;&amp; sudo systemctl enable setup-br0</code>; this will make the script
+execute at startup.</p>
+
+<p>After reboot or direct execution of the script, you can verify it with <code class="language-plaintext highlighter-rouge">bridge link show</code>. All network
+interfaces that you want to place in the same LAN should share the same master bridge. In my case, as shown
+below, wlan1 and eth1 both have master br0.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master br0 state forwarding priority 32 cost 5
+5: wlan1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master br0 state forwarding priority 32 cost 100
+</code></pre></div></div>
+
+<p>For the wlan1 interface, you <strong>don’t manually</strong> assign it to br0. Put that in the hostapd config file,
+and hostapd will configure it for you.</p>
+
+<h3 id="configure-routing-firewall">Configure routing (firewall)</h3>
+
+<p>Now that your bridge is configured, it is time to configure routing rules and access controls.
+I use nftables as the firewall, which gives more granular control than ufw or firewall-cmd.
+nftables is the default firewall in modern Linux operating systems, offering better usability
+than iptables.</p>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/sbin/nft -f</span>
+
+<span class="c1"># add table ensures the table exists before flush</span>
+<span class="c1"># Do not use flush ruleset, scope is too big</span>
+<span class="c1"># And will modify iptables-nft rules</span>
+<span class="k">add</span> <span class="s">table</span> <span class="s">inet</span> <span class="s">filter</span>
+<span class="s">flush</span> <span class="s">table</span> <span class="s">inet</span> <span class="s">filter</span>
+
+<span class="s">table</span> <span class="s">inet</span> <span class="s">filter</span> <span class="p">{</span>
+    <span class="kn">chain</span> <span class="s">input</span> <span class="p">{</span>
+        <span class="kn">type</span> <span class="s">filter</span> <span class="s">hook</span> <span class="s">input</span> <span class="s">priority</span> <span class="mi">0</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">drop</span><span class="p">;</span>
+
+        <span class="kn">iifname</span> <span class="s">"lo"</span> <span class="s">accept</span>
+        <span class="s">ct</span> <span class="s">state</span> <span class="s">established,related</span> <span class="s">accept</span>
+
+        <span class="c1"># DNS / DHCP / UPnP</span>
+        <span class="s">iifname</span> <span class="p">{</span> <span class="kn">"br0",</span> <span class="s">"wlan1",</span> <span class="s">"eth1"</span> <span class="err">}</span> <span class="s">udp</span> <span class="s">dport</span> <span class="p">{</span> <span class="kn">67,</span> <span class="mi">53</span> <span class="err">}</span> <span class="s">accept</span>
+        <span class="s">iifname</span> <span class="p">{</span> <span class="kn">"br0",</span> <span class="s">"wlan1",</span> <span class="s">"eth1"</span> <span class="err">}</span> <span class="s">tcp</span> <span class="s">dport</span> <span class="mi">53</span> <span class="s">accept</span>
+
+        <span class="s">ip</span> <span class="s">protocol</span> <span class="s">icmp</span> <span class="s">accept</span>
+        <span class="s">ip6</span> <span class="s">nexthdr</span> <span class="s">ipv6-icmp</span> <span class="s">accept</span>
+    <span class="err">}</span>
+
+    <span class="s">chain</span> <span class="s">forward</span> <span class="p">{</span>
+        <span class="kn">type</span> <span class="s">filter</span> <span class="s">hook</span> <span class="s">forward</span> <span class="s">priority</span> <span class="mi">0</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">drop</span><span class="p">;</span>
+
+        <span class="kn">ct</span> <span class="s">state</span> <span class="s">established,related</span> <span class="s">accept</span>
+
+        <span class="c1"># Normal routing</span>
+        <span class="s">iifname</span> <span class="s">"br0"</span> <span class="s">oifname</span> <span class="s">"eth0"</span> <span class="s">accept</span>
+
+        <span class="c1"># LAN, change to your subnet</span>
+        <span class="s">ip</span> <span class="s">saddr</span> <span class="mf">192.168</span><span class="s">.205.0/24</span> <span class="s">accept</span>
+
+        <span class="s">ip</span> <span class="s">protocol</span> <span class="s">icmp</span> <span class="s">accept</span>
+        <span class="s">ip6</span> <span class="s">nexthdr</span> <span class="s">ipv6-icmp</span> <span class="s">accept</span>
+    <span class="err">}</span>
+
+    <span class="s">chain</span> <span class="s">output</span> <span class="p">{</span>
+        <span class="kn">type</span> <span class="s">filter</span> <span class="s">hook</span> <span class="s">output</span> <span class="s">priority</span> <span class="mi">0</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">accept</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># ---------- NAT ----------</span>
+    <span class="kn">chain</span> <span class="s">prerouting</span> <span class="p">{</span>
+        <span class="kn">type</span> <span class="s">nat</span> <span class="s">hook</span> <span class="s">prerouting</span> <span class="s">priority</span> <span class="s">dstnat</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">accept</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">chain</span> <span class="s">postrouting</span> <span class="p">{</span>
+        <span class="kn">type</span> <span class="s">nat</span> <span class="s">hook</span> <span class="s">postrouting</span> <span class="s">priority</span> <span class="s">srcnat</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">accept</span><span class="p">;</span>
+        <span class="kn">oifname</span> <span class="s">"eth0"</span> <span class="s">ip</span> <span class="s">saddr</span> <span class="mf">192.168</span><span class="s">.205.0/24</span> <span class="s">masquerade</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<p>Above is an example of <strong>restricted cone NAT</strong> achieved with nftables<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>,
+the most common NAT type. If you are using P2P,
+consider using <strong>miniupnpd</strong><sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> or change postrouting last line to
+<code class="language-plaintext highlighter-rouge">oifname "eth0" ip saddr 192.168.205.0/24 masquerade fully-random, persistent</code>, change source address
+field to your LAN address.</p>
+
+<hr />
+
+<p>What does an AC+AP router need?</p>
+
+<ul>
+  <li>Routing: Covered, use nftables</li>
+  <li>DHCP / DNS: use dnsmasq<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup></li>
+  <li>Bridge LAN: Covered, use shell script to manually create and assign</li>
+  <li>Radio: use hostapd or add a router as a dummy access point (covered next).</li>
+</ul>
+
+<p>Before you continue, you should finish the first 3 steps, or at least part of step 4.
+For me, I am using <strong>hostapd</strong> on <strong>wlan1</strong><sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>, my MediaTek Wi-Fi card.</p>
+
+<h2 id="access-point-configuration-on-openwrt">Access Point configuration on OpenWrt</h2>
+
+<h3 id="generic-openwrt">Generic OpenWrt</h3>
+
+<p>On OpenWrt, to achieve the best roaming speed, 802.11k/v/r standards are required.
+OpenWrt firmware usually bundles <strong>wpad-basic-mbedtls</strong>, which does not include support
+for these standards. We will need to install <strong>wpad-openssl</strong> for full support.</p>
+
+<p><img src="/assets/2026-04-04-resources/11.png" alt="wpad-openssl" /></p>
+
+<p>On the latest OpenWrt 25.12 version, use <code class="language-plaintext highlighter-rouge">apk add wpad-openssl</code> or go to LuCI<sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> and install the package
+in <strong>System-&gt;Software</strong>, search <strong>wpad-openssl</strong>, and install it.</p>
+
+<p>Then go to <strong>Network-&gt;Wireless</strong> and configure radio settings.</p>
+
+<p><img src="/assets/2026-04-04-resources/9.png" alt="network" /></p>
+
+<p>I recommend using interactive configuration instead of UCI because it is easier. On older
+OpenWrt versions, such as 21 on mt3600be, LuCI does not provide a section to edit roaming configuration,
+even though it is supported. In that case, UCI is needed.</p>
+
+<p>Lastly, go to Edit radio, configure your Access Point, disable DHCP on <code class="language-plaintext highlighter-rouge">br-lan</code>, and set <code class="language-plaintext highlighter-rouge">br-lan</code>
+to a static IP address.</p>
+
+<p><img src="/assets/2026-04-04-resources/10.png" alt="AP" /></p>
+
+<h3 id="glinet-openwrt">GL.iNet OpenWrt</h3>
+
+<p>In GL.iNet Network mode, you can set OpenWrt to <strong>Access Point</strong>. It will automatically disable
+DHCP and request an IP address from the upstream router via DHCP.</p>
+
+<p><img src="/assets/2026-04-04-resources/12.png" alt="Network mode GLiNet" /></p>
+
+<p>This does not provide your router with a static IP address.
+When accessing the router admin panel remotely, you’ll need to look up the IP address
+on the main router. Or use the following:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uci <span class="nb">set </span>network.lan.ipaddr<span class="o">=</span><span class="s1">'192.168.205.2'</span> <span class="c"># In the same subnet, avoid IP address collision</span>
+uci <span class="nb">set </span>network.lan.netmask<span class="o">=</span><span class="s1">'255.255.255.0'</span>
+uci commit network
+/etc/init.d/network restart
+</code></pre></div></div>
+
+<p>To enable 802.11k/v/r, use the following:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uci <span class="nb">set </span>wireless.lan.ieee80211r<span class="o">=</span><span class="s1">'1'</span>
+uci <span class="nb">set </span>wireless.lan.mobility_domain<span class="o">=</span><span class="s1">'4f57'</span>
+uci <span class="nb">set </span>wireless.lan.ft_over_ds<span class="o">=</span><span class="s1">'1'</span>
+uci <span class="nb">set </span>wireless.lan.ft_psk_generate_local<span class="o">=</span><span class="s1">'1'</span>
+
+uci <span class="nb">set </span>wireless.lan.bss_transition<span class="o">=</span><span class="s1">'1'</span>
+
+uci <span class="nb">set </span>wireless.lan.rrm_neighbor_report<span class="o">=</span><span class="s1">'1'</span>
+uci <span class="nb">set </span>wireless.lan.rrm_beacon_report<span class="o">=</span><span class="s1">'1'</span>
+
+uci commit wireless
+wifi reload
+</code></pre></div></div>
+
+<p>After this, your GL.iNet router will be a powerful access point.</p>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-04-04-resources/4.jpeg" alt="Final" style="width:50%;max-width:540px;display:block;margin:0 auto;" />
+</figure>
+
+<h2 id="useful-tips">Useful Tips</h2>
+
+<ol>
+  <li>Use an <strong>Ethernet cable</strong> to connect to your router before configuring, in case you lose access midway.</li>
+  <li>When configuring the router IP address, your gateway IP address will change, for example from <code class="language-plaintext highlighter-rouge">192.168.8.1</code>
+to <code class="language-plaintext highlighter-rouge">192.168.205.*</code>. So your admin panel will not receive a response at the old address; go to the new IP address to
+access the admin panel.</li>
+</ol>
+
+<hr />
+
+<p>For the generic OpenWrt demo, I used a <strong>Cudy TR3000</strong> (256 MB version), a Wi-Fi 6 router with an <strong>mt7981</strong> chipset.
+Flashing OpenWrt is very straightforward, and OpenWrt has official support<sup id="fnref:7"><a href="#fn:7" class="footnote" rel="footnote" role="doc-noteref">7</a></sup>. This is
+a decent OpenWrt starter device.</p>
+
+<figure style="text-align:center;">
+  <img src="/assets/2026-04-04-resources/5.jpeg" alt="Final" style="width:80%;max-width:540px;display:block;margin:0 auto;" />
+</figure>
+<figure style="text-align:center;">
+  <img src="/assets/2026-04-04-resources/6.jpeg" alt="Final" style="width:80%;max-width:540px;display:block;margin:0 auto;" />
+</figure>
+<figure style="text-align:center;">
+  <img src="/assets/2026-04-04-resources/7.jpeg" alt="Final" style="width:80%;max-width:540px;display:block;margin:0 auto;" />
+</figure>
+<div style="text-align:center; font-size:0.85rem;color:#64748b;margin-top:.4rem;">
+Internal details
+</div>
+
+<hr />
+
+<p>REFERENCES:</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>How to find “CN” string and replace to “US” for GL.iNet mt3600be: https://www.reddit.com/r/GlInet/comments/1qfeva7/guide_region_unlock_glmt3600be_beryl_7_cn_to <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>nftables NAT documentation: https://wiki.nftables.org/wiki-nftables/index.php/Performing_Network_Address_Translation_(NAT)#Masquerading <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>OpenWrt configure upnpd: https://openwrt.org/docs/guide-user/firewall/upnp/miniupnpd <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Dnsmasq configuration tutorial on Fedora: https://docs.fedoraproject.org/en-US/fedora-server/administration/dnsmasq/ <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Zihao Fu, configuring mt7925 on Raspberry Pi: https://zihaofu245.me/blog/2026-3-05-pi-router/#Hostapd <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>LuCI documentation: https://openwrt.github.io/luci/jsapi/ <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>Cudy TR3000 OpenWrt documentation: https://openwrt.org/toh/cudy/tr3000 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-04-01T00:00:00+00:00">April 1, 2026</time></p>
+
+
+      </footer>
+
+      
+
+      
+
+  <nav class="pagination" aria-label="Post pagination">
+    
+      <a href="/general/2026/03/21/zeroclaw.html" class="pagination--pager" title="Running you own Jarvis on a 15$ computer">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="site-footer-meta" style="text-align:center; margin-top:20px; font-size:0.9em; color:#777;">
+    <div
+        style="display:flex; flex-wrap:nowrap; justify-content:center; align-items:center; gap:12px; white-space:nowrap;">
+        <span>© 2025 - 2026 Zihao Fu</span>
+        <span aria-hidden="true">•</span>
+        <a href="https://www.buymeacoffee.com/zihaofu245" target="_blank" rel="noopener noreferrer"
+            title="Buy me a coffee" aria-label="Buy me a coffee" style="display:inline-flex; align-items:center;">
+            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+                style="height:48px; width:auto; vertical-align:middle; border-radius:6px;">
+        </a>
+        <span aria-hidden="true">•</span>
+        <span>Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> &amp; <a
+                href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal
+                Mistakes</a></span>
+    </div>
+</div>
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

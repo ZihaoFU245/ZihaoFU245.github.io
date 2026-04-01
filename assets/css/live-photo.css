@@ -1,0 +1,38 @@
+/* Live Photo – reusable styles */
+.live-photo {
+  position: relative;
+  display: inline-block;
+  line-height: 0;          /* remove baseline gap under images */
+  overflow: hidden;
+  border-radius: 12px;     /* optional nicety; tweak or remove */
+}
+
+.live-photo > .lp-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.live-photo > .lp-video {
+  position: absolute;
+  inset: 0;                /* top:0 right:0 bottom:0 left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* assumes image & video same AR; change to 'contain' if needed */
+  opacity: 0;              /* start hidden; fade in when playing */
+  transition: opacity 120ms ease;
+  pointer-events: none;    /* clicks go to container (for replay behavior) */
+}
+
+/* Optional focus ring when container is keyboard-focused */
+.live-photo:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Respect reduced motion users: keep still image only */
+@media (prefers-reduced-motion: reduce) {
+  .live-photo > .lp-video {
+    display: none !important;
+  }
+}
