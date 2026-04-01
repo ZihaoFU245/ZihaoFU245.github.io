@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-04-01T08:26:58+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">How to set up a personal AC+AP style network?</title><link href="https://zihaofu245.me/tech/2026/04/01/ACAP.html" rel="alternate" type="text/html" title="How to set up a personal AC+AP style network?" /><published>2026-04-01T00:00:00+00:00</published><updated>2026-04-01T00:00:00+00:00</updated><id>https://zihaofu245.me/tech/2026/04/01/ACAP</id><content type="html" xml:base="https://zihaofu245.me/tech/2026/04/01/ACAP.html"><![CDATA[<p>Shown below is a <strong>GL.iNet mt3600be</strong> router, used in this blog post for <strong>demonstration</strong>. It uses an OpenWrt-
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zihaofu245.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zihaofu245.me/" rel="alternate" type="text/html" /><updated>2026-04-01T08:36:31+00:00</updated><id>https://zihaofu245.me/feed.xml</id><title type="html">Zihao’s Portfolio</title><subtitle>Engineer &amp; Computer Science student. Personal website, CV, and projects.</subtitle><author><name>Zihao Fu</name><email>zihaofu12@gmail.com</email></author><entry><title type="html">How to set up a personal AC+AP style network?</title><link href="https://zihaofu245.me/tech/2026/04/01/ACAP.html" rel="alternate" type="text/html" title="How to set up a personal AC+AP style network?" /><published>2026-04-01T00:00:00+00:00</published><updated>2026-04-01T00:00:00+00:00</updated><id>https://zihaofu245.me/tech/2026/04/01/ACAP</id><content type="html" xml:base="https://zihaofu245.me/tech/2026/04/01/ACAP.html"><![CDATA[<p>Shown below is a <strong>GL.iNet mt3600be</strong> router, used in this blog post for <strong>demonstration</strong>. It uses an OpenWrt-
 based system, providing excellent flexibility. It will be used as a powerful <strong>MLO (Wi-Fi 7) Access Point</strong>.</p>
 
 <figure style="text-align:center;">
@@ -193,59 +193,59 @@ I use nftables as the firewall, which gives more granular control than ufw or fi
 nftables is the default firewall in modern Linux operating systems, offering better usability
 than iptables.</p>
 
-<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/sbin/nft -f</span>
+<pre><code class="language-nft">#!/usr/sbin/nft -f
 
-<span class="c1"># add table ensures the table exists before flush</span>
-<span class="c1"># Do not use flush ruleset, scope is too big</span>
-<span class="c1"># And will modify iptables-nft rules</span>
-<span class="k">add</span> <span class="s">table</span> <span class="s">inet</span> <span class="s">filter</span>
-<span class="s">flush</span> <span class="s">table</span> <span class="s">inet</span> <span class="s">filter</span>
+# add table ensures the table exists before flush
+# Do not use flush ruleset, scope is too big
+# And will modify iptables-nft rules
+add table inet filter
+flush table inet filter
 
-<span class="s">table</span> <span class="s">inet</span> <span class="s">filter</span> <span class="p">{</span>
-    <span class="kn">chain</span> <span class="s">input</span> <span class="p">{</span>
-        <span class="kn">type</span> <span class="s">filter</span> <span class="s">hook</span> <span class="s">input</span> <span class="s">priority</span> <span class="mi">0</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">drop</span><span class="p">;</span>
+table inet filter {
+    chain input {
+        type filter hook input priority 0; policy drop;
 
-        <span class="kn">iifname</span> <span class="s">"lo"</span> <span class="s">accept</span>
-        <span class="s">ct</span> <span class="s">state</span> <span class="s">established,related</span> <span class="s">accept</span>
+        iifname "lo" accept
+        ct state established,related accept
 
-        <span class="c1"># DNS / DHCP / UPnP</span>
-        <span class="s">iifname</span> <span class="p">{</span> <span class="kn">"br0",</span> <span class="s">"wlan1",</span> <span class="s">"eth1"</span> <span class="err">}</span> <span class="s">udp</span> <span class="s">dport</span> <span class="p">{</span> <span class="kn">67,</span> <span class="mi">53</span> <span class="err">}</span> <span class="s">accept</span>
-        <span class="s">iifname</span> <span class="p">{</span> <span class="kn">"br0",</span> <span class="s">"wlan1",</span> <span class="s">"eth1"</span> <span class="err">}</span> <span class="s">tcp</span> <span class="s">dport</span> <span class="mi">53</span> <span class="s">accept</span>
+        # DNS / DHCP / UPnP
+        iifname { "br0", "wlan1", "eth1" } udp dport { 67, 53 } accept
+        iifname { "br0", "wlan1", "eth1" } tcp dport 53 accept
 
-        <span class="s">ip</span> <span class="s">protocol</span> <span class="s">icmp</span> <span class="s">accept</span>
-        <span class="s">ip6</span> <span class="s">nexthdr</span> <span class="s">ipv6-icmp</span> <span class="s">accept</span>
-    <span class="err">}</span>
+        ip protocol icmp accept
+        ip6 nexthdr ipv6-icmp accept
+    }
 
-    <span class="s">chain</span> <span class="s">forward</span> <span class="p">{</span>
-        <span class="kn">type</span> <span class="s">filter</span> <span class="s">hook</span> <span class="s">forward</span> <span class="s">priority</span> <span class="mi">0</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">drop</span><span class="p">;</span>
+    chain forward {
+        type filter hook forward priority 0; policy drop;
 
-        <span class="kn">ct</span> <span class="s">state</span> <span class="s">established,related</span> <span class="s">accept</span>
+        ct state established,related accept
 
-        <span class="c1"># Normal routing</span>
-        <span class="s">iifname</span> <span class="s">"br0"</span> <span class="s">oifname</span> <span class="s">"eth0"</span> <span class="s">accept</span>
+        # Normal routing
+        iifname "br0" oifname "eth0" accept
 
-        <span class="c1"># LAN, change to your subnet</span>
-        <span class="s">ip</span> <span class="s">saddr</span> <span class="mf">192.168</span><span class="s">.205.0/24</span> <span class="s">accept</span>
+        # LAN, change to your subnet
+        ip saddr 192.168.205.0/24 accept
 
-        <span class="s">ip</span> <span class="s">protocol</span> <span class="s">icmp</span> <span class="s">accept</span>
-        <span class="s">ip6</span> <span class="s">nexthdr</span> <span class="s">ipv6-icmp</span> <span class="s">accept</span>
-    <span class="err">}</span>
+        ip protocol icmp accept
+        ip6 nexthdr ipv6-icmp accept
+    }
 
-    <span class="s">chain</span> <span class="s">output</span> <span class="p">{</span>
-        <span class="kn">type</span> <span class="s">filter</span> <span class="s">hook</span> <span class="s">output</span> <span class="s">priority</span> <span class="mi">0</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">accept</span><span class="p">;</span>
-    <span class="p">}</span>
+    chain output {
+        type filter hook output priority 0; policy accept;
+    }
 
-    <span class="c1"># ---------- NAT ----------</span>
-    <span class="kn">chain</span> <span class="s">prerouting</span> <span class="p">{</span>
-        <span class="kn">type</span> <span class="s">nat</span> <span class="s">hook</span> <span class="s">prerouting</span> <span class="s">priority</span> <span class="s">dstnat</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">accept</span><span class="p">;</span>
-    <span class="p">}</span>
+    # ---------- NAT ----------
+    chain prerouting {
+        type nat hook prerouting priority dstnat; policy accept;
+    }
 
-    <span class="kn">chain</span> <span class="s">postrouting</span> <span class="p">{</span>
-        <span class="kn">type</span> <span class="s">nat</span> <span class="s">hook</span> <span class="s">postrouting</span> <span class="s">priority</span> <span class="s">srcnat</span><span class="p">;</span> <span class="kn">policy</span> <span class="s">accept</span><span class="p">;</span>
-        <span class="kn">oifname</span> <span class="s">"eth0"</span> <span class="s">ip</span> <span class="s">saddr</span> <span class="mf">192.168</span><span class="s">.205.0/24</span> <span class="s">masquerade</span>
-    <span class="err">}</span>
-<span class="err">}</span>
-</code></pre></div></div>
+    chain postrouting {
+        type nat hook postrouting priority srcnat; policy accept;
+        oifname "eth0" ip saddr 192.168.205.0/24 masquerade
+    }
+}
+</code></pre>
 
 <p>Above is an example of <strong>restricted cone NAT</strong> achieved with nftables<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>,
 the most common NAT type. If you are using P2P,
