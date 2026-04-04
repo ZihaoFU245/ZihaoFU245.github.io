@@ -9,9 +9,9 @@ group :jekyll_plugins do
 	gem "jekyll-feed"
 	gem "jekyll-sitemap"
 	gem "jekyll-include-cache"
-	gem "jekyll-remote-theme"
 	gem "jekyll-paginate-v2"
 end
 
+gem "minimal-mistakes-jekyll"
 gem "webrick"      # Ruby 3+ needs this for `jekyll serve`
 gem "tzinfo-data"  # fixes time zone issues on Windows
